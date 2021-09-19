@@ -1,5 +1,9 @@
 # Rosary
 
+References:
+* https://www.vatican.va/special/rosary/documents/misteri_en.html
+* https://www.usccb.org/how-to-pray-the-rosary
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.6.
 
 ## Development server

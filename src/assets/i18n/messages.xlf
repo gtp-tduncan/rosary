@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="closing-1" datatype="html">
+        <source> V: Pray for us, O holy Mother of God. R: That we may be made worthy of the promises of Christ.
+</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/prayers/closing/closing.component.html</context>
+          <context context-type="linenumber">2,5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="closing-2" datatype="html">
+        <source> Let us pray: O God, whose only begotten Son, by His life, death and resurrection, purchased for us the rewards of eternal life, grant, we beseech Thee, that meditating on these mysteries of the Most Holy Rosary of the Blessed Virgin Mary, we may imitate what they contain, and obtain what they promise, through the same Christ, our Lord. Amen.
+</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/prayers/closing/closing.component.html</context>
+          <context context-type="linenumber">8,18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="creed" datatype="html">
+        <source> I believe in God the Father almighty Creator of Heavan and Earth; and in Jesus Christ, His only Son, Our Lord who was conceived by the Holy Spirit, born of the Virgin Mary, suffered under Pontius Pilate, was crucified, died and was buried; He decended into hell; the third day He rose again from the dead; He ascended into heavan, sits at the right hand of God the Father Almighty; from there He shall come to judge the living and the dead. I believe in the Holy Spirit; the Holy Catholic Church, the communion of saints; the forgiveness of sins; the resurrection of the body; and life everylasting. Amen.
+</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/prayers/creed/creed.component.html</context>
+          <context context-type="linenumber">2,20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="fatima" datatype="html">
+        <source> Oh my Jesus, forgive us our sins,<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br /&gt;"/> save us from the fires of hell;<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br /&gt;"/> lead all souls to heaven,<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br /&gt;"/> especially those in most need of your mercy!<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br /&gt;"/> Amen.
+</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/prayers/fatima/fatima.component.html</context>
+          <context context-type="linenumber">2,7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="glory" datatype="html">
+        <source> Glory be to the Father, and the Son, and the Holy Spirit. As it was in the beginning, is now, and ever shall be, world without end. Amen.
+</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/prayers/glory/glory.component.html</context>
+          <context context-type="linenumber">2,9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="hail-holy-queen" datatype="html">
+        <source> Hail, Holy Queen, Mother of Mercy, our life, our sweetness, and our hope. To thee do we cry, poor banished children of Eve. To thee do we send up our sighs, mourning and weeping in this vale of tears. Turn then, most gracious advocate, thine eyes of mercy towards us, and after this our exile show unto us the blessed fruit of thy womb, Jesus. O clement, O loving, O sweet Virgin Mary.
+</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/prayers/hail-holy-queen/hail-holy-queen.component.html</context>
+          <context context-type="linenumber">2,9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="hail-mary" datatype="html">
+        <source> Hail Mary, full of grace, the Lord is with thee; blessed art thou amongst women, and blessed is the fruit of thy womb, Jesus. Holy Mary, Mother of God, pray for us sinners, now, and at the hour of our death. Amen.
+</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/prayers/hail-mary/hail-mary.component.html</context>
+          <context context-type="linenumber">2,10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="our-father" datatype="html">
+        <source> Our Father who art in heaven, hallowed be Thy name; Thy kingdom come; Thy will be done on earth as it is in heaven. Give us this day our daily bread; and forgive us our trespasses, as we forgive those who trespass against us; and lead us not into temptation; but deliver us from evil. Amen.
+</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/prayers/our-father/our-father.component.html</context>
+          <context context-type="linenumber">2,13</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
