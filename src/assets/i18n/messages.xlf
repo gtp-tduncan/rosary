@@ -2,6 +2,84 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file source-language="en-US" datatype="plaintext" original="ng2.template">
     <body>
+      <trans-unit id="glorious-mystery-1" datatype="html">
+        <source>The Resurrection</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/mystery-glorious/mystery-glorious.component.ts</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="glorious-fruit-1" datatype="html">
+        <source>A conversion of heart</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/mystery-glorious/mystery-glorious.component.ts</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="glorious-mystery-2" datatype="html">
+        <source>The Ascension</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/mystery-glorious/mystery-glorious.component.ts</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="glorious-fruit-2" datatype="html">
+        <source>A desire for heaven</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/mystery-glorious/mystery-glorious.component.ts</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="glorious-mystery-3" datatype="html">
+        <source>The coming of the Holy Spirit</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/mystery-glorious/mystery-glorious.component.ts</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="glorious-fruit-3" datatype="html">
+        <source>The gifts of the Holy Spirit</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/mystery-glorious/mystery-glorious.component.ts</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="glorious-mystery-4" datatype="html">
+        <source>The Assumption of the Blessed Mother</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/mystery-glorious/mystery-glorious.component.ts</context>
+          <context context-type="linenumber">40</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="glorious-fruit-4" datatype="html">
+        <source>Devotion to Mary</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/mystery-glorious/mystery-glorious.component.ts</context>
+          <context context-type="linenumber">44</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="glorious-mystery-5" datatype="html">
+        <source>The Coronation of the Blessed Mother</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/mystery-glorious/mystery-glorious.component.ts</context>
+          <context context-type="linenumber">48</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="glorious-fruit-5" datatype="html">
+        <source>Eternal happiness</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/mystery-glorious/mystery-glorious.component.ts</context>
+          <context context-type="linenumber">52</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="glorious-1" datatype="html">
+        <source> The
+</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/mysteries/glorious/g1-resurrection/g1-resurrection.component.html</context>
+          <context context-type="linenumber">2,3</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="closing-1" datatype="html">
         <source> V: Pray for us, O holy Mother of God. R: That we may be made worthy of the promises of Christ.
 </source>
