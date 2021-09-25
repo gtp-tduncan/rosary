@@ -7,13 +7,10 @@ export interface BeadGroupTemplate {
   beadGroupIndex?: number;
   repeatCount?: number;
   prayerIds?: string[];
+  feedback?: string;
 
 }
 
 export function initBeadGroup(template: BeadGroupTemplate, beadGroupIndex: number): BeadGroup {
-  const beadGroup = new BeadGroup(template);
-  beadGroup.beadGroupIndex = beadGroupIndex;
-  beadGroup.sequence = template.sequence;
-  beadGroup.sequenceId = `${template.sequence}_${beadGroupIndex}`;
-  return beadGroup;
+  return new BeadGroup(template, beadGroupIndex);
 }

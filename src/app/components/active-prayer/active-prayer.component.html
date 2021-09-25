@@ -1,38 +1,6 @@
-<div>
-  {{ activeBeadGroup.sequenceId }}
-  <span *ngIf="activeBeadGroup.repeatCount > 1">
-  &nbsp;- {{ activeBeadGroup.beadIndex }} - {{ activeBeadGroup.repeatCount }}
-  </span>
-</div>
-<div class="active-mystery" *ngIf="showMystery">
-  <b>Mystery:</b> {{ activeBeadGroupList.mystery() }}<br/>
-  <b>Fruit:</b> {{ activeBeadGroupList.fruit() }}
-</div>
-<div class="active-prayer">
-  <div *ngIf="activeBeadGroup.sequence === 'creed'">
-    <app-creed></app-creed>
-  </div>
-  <div *ngIf="activeBeadGroup.sequence === 'our-father'">
-    <app-our-father></app-our-father>
-  </div>
-  <div *ngIf="activeBeadGroup.sequence === 'hail-mary'">
-    <app-hail-mary></app-hail-mary>
-  </div>
-  <div *ngIf="activeBeadGroup.sequence === 'glory'">
-    <app-glory></app-glory>
-  </div>
-  <div *ngIf="activeBeadGroup.sequence === 'glory-fatima'">
-    <app-glory></app-glory>
-    <app-fatima></app-fatima>
-  </div>
-  <div *ngIf="activeBeadGroup.sequence === 'hail-holy-queen'">
-    <app-hail-holy-queen></app-hail-holy-queen>
-  </div>
-  <div *ngIf="activeBeadGroup.sequence === 'closing'">
-    <app-closing></app-closing>
-  </div>
-</div>
 <div class="active-nav">
   <button (click)="onPrevious()">&lt;= Previous</button>
   <button (click)="onNext()">Next =&gt;</button>
 </div>
+
+<app-holy-rosary-prayer [activeBeadGroupList]="activeBeadGroupList"></app-holy-rosary-prayer>

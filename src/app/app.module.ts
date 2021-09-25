@@ -15,11 +15,14 @@ import { MysteryJoyfulComponent } from './components/mysteries/mystery-joyful/my
 import { MysteryLuminousComponent } from './components/mysteries/mystery-luminous/mystery-luminous.component';
 import { MysterySorrowfulComponent } from './components/mysteries/mystery-sorrowful/mystery-sorrowful.component';
 import { MysterySelectorComponent } from './components/mystery-selector/mystery-selector.component';
+import { HolyRosaryPrayerComponent } from './components/holy-rosary-prayer/holy-rosary-prayer.component';
 import { ActivePrayerComponent } from './components/active-prayer/active-prayer.component';
+import { PatsBeadsComponent } from './components/pats-beads/pats-beads.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    ActivePrayerComponent,
     OurFatherComponent,
     HailMaryComponent,
     GloryComponent,
@@ -32,7 +35,8 @@ import { ActivePrayerComponent } from './components/active-prayer/active-prayer.
     MysteryLuminousComponent,
     MysterySorrowfulComponent,
     MysterySelectorComponent,
-    ActivePrayerComponent
+    HolyRosaryPrayerComponent,
+    PatsBeadsComponent
   ],
   imports: [
     BrowserModule,

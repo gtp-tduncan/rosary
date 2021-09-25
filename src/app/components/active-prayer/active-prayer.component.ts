@@ -1,6 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { BeadGroup } from 'src/app/models/bead-group';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { BeadGroupList } from 'src/app/models/bead-group-list';
+import { HolyRosaryPrayerComponent } from '../holy-rosary-prayer/holy-rosary-prayer.component';
 
 @Component({
   selector: 'app-active-prayer',
@@ -12,26 +12,29 @@ export class ActivePrayerComponent implements OnInit {
   @Input()
   activeBeadGroupList: BeadGroupList;
 
-  activeBeadGroup: BeadGroup;
+  @ViewChild(HolyRosaryPrayerComponent)
+  holyRosaryPrayer: HolyRosaryPrayerComponent;
 
-  constructor() { }
+  constructor() {
+    // console.log(`ActivePrayerComponent - constructor`);
+  }
 
   ngOnInit(): void {
-    this.activeBeadGroup = this.activeBeadGroupList.next();
-    console.log(`activeBeadGroup: ${this.activeBeadGroup}`);
+    console.log("Active pray onInit");
+    // this.ngOnChanges(undefined);
   }
 
-  get showMystery(): boolean {
-    return this.activeBeadGroupList.mystery() !== undefined;
-  }
+  // ngOnChanges(changes: SimpleChanges): void {
+  //   console.log(`Have activeBeadGroupList: ${this.activeBeadGroupList}`);
+  //   console.log(`Have Holy Rosary prayer: ${this.holyRosaryPrayer}`)
+  // }
 
   onNext() {
-    const wasBead = this.activeBeadGroup;
-    this.activeBeadGroup = this.activeBeadGroupList.next();
-    console.log(`old: ${wasBead?.sequenceId}, ${wasBead?.index} / ${wasBead?.maxIndex} -- new: ${this.activeBeadGroup?.sequenceId}, ${this.activeBeadGroup?.index} / ${this.activeBeadGroup?.maxIndex}`)
+    this.holyRosaryPrayer.onNext();
   }
 
   onPrevious() {
-    // No implemented (yet?)
+    this.holyRosaryPrayer.onPrevious();
   }
+
 }

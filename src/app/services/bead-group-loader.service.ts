@@ -28,7 +28,9 @@ export class BeadGroupLoaderService {
       workingSeq = this.loadHolyRosary();
     }
 
-    return (workingSeq) ? new BeadGroupList(workingSeq, mystery) : undefined;
+    const loadedSequence: BeadGroupList = (workingSeq) ? new BeadGroupList(workingSeq, mystery) : undefined;
+    console.log(`loadedSequence: ${loadedSequence?.mysterySequenceName()}`);
+    return loadedSequence;
   }
 
   protected loadHolyRosary(): BeadGroup[] {
@@ -158,7 +160,8 @@ export const GLORY: BeadGroupTemplate = {
   repeatCount: 0,
   prayerIds: [
     '@@glory'
-  ]
+  ],
+  feedback: 'long'
 }
 
 export const GLORY_FATIMA: BeadGroupTemplate = {
@@ -168,12 +171,14 @@ export const GLORY_FATIMA: BeadGroupTemplate = {
   prayerIds: [
     '@@glory',
     '@@fatima'
-  ]
+  ],
+  feedback: 'long'
 }
 
 export const HAIL_HOLY_QUEEN: BeadGroupTemplate = {
   sequence: 'hail-holy-queen',
-  sequenceId: 'hail-holy-queen'
+  sequenceId: 'hail-holy-queen',
+  feedback: 'extra-long'
 }
 
 export const CLOSING: BeadGroupTemplate = {

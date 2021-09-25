@@ -1,0 +1,111 @@
+<div *ngIf="environment?.debugMode">
+  {{ activeBeadGroup.sequenceId }}
+  <span *ngIf="activeBeadGroup.repeatCount > 1">
+  &nbsp;- {{ activeBeadGroup.beadIndex }} - {{ activeBeadGroup.repeatCount }}
+  </span>
+</div>
+<div class="rosary-beads-{{ orientation }}">
+  <img src="assets/cropped-2.jpg" usemap="#beadmap" width="482" height="1111">
+  <!-- <img src="assets/highlight-bead.jpg" class="highlight-bead"> -->
+  <map name="beadmap">
+    <area shape="circle" coords="279, 957, 289, 967" alt="row 2" href="row 2">
+    <area shape="circle" coords="310, 892, 320, 902" alt="row 3" href="row 3">
+    <area shape="circle" coords="304, 865, 314, 875" alt="row 4" href="row 4">
+    <area shape="circle" coords="79, 844, 89, 854" alt="row 5" href="row 5">
+    <area shape="circle" coords="239, 788, 249, 798" alt="row 6" href="row 6">
+
+    <area shape="circle" coords="236, 705, 246, 715" alt="row 8" href="row 8">
+    <area shape="circle" coords="279, 646, 289, 656" alt="row 9" href="row 9">
+    <area shape="circle" coords="299, 622, 309, 632" alt="row 10" href="row 10">
+    <area shape="circle" coords="313, 598, 323, 608" alt="row 11" href="row 11">
+    <area shape="circle" coords="326, 574, 336, 584" alt="row 12" href="row 12">
+    <area shape="circle" coords="337, 547, 347, 557" alt="row 13" href="row 13">
+    <area shape="circle" coords="345, 523, 355, 533" alt="row 14" href="row 14">
+    <area shape="circle" coords="363, 496, 373, 506" alt="row 15" href="row 15">
+    <area shape="circle" coords="386, 476, 396, 486" alt="row 16" href="row 16">
+    <area shape="circle" coords="396, 454, 406, 464" alt="row 17" href="row 17">
+    <area shape="circle" coords="400, 427, 410, 437" alt="row 18" href="row 18">
+
+    <area shape="circle" coords="432, 369, 442, 379" alt="row 20" href="row 20">
+
+    <area shape="circle" coords="422, 300, 432, 310" alt="row 22" href="row 22">
+    <area shape="circle" coords="424, 272, 434, 282" alt="row 23" href="row 23">
+    <area shape="circle" coords="432, 245, 442, 255" alt="row 24" href="row 24">
+    <area shape="circle" coords="432, 224, 442, 234" alt="row 25" href="row 25">
+    <area shape="circle" coords="429, 199, 439, 209" alt="row 26" href="row 26">
+    <area shape="circle" coords="427, 175, 437, 185" alt="row 27" href="row 27">
+    <area shape="circle" coords="422, 148, 432, 158" alt="row 28" href="row 28">
+    <area shape="circle" coords="406, 123, 416, 133" alt="row 29" href="row 29">
+    <area shape="circle" coords="381, 117, 391, 127" alt="row 30" href="row 30">
+    <area shape="circle" coords="354, 113, 364, 123" alt="row 31" href="row 31">
+
+    <area shape="circle" coords="308, 143, 318, 153" alt="row 33" href="row 33">
+
+    <area shape="circle" coords="241, 138, 251, 148" alt="row 35" href="row 35">
+    <area shape="circle" coords="226, 115, 236, 125" alt="row 36" href="row 36">
+    <area shape="circle" coords="211, 92, 221, 102" alt="row 37" href="row 37">
+    <area shape="circle" coords="202, 66, 212, 76" alt="row 38" href="row 38">
+    <area shape="circle" coords="206, 38, 216, 48" alt="row 39" href="row 39">
+    <area shape="circle" coords="192, 25, 202, 35" alt="row 40" href="row 40">
+    <area shape="circle" coords="170, 20, 180, 30" alt="row 41" href="row 41">
+    <area shape="circle" coords="146, 27, 156, 37" alt="row 42" href="row 42">
+    <area shape="circle" coords="127, 44, 137, 54" alt="row 43" href="row 43">
+    <area shape="circle" coords="117, 67, 127, 77" alt="row 44" href="row 44">
+
+    <area shape="circle" coords="102, 132, 112, 142" alt="row 46" href="row 46">
+
+    <area shape="circle" coords="112, 199, 122, 209" alt="row 48" href="row 48">
+    <area shape="circle" coords="100, 222, 110, 232" alt="row 49" href="row 49">
+    <area shape="circle" coords="78, 231, 88, 241" alt="row 50" href="row 50">
+    <area shape="circle" coords="50, 245, 60, 255" alt="row 51" href="row 51">
+    <area shape="circle" coords="37, 267, 47, 277" alt="row 52" href="row 52">
+    <area shape="circle" coords="31, 290, 41, 300" alt="row 53" href="row 53">
+    <area shape="circle" coords="32, 317, 42, 327" alt="row 54" href="row 54">
+    <area shape="circle" coords="36, 343, 46, 353" alt="row 55" href="row 55">
+    <area shape="circle" coords="47, 367, 57, 377" alt="row 56" href="row 56">
+    <area shape="circle" coords="64, 390, 74, 400" alt="row 57" href="row 57">
+
+    <area shape="circle" coords="114, 445, 124, 455" alt="row 59" href="row 59">
+
+    <area shape="circle" coords="97, 508, 107, 518" alt="row 61" href="row 61">
+    <area shape="circle" coords="106, 533, 116, 543" alt="row 62" href="row 62">
+    <area shape="circle" coords="116, 556, 126, 566" alt="row 63" href="row 63">
+    <area shape="circle" coords="122, 580, 132, 590" alt="row 64" href="row 64">
+    <area shape="circle" coords="139, 605, 149, 615" alt="row 65" href="row 65">
+    <area shape="circle" coords="161, 613, 171, 623" alt="row 66" href="row 66">
+    <area shape="circle" coords="191, 617, 201, 627" alt="row 67" href="row 67">
+    <area shape="circle" coords="216, 619, 226, 629" alt="row 68" href="row 68">
+    <area shape="circle" coords="231, 636, 241, 646" alt="row 69" href="row 69">
+    <area shape="circle" coords="238, 659, 248, 669" alt="row 70" href="row 70">
+  </map>
+</div>
+<div class="prayers-{{ orientation }}">
+  <div class="active-mystery" *ngIf="showMystery">
+    <b>{{ mysteryNum }} {{ mysteryName }} Mystery:</b> {{ activeBeadGroupList.mystery() }}<br/>
+    <b>Fruit:</b> {{ activeBeadGroupList.fruit() }}
+  </div>
+  <div class="active-prayer">
+    <div *ngIf="activeBeadGroup.sequence === 'creed'">
+      <app-creed></app-creed>
+    </div>
+    <div *ngIf="activeBeadGroup.sequence === 'our-father'">
+      <app-our-father></app-our-father>
+    </div>
+    <div *ngIf="activeBeadGroup.sequence === 'hail-mary'">
+      <app-hail-mary></app-hail-mary>
+    </div>
+    <div *ngIf="activeBeadGroup.sequence === 'glory'">
+      <app-glory></app-glory>
+    </div>
+    <div *ngIf="activeBeadGroup.sequence === 'glory-fatima'">
+      <app-glory></app-glory>
+      <app-fatima></app-fatima>
+    </div>
+    <div *ngIf="activeBeadGroup.sequence === 'hail-holy-queen'">
+      <app-hail-holy-queen></app-hail-holy-queen>
+    </div>
+    <div *ngIf="activeBeadGroup.sequence === 'closing'">
+      <app-closing></app-closing>
+    </div>
+  </div>
+</div>

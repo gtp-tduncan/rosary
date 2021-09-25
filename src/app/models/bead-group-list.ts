@@ -17,8 +17,6 @@ export class BeadGroupList {
     this.beadGroupIdx = -1;
     this.activeMysteries = mysteries;
     this.activeMysteriesIdx = 0;
-
-    this.toConsole();
   }
 
   next(): BeadGroup {
@@ -41,8 +39,11 @@ export class BeadGroupList {
     return this.activeMysteries.mysterySequenceName;
   }
 
+  mysteryNumber(): number {
+    return this.activeMysteriesIdx;
+  }
+
   mystery(): string {
-    console.log(`activeMysteries: ${JSON.stringify(this.activeMysteries)}`);
     return mysteryByNumber(this.activeMysteries, this.activeMysteriesIdx);
   }
 

@@ -25,7 +25,6 @@ export interface Mysteries {
 }
 
 export function mysteryByNumber(mystery: Mysteries, mysteryNum: number): string {
-  console.log(`mysteryByNumber: ${mysteryNum}`);
   if (mysteryNum === 1) {
     return mystery.mystery1;
   }
@@ -45,7 +44,6 @@ export function mysteryByNumber(mystery: Mysteries, mysteryNum: number): string 
 }
 
 export function fruitByNumber(mystery: Mysteries, mysteryNum: number): string {
-  console.log(`fruitByNumber: ${mysteryNum}`);
   if (mysteryNum === 1) {
     return mystery.fruit1;
   }

@@ -1,0 +1,45 @@
+// .active-prayer, .active-mystery {
+//   border-radius: 5px;
+//   border-width: 2px;
+//   padding: 10px;
+// }
+
+// .active-prayer {
+//   background-color: azure;
+// }
+
+// .active-mystery {
+//   background-color: darkcyan;
+//   color: yellow;
+// }
+
+.active-nav {
+  align-content: center;
+  width: 100%;
+}
+
+.rosary-beads-long, .rosary-beads-wide {
+  float: left;
+  height: 48%;
+  width: 48%;
+  //text-align: center;
+}
+
+// .rosary-beads-long img, .rosary-beads-wide img, .highlight-bead {
+//   max-height: 50%;
+//   max-width: 50%;
+//   object-fit: contain;
+// }
+
+.prayers-long, .prayers-wide {
+  float: none
+}
+
+.rosary-beads-long .highlight-bead, .rosary-beads-wide .highlight-bead {
+  height: 10px;
+  width: 10px;
+
+  position: relative;
+  opacity: 0.25;
+  z-index: 2;
+}
