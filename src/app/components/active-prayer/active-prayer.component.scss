@@ -1,0 +1,18 @@
+.active-prayer, .active-mystery {
+  border-radius: 5px;
+  border-width: 2px;
+  padding: 10px;
+}
+
+.active-prayer {
+  background-color: azure;
+}
+
+.active-mystery {
+  background-color: darkcyan;
+  color: yellow;
+}
+
+.active-nav {
+  align-content: center;
+}

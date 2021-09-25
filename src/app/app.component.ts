@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { BeadGroupList } from './models/bead-group-list';
 import { BeadGroupLoaderService, RosaryMysteriesEnum, SequenceIdEnum } from './services/bead-group-loader.service';
 
 @Component({
@@ -10,21 +11,16 @@ export class AppComponent {
 
   title = $localize`:@@rosaryTitle:Rosary`;
 
+  selectedBeadGroupList: BeadGroupList;
+
   constructor(private beadGroupLoader: BeadGroupLoaderService) { }
 
   onMysterySelected(selectedMystery: RosaryMysteriesEnum) {
-    console.log(`onMysterySelected: ${selectedMystery}`);
-    const beadGroup = this.beadGroupLoader.load(SequenceIdEnum.HOLY_ROSARY);
-    let currentBead = beadGroup[0];
-    // while (currentBead) {
-    console.log(`1: ${currentBead.data.prayerIds} - ${currentBead.data.repeatCount} - ${currentBead.data.sequenceId}`);
-    currentBead = currentBead.next();
-    // }
-    console.log(`2: ${currentBead.data.prayerIds} - ${currentBead.data.repeatCount} - ${currentBead.data.sequenceId}`);
+    this.selectedBeadGroupList = this.beadGroupLoader.loadMysteryEnum(SequenceIdEnum.HOLY_ROSARY, selectedMystery);
   }
 
   get showMysterySelector(): boolean {
-    return true;
+    return this.selectedBeadGroupList === undefined;
   }
 
 }

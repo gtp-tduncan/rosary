@@ -1,39 +1,49 @@
 import { BeadGroupTemplate } from "./bead-group-template";
 
-export class BeadGroup {
+export class BeadGroup implements BeadGroupTemplate {
+
+  sequence: string;
+  sequenceId: string;
+  beadGroupIndex?: number;
+  repeatCount?: number;
+  prayerIds?: string[];
 
   private beadIndex?: number;
 
-  constructor(public data: BeadGroupTemplate,
-    private previousBeadGroup: BeadGroup = undefined,
-    private nextBeadGroup: BeadGroup) {
+  constructor(data?: BeadGroupTemplate) {
+    if (data) {
+      this.sequence = data.sequence;
+      this.sequenceId = `${data.sequence}_${data.beadGroupIndex}`;
+      this.beadGroupIndex = data.beadGroupIndex;
+      this.repeatCount = (data.repeatCount) ? data.repeatCount : 0;
+      this.prayerIds = data.prayerIds;
+
       this.beadIndex = 0;
     }
+  }
 
-  next(): BeadGroup {
+  isBeadGroupDone(): boolean {
+    return this.beadIndex >= (this.repeatCount - 1);
+  }
+
+  resetBeadIndex() {
+    this.beadIndex = 0;
+  }
+
+  next() {
     this.beadIndex++;
-    if (this.beadIndex < this.data.repeatCount) {
-      this.nextBeadGroup.beadIndex = 0;
-      return this.nextBeadGroup;
-    }
-    return this;
   }
 
-  previous(): BeadGroup {
-    this.beadIndex--;
-    if (this.beadIndex === 0) {
-      this.previousBeadGroup.beadIndex = this.previousBeadGroup.data.repeatCount - 1;
-      return this.previousBeadGroup;
-    }
-    return this;
+  get groupIndex(): number {
+    return this.beadGroupIndex;
   }
 
-  setNext(bead: BeadGroup) {
-    this.nextBeadGroup = bead;
+  get index(): number {
+    return this.beadIndex;
   }
 
-  setPrevious(bead: BeadGroup) {
-    this.previousBeadGroup = bead;
+  get maxIndex(): number {
+    return (this.repeatCount) ? this.repeatCount : 0;
   }
 
 }

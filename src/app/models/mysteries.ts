@@ -1,5 +1,7 @@
 export interface Mysteries {
 
+  mysterySequenceName: string;
+
   mystery1: string;
 
   fruit1: string;
@@ -20,4 +22,44 @@ export interface Mysteries {
 
   fruit5: string;
 
+}
+
+export function mysteryByNumber(mystery: Mysteries, mysteryNum: number): string {
+  console.log(`mysteryByNumber: ${mysteryNum}`);
+  if (mysteryNum === 1) {
+    return mystery.mystery1;
+  }
+  else if (mysteryNum === 2) {
+    return mystery.mystery2;
+  }
+  else if (mysteryNum === 3) {
+    return mystery.mystery3;
+  }
+  else if (mysteryNum === 4) {
+    return mystery.mystery4;
+  }
+  else if (mysteryNum === 5) {
+    return mystery.mystery5;
+  }
+  return undefined;
+}
+
+export function fruitByNumber(mystery: Mysteries, mysteryNum: number): string {
+  console.log(`fruitByNumber: ${mysteryNum}`);
+  if (mysteryNum === 1) {
+    return mystery.fruit1;
+  }
+  else if (mysteryNum === 2) {
+    return mystery.fruit2;
+  }
+  else if (mysteryNum === 3) {
+    return mystery.fruit3;
+  }
+  else if (mysteryNum === 4) {
+    return mystery.fruit4;
+  }
+  else if (mysteryNum === 5) {
+    return mystery.fruit5;
+  }
+  return undefined;
 }

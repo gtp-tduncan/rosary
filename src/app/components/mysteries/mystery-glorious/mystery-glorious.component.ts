@@ -10,6 +10,10 @@ export class MysteryGloriousComponent implements Mysteries {
 
   constructor() { }
 
+  get mysterySequenceName(): string {
+    return 'Glorious';
+  }
+
   get mystery1(): string {
     return $localize`:@@glorious-mystery-1:The Resurrection`;
   }

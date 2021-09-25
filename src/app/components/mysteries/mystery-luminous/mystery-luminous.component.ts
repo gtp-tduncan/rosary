@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Mysteries } from 'src/app/models/mysteries';
 
 @Component({
@@ -9,6 +9,10 @@ import { Mysteries } from 'src/app/models/mysteries';
 export class MysteryLuminousComponent implements Mysteries {
 
   constructor() { }
+
+  get mysterySequenceName(): string {
+    return 'Luminous';
+  }
 
   get mystery1(): string {
     return $localize`:@@luminous-mystery-1:The Baptism in the Jordan`;

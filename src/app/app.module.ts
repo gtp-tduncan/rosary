@@ -15,6 +15,7 @@ import { MysteryJoyfulComponent } from './components/mysteries/mystery-joyful/my
 import { MysteryLuminousComponent } from './components/mysteries/mystery-luminous/mystery-luminous.component';
 import { MysterySorrowfulComponent } from './components/mysteries/mystery-sorrowful/mystery-sorrowful.component';
 import { MysterySelectorComponent } from './components/mystery-selector/mystery-selector.component';
+import { ActivePrayerComponent } from './components/active-prayer/active-prayer.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { MysterySelectorComponent } from './components/mystery-selector/mystery-
     MysteryJoyfulComponent,
     MysteryLuminousComponent,
     MysterySorrowfulComponent,
-    MysterySelectorComponent
+    MysterySelectorComponent,
+    ActivePrayerComponent
   ],
   imports: [
     BrowserModule,

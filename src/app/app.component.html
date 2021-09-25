@@ -1,3 +1,6 @@
 <div *ngIf="showMysterySelector">
   <app-mystery-selector (selectedMysteryEvent)="onMysterySelected($event)"></app-mystery-selector>
 </div>
+<div *ngIf="!showMysterySelector">
+  <app-active-prayer [activeBeadGroupList]="selectedBeadGroupList"></app-active-prayer>
+</div>
