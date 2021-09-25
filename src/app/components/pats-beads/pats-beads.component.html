@@ -1,6 +1,4 @@
-<img src="assets/cropped-2.jpg" usemap="#beadmap" width="{{ imageWidth }}" height="{{ imageHeight }}">
-<map name="beadmap">
-  <div *ngFor="let entry of coords; let i = index">
-    <area shape="circle" [coords]="entry.left,entry.top,entry.right,entry.bottom" href="#bead-{{i}}">
-  </div>
-</map>
+<img id="pats-beads" src="assets/cropped-2.jpg" width="{{ imageWidth }}" height="{{ imageHeight }}">
+<div *ngIf="hightlightStyle()">
+  <div class="highlight-bead" [style]="hightlightStyle()"></div>
+</div>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef,  HostListener,  Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { BeadPosition } from 'src/app/models/bead-position';
 
 @Component({
@@ -6,21 +6,30 @@ import { BeadPosition } from 'src/app/models/bead-position';
   templateUrl: './pats-beads.component.html',
   styleUrls: ['./pats-beads.component.scss']
 })
-export class PatsBeadsComponent implements OnInit {
+export class PatsBeadsComponent implements OnInit, OnChanges {
 
-  imageWidth = 482;
+  @Input()
+  highlightBeadIdx: number;
 
-  imageHeight = 1111;
+  imageWidth = 161;
 
-  coords: BoxPosition[];
+  imageHeight = 370;
+
+  highlightTop: string;
+  highlightLeft: string;
 
   private rawWidth = 1608;
   private rawHeight = 3704;
   private rawCoords: BeadPosition[] = [
+
     { x: 948, y: 3208 },
+    { x: 948, y: 3208 },
+
     { x: 1051, y: 2992 },
     { x: 1033, y: 2902 },
-    { x: 283, y: 2830 },
+    { x: 988, y: 2830 },
+
+    { x: 815, y: 2646 },
     { x: 815, y: 2646 },
 
     { x: 805, y: 2368 },
@@ -36,6 +45,8 @@ export class PatsBeadsComponent implements OnInit {
     { x: 1353, y: 1442 },
 
     { x: 1458, y: 1249 },
+    { x: 1458, y: 1249 },
+    { x: 1458, y: 1249 },
 
     { x: 1425, y: 1018 },
     { x: 1430, y: 924 },
@@ -48,6 +59,8 @@ export class PatsBeadsComponent implements OnInit {
     { x: 1287, y: 407 },
     { x: 1199, y: 396 },
 
+    { x: 1045, y: 495 },
+    { x: 1045, y: 495 },
     { x: 1045, y: 495 },
 
     { x: 820, y: 479 },
@@ -62,6 +75,8 @@ export class PatsBeadsComponent implements OnInit {
     { x: 408, y: 242 },
 
     { x: 357, y: 459 },
+    { x: 357, y: 459 },
+    { x: 357, y: 459 },
 
     { x: 391, y: 683 },
     { x: 351, y: 759 },
@@ -74,6 +89,8 @@ export class PatsBeadsComponent implements OnInit {
     { x: 174, y: 1241 },
     { x: 230, y: 1318 },
 
+    { x: 399, y: 1503 },
+    { x: 399, y: 1503 },
     { x: 399, y: 1503 },
 
     { x: 341, y: 1710 },
@@ -89,32 +106,34 @@ export class PatsBeadsComponent implements OnInit {
 
   ];
 
-  constructor() { }
+  constructor(private elementRef: ElementRef) { }
 
   ngOnInit(): void {
-    const offset = 5;
-    this.coords = [];
-
-    this.rawCoords.forEach(entry => {
-      const newX = (entry.x / this.rawWidth * this.imageWidth);
-      const newY = (entry.y / this.rawHeight * this.imageHeight);
-
-      const boxPosition: BoxPosition = {
-        left: (newX - offset),
-        right: (newX + offset),
-        top: (newY - offset),
-        bottom: (newY + offset)
-      }
-
-      this.coords.push(boxPosition);
-    })
+    this.ngOnChanges(undefined);
   }
 
-}
+  ngOnChanges(changes: SimpleChanges): void {
+    this.calculateBoxPosition();
+  }
 
-interface BoxPosition {
-  left: number;
-  right: number;
-  top: number;
-  bottom: number;
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    const element = document.getElementById('pats-beads');
+    this.imageWidth = element.clientWidth;
+    this.imageHeight = element.clientHeight;
+    this.calculateBoxPosition();
+  }
+
+  hightlightStyle(): string {
+    if (this.highlightTop && this.highlightLeft) {
+      return `top: ${this.highlightTop}; left: ${this.highlightLeft}`;
+    }
+    return undefined;
+  }
+
+  private calculateBoxPosition() {
+    const rawCoord = this.rawCoords[this.highlightBeadIdx];
+    this.highlightLeft = ((rawCoord.x / this.rawWidth * this.imageWidth)).toString() + 'px';
+    this.highlightTop = ((rawCoord.y / this.rawHeight * this.imageHeight) - this.imageHeight).toString() + 'px';
+  }
 }
