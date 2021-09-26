@@ -1,8 +1,16 @@
 <div class="outer-rosary">
-  <div class="active-nav">
-    <button (click)="onPrevious()">&lt;= Previous</button>
-    <button (click)="onNext()">Next =&gt;</button>
+  <div>
+    <span class="prayer-name">{{ prayerName }}</span>
+    <span class="active-nav" *ngIf="!isPrayerSequenceDone">
+      <button (click)="onPrevious()" i18n>&lt;= Previous</button>
+      <button (click)="onNext()" i18n>Next =&gt;</button>
+      &nbsp;
+      <button (click)="onStartNew()" i18n>Reset Prayer</button>
+    </span>
+    <span class="active-nav" *ngIf="isPrayerSequenceDone">
+      <button (click)="onStartNew()" i18n>Start New Prayer</button>
+    </span>
   </div>
 
-  <app-holy-rosary-prayer [activeBeadGroupList]="activeBeadGroupList"></app-holy-rosary-prayer>
+  <app-holy-rosary-prayer [activeBeadGroupList]="activeBeadGroupList" [prayerName]="prayerName"></app-holy-rosary-prayer>
 </div>

@@ -1,10 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { Mysteries } from 'src/app/models/mysteries';
-import { RosaryMysteriesEnum, SequenceIdEnum } from 'src/app/services/bead-group-loader.service';
-import { MysteryGloriousComponent } from '../mysteries/mystery-glorious/mystery-glorious.component';
-import { MysteryJoyfulComponent } from '../mysteries/mystery-joyful/mystery-joyful.component';
-import { MysteryLuminousComponent } from '../mysteries/mystery-luminous/mystery-luminous.component';
-import { MysterySorrowfulComponent } from '../mysteries/mystery-sorrowful/mystery-sorrowful.component';
+import { RosaryMysteriesEnum } from 'src/app/services/bead-group-loader.service';
 
 @Component({
   selector: 'app-mystery-selector',

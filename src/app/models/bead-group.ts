@@ -34,8 +34,16 @@ export class BeadGroup implements BeadGroupTemplate {
     this.beadIndex = 0;
   }
 
+  resetBeadIndexToEnd() {
+    this.beadIndex = this.repeatCount - 1;
+  }
+
   next() {
     this.beadIndex++;
+  }
+
+  previous() {
+    this.beadIndex--;
   }
 
   get groupIndex(): number {
