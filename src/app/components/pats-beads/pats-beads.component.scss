@@ -1,0 +1,25 @@
+// img {
+//   margin-top: 5px;
+//   margin-left: 5px;
+//   // object-fit: contain;
+//   // position: relative;
+// }
+
+// #pats-beads {
+//   max-width: 40%;
+// }
+
+.highlight-bead {
+  height: 30px;
+  width: 30px;
+  background-color: red;
+  border-color: darkred;
+
+  position: relative;
+  opacity: 0.5;
+  z-index: 2;
+}
+
+.pats-beads-container {
+  margin: 3px;
+}
