@@ -1,0 +1,21 @@
+.button-selector .left, .button-selector .right {
+  width: 42%;
+}
+
+.button-selector .left, .button-selector .center {
+  float: left;
+}
+
+.button-selector .right {
+  float: none;
+}
+
+.button-selector .center {
+  text-align: center;
+  width: 120px;
+}
+
+button {
+  margin-top: 3px;
+  min-width: 120px;
+}

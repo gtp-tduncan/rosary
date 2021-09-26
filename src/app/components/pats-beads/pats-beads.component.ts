@@ -11,9 +11,9 @@ export class PatsBeadsComponent implements OnInit, OnChanges {
   @Input()
   highlightBeadIdx: number;
 
-  imageWidth = 161;
+  imageWidth = 273;
 
-  imageHeight = 370;
+  imageHeight = 630;
 
   highlightTop: string;
   highlightLeft: string;
@@ -116,13 +116,13 @@ export class PatsBeadsComponent implements OnInit, OnChanges {
     this.calculateBoxPosition();
   }
 
-  @HostListener('window:resize', ['$event'])
-  onResize(event) {
-    const element = document.getElementById('pats-beads');
-    this.imageWidth = element.clientWidth;
-    this.imageHeight = element.clientHeight;
-    this.calculateBoxPosition();
-  }
+  // @HostListener('window:resize', ['$event'])
+  // onResize(event) {
+  //   const element = document.getElementById('pats-beads');
+  //   this.imageWidth = element.clientWidth;
+  //   this.imageHeight = element.clientHeight;
+  //   this.calculateBoxPosition();
+  // }
 
   hightlightStyle(): string {
     if (this.highlightTop && this.highlightLeft) {
@@ -132,8 +132,9 @@ export class PatsBeadsComponent implements OnInit, OnChanges {
   }
 
   private calculateBoxPosition() {
+    const offset = 15;
     const rawCoord = this.rawCoords[this.highlightBeadIdx];
-    this.highlightLeft = ((rawCoord.x / this.rawWidth * this.imageWidth)).toString() + 'px';
-    this.highlightTop = ((rawCoord.y / this.rawHeight * this.imageHeight) - this.imageHeight).toString() + 'px';
+    this.highlightLeft = ((rawCoord.x / this.rawWidth * this.imageWidth) - offset).toString() + 'px';
+    this.highlightTop = ((rawCoord.y / this.rawHeight * this.imageHeight) - offset - this.imageHeight).toString() + 'px';
   }
 }
