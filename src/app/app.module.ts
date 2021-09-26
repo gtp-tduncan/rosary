@@ -18,6 +18,8 @@ import { MysterySelectorComponent } from './components/mystery-selector/mystery-
 import { HolyRosaryPrayerComponent } from './components/holy-rosary-prayer/holy-rosary-prayer.component';
 import { ActivePrayerComponent } from './components/active-prayer/active-prayer.component';
 import { PatsBeadsComponent } from './components/pats-beads/pats-beads.component';
+import { SignCrossComponent } from './prayers/sign-cross/sign-cross.component';
+import { EndComponent } from './prayers/end/end.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import { PatsBeadsComponent } from './components/pats-beads/pats-beads.component
     MysterySorrowfulComponent,
     MysterySelectorComponent,
     HolyRosaryPrayerComponent,
-    PatsBeadsComponent
+    PatsBeadsComponent,
+    SignCrossComponent,
+    EndComponent
   ],
   imports: [
     BrowserModule,

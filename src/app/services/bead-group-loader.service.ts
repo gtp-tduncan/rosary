@@ -1,4 +1,3 @@
-import { sequence } from '@angular/animations';
 import { Injectable } from '@angular/core';
 import { MysteryGloriousComponent } from '../components/mysteries/mystery-glorious/mystery-glorious.component';
 import { MysteryJoyfulComponent } from '../components/mysteries/mystery-joyful/mystery-joyful.component';
@@ -23,12 +22,14 @@ export class BeadGroupLoaderService {
 
   loadMystery(sequenceId: SequenceIdEnum, mystery: Mysteries): BeadGroupList {
     let workingSeq: BeadGroup[] = undefined;
+    let prayerName: string;
 
     if (SequenceIdEnum.HOLY_ROSARY === sequenceId) {
+      prayerName = "the Holy Rosary";
       workingSeq = this.loadHolyRosary();
     }
 
-    const loadedSequence: BeadGroupList = (workingSeq) ? new BeadGroupList(workingSeq, mystery) : undefined;
+    const loadedSequence: BeadGroupList = (workingSeq) ? new BeadGroupList(prayerName, workingSeq, mystery) : undefined;
     console.log(`loadedSequence: ${loadedSequence?.mysterySequenceName()}`);
     return loadedSequence;
   }
@@ -36,6 +37,7 @@ export class BeadGroupLoaderService {
   protected loadHolyRosary(): BeadGroup[] {
     let beadGroupIndex = 0;
     return [
+      initBeadGroup(SIGN_CROSS, beadGroupIndex++),
       initBeadGroup(APOSTLES_CREED, beadGroupIndex++),
       initBeadGroup(OUR_FATHER, beadGroupIndex++),
       initBeadGroup(OPENING_HAIL_MARYS, beadGroupIndex++),
@@ -61,7 +63,8 @@ export class BeadGroupLoaderService {
       initBeadGroup(HAIL_MARYS, beadGroupIndex++),
       initBeadGroup(GLORY_FATIMA, beadGroupIndex++),
       initBeadGroup(HAIL_HOLY_QUEEN, beadGroupIndex++),
-      initBeadGroup(CLOSING, beadGroupIndex++)
+      initBeadGroup(CLOSING, beadGroupIndex++),
+      initBeadGroup(SIGN_CROSS, beadGroupIndex++)
     ] as BeadGroup[];
   }
 }
@@ -116,6 +119,14 @@ export const MYSTERY_4: BeadGroupTemplate = {
 export const MYSTERY_5: BeadGroupTemplate = {
   sequence: 'mystery-5',
   sequenceId: 'mystery-5'
+}
+
+export const SIGN_CROSS: BeadGroupTemplate = {
+  sequence: 'sign-cross',
+  sequenceId: 'sign-cross',
+  prayerIds: [
+    '@@sign-cross'
+  ]
 }
 
 export const APOSTLES_CREED: BeadGroupTemplate = {

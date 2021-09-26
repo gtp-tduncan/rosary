@@ -1,7 +1,6 @@
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { BeadGroup } from 'src/app/models/bead-group';
 import { BeadGroupList } from 'src/app/models/bead-group-list';
-import { PatsBeadsComponent } from '../pats-beads/pats-beads.component';
 
 @Component({
   selector: 'app-holy-rosary-prayer',
@@ -12,6 +11,9 @@ export class HolyRosaryPrayerComponent implements OnInit {
 
   @Input()
   activeBeadGroupList: BeadGroupList;
+
+  @Input()
+  prayerName: string;
 
   @Input()
   orientation: string;
@@ -38,11 +40,16 @@ export class HolyRosaryPrayerComponent implements OnInit {
 
   onNext() {
     this.activeBeadGroup = this.activeBeadGroupList.next();
-    this.highlightBeadIndex++;
+    if (this.activeBeadGroup) {
+      this.highlightBeadIndex++;
+    }
   }
 
   onPrevious() {
-    // No implemented (yet?)
+    this.activeBeadGroup = this.activeBeadGroupList.previous();
+    if (this.activeBeadGroup) {
+      this.highlightBeadIndex--;
+    }
   }
 
   get mysteryNum(): string {

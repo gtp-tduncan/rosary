@@ -23,4 +23,8 @@ export class AppComponent {
     return this.selectedBeadGroupList === undefined;
   }
 
+  onResetEvent(flag: boolean) {
+    this.selectedBeadGroupList = undefined;
+  }
+
 }

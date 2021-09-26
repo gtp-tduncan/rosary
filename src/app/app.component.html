@@ -2,6 +2,5 @@
   <app-mystery-selector (selectedMysteryEvent)="onMysterySelected($event)"></app-mystery-selector>
 </div>
 <div *ngIf="!showMysterySelector">
-  <!-- <app-holy-rosary-prayer [activeBeadGroupList]="selectedBeadGroupList"></app-holy-rosary-prayer> -->
-  <app-active-prayer [activeBeadGroupList]="selectedBeadGroupList"></app-active-prayer>
+  <app-active-prayer [activeBeadGroupList]="selectedBeadGroupList" (onResetEvent)="onResetEvent($event)"></app-active-prayer>
 </div>

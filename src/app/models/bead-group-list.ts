@@ -3,6 +3,8 @@ import { fruitByNumber, Mysteries, mysteryByNumber } from "./mysteries";
 
 export class BeadGroupList {
 
+  prayerName: string;
+
   private currentBeadGroup: BeadGroup;
 
   private activeMysteries: Mysteries;
@@ -11,7 +13,8 @@ export class BeadGroupList {
   private beadGroups: BeadGroup[];
   private beadGroupIdx: number;
 
-  constructor(beadGroups: BeadGroup[], mysteries?: Mysteries) {
+  constructor(prayerName: string, beadGroups: BeadGroup[], mysteries?: Mysteries) {
+    this.prayerName = prayerName;
     this.currentBeadGroup = undefined;
     this.beadGroups = beadGroups;
     this.beadGroupIdx = -1;
@@ -19,9 +22,17 @@ export class BeadGroupList {
     this.activeMysteriesIdx = 0;
   }
 
+  get isPrayerSequenceDone(): boolean {
+    return this.beadGroupIdx >= this.beadGroups.length;
+  }
+
   next(): BeadGroup {
     if (this.isCurrentBeadGroupDone()) {
       this.beadGroupIdx++;
+      if (this.beadGroupIdx >= this.beadGroups.length) {
+        return undefined;
+      }
+
       this.currentBeadGroup = this.beadGroups[this.beadGroupIdx];
       this.currentBeadGroup.resetBeadIndex();
 
@@ -32,6 +43,25 @@ export class BeadGroupList {
     else {
       this.currentBeadGroup.next();
     }
+    return this.currentBeadGroup;
+  }
+
+  previous(): BeadGroup {
+    if (this.currentBeadGroup.index > 0) {
+      this.currentBeadGroup.previous();
+    }
+    else if (this.beadGroupIdx > 0) {
+      const lastWasMystery = this.currentBeadGroup.sequence.startsWith('mystery');
+
+      this.beadGroupIdx--;
+      this.currentBeadGroup = this.beadGroups[this.beadGroupIdx];
+      this.currentBeadGroup.resetBeadIndexToEnd();
+
+      if (lastWasMystery) {
+        this.activeMysteriesIdx--;
+      }
+    }
+
     return this.currentBeadGroup;
   }
 
