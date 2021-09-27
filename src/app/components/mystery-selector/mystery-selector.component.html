@@ -2,20 +2,20 @@
   <div class="left">&nbsp;</div>
   <div class="center">
     <p i18n>Select the desired Mystery:</p>
-    <!-- <div>
-      <button (click)='selectByDay()'>{{ selectByDayLabel() }}</button>
-    </div> -->
     <div>
-      <button (click)='selectGlorious()' i18n>Glorious</button>
+      <button (click)='selectByDay()'><span i18n>Select by day</span>: {{ mysteryOfTheDayLabel }}</button>
     </div>
     <div>
-      <button (click)='selectJoyful()' i18n>Joyful</button>
+      <button (click)='selectGlorious()'>{{ gloriousMystery }}</button>
     </div>
     <div>
-      <button (click)='selectLuminous()' i18n>Luminous</button>
+      <button (click)='selectJoyful()'>{{ joyfulMystery }}</button>
     </div>
     <div>
-      <button (click)='selectSorrowful()' i18n>Sorrowful</button>
+      <button (click)='selectLuminous()'>{{ luminousMystery }}</button>
+    </div>
+    <div>
+      <button (click)='selectSorrowful()'>{{ sorrowfulMystery }}</button>
     </div>
   </div>
   <div class="right">&nbsp;</div>

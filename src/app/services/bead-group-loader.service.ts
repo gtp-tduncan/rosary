@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { MysteryGloriousComponent } from '../components/mysteries/mystery-glorious/mystery-glorious.component';
-import { MysteryJoyfulComponent } from '../components/mysteries/mystery-joyful/mystery-joyful.component';
-import { MysteryLuminousComponent } from '../components/mysteries/mystery-luminous/mystery-luminous.component';
-import { MysterySorrowfulComponent } from '../components/mysteries/mystery-sorrowful/mystery-sorrowful.component';
+import { MysteryGloriousComponent } from '../components/holy-rosary-prayer/mysteries/mystery-glorious/mystery-glorious.component';
+import { MysteryJoyfulComponent } from '../components/holy-rosary-prayer/mysteries/mystery-joyful/mystery-joyful.component';
+import { MysteryLuminousComponent } from '../components/holy-rosary-prayer/mysteries/mystery-luminous/mystery-luminous.component';
+import { MysterySorrowfulComponent } from '../components/holy-rosary-prayer/mysteries/mystery-sorrowful/mystery-sorrowful.component';
 import { BeadGroup } from '../models/bead-group';
 import { BeadGroupList } from '../models/bead-group-list';
 import { BeadGroupTemplate, initBeadGroup } from '../models/bead-group-template';

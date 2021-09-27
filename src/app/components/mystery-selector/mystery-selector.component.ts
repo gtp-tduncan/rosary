@@ -1,6 +1,16 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { RosaryMysteriesEnum } from 'src/app/services/bead-group-loader.service';
 
+const SUN = 0;
+const MON = 1;
+const TUE = 2;
+const WED = 3;
+const THU = 4;
+const FRI = 5;
+const SAT = 6;
+
+export const MYSTERY_LABEL_MAP = new Map<RosaryMysteriesEnum, string>();
+
 @Component({
   selector: 'app-mystery-selector',
   templateUrl: './mystery-selector.component.html',
@@ -11,17 +21,73 @@ export class MysterySelectorComponent implements OnInit {
   @Output()
   selectedMysteryEvent = new EventEmitter<RosaryMysteriesEnum>();
 
-  constructor() { }
+  mysteryOfTheDayLabel: string;
 
-  ngOnInit(): void {
+  mysteryOfTheDay: RosaryMysteriesEnum;
+
+  private dayOfWeek: number;
+
+  constructor() {
+    if (MYSTERY_LABEL_MAP.size === 0) {
+      MYSTERY_LABEL_MAP[RosaryMysteriesEnum.GLORIOUS] = this.gloriousMystery;
+      MYSTERY_LABEL_MAP[RosaryMysteriesEnum.JOYFUL] = this.joyfulMystery;
+      MYSTERY_LABEL_MAP[RosaryMysteriesEnum.LUMINOUS] = this.luminousMystery;
+      MYSTERY_LABEL_MAP[RosaryMysteriesEnum.SORROWFUL] = this.sorrowfulMystery;
+    }
+
+    this.dayOfWeek = (new Date()).getDay();
+    this.mysteryOfTheDay = this.getMysteryOfTheDay();
+    this.mysteryOfTheDayLabel = MYSTERY_LABEL_MAP[this.mysteryOfTheDay];
   }
 
-  selectByDayLabel(): string {
-    return 'Select by Day';
+  ngOnInit(): void { }
+
+  get gloriousMystery(): string {
+    return $localize`:@@glorious:Glorious`;
+  }
+
+  get joyfulMystery(): string {
+    return $localize`:@@joyful:Joyful`;
+  }
+
+  get luminousMystery(): string {
+    return $localize`:@@luminous:Luminous`;
+  }
+
+  get sorrowfulMystery(): string {
+    return $localize`:@@sorrowful:Sorrowful`;
+  }
+
+  getMysteryOfTheDay(): RosaryMysteriesEnum {
+    if (this.dayOfWeek === SUN || this.dayOfWeek === WED) {
+      console.log('GLORIOUS');
+      return RosaryMysteriesEnum.GLORIOUS;
+    }
+    else if (this.dayOfWeek === MON || this.dayOfWeek === SAT) {
+      console.log('JOYFUL');
+      return RosaryMysteriesEnum.JOYFUL;
+    }
+    else if (this.dayOfWeek === TUE || this.dayOfWeek === FRI) {
+      console.log('SORROWFUL');
+      return RosaryMysteriesEnum.SORROWFUL;
+    }
+    console.log('LUMINOUS');
+    return RosaryMysteriesEnum.LUMINOUS;
   }
 
   selectByDay() {
-
+    if (this.mysteryOfTheDay === RosaryMysteriesEnum.GLORIOUS) {
+      this.selectGlorious();
+    }
+    else if (this.mysteryOfTheDay === RosaryMysteriesEnum.JOYFUL) {
+      this.selectJoyful();
+    }
+    else if (this.mysteryOfTheDay === RosaryMysteriesEnum.SORROWFUL) {
+      this.selectSorrowful();
+    }
+    else {
+      this.selectLuminous();
+    }
   }
 
   selectGlorious() {
