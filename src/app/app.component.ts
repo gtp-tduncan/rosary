@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { BeadGroupList } from './models/bead-group-list';
-import { BeadGroupLoaderService, RosaryMysteriesEnum, SequenceIdEnum } from './services/bead-group-loader.service';
+import { RosaryMysteriesEnum } from './sequences/rosary-helper';
+import { BeadGroupLoaderService } from './services/bead-group-loader.service';
 
 @Component({
   selector: 'app-root',
@@ -16,7 +17,7 @@ export class AppComponent {
   constructor(private beadGroupLoader: BeadGroupLoaderService) { }
 
   onMysterySelected(selectedMystery: RosaryMysteriesEnum) {
-    this.selectedBeadGroupList = this.beadGroupLoader.loadMysteryEnum(SequenceIdEnum.HOLY_ROSARY, selectedMystery);
+    this.selectedBeadGroupList = this.beadGroupLoader.loadHolyRosaryContemporaryMysteryEnum(selectedMystery);
   }
 
   get showMysterySelector(): boolean {

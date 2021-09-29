@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { RosaryMysteriesEnum } from 'src/app/services/bead-group-loader.service';
+import { RosaryMysteriesEnum } from 'src/app/sequences/rosary-helper';
 
 const SUN = 0;
 const MON = 1;

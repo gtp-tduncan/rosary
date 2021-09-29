@@ -1,4 +1,5 @@
-import { BeadGroupLoaderService, RosaryMysteriesEnum, SequenceIdEnum } from "../services/bead-group-loader.service";
+import { RosaryMysteriesEnum } from "../sequences/rosary-helper";
+import { BeadGroupLoaderService } from "../services/bead-group-loader.service";
 import { BeadGroup } from "./bead-group";
 import { BeadGroupList } from "./bead-group-list";
 
@@ -9,7 +10,7 @@ describe('BeadGroupList', () => {
     it('for Holy Rosary sequence', () => {
       // given
       const loader = new BeadGroupLoaderService();
-      let beadGroupList: BeadGroupList = loader.loadMysteryEnum(SequenceIdEnum.HOLY_ROSARY, RosaryMysteriesEnum.JOYFUL);
+      let beadGroupList: BeadGroupList = loader.loadHolyRosaryContemporaryMysteryEnum(RosaryMysteriesEnum.JOYFUL);
       let beadGroup = beadGroupList.next();
       let groupIdx = 0;
       let mysteryNum = 1;
