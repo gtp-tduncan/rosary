@@ -26,6 +26,10 @@ export class BeadGroupList {
     return this.beadGroupIdx >= this.beadGroups.length;
   }
 
+  current(): BeadGroup {
+    return this.currentBeadGroup;
+  }
+
   next(): BeadGroup {
     if (this.isCurrentBeadGroupDone()) {
       this.beadGroupIdx++;

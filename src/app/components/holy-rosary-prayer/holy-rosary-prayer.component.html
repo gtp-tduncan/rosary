@@ -1,10 +1,10 @@
-<div class="page-container">
-  <div class="rosary-beads-container">
+<div class="page-row">
+  <div class="page-section-left">
     <div class="rosary-beads-{{ orientation }}">
       <app-pats-beads [highlightBeadIdx]="highlightBeadIndex"></app-pats-beads>
     </div>
   </div>
-  <div class="prayers-{{ orientation }}">
+  <div class="page-section-right">
     <div class="active-mystery" *ngIf="showMystery">
       <table border="0">
         <tbody>

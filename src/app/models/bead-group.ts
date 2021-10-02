@@ -13,11 +13,9 @@ export class BeadGroup implements BeadGroupTemplate {
 
   constructor(data?: BeadGroupTemplate, beadGroupIndex?: number) {
     if (data) {
-      const useBeadGroupIndex = (beadGroupIndex) ? beadGroupIndex : data.beadGroupIndex;
-
       this.sequence = data.sequence;
-      this.sequenceId = `${data.sequence}_${useBeadGroupIndex}`;
-      this.beadGroupIndex = useBeadGroupIndex;
+      this.sequenceId = `${data.sequence}_${beadGroupIndex}`;
+      this.beadGroupIndex = beadGroupIndex;
       this.repeatCount = (data.repeatCount) ? data.repeatCount : 0;
       this.prayerIds = data.prayerIds;
       this.feedback = (data?.feedback || 'short');

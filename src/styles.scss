@@ -6,3 +6,24 @@ pre {
 body {
   background-color: lightgray;
 }
+
+.page-container {
+  text-align: center;
+}
+
+.page-row {
+  display: flex;
+}
+
+.page-section-left, .page-section-right {
+  flex: 50%;
+  padding: 10px;
+}
+
+.page-section-left {
+  text-align: right;
+}
+
+.page-section-right {
+  text-align: left;
+}

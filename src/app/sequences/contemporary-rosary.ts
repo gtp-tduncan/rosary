@@ -19,30 +19,37 @@ function loadContemporaryHolyRosary() {
   let beadGroupIndex = 0;
   return [
     initBeadGroup(SIGN_CROSS, beadGroupIndex++),
+
     initBeadGroup(APOSTLES_CREED, beadGroupIndex++),
     initBeadGroup(OUR_FATHER, beadGroupIndex++),
     initBeadGroup(OPENING_HAIL_MARYS, beadGroupIndex++),
     initBeadGroup(GLORY, beadGroupIndex++),
+
     initBeadGroup(MYSTERY_1, beadGroupIndex++),
     initBeadGroup(OUR_FATHER, beadGroupIndex++),
     initBeadGroup(HAIL_MARYS, beadGroupIndex++),
     initBeadGroup(GLORY_FATIMA, beadGroupIndex++),
+
     initBeadGroup(MYSTERY_2, beadGroupIndex++),
     initBeadGroup(OUR_FATHER, beadGroupIndex++),
     initBeadGroup(HAIL_MARYS, beadGroupIndex++),
     initBeadGroup(GLORY_FATIMA, beadGroupIndex++),
+
     initBeadGroup(MYSTERY_3, beadGroupIndex++),
     initBeadGroup(OUR_FATHER, beadGroupIndex++),
     initBeadGroup(HAIL_MARYS, beadGroupIndex++),
     initBeadGroup(GLORY_FATIMA, beadGroupIndex++),
+
     initBeadGroup(MYSTERY_4, beadGroupIndex++),
     initBeadGroup(OUR_FATHER, beadGroupIndex++),
     initBeadGroup(HAIL_MARYS, beadGroupIndex++),
     initBeadGroup(GLORY_FATIMA, beadGroupIndex++),
+
     initBeadGroup(MYSTERY_5, beadGroupIndex++),
     initBeadGroup(OUR_FATHER, beadGroupIndex++),
     initBeadGroup(HAIL_MARYS, beadGroupIndex++),
     initBeadGroup(GLORY_FATIMA, beadGroupIndex++),
+
     initBeadGroup(HAIL_HOLY_QUEEN, beadGroupIndex++),
     initBeadGroup(CLOSING, beadGroupIndex++),
     initBeadGroup(SIGN_CROSS, beadGroupIndex++)

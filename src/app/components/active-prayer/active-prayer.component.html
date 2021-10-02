@@ -1,14 +1,19 @@
-<div class="outer-rosary">
-  <div>
-    <span class="prayer-name">{{ prayerName }}</span>
-    <span class="active-nav" *ngIf="!isPrayerSequenceDone">
-      <button (click)="onPrevious()" i18n>&lt;= Previous</button>
-      <button (click)="onNext()" i18n>Next =&gt;</button>
-      &nbsp;
-      <button (click)="onStartNew()" i18n>Reset Prayer</button>
+<div class="page-container">
+  <div class="page-row">
+    <span class="page-section-left">
+      <span class="prayer-name">{{ prayerName }}</span>
+      <span>- version {{ appVersion }}</span>
     </span>
-    <span class="active-nav" *ngIf="isPrayerSequenceDone">
-      <button (click)="onStartNew()" i18n>Start New Prayer</button>
+    <span class="page-section-right">
+      <span class="active-nav" *ngIf="!isPrayerSequenceDone">
+        <button (click)="onPrevious()" i18n>&lt;= Previous</button>
+        <button (click)="onNext()" i18n>Next =&gt;</button>
+        &nbsp;
+        <button (click)="onStartNew()" i18n>Reset Prayer</button>
+      </span>
+      <span class="active-nav" *ngIf="isPrayerSequenceDone">
+        <button (click)="onStartNew()" i18n>Start New Prayer</button>
+      </span>
     </span>
   </div>
 
