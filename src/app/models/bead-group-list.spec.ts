@@ -11,7 +11,6 @@ describe('BeadGroupList', () => {
       // given
       const loader = new BeadGroupLoaderService();
       let beadGroupList: BeadGroupList = loader.loadHolyRosaryContemporaryMysteryEnum(RosaryMysteriesEnum.JOYFUL);
-      let beadGroup = beadGroupList.next();
       let groupIdx = 0;
       let mysteryNum = 1;
 

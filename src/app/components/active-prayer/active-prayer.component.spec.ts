@@ -17,7 +17,7 @@ import { PatsBeadsComponent } from '../pats-beads/pats-beads.component';
 
 import { ActivePrayerComponent } from './active-prayer.component';
 
-fdescribe('ActivePrayerComponent', () => {
+describe('ActivePrayerComponent', () => {
   let component: ActivePrayerComponent;
   let fixture: ComponentFixture<ActivePrayerComponent>;
   let beadGroupLoader = new BeadGroupLoaderService();
