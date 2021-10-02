@@ -1,10 +1,22 @@
+@import 'styles-mixin.scss';
+
 /* You can add global styles to this file, and also import other style files */
-pre {
+pre, body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
   background-color: lightgray;
+}
+
+button {
+  margin: $margins;
+  min-height: 30px;
+}
+
+.alternate-bold {
+  color: blue;
+  font-weight: bold;
 }
 
 .page-container {
@@ -15,7 +27,7 @@ body {
   display: flex;
 }
 
-.page-section-left, .page-section-right {
+.page-section-left, .page-section-center, .page-section-right {
   flex: 50%;
   padding: 10px;
 }
@@ -24,6 +36,27 @@ body {
   text-align: right;
 }
 
+.page-section-center {
+  text-align: center;
+}
+
 .page-section-right {
   text-align: left;
+}
+
+.page-section-title {
+  font-weight: bold;
+  padding: $padding;
+  text-align: center;
+}
+
+.content-border {
+  border: $border;
+  border-radius: $border-radius;
+  text-align: center;
+}
+
+.content-no-border, .content-border {
+  margin: $margins;
+  padding: $padding;
 }

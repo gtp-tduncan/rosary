@@ -7,6 +7,7 @@ export class BeadGroupList {
 
   private currentBeadGroup: BeadGroup;
 
+  // TODO: Mystery-related code should be moved to HolyRosaryPrayerComponent
   private activeMysteries: Mysteries;
   private activeMysteriesIdx: number;
 
@@ -40,7 +41,7 @@ export class BeadGroupList {
       this.currentBeadGroup = this.beadGroups[this.beadGroupIdx];
       this.currentBeadGroup.resetBeadIndex();
 
-      if (this.currentBeadGroup.sequence.startsWith('mystery')) {
+      if (this.currentBeadGroup.sequence.startsWith('mystery') || this.currentBeadGroup.incrementMysteryIdx) {
         this.activeMysteriesIdx++;
       }
     }
@@ -55,7 +56,7 @@ export class BeadGroupList {
       this.currentBeadGroup.previous();
     }
     else if (this.beadGroupIdx > 0) {
-      const lastWasMystery = this.currentBeadGroup.sequence.startsWith('mystery');
+      const lastWasMystery = this.currentBeadGroup.sequence.startsWith('mystery') || this.currentBeadGroup.incrementMysteryIdx;
 
       this.beadGroupIdx--;
       this.currentBeadGroup = this.beadGroups[this.beadGroupIdx];

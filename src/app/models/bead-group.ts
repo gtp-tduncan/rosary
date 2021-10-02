@@ -8,6 +8,7 @@ export class BeadGroup implements BeadGroupTemplate {
   repeatCount?: number;
   prayerIds?: string[];
   feedback?: string;
+  incrementMysteryIdx?: boolean;
 
   private beadIndex?: number;
 
@@ -19,6 +20,7 @@ export class BeadGroup implements BeadGroupTemplate {
       this.repeatCount = (data.repeatCount) ? data.repeatCount : 0;
       this.prayerIds = data.prayerIds;
       this.feedback = (data?.feedback || 'short');
+      this.incrementMysteryIdx = data?.incrementMysteryIdx;
 
       this.beadIndex = 0;
     }

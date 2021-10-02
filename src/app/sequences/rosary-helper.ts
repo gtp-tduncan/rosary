@@ -120,7 +120,8 @@ export const GLORY_FATIMA: BeadGroupTemplate = {
 export const HAIL_HOLY_QUEEN: BeadGroupTemplate = {
   sequence: 'hail-holy-queen',
   sequenceId: 'hail-holy-queen',
-  feedback: 'extra-long'
+  feedback: 'extra-long',
+  incrementMysteryIdx: true
 }
 
 export const CLOSING: BeadGroupTemplate = {

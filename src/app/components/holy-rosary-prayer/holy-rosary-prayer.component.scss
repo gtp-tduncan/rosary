@@ -1,18 +1,3 @@
-// .active-prayer, .active-mystery {
-//   border-radius: 5px;
-//   border-width: 2px;
-//   padding: 10px;
-// }
-
-// .active-prayer-workspace {
-//   background-color: #e5e5e5;
-//   padding: 5px;
-// }
-
-// .active-prayer {
-//   background-color: lightgray;
-// }
-
 .active-mystery {
   background-color: paleturquoise;
   border-radius: 5px;
@@ -23,7 +8,7 @@
 }
 
 .active-mystery .left-cell, .active-mystery .right-cell {
-  font-size: large;
+  margin: 5px;
   padding: 5px;
 }
 
@@ -36,26 +21,3 @@
 .active-mystery .right-cell {
   background-color: #bffefe;
 }
-
-// .page-container .rosary-beads-container {
-//   float: left;
-// }
-
-// .page-container .rosary-beads-container .rosary-beads-long, .page-container .rosary-beads-container .rosary-beads-wide {
-//   position: relative;
-//   float: left;
-// }
-
-// .page-container .rosary-beads-container {
-//   max-width: 95%;
-// }
-
-// .page-container .prayers-long, .page-container .prayers-wide {
-//   float: left;
-//   width: 50%;
-// }
-
-// .page-container .prayers-long .active-mystery, .page-container .prayers-wide .active-mystery {
-//   float: none;
-//   width: 100%;
-// }

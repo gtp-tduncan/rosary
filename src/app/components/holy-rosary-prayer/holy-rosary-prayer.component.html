@@ -6,28 +6,24 @@
   </div>
   <div class="page-section-right">
     <div class="active-mystery" *ngIf="showMystery">
-      <table border="0">
-        <tbody>
-          <tr>
-            <td class="left-cell">
-              {{ mysteryNum }} {{ mysteryName }} Mystery:
-            </td>
-            <td class="right-cell">
-              {{ activeBeadGroupList.mystery() }}
-            </td>
-          </tr>
-          <tr>
-            <td class="left-cell">
-              Fruit of the Mystery:
-            </td>
-            <td class="right-cell">
-              {{ activeBeadGroupList.fruit() }}
-            </td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="page-row">
+        <div class="page-section-left left-cell">
+          {{ mysteryNum }} {{ mysteryName }} {{ mysteryLiteralLabel }}:
+        </div>
+        <div class="page-section-right right-cell">
+          {{ activeBeadGroupList.mystery() }}
+        </div>
+      </div>
+      <div class="page-row">
+        <div class="page-section-left left-cell" i18n>
+          Fruit of the Mystery:
+        </div>
+        <div class="page-section-right right-cell">
+          {{ activeBeadGroupList.fruit() }}
+        </div>
+      </div>
     </div>
-    <div class="active-prayer">
+    <div class="active-prayer content-no-border">
       <div class="active-prayer-workspace">
         <div *ngIf="activeBeadGroup === undefined">
           <app-end [prayerName]="prayerName"></app-end>
@@ -48,7 +44,7 @@
           <app-glory></app-glory>
         </div>
         <div *ngIf="activeBeadGroup?.sequence === 'glory-fatima'">
-          <app-glory></app-glory>
+          <app-glory></app-glory><br /><br />
           <app-fatima></app-fatima>
         </div>
         <div *ngIf="activeBeadGroup?.sequence === 'hail-holy-queen'">

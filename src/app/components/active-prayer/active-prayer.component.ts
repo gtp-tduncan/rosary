@@ -1,5 +1,4 @@
 import { AfterViewInit, Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
-import { AppComponent } from 'src/app/app.component';
 import { BeadGroupList } from 'src/app/models/bead-group-list';
 import { HolyRosaryPrayerComponent } from '../holy-rosary-prayer/holy-rosary-prayer.component';
 
@@ -21,11 +20,7 @@ export class ActivePrayerComponent implements OnInit, AfterViewInit {
 
   prayerName: string;
 
-  appVersion: string;
-
-  constructor(appComponent: AppComponent) {
-    this.appVersion = appComponent.appVersion;
-  }
+  constructor() { }
 
   ngOnInit(): void {
     this.prayerName = this.activeBeadGroupList.prayerName;

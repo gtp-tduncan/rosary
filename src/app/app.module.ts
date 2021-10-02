@@ -16,6 +16,7 @@ import { HailHolyQueenComponent } from './prayers/hail-holy-queen/hail-holy-quee
 import { HailMaryComponent } from './prayers/hail-mary/hail-mary.component';
 import { OurFatherComponent } from './prayers/our-father/our-father.component';
 import { SignCrossComponent } from './prayers/sign-cross/sign-cross.component';
+import { NoticesComponent } from './components/notices/notices.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { SignCrossComponent } from './prayers/sign-cross/sign-cross.component';
     FatimaComponent,
     HailHolyQueenComponent,
     ClosingComponent,
-    EndComponent
+    EndComponent,
+    NoticesComponent
   ],
   imports: [
     BrowserModule,

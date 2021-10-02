@@ -1,22 +1,22 @@
 <div class="button-selector">
-  <div class="left">&nbsp;</div>
-  <div class="center">
-    <p i18n>Select the desired Mystery:</p>
+  <div class="page-section-left"></div>
+  <div class="page-section-center">
+    <p class="page-section-title" i18n>Select the desired Mystery:</p>
     <div>
-      <button (click)='selectByDay()'><span i18n>Select by day</span>: {{ mysteryOfTheDayLabel }}</button>
+      <button (click)='selectByDay()'><span class="alternate-bold" i18n>Select by day</span>: <b>{{ mysteryOfTheDayLabel }}</b></button>
     </div>
     <div>
-      <button (click)='selectGlorious()'>{{ gloriousMystery }}</button>
+      <button (click)='selectGlorious()'><b>{{ gloriousMystery }}</b></button>
     </div>
     <div>
-      <button (click)='selectJoyful()'>{{ joyfulMystery }}</button>
+      <button (click)='selectJoyful()'><b>{{ joyfulMystery }}</b></button>
     </div>
     <div>
-      <button (click)='selectLuminous()'>{{ luminousMystery }}</button>
+      <button (click)='selectLuminous()'><b>{{ luminousMystery }}</b></button>
     </div>
     <div>
-      <button (click)='selectSorrowful()'>{{ sorrowfulMystery }}</button>
+      <button (click)='selectSorrowful()'><b>{{ sorrowfulMystery }}</b></button>
     </div>
   </div>
-  <div class="right">&nbsp;</div>
+  <div class="page-section-right"></div>
 </div>
