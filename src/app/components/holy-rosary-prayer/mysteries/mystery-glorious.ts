@@ -1,11 +1,5 @@
-import { Component } from '@angular/core';
 import { Mysteries } from 'src/app/models/mysteries';
 
-@Component({
-  selector: 'app-mystery-glorious',
-  templateUrl: './mystery-glorious.component.html',
-  styleUrls: ['./mystery-glorious.component.scss']
-})
 export class MysteryGloriousComponent implements Mysteries {
 
   constructor() { }

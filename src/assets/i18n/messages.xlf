@@ -9,312 +9,354 @@
           <context context-type="linenumber">12</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="7290994d4f0d9b386c911f54f0e346848eeab52b" datatype="html">
+        <source>&lt;= Previous</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/active-prayer/active-prayer.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="40fe55050ada6545b69863e9e61402810d3af213" datatype="html">
+        <source>Next =&gt;</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/active-prayer/active-prayer.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8a9f4ee16ad2bdfa38bd60aea19f73a9f6870fc5" datatype="html">
+        <source>Reset Prayer</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/active-prayer/active-prayer.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c915df2dcfd5d2d5c63e041a59f318b690e34d4d" datatype="html">
+        <source>Start New Prayer</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/active-prayer/active-prayer.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="glorious-mystery-1" datatype="html">
         <source>The Resurrection</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/mysteries/mystery-glorious/mystery-glorious.component.ts</context>
+          <context context-type="sourcefile">src/app/components/holy-rosary-prayer/mysteries/mystery-glorious/mystery-glorious.component.ts</context>
           <context context-type="linenumber">18</context>
         </context-group>
       </trans-unit>
       <trans-unit id="glorious-fruit-1" datatype="html">
         <source>A conversion of heart</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/mysteries/mystery-glorious/mystery-glorious.component.ts</context>
+          <context context-type="sourcefile">src/app/components/holy-rosary-prayer/mysteries/mystery-glorious/mystery-glorious.component.ts</context>
           <context context-type="linenumber">22</context>
         </context-group>
       </trans-unit>
       <trans-unit id="glorious-mystery-2" datatype="html">
         <source>The Ascension</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/mysteries/mystery-glorious/mystery-glorious.component.ts</context>
+          <context context-type="sourcefile">src/app/components/holy-rosary-prayer/mysteries/mystery-glorious/mystery-glorious.component.ts</context>
           <context context-type="linenumber">26</context>
         </context-group>
       </trans-unit>
       <trans-unit id="glorious-fruit-2" datatype="html">
         <source>A desire for heaven</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/mysteries/mystery-glorious/mystery-glorious.component.ts</context>
+          <context context-type="sourcefile">src/app/components/holy-rosary-prayer/mysteries/mystery-glorious/mystery-glorious.component.ts</context>
           <context context-type="linenumber">30</context>
         </context-group>
       </trans-unit>
       <trans-unit id="glorious-mystery-3" datatype="html">
         <source>The coming of the Holy Spirit</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/mysteries/mystery-glorious/mystery-glorious.component.ts</context>
+          <context context-type="sourcefile">src/app/components/holy-rosary-prayer/mysteries/mystery-glorious/mystery-glorious.component.ts</context>
           <context context-type="linenumber">34</context>
         </context-group>
       </trans-unit>
       <trans-unit id="glorious-fruit-3" datatype="html">
         <source>The gifts of the Holy Spirit</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/mysteries/mystery-glorious/mystery-glorious.component.ts</context>
+          <context context-type="sourcefile">src/app/components/holy-rosary-prayer/mysteries/mystery-glorious/mystery-glorious.component.ts</context>
           <context context-type="linenumber">38</context>
         </context-group>
       </trans-unit>
       <trans-unit id="glorious-mystery-4" datatype="html">
         <source>The Assumption of the Blessed Mother</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/mysteries/mystery-glorious/mystery-glorious.component.ts</context>
+          <context context-type="sourcefile">src/app/components/holy-rosary-prayer/mysteries/mystery-glorious/mystery-glorious.component.ts</context>
           <context context-type="linenumber">42</context>
         </context-group>
       </trans-unit>
       <trans-unit id="glorious-fruit-4" datatype="html">
         <source>Devotion to Mary</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/mysteries/mystery-glorious/mystery-glorious.component.ts</context>
+          <context context-type="sourcefile">src/app/components/holy-rosary-prayer/mysteries/mystery-glorious/mystery-glorious.component.ts</context>
           <context context-type="linenumber">46</context>
         </context-group>
       </trans-unit>
       <trans-unit id="glorious-mystery-5" datatype="html">
         <source>The Coronation of the Blessed Mother</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/mysteries/mystery-glorious/mystery-glorious.component.ts</context>
+          <context context-type="sourcefile">src/app/components/holy-rosary-prayer/mysteries/mystery-glorious/mystery-glorious.component.ts</context>
           <context context-type="linenumber">50</context>
         </context-group>
       </trans-unit>
       <trans-unit id="glorious-fruit-5" datatype="html">
         <source>Eternal happiness</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/mysteries/mystery-glorious/mystery-glorious.component.ts</context>
+          <context context-type="sourcefile">src/app/components/holy-rosary-prayer/mysteries/mystery-glorious/mystery-glorious.component.ts</context>
           <context context-type="linenumber">54</context>
         </context-group>
       </trans-unit>
       <trans-unit id="joyful-mystery-1" datatype="html">
         <source>The Annunciation</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/mysteries/mystery-joyful/mystery-joyful.component.ts</context>
+          <context context-type="sourcefile">src/app/components/holy-rosary-prayer/mysteries/mystery-joyful/mystery-joyful.component.ts</context>
           <context context-type="linenumber">18</context>
         </context-group>
       </trans-unit>
       <trans-unit id="joyful-fruit-1" datatype="html">
         <source>Humility</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/mysteries/mystery-joyful/mystery-joyful.component.ts</context>
+          <context context-type="sourcefile">src/app/components/holy-rosary-prayer/mysteries/mystery-joyful/mystery-joyful.component.ts</context>
           <context context-type="linenumber">22</context>
         </context-group>
       </trans-unit>
       <trans-unit id="joyful-mystery-2" datatype="html">
         <source>The Visitation</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/mysteries/mystery-joyful/mystery-joyful.component.ts</context>
+          <context context-type="sourcefile">src/app/components/holy-rosary-prayer/mysteries/mystery-joyful/mystery-joyful.component.ts</context>
           <context context-type="linenumber">26</context>
         </context-group>
       </trans-unit>
       <trans-unit id="joyful-fruit-2" datatype="html">
         <source>Charity</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/mysteries/mystery-joyful/mystery-joyful.component.ts</context>
+          <context context-type="sourcefile">src/app/components/holy-rosary-prayer/mysteries/mystery-joyful/mystery-joyful.component.ts</context>
           <context context-type="linenumber">30</context>
         </context-group>
       </trans-unit>
       <trans-unit id="joyful-mystery-3" datatype="html">
         <source>Birth of our Lord</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/mysteries/mystery-joyful/mystery-joyful.component.ts</context>
+          <context context-type="sourcefile">src/app/components/holy-rosary-prayer/mysteries/mystery-joyful/mystery-joyful.component.ts</context>
           <context context-type="linenumber">34</context>
         </context-group>
       </trans-unit>
       <trans-unit id="joyful-fruit-3" datatype="html">
         <source>Poverty; detachment from the world</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/mysteries/mystery-joyful/mystery-joyful.component.ts</context>
+          <context context-type="sourcefile">src/app/components/holy-rosary-prayer/mysteries/mystery-joyful/mystery-joyful.component.ts</context>
           <context context-type="linenumber">38</context>
         </context-group>
       </trans-unit>
       <trans-unit id="joyful-mystery-4" datatype="html">
         <source>The Presentation</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/mysteries/mystery-joyful/mystery-joyful.component.ts</context>
+          <context context-type="sourcefile">src/app/components/holy-rosary-prayer/mysteries/mystery-joyful/mystery-joyful.component.ts</context>
           <context context-type="linenumber">42</context>
         </context-group>
       </trans-unit>
       <trans-unit id="joyful-fruit-4" datatype="html">
         <source>Obedience</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/mysteries/mystery-joyful/mystery-joyful.component.ts</context>
+          <context context-type="sourcefile">src/app/components/holy-rosary-prayer/mysteries/mystery-joyful/mystery-joyful.component.ts</context>
           <context context-type="linenumber">46</context>
         </context-group>
       </trans-unit>
       <trans-unit id="joyful-mystery-5" datatype="html">
         <source>The finding of our Lord in the temple</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/mysteries/mystery-joyful/mystery-joyful.component.ts</context>
+          <context context-type="sourcefile">src/app/components/holy-rosary-prayer/mysteries/mystery-joyful/mystery-joyful.component.ts</context>
           <context context-type="linenumber">50</context>
         </context-group>
       </trans-unit>
       <trans-unit id="joyful-fruit-5" datatype="html">
         <source>Piety</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/mysteries/mystery-joyful/mystery-joyful.component.ts</context>
+          <context context-type="sourcefile">src/app/components/holy-rosary-prayer/mysteries/mystery-joyful/mystery-joyful.component.ts</context>
           <context context-type="linenumber">54</context>
         </context-group>
       </trans-unit>
       <trans-unit id="luminous-mystery-1" datatype="html">
         <source>The Baptism in the Jordan</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/mysteries/mystery-luminous/mystery-luminous.component.ts</context>
+          <context context-type="sourcefile">src/app/components/holy-rosary-prayer/mysteries/mystery-luminous/mystery-luminous.component.ts</context>
           <context context-type="linenumber">18</context>
         </context-group>
       </trans-unit>
       <trans-unit id="luminous-fruit-1" datatype="html">
         <source>Openness to the Holy Spirit</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/mysteries/mystery-luminous/mystery-luminous.component.ts</context>
+          <context context-type="sourcefile">src/app/components/holy-rosary-prayer/mysteries/mystery-luminous/mystery-luminous.component.ts</context>
           <context context-type="linenumber">22</context>
         </context-group>
       </trans-unit>
       <trans-unit id="luminous-mystery-2" datatype="html">
         <source>The Wedding Feast at Cana</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/mysteries/mystery-luminous/mystery-luminous.component.ts</context>
+          <context context-type="sourcefile">src/app/components/holy-rosary-prayer/mysteries/mystery-luminous/mystery-luminous.component.ts</context>
           <context context-type="linenumber">26</context>
         </context-group>
       </trans-unit>
       <trans-unit id="luminous-fruit-2" datatype="html">
         <source>To Jesus through Mary</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/mysteries/mystery-luminous/mystery-luminous.component.ts</context>
+          <context context-type="sourcefile">src/app/components/holy-rosary-prayer/mysteries/mystery-luminous/mystery-luminous.component.ts</context>
           <context context-type="linenumber">30</context>
         </context-group>
       </trans-unit>
       <trans-unit id="luminous-mystery-3" datatype="html">
         <source>The Proclamation of the Kingdom of God</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/mysteries/mystery-luminous/mystery-luminous.component.ts</context>
+          <context context-type="sourcefile">src/app/components/holy-rosary-prayer/mysteries/mystery-luminous/mystery-luminous.component.ts</context>
           <context context-type="linenumber">34</context>
         </context-group>
       </trans-unit>
       <trans-unit id="luminous-fruit-3" datatype="html">
         <source>Conversion</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/mysteries/mystery-luminous/mystery-luminous.component.ts</context>
+          <context context-type="sourcefile">src/app/components/holy-rosary-prayer/mysteries/mystery-luminous/mystery-luminous.component.ts</context>
           <context context-type="linenumber">38</context>
         </context-group>
       </trans-unit>
       <trans-unit id="luminous-mystery-4" datatype="html">
         <source>The Transfiguration</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/mysteries/mystery-luminous/mystery-luminous.component.ts</context>
+          <context context-type="sourcefile">src/app/components/holy-rosary-prayer/mysteries/mystery-luminous/mystery-luminous.component.ts</context>
           <context context-type="linenumber">42</context>
         </context-group>
       </trans-unit>
       <trans-unit id="luminous-fruit-4" datatype="html">
         <source>Desire for holiness</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/mysteries/mystery-luminous/mystery-luminous.component.ts</context>
+          <context context-type="sourcefile">src/app/components/holy-rosary-prayer/mysteries/mystery-luminous/mystery-luminous.component.ts</context>
           <context context-type="linenumber">46</context>
         </context-group>
       </trans-unit>
       <trans-unit id="luminous-mystery-5" datatype="html">
         <source>The Instituation of the Eucharist</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/mysteries/mystery-luminous/mystery-luminous.component.ts</context>
+          <context context-type="sourcefile">src/app/components/holy-rosary-prayer/mysteries/mystery-luminous/mystery-luminous.component.ts</context>
           <context context-type="linenumber">50</context>
         </context-group>
       </trans-unit>
       <trans-unit id="luminous-fruit-5" datatype="html">
         <source>Adoration</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/mysteries/mystery-luminous/mystery-luminous.component.ts</context>
+          <context context-type="sourcefile">src/app/components/holy-rosary-prayer/mysteries/mystery-luminous/mystery-luminous.component.ts</context>
           <context context-type="linenumber">54</context>
         </context-group>
       </trans-unit>
       <trans-unit id="sorrowful-mystery-1" datatype="html">
         <source>The Resurrection</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/mysteries/mystery-sorrowful/mystery-sorrowful.component.ts</context>
+          <context context-type="sourcefile">src/app/components/holy-rosary-prayer/mysteries/mystery-sorrowful/mystery-sorrowful.component.ts</context>
           <context context-type="linenumber">18</context>
         </context-group>
       </trans-unit>
       <trans-unit id="sorrowful-fruit-1" datatype="html">
         <source>A conversion of heart</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/mysteries/mystery-sorrowful/mystery-sorrowful.component.ts</context>
+          <context context-type="sourcefile">src/app/components/holy-rosary-prayer/mysteries/mystery-sorrowful/mystery-sorrowful.component.ts</context>
           <context context-type="linenumber">22</context>
         </context-group>
       </trans-unit>
       <trans-unit id="sorrowful-mystery-2" datatype="html">
         <source>The Ascension</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/mysteries/mystery-sorrowful/mystery-sorrowful.component.ts</context>
+          <context context-type="sourcefile">src/app/components/holy-rosary-prayer/mysteries/mystery-sorrowful/mystery-sorrowful.component.ts</context>
           <context context-type="linenumber">26</context>
         </context-group>
       </trans-unit>
       <trans-unit id="sorrowful-fruit-2" datatype="html">
         <source>A desire for heaven</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/mysteries/mystery-sorrowful/mystery-sorrowful.component.ts</context>
+          <context context-type="sourcefile">src/app/components/holy-rosary-prayer/mysteries/mystery-sorrowful/mystery-sorrowful.component.ts</context>
           <context context-type="linenumber">30</context>
         </context-group>
       </trans-unit>
       <trans-unit id="sorrowful-mystery-3" datatype="html">
         <source>The coming of the Holy Spirit</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/mysteries/mystery-sorrowful/mystery-sorrowful.component.ts</context>
+          <context context-type="sourcefile">src/app/components/holy-rosary-prayer/mysteries/mystery-sorrowful/mystery-sorrowful.component.ts</context>
           <context context-type="linenumber">34</context>
         </context-group>
       </trans-unit>
       <trans-unit id="sorrowful-fruit-3" datatype="html">
         <source>The gifts of the Holy Spirit</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/mysteries/mystery-sorrowful/mystery-sorrowful.component.ts</context>
+          <context context-type="sourcefile">src/app/components/holy-rosary-prayer/mysteries/mystery-sorrowful/mystery-sorrowful.component.ts</context>
           <context context-type="linenumber">38</context>
         </context-group>
       </trans-unit>
       <trans-unit id="sorrowful-mystery-4" datatype="html">
         <source>The Assumption of the Blessed Mother</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/mysteries/mystery-sorrowful/mystery-sorrowful.component.ts</context>
+          <context context-type="sourcefile">src/app/components/holy-rosary-prayer/mysteries/mystery-sorrowful/mystery-sorrowful.component.ts</context>
           <context context-type="linenumber">42</context>
         </context-group>
       </trans-unit>
       <trans-unit id="sorrowful-fruit-4" datatype="html">
         <source>Devotion to Mary</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/mysteries/mystery-sorrowful/mystery-sorrowful.component.ts</context>
+          <context context-type="sourcefile">src/app/components/holy-rosary-prayer/mysteries/mystery-sorrowful/mystery-sorrowful.component.ts</context>
           <context context-type="linenumber">46</context>
         </context-group>
       </trans-unit>
       <trans-unit id="sorrowful-mystery-5" datatype="html">
         <source>The Coronation of the Blessed Mother</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/mysteries/mystery-sorrowful/mystery-sorrowful.component.ts</context>
+          <context context-type="sourcefile">src/app/components/holy-rosary-prayer/mysteries/mystery-sorrowful/mystery-sorrowful.component.ts</context>
           <context context-type="linenumber">50</context>
         </context-group>
       </trans-unit>
       <trans-unit id="sorrowful-fruit-5" datatype="html">
         <source>Eternal happiness</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/mysteries/mystery-sorrowful/mystery-sorrowful.component.ts</context>
+          <context context-type="sourcefile">src/app/components/holy-rosary-prayer/mysteries/mystery-sorrowful/mystery-sorrowful.component.ts</context>
           <context context-type="linenumber">54</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="5deacb3145552f5c36c87e4a8f4e3580bbdaad88" datatype="html">
+      <trans-unit id="40acf9c3b3d2ff26290656991b8c86617013c54e" datatype="html">
+        <source>Select the desired Mystery:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/mystery-selector/mystery-selector.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="b09101e08728eb553bf40ca0421e5c452c858387" datatype="html">
+        <source>Select by day</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/mystery-selector/mystery-selector.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="glorious" datatype="html">
         <source>Glorious</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/mystery-selector/mystery-selector.component.html</context>
-          <context context-type="linenumber">5</context>
+          <context context-type="sourcefile">src/app/components/mystery-selector/mystery-selector.component.ts</context>
+          <context context-type="linenumber">46</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="5a4a37aa03ccad0e411e3ba7b85c07514ac9d2a4" datatype="html">
+      <trans-unit id="joyful" datatype="html">
         <source>Joyful</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/mystery-selector/mystery-selector.component.html</context>
-          <context context-type="linenumber">8</context>
+          <context context-type="sourcefile">src/app/components/mystery-selector/mystery-selector.component.ts</context>
+          <context context-type="linenumber">50</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="46ccd9363aa77717fd09312a944a7c0250536258" datatype="html">
+      <trans-unit id="luminous" datatype="html">
         <source>Luminous</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/mystery-selector/mystery-selector.component.html</context>
-          <context context-type="linenumber">11</context>
+          <context context-type="sourcefile">src/app/components/mystery-selector/mystery-selector.component.ts</context>
+          <context context-type="linenumber">54</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="cd7ff9344fc612a482c4a767ddb8b46595f79448" datatype="html">
+      <trans-unit id="sorrowful" datatype="html">
         <source>Sorrowful</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/mystery-selector/mystery-selector.component.html</context>
-          <context context-type="linenumber">14</context>
+          <context context-type="sourcefile">src/app/components/mystery-selector/mystery-selector.component.ts</context>
+          <context context-type="linenumber">58</context>
         </context-group>
       </trans-unit>
       <trans-unit id="closing-1" datatype="html">
@@ -367,6 +409,20 @@ Amen.
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/prayers/creed/creed.component.html</context>
           <context context-type="linenumber">2,21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1e8c5582acfd4c735932f72ca7fb38ba55b50db2" datatype="html">
+        <source>Thank you for praying</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/prayers/end/end.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c79387e8dadfb6a7333a25518e59e8b0a4eec574" datatype="html">
+        <source>today!</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/prayers/end/end.component.html</context>
+          <context context-type="linenumber">4</context>
         </context-group>
       </trans-unit>
       <trans-unit id="fatima" datatype="html">
@@ -440,6 +496,17 @@ Amen.
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/prayers/our-father/our-father.component.html</context>
           <context context-type="linenumber">2,14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="sign-cross" datatype="html">
+        <source><x id="START_TAG_PRE" ctype="x-pre" equiv-text="&lt;pre&gt;"/>In the name of the Father,
+and of the Son,
+and of the Holy Spirit.
+Amen.
+<x id="CLOSE_TAG_PRE" ctype="x-pre" equiv-text="&lt;/pre&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/prayers/sign-cross/sign-cross.component.html</context>
+          <context context-type="linenumber">2,7</context>
         </context-group>
       </trans-unit>
     </body>

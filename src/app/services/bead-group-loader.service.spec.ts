@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
-import { MysteryGloriousComponent } from '../components/mysteries/mystery-glorious/mystery-glorious.component';
+import { MysteryGloriousComponent } from '../components/holy-rosary-prayer/mysteries/mystery-glorious';
 
-import { BeadGroupLoaderService, SequenceIdEnum } from './bead-group-loader.service';
+import { BeadGroupLoaderService } from './bead-group-loader.service';
 
 describe('BeadGroupLoaderService', () => {
   let service: BeadGroupLoaderService;
@@ -14,7 +14,7 @@ describe('BeadGroupLoaderService', () => {
   it('should be created and display json sequence', () => {
     expect(service).toBeTruthy();
     const mystery = new MysteryGloriousComponent();
-    const beads = service.loadMystery(SequenceIdEnum.HOLY_ROSARY, mystery);
+    const beads = service.loadHolyRosaryContemporary(mystery);
     expect(beads).toBeTruthy();
   });
 });

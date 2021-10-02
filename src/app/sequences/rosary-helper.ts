@@ -1,0 +1,134 @@
+import { MysteryGloriousComponent } from "../components/holy-rosary-prayer/mysteries/mystery-glorious";
+import { MysteryJoyfulComponent } from "../components/holy-rosary-prayer/mysteries/mystery-joyful";
+import { MysteryLuminousComponent } from "../components/holy-rosary-prayer/mysteries/mystery-luminous";
+import { MysterySorrowfulComponent } from "../components/holy-rosary-prayer/mysteries/mystery-sorrowful";
+import { BeadGroupTemplate } from "../models/bead-group-template";
+
+export enum RosaryMysteriesEnum {
+  GLORIOUS,
+  JOYFUL,
+  LUMINOUS,
+  SORROWFUL
+}
+
+export function lookupMystery(mysteryEnum: RosaryMysteriesEnum) {
+  if (RosaryMysteriesEnum.GLORIOUS === mysteryEnum) {
+    return new MysteryGloriousComponent();
+  }
+  else if (RosaryMysteriesEnum.JOYFUL === mysteryEnum) {
+    return new MysteryJoyfulComponent();
+  }
+  else if (RosaryMysteriesEnum.LUMINOUS === mysteryEnum) {
+    return new MysteryLuminousComponent();
+  }
+  else if (RosaryMysteriesEnum.SORROWFUL === mysteryEnum) {
+    return new MysterySorrowfulComponent();
+  }
+  return undefined;
+}
+
+export const MYSTERY_1: BeadGroupTemplate = {
+  sequence: 'mystery-1',
+  sequenceId: 'mystery-1'
+}
+
+export const MYSTERY_2: BeadGroupTemplate = {
+  sequence: 'mystery-2',
+  sequenceId: 'mystery-2'
+}
+
+export const MYSTERY_3: BeadGroupTemplate = {
+  sequence: 'mystery-3',
+  sequenceId: 'mystery-3'
+}
+
+export const MYSTERY_4: BeadGroupTemplate = {
+  sequence: 'mystery-4',
+  sequenceId: 'mystery-4'
+}
+
+export const MYSTERY_5: BeadGroupTemplate = {
+  sequence: 'mystery-5',
+  sequenceId: 'mystery-5'
+}
+
+export const SIGN_CROSS: BeadGroupTemplate = {
+  sequence: 'sign-cross',
+  sequenceId: 'sign-cross',
+  prayerIds: [
+    '@@sign-cross'
+  ]
+}
+
+export const APOSTLES_CREED: BeadGroupTemplate = {
+  sequence: 'creed',
+  sequenceId: 'creed',
+  repeatCount: 0,
+  prayerIds: [
+    '@@creed'
+  ]
+};
+
+export const OUR_FATHER: BeadGroupTemplate = {
+  sequence: 'our-father',
+  sequenceId: 'our-father',
+  repeatCount: 0,
+  prayerIds: [
+    '@@our-father'
+  ]
+};
+
+export const OPENING_HAIL_MARYS: BeadGroupTemplate = {
+  sequence: 'hail-mary',
+  sequenceId: 'hail-mary',
+  repeatCount: 3,
+  prayerIds: [
+    '@@hail-mary'
+  ]
+}
+
+export const HAIL_MARYS: BeadGroupTemplate = {
+  sequence: 'hail-mary',
+  sequenceId: 'hail-mary',
+  repeatCount: 10,
+  prayerIds: [
+    '@@hail-mary'
+  ]
+}
+
+export const GLORY: BeadGroupTemplate = {
+  sequence: 'glory',
+  sequenceId: 'glory',
+  repeatCount: 0,
+  prayerIds: [
+    '@@glory'
+  ],
+  feedback: 'long'
+}
+
+export const GLORY_FATIMA: BeadGroupTemplate = {
+  sequence: 'glory-fatima',
+  sequenceId: 'glory-fatima',
+  repeatCount: 0,
+  prayerIds: [
+    '@@glory',
+    '@@fatima'
+  ],
+  feedback: 'long'
+}
+
+export const HAIL_HOLY_QUEEN: BeadGroupTemplate = {
+  sequence: 'hail-holy-queen',
+  sequenceId: 'hail-holy-queen',
+  feedback: 'extra-long'
+}
+
+export const CLOSING: BeadGroupTemplate = {
+  sequence: 'closing',
+  sequenceId: 'closing',
+  repeatCount: 0,
+  prayerIds: [
+    '@@closing-1',
+    '@@closing-2'
+  ]
+}
