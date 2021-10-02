@@ -37,6 +37,34 @@
           <context context-type="linenumber">14</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="7290994d4f0d9b386c911f54f0e346848eeab52b" datatype="html">
+        <source>&lt;= Previous</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/active-prayer/active-prayer.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="40fe55050ada6545b69863e9e61402810d3af213" datatype="html">
+        <source>Next =&gt;</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/active-prayer/active-prayer.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8a9f4ee16ad2bdfa38bd60aea19f73a9f6870fc5" datatype="html">
+        <source>Reset Prayer</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/active-prayer/active-prayer.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c915df2dcfd5d2d5c63e041a59f318b690e34d4d" datatype="html">
+        <source>Start New Prayer</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/active-prayer/active-prayer.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="glorious-mystery-1" datatype="html">
         <source>The Resurrection</source>
         <context-group purpose="location">
