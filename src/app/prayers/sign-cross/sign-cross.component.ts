@@ -7,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignCrossComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+    console.log(`SignCrossComponent constructor`);
+  }
 
   ngOnInit(): void {
   }

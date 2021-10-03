@@ -41,7 +41,7 @@ export class MysteryJoyfulComponent implements Mysteries {
   }
 
   get mystery5(): string {
-    return $localize`:@@joyful-mystery-5:The finding of our Lord in the temple`;
+    return $localize`:@@joyful-mystery-5:The Finding of our Lord in the temple`;
   }
 
   get fruit5(): string {

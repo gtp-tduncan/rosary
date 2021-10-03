@@ -1,4 +1,6 @@
-<img id="pats-beads" src="assets/cropped-2.png" width="{{ imageWidth }}">
-<div *ngIf="hightlightStyle()">
-  <div class="highlight-bead" [style]="hightlightStyle()"></div>
+<div class="pats-beads">
+  <img id="pats-beads" src="assets/cropped-2.png" width="{{ imageWidth }}">
+  <div *ngIf="hightlightStyle()">
+    <div id="pats-highlight" class="highlight-bead" [style]="hightlightStyle()"></div>
+  </div>
 </div>

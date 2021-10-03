@@ -35,7 +35,8 @@ export class HolyRosaryPrayerComponent implements OnInit {
   }
 
   get showMystery(): boolean {
-    return this.activeBeadGroupList.mystery() !== undefined;
+    const mysteryNumber = this.activeBeadGroupList.mysteryNumber();
+    return (mysteryNumber >= 1 && mysteryNumber <= 5 && this.activeBeadGroupList.mystery() !== undefined);
   }
 
   onNext() {
@@ -58,6 +59,10 @@ export class HolyRosaryPrayerComponent implements OnInit {
 
   get mysteryName(): string {
     return this.activeBeadGroupList.mysterySequenceName();
+  }
+
+  get mysteryLiteralLabel(): string {
+    return $localize`:@@mysteryLiteral:Mystery`;
   }
 
 }

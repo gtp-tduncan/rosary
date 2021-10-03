@@ -1,5 +1,6 @@
 import { Component, ElementRef,  HostListener,  Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { BeadPosition } from 'src/app/models/bead-position';
+import { debugElementPosition } from 'src/utils/debug-utils';
 
 @Component({
   selector: 'app-pats-beads',
@@ -17,6 +18,7 @@ export class PatsBeadsComponent implements OnInit, OnChanges {
 
   highlightTop: string;
   highlightLeft: string;
+  highlightRight: string;
 
   private rawWidth = 1608;
   private rawHeight = 3704;
@@ -124,6 +126,15 @@ export class PatsBeadsComponent implements OnInit, OnChanges {
     this.calculateBoxPosition();
   }
 
+  // onResize(event) {
+  //   console.log('--------------------');
+  //   console.log(`onResize: ${event.target.innerWidth}`);
+  //   const beads = document.getElementById('pats-beads');
+  //   debugElementPosition('beads', beads);
+  //   const highlight = document.getElementById('pats-highlight');
+  //   debugElementPosition('highlight', highlight);
+  // }
+
   // @HostListener('window:resize', ['$event'])
   // onResize(event) {
   //   const element = document.getElementById('pats-beads');
@@ -133,16 +144,22 @@ export class PatsBeadsComponent implements OnInit, OnChanges {
   // }
 
   hightlightStyle(): string {
-    if (this.highlightTop && this.highlightLeft) {
-      return `top: ${this.highlightTop}; left: ${this.highlightLeft}`;
+    if (this.highlightTop && this.highlightRight) {
+      //return `top: ${this.highlightTop}; left: ${this.highlightLeft}`;
+      // return `top: ${this.highlightTop}; right: ${this.highlightRight}`;
+      return `top: ${this.highlightTop}; right: ${this.highlightRight}`;
     }
     return undefined;
   }
 
   private calculateBoxPosition() {
-    const offset = 15;
+    const offsetX = 22;  // Half the size of the highlight div with some tweaking
+    const offsetY = 18;  // Half the size of the highlight div with some tweaking
     const rawCoord = this.rawCoords[this.highlightBeadIdx];
-    this.highlightLeft = ((rawCoord.x / this.rawWidth * this.imageWidth) - offset).toString() + 'px';
-    this.highlightTop = ((rawCoord.y / this.rawHeight * this.imageHeight) - offset - this.imageHeight).toString() + 'px';
+    const baseLeft = ((rawCoord.x / this.rawWidth * this.imageWidth) + offsetX);
+    //this.highlightLeft = baseLeft.toString() + 'px';
+    this.highlightRight = ((baseLeft - this.imageWidth) * -1).toString() + 'px';
+    this.highlightTop = ((rawCoord.y / this.rawHeight * this.imageHeight) - offsetY).toString() + 'px';
+    // console.log(`left: ${this.highlightLeft}, right: ${this.highlightRight}, width: ${this.imageWidth}`);
   }
 }

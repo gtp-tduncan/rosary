@@ -1,62 +1,51 @@
-@import 'styles-mixin.scss';
-
+/* Mix-ins */
 /* You can add global styles to this file, and also import other style files */
 pre, body {
   font-family: Arial, Helvetica, sans-serif;
 }
-
 body {
   background-color: lightgray;
 }
-
 button {
-  margin: $margins;
+  margin: 5px;
   min-height: 30px;
 }
-
 .alternate-bold {
   color: blue;
   font-weight: bold;
 }
-
 .page-container {
   text-align: center;
 }
-
 .page-row {
   display: flex;
 }
-
 .page-section-left, .page-section-center, .page-section-right {
   flex: 50%;
   padding: 10px;
 }
-
 .page-section-left {
   text-align: right;
 }
-
 .page-section-center {
   text-align: center;
 }
-
 .page-section-right {
   text-align: left;
 }
-
 .page-section-title {
   font-weight: bold;
-  padding: $padding;
+  padding: 5px;
   text-align: center;
 }
-
 .content-border {
-  border: $border;
-  border-radius: $border-radius;
+  border: 1px dashed black;
+  border-radius: 10px;
   text-align: center;
 }
-
 .content-no-border, .content-border {
-  margin: $margins;
-  padding: $padding;
+  margin: 5px;
+  padding: 5px;
 }
+
+/*# sourceMappingURL=styles.css.map*/

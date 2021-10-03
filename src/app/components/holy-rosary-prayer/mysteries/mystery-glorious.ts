@@ -25,7 +25,7 @@ export class MysteryGloriousComponent implements Mysteries {
   }
 
   get mystery3(): string {
-    return $localize`:@@glorious-mystery-3:The coming of the Holy Spirit`;
+    return $localize`:@@glorious-mystery-3:The Coming of the Holy Spirit`;
   }
 
   get fruit3(): string {
