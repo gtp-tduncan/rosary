@@ -1,0 +1,8 @@
+<div *ngFor="let period of periods" class="page-row">
+  <div class="page-section-left">
+  {{ period.name }}:
+  </div>
+  <div class="page-section-right">
+  {{ period.startDate | date }} - {{ period.endDate | date }}
+  </div>
+</div>

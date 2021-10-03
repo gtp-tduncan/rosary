@@ -1,3 +1,5 @@
+import { LiturgicalDates } from "src/app/models/liturgical-dates";
+
 export enum Months {
   JAN = 0,
   FEB,
@@ -13,49 +15,72 @@ export enum Months {
   DEC
 }
 
-/**
- * Reference:
- * https://www.geeksforgeeks.org/how-to-calculate-the-easter-date-for-a-given-year-using-gauss-algorithm/
- *
- * @param year
- */
-export function gaussEaster(year: number) {
-  const a = year % 19;
-  const b = year % 4;
-  const c = year % 7;
-
-  const p = Math.floor(year / 100);
-  const q = Math.floor((13 + 8 * p) / 25);
-
-  const m = Math.floor(15 - q + p - p / 4) % 30;
-  const n = Math.floor(4 + p - p / 4) % 7;
-  const d = Math.floor(19 * a + m) % 30;
-  const e = Math.floor(2 * b + 4 * c + 6 * d + n) % 7;
-
-  const days = Math.floor(22 + d + e);
-
-  if (d == 29 && e == 6) {
-    return new Date(year, Months.APR, 19);
-  }
-  else if (d == 28 && e == 6) {
-    return new Date(year, Months.APR, 18);
-  }
-
-  return (days > 31)
-    ? new Date(year, Months.APR, days - 31)
-    : new Date(year, Months.MAR, days);
+export function addDays(baseDate: Date, days: number): Date {
+  const workingDate = new Date(baseDate);
+  workingDate.setDate(workingDate.getDate() + days);
+  return workingDate;
 }
 
-export function isAdvent(): boolean {
-  const baseNow = new Date();
-  const year = baseNow.getFullYear();
-  const now = new Date(year, baseNow.getMonth(), baseNow.getDate());
-  const christmasDay = new Date(year, Months.DEC, 25);
-  const dowChristmasDay = christmasDay.getDay();
-  const adventStartsDaysBack = dowChristmasDay - 28;
-  const adventStarts = (adventStartsDaysBack >= 1)
-    ? new Date(year, Months.DEC, adventStartsDaysBack)
-    : new Date(year, Months.NOV, adventStartsDaysBack + 30);
+export const LIT_DATES_2020: LiturgicalDates = {
+  advent: {
+    startDate: new Date(2020, Months.NOV, 29),
+    endDate: new Date(2020, Months.DEC, 24),
+    name: 'test-advent'
+  },
+  christmas: {
+    startDate: new Date(2020, Months.DEC, 25),
+    endDate: new Date(2021, Months.JAN, 10),
+    name: 'test-christmas'
+  },
+  lent: {
+    startDate: new Date(2020, Months.FEB, 26),
+    endDate: new Date(2020, Months.APR, 9),
+    name: 'test-lent'
+  },
+  triduum: {
+    startDate: new Date(2020, Months.APR, 9),
+    endDate: new Date(2020, Months.APR, 12),
+    name: 'test-triduum'
+  },
+  easter: {
+    startDate: new Date(2020, Months.APR, 12),
+    endDate: new Date(2020, Months.MAY, 31),
+    name: 'test-easter'
+  }
+};
 
-  return adventStarts <= now && now <= christmasDay;
-}
+export const LIT_DATES_2021: LiturgicalDates = {
+  advent: {
+    startDate: new Date(2021, Months.NOV, 28),
+    endDate: new Date(2021, Months.DEC, 24),
+    name: 'test-advent'
+  },
+  christmas: {
+    startDate: new Date(2021, Months.DEC, 25),
+    endDate: new Date(2022, Months.JAN, 9),
+    name: 'test-christmas'
+  },
+  lent: {
+    startDate: new Date(2021, Months.FEB, 17),
+    endDate: new Date(2021, Months.APR, 1),
+    name: 'test-lent'
+  },
+  triduum: {
+    startDate: new Date(2021, Months.APR, 1),
+    endDate: new Date(2021, Months.APR, 4),
+    name: 'test-triduum'
+  },
+  easter: {
+    startDate: new Date(2021, Months.APR, 4),
+    endDate: new Date(2021, Months.MAY, 23),
+    name: 'test-easter'
+  }
+};
+
+export const LIT_YEAR_2020_2021: LiturgicalDates = {
+  advent: LIT_DATES_2020.advent,
+  christmas: LIT_DATES_2020.christmas,
+  lent: LIT_DATES_2021.lent,
+  triduum: LIT_DATES_2021.triduum,
+  easter: LIT_DATES_2021.easter
+};

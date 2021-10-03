@@ -16,8 +16,11 @@ export class AppComponent {
   selectedBeadGroupList: BeadGroupList;
 
   appVersion: string = version;
+  dateStarted: Date;
 
   constructor(private beadGroupLoader: BeadGroupLoaderService) {
+    const now = new Date();
+    this.dateStarted = new Date(now.getFullYear(), now.getMonth(), now.getDate());
   }
 
   onMysterySelected(selectedMystery: RosaryMysteriesEnum) {

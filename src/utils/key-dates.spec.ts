@@ -1,4 +1,4 @@
-import { gaussEaster } from "./key-dates";
+import { gaussEaster } from "./dates-lent-easter";
 
 const easterData: GaussDate[] = [
   { year: 2001, expectedDate: new Date(2001, 3, 15) },
