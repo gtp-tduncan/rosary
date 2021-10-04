@@ -6,7 +6,7 @@ import { DateAndLocalizationService } from './date-and-localization.service';
 
 import { LiturgicalYearService } from './liturgical-year.service';
 
-fdescribe('LiturgicalYearService', () => {
+describe('LiturgicalYearService', () => {
   let service: LiturgicalYearService;
   let appDate: AppDateService;
 
