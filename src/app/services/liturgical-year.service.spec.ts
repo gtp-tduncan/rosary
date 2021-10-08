@@ -24,7 +24,7 @@ describe('LiturgicalYearService', () => {
 
   it('should match expected results for 2020', () => {
     const fakeNow = new Date(2020, Months.JAN, 1);
-    appDate = new AppDateService(fakeNow);
+    appDate = new AppDateServiceForTest(fakeNow);
 
     const localization = new DateAndLocalizationService(appDate);
     service = new LiturgicalYearService(localization);
@@ -35,7 +35,7 @@ describe('LiturgicalYearService', () => {
 
   it('should match expected results for 2021', () => {
     const fakeNow = new Date(2021, Months.JAN, 1);
-    appDate = new AppDateService(fakeNow);
+    appDate = new AppDateServiceForTest(fakeNow);
 
     const localization = new DateAndLocalizationService(appDate);
     service = new LiturgicalYearService(localization);
@@ -46,7 +46,7 @@ describe('LiturgicalYearService', () => {
 
   it('should match expected results for liturgical year 2020/2021', () => {
     const fakeNow = new Date(2020, Months.NOV, 27);
-    appDate = new AppDateService(fakeNow);
+    appDate = new AppDateServiceForTest(fakeNow);
 
     const localization = new DateAndLocalizationService(appDate);
     service = new LiturgicalYearService(localization);
@@ -68,4 +68,13 @@ function expectLiturgicalDatesToMatch(date1: LiturgicalDates, date2: LiturgicalD
 function expectLiturgicalPeriodsToMatch(period1: LiturgicalPeriod, period2: LiturgicalPeriod) {
   expect(period1.startDate).toEqual(period2.startDate);
   expect(period1.endDate).toEqual(period2.endDate);
+}
+
+class AppDateServiceForTest extends AppDateService {
+
+  constructor(date?: Date) {
+    super();
+    this.updateDate(date);
+  }
+
 }

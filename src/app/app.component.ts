@@ -13,26 +13,8 @@ export class AppComponent {
 
   title = $localize`:@@rosaryTitle:Rosary`;
 
-  selectedBeadGroupList: BeadGroupList;
-
   appVersion: string = version;
-  dateStarted: Date;
 
-  constructor(private beadGroupLoader: BeadGroupLoaderService) {
-    const now = new Date();
-    this.dateStarted = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-  }
-
-  onMysterySelected(selectedMystery: RosaryMysteriesEnum) {
-    this.selectedBeadGroupList = this.beadGroupLoader.loadHolyRosaryContemporaryMysteryEnum(selectedMystery);
-  }
-
-  get showMysterySelector(): boolean {
-    return this.selectedBeadGroupList === undefined;
-  }
-
-  onResetEvent(flag: boolean) {
-    this.selectedBeadGroupList = undefined;
-  }
+  constructor() { }
 
 }

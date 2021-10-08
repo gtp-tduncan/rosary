@@ -1,9 +1,1 @@
-<div class="content-border">
-  <div *ngIf="showMysterySelector">
-    <app-mystery-selector (selectedMysteryEvent)="onMysterySelected($event)"></app-mystery-selector>
-  </div>
-  <div *ngIf="!showMysterySelector">
-    <app-active-prayer [activeBeadGroupList]="selectedBeadGroupList" (onResetEvent)="onResetEvent($event)"></app-active-prayer>
-  </div>
-</div>
-<app-notices></app-notices>
+<router-outlet></router-outlet>

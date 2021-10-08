@@ -19,6 +19,8 @@ import { PatsBeadsComponent } from './components/pats-beads/pats-beads.component
 import { NoticesComponent } from './components/notices/notices.component';
 import { FormsModule } from '@angular/forms';
 import { LiturgicalDatesComponent } from './components/liturgical-dates/liturgical-dates.component';
+import { LayoutsComponent } from './components/layouts/layouts.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { LiturgicalDatesComponent } from './components/liturgical-dates/liturgic
     HailHolyQueenComponent,
     ClosingComponent,
     EndComponent,
-    LiturgicalDatesComponent
+    LiturgicalDatesComponent,
+    LayoutsComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
