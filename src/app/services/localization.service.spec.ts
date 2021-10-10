@@ -1,10 +1,10 @@
 import { TestBed } from '@angular/core/testing';
 import { AppDateService } from './app-date.service';
 
-import { DateAndLocalizationService } from './date-and-localization.service';
+import { LocalizationService } from './localization.service';
 
 describe('DateAndLocalizationService', () => {
-  let service: DateAndLocalizationService;
+  let service: LocalizationService;
   let appDate: AppDateService;
 
   beforeEach(() => {
@@ -15,7 +15,7 @@ describe('DateAndLocalizationService', () => {
         { provide: AppDateService, useValue: appDate }
       ]
     });
-    service = TestBed.inject(DateAndLocalizationService);
+    service = TestBed.inject(LocalizationService);
   });
 
   it('should be created', () => {

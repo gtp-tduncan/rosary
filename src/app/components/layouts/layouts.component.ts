@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class  LayoutsComponent implements OnInit {
 
+  imageWidth = 273;
+
   constructor() { }
 
   ngOnInit(): void {

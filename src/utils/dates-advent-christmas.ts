@@ -1,8 +1,9 @@
 import { LiturgicalDates, LiturgicalPeriod, PeriodStatus } from "src/app/models/liturgical-dates";
-import { DateAndLocalizationService } from "src/app/services/date-and-localization.service";
+import { AppDateService } from "src/app/services/app-date.service";
+import { LocalizationService } from "src/app/services/localization.service";
 import { addDays, Months } from "./key-dates";
 
-export function refreshNeeded(period: LiturgicalPeriod, localization: DateAndLocalizationService): PeriodStatus {
+export function refreshNeeded(period: LiturgicalPeriod, appDate: AppDateService): PeriodStatus {
   const hasStart = period?.startDate !== undefined;
   const hasEnd = period?.endDate !== undefined;
 
@@ -10,14 +11,14 @@ export function refreshNeeded(period: LiturgicalPeriod, localization: DateAndLoc
     return PeriodStatus.MISSING;
   }
 
-  return (hasEnd && period.endDate > localization.appDate.date) || (!hasEnd && period.startDate > localization.appDate.date)
+  return (hasEnd && period.endDate > appDate.date) || (!hasEnd && period.startDate > appDate.date)
     ? PeriodStatus.INCREMENT_YEAR
     : PeriodStatus.GOOD;
 
 }
 
-export function calculateAdventAndChristmas(localization: DateAndLocalizationService): LiturgicalDates {
-  const nextChristmasDay = calculateNextChristmas(localization);
+export function calculateAdventAndChristmas(appDate: AppDateService, localization: LocalizationService): LiturgicalDates {
+  const nextChristmasDay = calculateNextChristmas(appDate, localization);
 
   const adventYear = nextChristmasDay.startDate.getFullYear();
   const dowChristmasDay = nextChristmasDay.startDate.getDay();
@@ -37,11 +38,11 @@ export function calculateAdventAndChristmas(localization: DateAndLocalizationSer
   }
 }
 
-function calculateNextChristmas(localization: DateAndLocalizationService): LiturgicalPeriod {
-  let christmasDay = new Date(localization.appDate.currentYear, Months.DEC, 25);
+function calculateNextChristmas(appDate: AppDateService, localization: LocalizationService): LiturgicalPeriod {
+  let christmasDay = new Date(appDate.currentYear, Months.DEC, 25);
 
-  if (localization.appDate.date > christmasDay) {
-    christmasDay = new Date(localization.appDate.currentYear + 1, Months.DEC, 25);
+  if (appDate.date > christmasDay) {
+    christmasDay = new Date(appDate.currentYear + 1, Months.DEC, 25);
   }
 
   const endOfChristmas = calculateEndOfChristmasSeason(christmasDay);

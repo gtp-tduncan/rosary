@@ -1,13 +1,17 @@
 .pats-beads {
   position: relative;
+  max-height: 49%;
+  max-width: 49%;
+  text-align: right;
+}
+
+#pats-beads {
   text-align: right;
 }
 
 .highlight-bead {
   position: absolute;
 
-  height: 30px;
-  width: 30px;
   background-color: red;
   border: 5px solid darkred;
   border-radius: 50%;

@@ -3,6 +3,7 @@ import { BeadGroupList } from './models/bead-group-list';
 import { RosaryMysteriesEnum } from './sequences/rosary-helper';
 import { BeadGroupLoaderService } from './services/bead-group-loader.service';
 import { version } from '../../package.json';
+import { LiturgicalYearService } from './services/liturgical-year.service';
 
 @Component({
   selector: 'app-root',
@@ -15,6 +16,6 @@ export class AppComponent {
 
   appVersion: string = version;
 
-  constructor() { }
+  constructor(public liturgicalYear: LiturgicalYearService) { }
 
 }

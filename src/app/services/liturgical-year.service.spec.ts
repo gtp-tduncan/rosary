@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 import { LIT_DATES_2020, LIT_DATES_2021, LIT_YEAR_2020_2021, Months } from 'src/utils/key-dates';
 import { LiturgicalDates, LiturgicalPeriod } from '../models/liturgical-dates';
 import { AppDateService } from './app-date.service';
-import { DateAndLocalizationService } from './date-and-localization.service';
+import { LocalizationService } from './localization.service';
 
 import { LiturgicalYearService } from './liturgical-year.service';
 
@@ -16,7 +16,7 @@ describe('LiturgicalYearService', () => {
     TestBed.configureTestingModule({
       providers: [
         { provide: AppDateService, useValue: appDate },
-        DateAndLocalizationService
+        LocalizationService
       ]
     });
     service = TestBed.inject(LiturgicalYearService);
@@ -26,8 +26,8 @@ describe('LiturgicalYearService', () => {
     const fakeNow = new Date(2020, Months.JAN, 1);
     appDate = new AppDateServiceForTest(fakeNow);
 
-    const localization = new DateAndLocalizationService(appDate);
-    service = new LiturgicalYearService(localization);
+    const localization = new LocalizationService();
+    service = new LiturgicalYearService(appDate, localization);
     expect(service).toBeTruthy();
     expect(service.liturgicalDates).toBeTruthy();
     expectLiturgicalDatesToMatch(service.liturgicalDates, LIT_DATES_2020);
@@ -37,8 +37,8 @@ describe('LiturgicalYearService', () => {
     const fakeNow = new Date(2021, Months.JAN, 1);
     appDate = new AppDateServiceForTest(fakeNow);
 
-    const localization = new DateAndLocalizationService(appDate);
-    service = new LiturgicalYearService(localization);
+    const localization = new LocalizationService();
+    service = new LiturgicalYearService(appDate, localization);
     expect(service).toBeTruthy();
     expect(service.liturgicalDates).toBeTruthy();
     expectLiturgicalDatesToMatch(service.liturgicalDates, LIT_DATES_2021);
@@ -48,8 +48,8 @@ describe('LiturgicalYearService', () => {
     const fakeNow = new Date(2020, Months.NOV, 27);
     appDate = new AppDateServiceForTest(fakeNow);
 
-    const localization = new DateAndLocalizationService(appDate);
-    service = new LiturgicalYearService(localization);
+    const localization = new LocalizationService();
+    service = new LiturgicalYearService(appDate, localization);
     expect(service).toBeTruthy();
     expect(service.liturgicalDates).toBeTruthy();
     expectLiturgicalDatesToMatch(service.liturgicalDates, LIT_YEAR_2020_2021);

@@ -1,13 +1,11 @@
 import { Injectable } from '@angular/core';
-import { AppDateService } from './app-date.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class DateAndLocalizationService {
+export class LocalizationService {
 
-  constructor(public readonly appDate: AppDateService) {
-  }
+  constructor() { }
 
   get adventLabel(): string {
     return $localize`:@@adventLabel:Advent`;

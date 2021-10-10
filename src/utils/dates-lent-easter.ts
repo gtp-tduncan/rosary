@@ -1,5 +1,6 @@
 import { LiturgicalDates } from "src/app/models/liturgical-dates";
-import { DateAndLocalizationService } from "src/app/services/date-and-localization.service";
+import { AppDateService } from "src/app/services/app-date.service";
+import { LocalizationService } from "src/app/services/localization.service";
 import { addDays, Months } from "./key-dates";
 
 /**
@@ -38,10 +39,10 @@ export function gaussEaster(year: number): Date {
     : new Date(year, Months.MAR, days);
 }
 
-export function calculateLentAndEaster(localization: DateAndLocalizationService): LiturgicalDates {
-  let easterDay = gaussEaster(localization.appDate.currentYear);
-  if (localization.appDate.date > easterDay) {
-    easterDay = gaussEaster(localization.appDate.currentYear + 1);
+export function calculateLentAndEaster(appDate: AppDateService, localization: LocalizationService): LiturgicalDates {
+  let easterDay = gaussEaster(appDate.currentYear);
+  if (appDate.date > easterDay) {
+    easterDay = gaussEaster(appDate.currentYear + 1);
   }
 
   const endEaster = addDays(easterDay, 49);
