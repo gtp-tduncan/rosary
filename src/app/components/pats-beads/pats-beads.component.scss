@@ -1,12 +1,14 @@
 .pats-beads {
   position: relative;
-  max-height: 49%;
-  max-width: 49%;
+  // max-height: 49%;
+  // max-width: 49%;
   text-align: right;
+  // height: auto;
 }
 
 #pats-beads {
-  text-align: right;
+  max-height: 75vh;
+  text-align: left;
 }
 
 .highlight-bead {

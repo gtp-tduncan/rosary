@@ -1,5 +1,5 @@
 <div class="page-full">
-  <div class="content-border">
+  <div id="home-content-border" class="content-border" [style]="homeContentBorderStyle()">
     <div *ngIf="showMysterySelector">
       <app-mystery-selector (selectedMysteryEvent)="onMysterySelected($event)"></app-mystery-selector>
       <app-notices></app-notices>

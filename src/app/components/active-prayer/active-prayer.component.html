@@ -1,9 +1,9 @@
-<div class="section-container">
+<div id="active-prayer-section-container" class="section-container" [style]="sectionContainerStyle">
   <div class="section-row">
     <span class="section-left">
       <span class="prayer-name">{{ prayerName }}</span>
     </span>
-    <span class="section-right">
+    <span class="section-right-2x">
       <span class="active-nav" *ngIf="!isPrayerSequenceDone">
         <button (click)="onPrevious()" i18n>&lt;= Previous</button>
         <button (click)="onNext()" i18n>Next =&gt;</button>

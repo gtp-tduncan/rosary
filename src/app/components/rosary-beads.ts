@@ -1,6 +1,8 @@
 export interface RosaryBeads {
   highlightBeadIdx: number;
 
+  calcImageWidth(): string;
+
   imageWidth: number;
   imageHeight: number;
 
@@ -8,7 +10,7 @@ export interface RosaryBeads {
   highlightLeft: string;
   highlightRight: string;
 
-  calculateHighlightPosition();
+  calculateHighlightPosition(): void;
 
-  hightlightStyle(): string;
+  highlightStyle(): string;
 }

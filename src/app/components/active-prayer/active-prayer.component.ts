@@ -20,6 +20,8 @@ export class ActivePrayerComponent implements OnInit, AfterViewInit {
 
   prayerName: string;
 
+  sectionContainerStyle: string;
+
   constructor() { }
 
   ngOnInit(): void {
@@ -47,5 +49,11 @@ export class ActivePrayerComponent implements OnInit, AfterViewInit {
   onStartNew() {
     this.onResetEvent.emit(true);
   }
+
+  // validateOnResizeEvent(parentRect: DOMRect, elementBoundaryUtils: ElementBoundaryUtils): void {
+  //   const sectionContainerElement: HTMLElement = document.querySelector('#active-prayer-section-container');
+  //   this.sectionContainerStyle = elementBoundaryUtils.style(sectionContainerElement.getBoundingClientRect(), parentRect);
+  //   console.log(`sectionContainerStyle: ${this.sectionContainerStyle}`);
+  // }
 
 }

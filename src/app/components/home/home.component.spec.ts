@@ -1,4 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { AppComponent } from 'src/app/app.component';
+import { LiturgicalDates } from 'src/app/models/liturgical-dates';
+import { MysterySelectorComponent } from '../mystery-selector/mystery-selector.component';
+import { NoticesComponent } from '../notices/notices.component';
 
 import { HomeComponent } from './home.component';
 
@@ -8,7 +12,14 @@ describe('HomeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HomeComponent ]
+      declarations: [
+        HomeComponent,
+        MysterySelectorComponent,
+        NoticesComponent
+      ],
+      providers: [
+        AppComponent
+      ]
     })
     .compileComponents();
   });
@@ -19,7 +30,7 @@ describe('HomeComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  fit('should create', () => {
     expect(component).toBeTruthy();
   });
 });

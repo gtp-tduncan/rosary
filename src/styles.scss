@@ -3,30 +3,30 @@
 /* You can add global styles to this file, and also import other style files */
 pre, body {
   font-family: Arial, Helvetica, sans-serif;
+  font-size: 9pt;
 }
 
-body, html, app-root {
-  // background-color: lightgray;
-  margin: unset;
-  padding: unset;
-  // height: 99%;
+html {  //   , .page-full {
+  background-image: repeating-linear-gradient(0deg, green, green 3px, rgb(0, 56, 0) 3px, rgb(0, 56, 0) 6px);
 }
 
-body,
-html,
 app-root,
-.page-full,
 .repeating-linear-green,
 .repeating-linear-red,
 .repeating-linear-rose,
 .repeating-linear-violet,
 .repeating-linear-white {
-  //display: flexbox -ms-flexbox;
-  height: 100%;
-  width: 100%;
+  // display: flexbox -ms-flexbox;
   max-height: 100%;
   max-width: 100%;
+  // min-height: 100%;
+  // min-width: 100%;
 }
+
+img {
+  object-fit: contain;
+}
+
 
 // .repeating-linear-green, .repeating-linear-red, .repeating-linear-rose, .repeating-linear-violet, .repeating-linear-white {
 //   margin: unset;
@@ -35,31 +35,58 @@ app-root,
 //   width: 100%;
 // }
 
-.repeating-linear-green {
-  background: repeating-linear-gradient(-45deg, green, green 3px, rgb(0, 56, 0) 3px, rgb(0, 56, 0) 6px);
+// .repeating-linear-green {
+//   background: repeating-linear-gradient(-45deg, green, green 3px, rgb(0, 56, 0) 3px, rgb(0, 56, 0) 6px);
+// }
+
+// .repeating-linear-red {
+//   background: repeating-linear-gradient(-45deg, red, red 5px, rgb(56, 0, 0) 5px, rgb(56, 0, 0) 10px);
+// }
+
+// .repeating-linear-rose {
+//   background: repeating-linear-gradient(-45deg, pink, pink 5px, rgba(255, 192, 203, 0.411) 5px,  rgba(255, 192, 203, 0.411) 10px);
+// }
+
+// .repeating-linear-violet {
+//   background: repeating-linear-gradient(-45deg, purple, purple 5px, rgb(56, 0, 56) 5px, rgb(56, 0, 56) 10px);
+// }
+
+// .repeating-linear-white {
+//   background: repeating-linear-gradient(-45deg, white, white 5px, gray 5px, gray 10px);
+// }
+
+// .content-border {
+//   border: $border;
+//   border-radius: $border-radius;
+//   display: flexbox;
+//   text-align: center;
+// }
+
+.content-border {
+  border: $border;
+  border-radius: $border-radius;
+  text-align: center;
 }
 
-.repeating-linear-red {
-  background: repeating-linear-gradient(-45deg, red, red 5px, rgb(56, 0, 0) 5px, rgb(56, 0, 0) 10px);
+.content-no-border, .content-border {
+  background-color: lightgray;
+  box-sizing: border-box;
+  // display: flexbox;
+  margin-top: $margins;   //calc($margins * 4);
+  margin-bottom: $margins;  //calc($margins * -2);
+  margin-left: $margins;
+  margin-right: $margins;
+  opacity: 85%;
+  padding: $padding;
+  // height: calc(100% - $margins);
+  // width: calc(100% - $margins);
 }
 
-.repeating-linear-rose {
-  background: repeating-linear-gradient(-45deg, pink, pink 5px, rgba(255, 192, 203, 0.411) 5px,  rgba(255, 192, 203, 0.411) 10px);
-}
-
-.repeating-linear-violet {
-  background: repeating-linear-gradient(-45deg, purple, purple 5px, rgb(56, 0, 56) 5px, rgb(56, 0, 56) 10px);
-}
-
-.repeating-linear-white {
-  background: repeating-linear-gradient(-45deg, white, white 5px, gray 5px, gray 10px);
-}
-
-img {
-  // display: block;
-  max-height: 100%;
-  max-width: 100%;
-}
+// // img {
+// //   // display: block;
+// //   max-height: 100%;
+// //   max-width: 100%;
+// // }
 
 button {
   margin: $margins;
@@ -72,6 +99,8 @@ button {
 }
 
 .section-container {
+  height: 90vmin;
+  overflow: hidden;
   text-align: center;
 }
 
@@ -83,12 +112,19 @@ button {
   height: 100%;
 }
 
-.section-left, .section-center, .section-right {
-  flex: 50%;
-  padding: 10px;
+.section-left, .section-center, .section-right, .section-left-2x, .section-right-2x {
+  padding: 5px;
 }
 
-.section-left {
+.section-left, .section-center, .section-right {
+  flex: 33%;
+}
+
+.section-left-2x, .section-right-2x {
+  flex: 66%
+}
+
+.section-left, .section-left-2x {
   text-align: right;
 }
 
@@ -96,7 +132,7 @@ button {
   text-align: center;
 }
 
-.section-right {
+.section-right, .section-right-2x {
   text-align: left;
 }
 
@@ -110,17 +146,3 @@ button {
   font-size: xx-small;
 }
 
-.content-border {
-  border: $border;
-  border-radius: $border-radius;
-  display: flexbox;
-  text-align: center;
-}
-
-.content-no-border, .content-border {
-  background-color: lightgray;
-  box-sizing: border-box;
-  opacity: 85%;
-  margin: $margins;
-  padding: $padding;
-}
