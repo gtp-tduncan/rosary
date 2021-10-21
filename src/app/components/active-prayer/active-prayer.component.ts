@@ -29,10 +29,7 @@ export class ActivePrayerComponent implements OnInit, AfterViewInit {
     this.prayerName = this.prayerName[0].toUpperCase() + this.prayerName.substring(1);
   }
 
-  ngAfterViewInit(): void {
-    console.log(`ngOnInit - activeBeadGroupList=${this.activeBeadGroupList?.prayerName}`);
-    console.log(`ngOnInit - holyRosaryPrayer=${this.holyRosaryPrayer?.prayerName}`);
-  }
+  ngAfterViewInit(): void { }
 
   get isPrayerSequenceDone(): boolean {
     return this.activeBeadGroupList.isPrayerSequenceDone;
@@ -49,11 +46,5 @@ export class ActivePrayerComponent implements OnInit, AfterViewInit {
   onStartNew() {
     this.onResetEvent.emit(true);
   }
-
-  // validateOnResizeEvent(parentRect: DOMRect, elementBoundaryUtils: ElementBoundaryUtils): void {
-  //   const sectionContainerElement: HTMLElement = document.querySelector('#active-prayer-section-container');
-  //   this.sectionContainerStyle = elementBoundaryUtils.style(sectionContainerElement.getBoundingClientRect(), parentRect);
-  //   console.log(`sectionContainerStyle: ${this.sectionContainerStyle}`);
-  // }
 
 }

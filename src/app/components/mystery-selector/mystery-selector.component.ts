@@ -11,6 +11,8 @@ const SAT = 6;
 
 export const MYSTERY_LABEL_MAP = new Map<RosaryMysteriesEnum, string>();
 
+const HIGHLIGHT_MYSTERY_OF_DAY = 'highlight-mystery-of-day';
+
 @Component({
   selector: 'app-mystery-selector',
   templateUrl: './mystery-selector.component.html',
@@ -56,6 +58,26 @@ export class MysterySelectorComponent implements OnInit {
 
   get sorrowfulMystery(): string {
     return $localize`:@@sorrowful:Sorrowful`;
+  }
+
+  get isGlorious(): string {
+    return (this.getMysteryOfTheDay() === RosaryMysteriesEnum.GLORIOUS)
+      ? HIGHLIGHT_MYSTERY_OF_DAY : '';
+  }
+
+  get isJoyful(): string {
+    return (this.getMysteryOfTheDay() === RosaryMysteriesEnum.JOYFUL)
+      ? HIGHLIGHT_MYSTERY_OF_DAY : '';
+  }
+
+  get isLuminous(): string {
+    return (this.getMysteryOfTheDay() === RosaryMysteriesEnum.LUMINOUS)
+      ? HIGHLIGHT_MYSTERY_OF_DAY : '';
+  }
+
+  get isSorrowful(): string {
+    return (this.getMysteryOfTheDay() === RosaryMysteriesEnum.SORROWFUL)
+      ? HIGHLIGHT_MYSTERY_OF_DAY : '';
   }
 
   getMysteryOfTheDay(): RosaryMysteriesEnum {

@@ -1,24 +1,17 @@
-<div class="section-container">
-  <div class="section-row">
-    <div class="section-left"></div>
-    <div class="section-center">
-      <p class="section-title" i18n>Select the desired Mystery:</p>
-      <div>
-        <button (click)='selectByDay()'><span class="alternate-bold" i18n>Select by day</span>: <b>{{ mysteryOfTheDayLabel }}</b></button>
-      </div>
-      <div>
-        <button (click)='selectGlorious()'><b>{{ gloriousMystery }}</b></button>
-      </div>
-      <div>
-        <button (click)='selectJoyful()'><b>{{ joyfulMystery }}</b></button>
-      </div>
-      <div>
-        <button (click)='selectLuminous()'><b>{{ luminousMystery }}</b></button>
-      </div>
-      <div>
-        <button (click)='selectSorrowful()'><b>{{ sorrowfulMystery }}</b></button>
-      </div>
+<div class="content-border">
+  <div class="section-title" i18n>Select the desired Mystery:</div>
+  <div class="gtp-row-plain">
+    <div class="gtp-cell-plain-2">
+      <button (click)='selectGlorious()' [class]='isGlorious'><b>{{ gloriousMystery }}</b></button>
     </div>
-    <div class="section-right"></div>
+    <div class="gtp-cell-plain-2">
+      <button (click)='selectJoyful()' [class]='isJoyful'><b>{{ joyfulMystery }}</b></button>
+    </div>
+    <div class="gtp-cell-plain-2">
+      <button (click)='selectLuminous()' [class]='isLuminous'><b>{{ luminousMystery }}</b></button>
+    </div>
+    <div class="gtp-cell-plain-2">
+      <button (click)='selectSorrowful()' [class]='isSorrowful'><b>{{ sorrowfulMystery }}</b></button>
+    </div>
   </div>
 </div>

@@ -1,70 +1,19 @@
 @import 'styles-mixin.scss';
 
-/* You can add global styles to this file, and also import other style files */
-pre, body {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 9pt;
+body {
+  font-family: $fontname;
+  background-image: repeating-linear-gradient(0deg, green, green 3px, rgb(0, 100, 0) 3px, rgb(0, 100, 0) 6px);
 }
 
-html {  //   , .page-full {
-  background-image: repeating-linear-gradient(0deg, green, green 3px, rgb(0, 56, 0) 3px, rgb(0, 56, 0) 6px);
+input {
+  font-family: $fontname;
+  margin-bottom: $input-margin-bottom;
 }
-
-app-root,
-.repeating-linear-green,
-.repeating-linear-red,
-.repeating-linear-rose,
-.repeating-linear-violet,
-.repeating-linear-white {
-  // display: flexbox -ms-flexbox;
-  max-height: 100%;
-  max-width: 100%;
-  // min-height: 100%;
-  // min-width: 100%;
-}
-
-img {
-  object-fit: contain;
-}
-
-
-// .repeating-linear-green, .repeating-linear-red, .repeating-linear-rose, .repeating-linear-violet, .repeating-linear-white {
-//   margin: unset;
-//   padding: unset;
-//   height: 100%;
-//   width: 100%;
-// }
-
-// .repeating-linear-green {
-//   background: repeating-linear-gradient(-45deg, green, green 3px, rgb(0, 56, 0) 3px, rgb(0, 56, 0) 6px);
-// }
-
-// .repeating-linear-red {
-//   background: repeating-linear-gradient(-45deg, red, red 5px, rgb(56, 0, 0) 5px, rgb(56, 0, 0) 10px);
-// }
-
-// .repeating-linear-rose {
-//   background: repeating-linear-gradient(-45deg, pink, pink 5px, rgba(255, 192, 203, 0.411) 5px,  rgba(255, 192, 203, 0.411) 10px);
-// }
-
-// .repeating-linear-violet {
-//   background: repeating-linear-gradient(-45deg, purple, purple 5px, rgb(56, 0, 56) 5px, rgb(56, 0, 56) 10px);
-// }
-
-// .repeating-linear-white {
-//   background: repeating-linear-gradient(-45deg, white, white 5px, gray 5px, gray 10px);
-// }
-
-// .content-border {
-//   border: $border;
-//   border-radius: $border-radius;
-//   display: flexbox;
-//   text-align: center;
-// }
 
 .content-border {
   border: $border;
   border-radius: $border-radius;
+  display: flexbox;
   text-align: center;
 }
 
@@ -82,67 +31,472 @@ img {
   // width: calc(100% - $margins);
 }
 
-// // img {
-// //   // display: block;
-// //   max-height: 100%;
-// //   max-width: 100%;
-// // }
-
-button {
-  margin: $margins;
-  min-height: 30px;
-}
-
-.alternate-bold {
-  color: blue;
-  font-weight: bold;
-}
-
-.section-container {
-  height: 90vmin;
-  overflow: hidden;
-  text-align: center;
-}
-
-.section-row, .section-row-full {
-  display: flex;
-}
-
-.section-row-full {
-  height: 100%;
-}
-
-.section-left, .section-center, .section-right, .section-left-2x, .section-right-2x {
-  padding: 5px;
-}
-
-.section-left, .section-center, .section-right {
-  flex: 33%;
-}
-
-.section-left-2x, .section-right-2x {
-  flex: 66%
-}
-
-.section-left, .section-left-2x {
-  text-align: right;
-}
-
-.section-center {
-  text-align: center;
-}
-
-.section-right, .section-right-2x {
-  text-align: left;
-}
-
 .section-title {
   font-weight: bold;
   padding: $padding;
   text-align: center;
 }
 
-.spacer {
-  font-size: xx-small;
+/* ================================================================================ */
+
+@media (orientation: landscape) {
+
+  @mixin create_gtp_cell_landscape($width-indicator) {
+    .gtp-cell-#{$width-indicator}, .gtp-cell-plain-#{$width-indicator} {
+      background-color: transparent;
+      padding: $padding;
+      width: percentage(100 / ($width-sections / $width-indicator));
+      word-break: $word-break-type;
+    }
+
+    .gtp-cell-#{$width-indicator} {
+      border: 1px solid #c3c3c3;
+    }
+  }
+
+  @include create_gtp_cell_landscape(1);
+  @include create_gtp_cell_landscape(2);
+  @include create_gtp_cell_landscape(3);
+  @include create_gtp_cell_landscape(4);
+  @include create_gtp_cell_landscape(5);
+  @include create_gtp_cell_landscape(6);
+  @include create_gtp_cell_landscape(7);
+  @include create_gtp_cell_landscape(8);
+  @include create_gtp_cell_landscape(9);
+  @include create_gtp_cell_landscape(10);
+  @include create_gtp_cell_landscape(11);
+  @include create_gtp_cell_landscape(12);
+
 }
+
+/* -------------------------------------------------------------------------------- */
+
+@media (orientation: portrait) {
+
+  @mixin create_gtp_cell_portrait($width-indicator, $width-length) {
+    .gtp-cell-#{$width-indicator}, .gtp-cell-plain-#{$width-indicator} {
+      background-color: transparent;
+      padding: $padding;
+      width: $width-length;
+      word-break: $word-break-type;
+    }
+
+    .gtp-cell-#{$width-indicator} {
+      border: 1px solid #c3c3c3;
+    }
+  }
+
+  @include create_gtp_cell_portrait(1, '50%');
+  @include create_gtp_cell_portrait(2, '50%');
+  @include create_gtp_cell_portrait(3, '50%');
+  @include create_gtp_cell_portrait(4, '100%');
+  @include create_gtp_cell_portrait(5, '100%');
+  @include create_gtp_cell_portrait(6, '100%');
+  @include create_gtp_cell_portrait(7, '100%');
+  @include create_gtp_cell_portrait(8, '100%');
+  @include create_gtp_cell_portrait(9, '100%');
+  @include create_gtp_cell_portrait(10, '100%');
+  @include create_gtp_cell_portrait(11, '100%');
+  @include create_gtp_cell_portrait(12, '100%');
+
+}
+
+/* ================================================================================ */
+
+@media (orientation: landscape) {
+
+  .box {
+    height: 200px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
+  .box>* {
+    flex: 0 0 33%;
+  }
+
+}
+
+/* -------------------------------------------------------------------------------- */
+
+@media (orientation: portrait) {
+
+  .box {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-top: 0.5em;
+  }
+
+  .box>* {
+    flex: 0 0 10%;
+  }
+
+}
+
+/* ================================================================================ */
+
+@media (orientation: landscape) {
+
+  .gtp-control {
+    width: 95%;
+  }
+
+}
+
+/* ================================================================================ */
+
+@media (orientation: landscape) {
+
+  .gtp-stacked {
+    display: flex;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+  }
+
+}
+
+/* ================================================================================ */
+
+@media (orientation: landscape) {
+
+  .gtp-center {
+    text-align: center;
+  }
+
+}
+
+/* ================================================================================ */
+
+@media (orientation: landscape) {
+
+  .gtp-right {
+    text-align: right;
+  }
+
+}
+
+/* ================================================================================ */
+
+@media (orientation: landscape) {
+
+  .gtp-full-width {
+    width: 100%;
+  }
+
+}
+
+/* ================================================================================ */
+
+@media (orientation: landscape) {
+
+  .gtp-url {
+    background-color: #f0f0f0;
+    color: darkblue;
+    margin-left: 5px;
+    z-index: 200;
+  }
+
+}
+
+/* ================================================================================ */
+
+@media (orientation: landscape) {
+
+  input[readonly]
+  {
+      background-color: #f5f5f5;
+  }
+
+}
+
+/* ================================================================================ */
+
+@media (orientation: landscape) {
+
+  .gtp-spacing-default, .gtp-cell {
+    padding: 5px;
+  }
+
+}
+
+/* ================================================================================ */
+
+@media (orientation: landscape) {
+
+  .gtp-table {
+    width: 100%;
+  }
+
+}
+
+/* ================================================================================ */
+
+@media (orientation: landscape) {
+
+  .gtp-row, .gtp-row-plain, .gtp-inline {
+    display: flex;
+    flex-direction: row;
+    -webkit-flex-direction: row;
+  }
+
+}
+
+/* ================================================================================ */
+
+@media (orientation: landscape) {
+
+  .gtp-row:nth-child(even) {
+    @include gtp-row-even-mixin;
+  }
+
+}
+
+/* ================================================================================ */
+
+@media (orientation: landscape) {
+
+  .gtp-row:nth-child(odd) {
+    @include gtp-row-odd-mixin;
+  }
+
+}
+
+/* ================================================================================ */
+
+@media (orientation: landscape) {
+
+  .gtp-cell-padding {
+    padding: $padding;
+  }
+
+}
+
+/* ================================================================================ */
+
+@media (orientation: landscape) {
+
+  .nav-button {
+    max-width: 150px;
+  }
+
+}
+
+/* ================================================================================ */
+
+@media (orientation: landscape) {
+
+  .highlight-mystery-of-day {
+    background-color: yellow;
+    border-width: 2px;
+    color: darkblue;
+  }
+
+}
+
+/* ================================================================================ */
+
+@media (orientation: landscape) {
+
+  .section-row {
+    padding: $padding;
+  }
+}
+
+// ********************************************************
+
+// @import 'styles-mixin.scss';
+
+// /* You can add global styles to this file, and also import other style files */
+// pre, body {
+//   font-family: Arial, Helvetica, sans-serif;
+//   font-size: 9pt;
+// }
+
+// html {  //   , .page-full {
+//   background-image: repeating-linear-gradient(0deg, green, green 3px, rgb(0, 100, 0) 3px, rgb(0, 100, 0) 6px);
+// }
+
+// app-root,
+// .repeating-linear-green,
+// .repeating-linear-red,
+// .repeating-linear-rose,
+// .repeating-linear-violet,
+// .repeating-linear-white {
+//   // display: flexbox -ms-flexbox;
+//   max-height: 100%;
+//   max-width: 100%;
+//   // min-height: 100%;
+//   // min-width: 100%;
+// }
+
+// img {
+//   object-fit: contain;
+// }
+
+
+// // .repeating-linear-green, .repeating-linear-red, .repeating-linear-rose, .repeating-linear-violet, .repeating-linear-white {
+// //   margin: unset;
+// //   padding: unset;
+// //   height: 100%;
+// //   width: 100%;
+// // }
+
+// // .repeating-linear-green {
+// //   background: repeating-linear-gradient(-45deg, green, green 3px, rgb(0, 56, 0) 3px, rgb(0, 56, 0) 6px);
+// // }
+
+// // .repeating-linear-red {
+// //   background: repeating-linear-gradient(-45deg, red, red 5px, rgb(56, 0, 0) 5px, rgb(56, 0, 0) 10px);
+// // }
+
+// // .repeating-linear-rose {
+// //   background: repeating-linear-gradient(-45deg, pink, pink 5px, rgba(255, 192, 203, 0.411) 5px,  rgba(255, 192, 203, 0.411) 10px);
+// // }
+
+// // .repeating-linear-violet {
+// //   background: repeating-linear-gradient(-45deg, purple, purple 5px, rgb(56, 0, 56) 5px, rgb(56, 0, 56) 10px);
+// // }
+
+// // .repeating-linear-white {
+// //   background: repeating-linear-gradient(-45deg, white, white 5px, gray 5px, gray 10px);
+// // }
+
+// // .content-border {
+// //   border: $border;
+// //   border-radius: $border-radius;
+// //   display: flexbox;
+// //   text-align: center;
+// // }
+
+// .gtp-row, .gtp-row-plain, .gtp-inline {
+//   display: flex;
+//   flex-direction: row;
+//   -webkit-flex-direction: row;
+// }
+
+// .gtp-row:nth-child(even) {
+//   @include gtp-row-even-mixin;
+// }
+
+// .gtp-row:nth-child(odd) {
+//   @include gtp-row-odd-mixin;
+// }
+
+// @mixin create_gtp_cell($width-indicator) {
+//   .gtp-cell-#{$width-indicator}, .gtp-cell-plain-#{$width-indicator} {
+//     background-color: transparent;
+//     padding: $padding;
+//     width: percentage(100 / ($width-sections / $width-indicator));
+//     word-break: $word-break-type;
+//   }
+
+//   .gtp-cell-#{$width-indicator} {
+//     border: 1px solid #c3c3c3;
+//   }
+// }
+
+// @include create_gtp_cell(1);
+// @include create_gtp_cell(2);
+// @include create_gtp_cell(3);
+// @include create_gtp_cell(4);
+// @include create_gtp_cell(5);
+// @include create_gtp_cell(6);
+// @include create_gtp_cell(7);
+// @include create_gtp_cell(8);
+// @include create_gtp_cell(9);
+// @include create_gtp_cell(10);
+// @include create_gtp_cell(11);
+// @include create_gtp_cell(12);
+
+// .nav-button {
+//   max-width: 150px;
+// }
+
+// .content-border {
+//   border: $border;
+//   border-radius: $border-radius;
+//   text-align: center;
+// }
+
+// .content-no-border, .content-border {
+//   background-color: lightgray;
+//   box-sizing: border-box;
+//   // display: flexbox;
+//   margin-top: $margins;   //calc($margins * 4);
+//   margin-bottom: $margins;  //calc($margins * -2);
+//   margin-left: $margins;
+//   margin-right: $margins;
+//   opacity: 85%;
+//   padding: $padding;
+//   // height: calc(100% - $margins);
+//   // width: calc(100% - $margins);
+// }
+
+// // // img {
+// // //   // display: block;
+// // //   max-height: 100%;
+// // //   max-width: 100%;
+// // // }
+
+// button {
+//   margin: $margins;
+//   min-height: 30px;
+// }
+
+// .alternate-bold {
+//   color: blue;
+//   font-weight: bold;
+// }
+
+// .nav-btn-left, .nav-btn-right {
+//   width: 10hmin;
+// }
+
+// .section-container {
+//   height: 90vmin;
+//   overflow: hidden;
+//   text-align: center;
+// }
+
+// .section-row, .section-row-full {
+//   display: flex;
+// }
+
+// .section-row-full {
+//   height: 100%;
+// }
+
+// // .section-far-left, .section-left, .section-center, .section-right, .section-far-right, .section-left-2x, .section-right-2x {
+// //   padding: 5px;
+// // }
+
+// // .section-far-left, .section-far-right {
+// //   flex: 10%;
+// // }
+
+// // .section-left, .section-center, .section-right {
+// //   flex: 33%;
+// // }
+
+// // .section-left-2x, .section-right-2x {
+// //   flex: 66%
+// // }
+
+// // .section-left, .section-left-2x {
+// //   text-align: right;
+// // }
+
+// // .section-center {
+// //   text-align: center;
+// // }
+
+// // .section-right, .section-right-2x {
+// //   text-align: left;
+// // }
+
+// // .spacer {
+// //   font-size: xx-small;
+// // }
 

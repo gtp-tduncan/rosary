@@ -1,4 +1,15 @@
-.section-left, .section-center, .section-right {
-  padding-top: 3px;
-  padding-bottom: 3px;
+.content-border {
+  display: unset;
+}
+
+.box {
+  height: 32vh;
+}
+
+@media (orientation: portrait) {
+
+  .period {
+    margin-top: 0.5vh;
+  }
+
 }

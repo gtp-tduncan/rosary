@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { LiturgicalDates, LiturgicalPeriod } from 'src/app/models/liturgical-dates';
+import { LiturgicalYearService } from 'src/app/services/liturgical-year.service';
 
 @Component({
   selector: 'app-liturgical-dates',
@@ -8,25 +9,36 @@ import { LiturgicalDates, LiturgicalPeriod } from 'src/app/models/liturgical-dat
 })
 export class LiturgicalDatesComponent implements OnInit {
 
-  @Input()
-  liturgicalDates: LiturgicalDates;
-
   periods: LiturgicalPeriod[];
+  periodsLeft: LiturgicalPeriod[];
+  periodsRight: LiturgicalPeriod[];
 
-  constructor() { }
+  constructor(private liturgicalYear: LiturgicalYearService) { }
 
   ngOnInit(): void {
-    this.periods = [
-      this.liturgicalDates.advent,
-      this.liturgicalDates.christmas,
-      this.liturgicalDates.lent,
-      this.liturgicalDates.triduum,
-      this.liturgicalDates.easter
+    const liturgicalDates = this.liturgicalYear?.liturgicalDates;
+
+    let periods = [
+      liturgicalDates.advent,
+      liturgicalDates.christmas,
+      liturgicalDates.lent,
+      liturgicalDates.triduum,
+      liturgicalDates.easter
     ]
 
-    this.periods.sort((period1: LiturgicalPeriod, period2: LiturgicalPeriod) => {
+    periods.sort((period1: LiturgicalPeriod, period2: LiturgicalPeriod) => {
       return period1.startDate < period2.startDate ? -1 : 1;
     });
+
+    this.periodsLeft = [
+      periods[0], periods[1], periods[2]
+    ];
+
+    this.periodsRight = [
+      periods[3], periods[4]
+    ];
+
+    this.periods = periods;
   }
 
 }

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { AppComponent } from 'src/app/app.component';
-import { LiturgicalYearService } from 'src/app/services/liturgical-year.service';
 
 @Component({
   selector: 'app-notices',
@@ -11,8 +10,7 @@ export class NoticesComponent implements OnInit {
 
   appVersion: string;
 
-  constructor(appComponent: AppComponent,
-              public liturgicalYear: LiturgicalYearService) {
+  constructor(appComponent: AppComponent) {
     this.appVersion = appComponent.appVersion;
   }
 
