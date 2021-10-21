@@ -1,10 +1,10 @@
 <div id="active-prayer-section-container" class="section-container" [style]="sectionContainerStyle">
-  <div class="section-row">
-    <span class="gtp-cell-5 right">
+  <div class="gtp-row-plain">
+    <span class="gtp-cell-plain-5 right">
       <span class="prayer-name">{{ prayerName }}</span>
     </span>
-    <span class="gtp-cell-1"></span>
-    <span class="gtp-cell-5">
+    <span class="gtp-cell-plain-1"></span>
+    <span class="gtp-cell-plain-5">
       <span class="active-nav" *ngIf="!isPrayerSequenceDone">
 
         &nbsp;
@@ -16,9 +16,15 @@
     </span>
   </div>
 
-  <div class="section-row">
-    <button class="nav-button" (click)="onPrevious()">&lt;=</button>
+  <div class="gtp-row-plain">
+    <span class="gtp-cell-plain-1">
+      <button (click)="onPrevious()">&lt;=</button>
+    </span>
+    <span class="gtp-cell-plain-10">
     <app-holy-rosary-prayer [activeBeadGroupList]="activeBeadGroupList" [prayerName]="prayerName"></app-holy-rosary-prayer>
-    <button class="nav-button" (click)="onNext()">=&gt;</button>
+    </span>
+    <span class="gtp-cell-plain-1">
+      <button (click)="onNext()">=&gt;</button>
+    </span>
   </div>
 </div>
