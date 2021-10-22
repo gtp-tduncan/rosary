@@ -1,9 +1,11 @@
+@import '../../../styles-shared-mixins.scss';
+
 @media (orientation: portrait) {
 
-  .active-prayer {
+  .active-prayer, .active-mystery {
     background-color: transparent;
     font-size: 4vw;
-    transform: translateY(-45vh);
+    transform: translateX($prayerOffsetX) translateY($prayerOffsetY);
   }
 
 }

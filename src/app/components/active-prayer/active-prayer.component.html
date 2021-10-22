@@ -1,4 +1,4 @@
-<div id="active-prayer-section-container" class="section-container" [style]="sectionContainerStyle">
+<div id="active-prayer-section-container">
   <div class="gtp-row-plain">
     <span class="gtp-cell-plain-5 right gtp-cell-plain-5-phone">
       <span class="prayer-name">{{ prayerName }}</span>
@@ -21,19 +21,11 @@
       <button (click)="onPrevious()">&lt;=</button>
     </span>
     <span class="gtp-cell-plain-10">
-    <app-holy-rosary-prayer [activeBeadGroupList]="activeBeadGroupList" [prayerName]="prayerName"></app-holy-rosary-prayer>
+      <app-holy-rosary-prayer [activeBeadGroupList]="activeBeadGroupList" [prayerName]="prayerName"></app-holy-rosary-prayer>
     </span>
     <span class="gtp-cell-plain-1 gtp-cell-none-phone">
       <button (click)="onNext()">=&gt;</button>
     </span>
   </div>
-
-  <div class="gtp-row-plain">
-    <span class="gtp-cell-none gtp-cell-6-phone">
-      <button (click)="onPrevious()">&lt;=</button>
-    </span>
-    <span class="gtp-cell-none gtp-cell-6-phone">
-      <button (click)="onNext()">=&gt;</button>
-    </span>
-  </div>
 </div>
+
