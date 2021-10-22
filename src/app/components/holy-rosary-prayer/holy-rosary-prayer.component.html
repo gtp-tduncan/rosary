@@ -1,24 +1,22 @@
-<div class="page-row">
-  <div class="page-section-left">
-    <div class="rosary-beads-{{ orientation }}">
-      <app-pats-beads [highlightBeadIdx]="highlightBeadIndex"></app-pats-beads>
-    </div>
-  </div>
-  <div class="page-section-right">
+<span class="gtp-row">
+  <span id="rosary-beads-div" class="gtp-cell-plain-5">
+    <app-pats-beads [highlightBeadIdx]="highlightBeadIndex"></app-pats-beads>
+  </span>
+  <span class="gtp-cell-plain-7">
     <div class="active-mystery" *ngIf="showMystery">
-      <div class="page-row">
-        <div class="page-section-left left-cell">
+      <div class="section-row">
+        <div class="section-left left-cell">
           {{ mysteryNum }} {{ mysteryName }} {{ mysteryLiteralLabel }}:
         </div>
-        <div class="page-section-right right-cell">
+        <div class="section-right right-cell">
           {{ activeBeadGroupList.mystery() }}
         </div>
       </div>
-      <div class="page-row">
-        <div class="page-section-left left-cell" i18n>
+      <div class="section-row">
+        <div class="section-left left-cell" i18n>
           Fruit of the Mystery:
         </div>
-        <div class="page-section-right right-cell">
+        <div class="section-right right-cell">
           {{ activeBeadGroupList.fruit() }}
         </div>
       </div>
@@ -55,5 +53,5 @@
         </div>
       </div>
     </div>
-  </div>
-</div>
+  </span>
+</span>

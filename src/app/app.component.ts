@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
-import { BeadGroupList } from './models/bead-group-list';
-import { RosaryMysteriesEnum } from './sequences/rosary-helper';
-import { BeadGroupLoaderService } from './services/bead-group-loader.service';
 import { version } from '../../package.json';
+import { LiturgicalYearService } from './services/liturgical-year.service';
 
 @Component({
   selector: 'app-root',
@@ -13,23 +11,8 @@ export class AppComponent {
 
   title = $localize`:@@rosaryTitle:Rosary`;
 
-  selectedBeadGroupList: BeadGroupList;
-
   appVersion: string = version;
 
-  constructor(private beadGroupLoader: BeadGroupLoaderService) {
-  }
-
-  onMysterySelected(selectedMystery: RosaryMysteriesEnum) {
-    this.selectedBeadGroupList = this.beadGroupLoader.loadHolyRosaryContemporaryMysteryEnum(selectedMystery);
-  }
-
-  get showMysterySelector(): boolean {
-    return this.selectedBeadGroupList === undefined;
-  }
-
-  onResetEvent(flag: boolean) {
-    this.selectedBeadGroupList = undefined;
-  }
+  constructor(public liturgicalYear: LiturgicalYearService) { }
 
 }

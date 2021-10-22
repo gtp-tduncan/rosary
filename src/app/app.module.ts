@@ -17,6 +17,10 @@ import { HolyRosaryPrayerComponent } from './components/holy-rosary-prayer/holy-
 import { ActivePrayerComponent } from './components/active-prayer/active-prayer.component';
 import { PatsBeadsComponent } from './components/pats-beads/pats-beads.component';
 import { NoticesComponent } from './components/notices/notices.component';
+import { FormsModule } from '@angular/forms';
+import { LiturgicalDatesComponent } from './components/liturgical-dates/liturgical-dates.component';
+import { LayoutsComponent } from './components/layouts/layouts.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -35,13 +39,15 @@ import { NoticesComponent } from './components/notices/notices.component';
     FatimaComponent,
     HailHolyQueenComponent,
     ClosingComponent,
-    EndComponent
+    EndComponent,
+    LiturgicalDatesComponent,
+    LayoutsComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
-    // ,
-    // PrayersModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,15 @@
+.content-border {
+  display: unset;
+}
+
+.box {
+  height: 32vh;
+}
+
+@media (orientation: portrait) {
+
+  .period {
+    margin-top: 0.5vh;
+  }
+
+}

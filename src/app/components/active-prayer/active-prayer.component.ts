@@ -20,6 +20,8 @@ export class ActivePrayerComponent implements OnInit, AfterViewInit {
 
   prayerName: string;
 
+  sectionContainerStyle: string;
+
   constructor() { }
 
   ngOnInit(): void {
@@ -27,10 +29,7 @@ export class ActivePrayerComponent implements OnInit, AfterViewInit {
     this.prayerName = this.prayerName[0].toUpperCase() + this.prayerName.substring(1);
   }
 
-  ngAfterViewInit(): void {
-    console.log(`ngOnInit - activeBeadGroupList=${this.activeBeadGroupList?.prayerName}`);
-    console.log(`ngOnInit - holyRosaryPrayer=${this.holyRosaryPrayer?.prayerName}`);
-  }
+  ngAfterViewInit(): void { }
 
   get isPrayerSequenceDone(): boolean {
     return this.activeBeadGroupList.isPrayerSequenceDone;

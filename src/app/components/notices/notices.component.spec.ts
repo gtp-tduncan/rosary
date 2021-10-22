@@ -1,5 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { AppComponent } from 'src/app/app.component';
+import { AppDateService } from 'src/app/services/app-date.service';
+import { LocalizationService } from 'src/app/services/localization.service';
+import { LiturgicalYearService } from 'src/app/services/liturgical-year.service';
 
 import { NoticesComponent } from './notices.component';
 
@@ -13,7 +16,10 @@ describe('NoticesComponent', () => {
         NoticesComponent
       ],
       providers: [
-        AppComponent
+        AppComponent,
+        { provide: AppDateService, useValue: new AppDateService() },
+        LocalizationService,
+        LiturgicalYearService
       ]
     })
     .compileComponents();

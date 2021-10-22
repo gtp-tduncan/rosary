@@ -1,0 +1,11 @@
+<div class="page-full">
+  <div id="home-content-border" class="content-border" [style]="homeContentBorderStyle()">
+    <div *ngIf="showMysterySelector">
+      <app-mystery-selector (selectedMysteryEvent)="onMysterySelected($event)"></app-mystery-selector>
+      <app-notices></app-notices>
+    </div>
+    <div *ngIf="!showMysterySelector">
+      <app-active-prayer [activeBeadGroupList]="selectedBeadGroupList" (onResetEvent)="onResetEvent($event)"></app-active-prayer>
+    </div>
+  </div>
+</div>

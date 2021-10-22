@@ -1,5 +1,79 @@
-/* Mix-ins */
+$header-bgcolor: lightblue;
+$header-textcolor: darkblue;
+$fontname: Consola;
+$input-margin-bottom: 10px;
+$margin: 5px;
+$padding: 5px;
+
 $border: 1px dashed black;
 $border-radius: 10px;
-$margins: 5px;
+$margins: 10px;
 $padding: 5px;
+
+$row-hover-bgcolor: goldenrod;
+$row-hover-fgcolor: darkred;
+$row-even-bgcolor: white;
+$row-even-textcolor: darkblue;
+$row-odd-bgcolor: antiquewhite;
+$row-odd-textcolor: darkblue;
+$width-sections: 12;
+$word-break-type: break-word;
+
+@mixin gtp-header-mixin {
+  background-color: $header-bgcolor;
+  color: $header-textcolor;
+  font-family: $fontname;
+}
+
+@mixin gtp-row-even-mixin {
+  background-color: $row-even-bgcolor;
+  color: $row-even-textcolor;
+  font-family: $fontname;
+}
+
+@mixin gtp-row-odd-mixin {
+  background-color: $row-odd-bgcolor;
+  color: $row-odd-textcolor;
+  font-family: $fontname;
+}
+
+// Do not change values below this line
+// ------------------------------------
+$row-z-index: 10;
+
+// /* Mix-ins */
+// $border: 1px dashed black;
+// $border-radius: 10px;
+// $margins: 10px;
+// $padding: 5px;
+
+// $header-bgcolor: lightblue;
+// $header-textcolor: darkblue;
+// $fontname: Consola;
+
+// $row-hover-bgcolor: goldenrod;
+// $row-hover-fgcolor: darkred;
+// $row-even-bgcolor: white;
+// $row-even-textcolor: darkblue;
+// $row-odd-bgcolor: antiquewhite;
+// $row-odd-textcolor: darkblue;
+// $width-sections: 12;
+// $word-break-type: break-word;
+
+// @mixin gtp-header-mixin {
+//   background-color: $header-bgcolor;
+//   color: $header-textcolor;
+//   font-family: $fontname;
+// }
+
+// @mixin gtp-row-even-mixin {
+//   background-color: $row-even-bgcolor;
+//   color: $row-even-textcolor;
+//   font-family: $fontname;
+// }
+
+// @mixin gtp-row-odd-mixin {
+//   background-color: $row-odd-bgcolor;
+//   color: $row-odd-textcolor;
+//   font-family: $fontname;
+// }
