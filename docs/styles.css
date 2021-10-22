@@ -12,14 +12,14 @@ button {
   font-family: Consola;
 }
 
-.content-border {
+.content-border, .home-content-border {
   border: 1px dashed black;
   border-radius: 10px;
   display: flexbox;
   text-align: center;
 }
 
-.content-no-border, .content-border {
+.content-no-border, .content-border, .home-content-border {
   background-color: lightgray;
   box-sizing: border-box;
   font-size: 3vw;
@@ -29,6 +29,17 @@ button {
   margin-right: 10px;
   opacity: 85%;
   padding: 5px;
+}
+
+@media (orientation: portrait) {
+  .home-content-border {
+    display: flexbox;
+    height: 97vh;
+  }
+}
+
+.active-nav {
+  padding: 4px;
 }
 
 .section-title {
@@ -183,7 +194,7 @@ button {
   .gtp-cell-1-phone, .gtp-cell-plain-1-phone {
     background-color: transparent;
     padding: 5px;
-    width: "50%";
+    width: "48%";
     word-break: break-word;
   }
 
@@ -194,7 +205,7 @@ button {
   .gtp-cell-2-phone, .gtp-cell-plain-2-phone {
     background-color: transparent;
     padding: 5px;
-    width: "50%";
+    width: "48%";
     word-break: break-word;
   }
 
@@ -205,7 +216,7 @@ button {
   .gtp-cell-3-phone, .gtp-cell-plain-3-phone {
     background-color: transparent;
     padding: 5px;
-    width: "50%";
+    width: "48%";
     word-break: break-word;
   }
 
@@ -425,10 +436,38 @@ button {
 
 /* ================================================================================ */
 
+.gtp-footer {
+  position: relative;
+}
+
+.gtp-footer * {
+  position: absolute;
+  bottom: 3vh;
+  left: 1vw;
+}
+
+/* ================================================================================ */
+
 @media (orientation: landscape) {
-  .gtp-row, .gtp-row-plain, .gtp-inline {
+  .gtp-row, .gtp-row-plain, .gtp-inline, .gtp-footer {
     display: flex;
     flex-direction: row;
+  }
+
+  .phone-nav {
+    visibility: hidden;
+  }
+}
+
+/* -------------------------------------------------------------------------------- */
+
+@media (orientation: portrait) {
+  .gtp-row, .gtp-row-plain, .gtp-inline, .gtp-footer {
+    width: 90vw;
+  }
+
+  .phone-nav {
+    float: left;
   }
 }
 
