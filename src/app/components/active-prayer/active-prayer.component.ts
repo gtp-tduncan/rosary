@@ -20,8 +20,6 @@ export class ActivePrayerComponent implements OnInit, AfterViewInit {
 
   prayerName: string;
 
-  sectionContainerStyle: string;
-
   constructor() { }
 
   ngOnInit(): void {

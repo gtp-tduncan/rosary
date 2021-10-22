@@ -17,8 +17,6 @@ export class HomeComponent implements OnInit {
   @ViewChild(ActivePrayerComponent)
   activePrayer: ActivePrayerComponent;
 
-  private _homeContentBorderStyle: string;
-
   constructor(private beadGroupLoader: BeadGroupLoaderService,
               public appConfig: AppConfigService) {
   }
@@ -33,12 +31,16 @@ export class HomeComponent implements OnInit {
     return this.selectedBeadGroupList === undefined;
   }
 
-  homeContentBorderStyle(): string {
-    return this._homeContentBorderStyle;
-  }
-
   onResetEvent(flag: boolean): void {
     this.selectedBeadGroupList = undefined;
+  }
+
+  onNext(): void {
+    this.activePrayer.onNext();
+  }
+
+  onPrevious(): void {
+    this.activePrayer.onPrevious();
   }
 
 }

@@ -1,22 +1,22 @@
 <span class="gtp-row">
-  <span id="rosary-beads-div" class="gtp-cell-plain-5">
+  <span id="rosary-beads-div" class="gtp-cell-plain-5 gtp-cell-plain-12-phone">
     <app-pats-beads [highlightBeadIdx]="highlightBeadIndex"></app-pats-beads>
   </span>
-  <span class="gtp-cell-plain-7">
+  <span class="gtp-cell-plain-7 gtp-cell-plain-12-phone">
     <div class="active-mystery" *ngIf="showMystery">
-      <div class="section-row">
-        <div class="section-left left-cell">
+      <div class="gtp-row">
+        <div class="gtp-cell-plain-6 gtp-cell-plain-1-phone">
           {{ mysteryNum }} {{ mysteryName }} {{ mysteryLiteralLabel }}:
         </div>
-        <div class="section-right right-cell">
+        <div class="gtp-cell-plain-6 gtp-cell-plain-1-phone">
           {{ activeBeadGroupList.mystery() }}
         </div>
       </div>
-      <div class="section-row">
-        <div class="section-left left-cell" i18n>
+      <div class="gtp-row-plain">
+        <div class="gtp-cell-plain-6 gtp-cell-plain-1-phone" i18n>
           Fruit of the Mystery:
         </div>
-        <div class="section-right right-cell">
+        <div class="gtp-cell-plain-6 gtp-cell-1-plain-phone">
           {{ activeBeadGroupList.fruit() }}
         </div>
       </div>
