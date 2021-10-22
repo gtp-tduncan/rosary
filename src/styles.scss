@@ -10,6 +10,10 @@ input {
   margin-bottom: $input-margin-bottom;
 }
 
+button {
+  font-family: $fontname;
+}
+
 .content-border {
   border: $border;
   border-radius: $border-radius;
@@ -20,6 +24,7 @@ input {
 .content-no-border, .content-border {
   background-color: lightgray;
   box-sizing: border-box;
+  font-size: 3vw;
   // display: flexbox;
   margin-top: $margins;   //calc($margins * 4);
   margin-bottom: $margins;  //calc($margins * -2);
@@ -36,6 +41,7 @@ input {
   padding: $padding;
   text-align: center;
 }
+
 
 /* ================================================================================ */
 
@@ -67,6 +73,9 @@ input {
   @include create_gtp_cell_landscape(11);
   @include create_gtp_cell_landscape(12);
 
+  .gtp-cell-none {
+    visibility: hidden;
+  }
 }
 
 /* -------------------------------------------------------------------------------- */
@@ -74,7 +83,7 @@ input {
 @media (orientation: portrait) {
 
   @mixin create_gtp_cell_portrait($width-indicator, $width-length) {
-    .gtp-cell-#{$width-indicator}, .gtp-cell-plain-#{$width-indicator} {
+    .gtp-cell-#{$width-indicator}-phone, .gtp-cell-plain-#{$width-indicator}-phone {
       background-color: transparent;
       padding: $padding;
       width: $width-length;
@@ -99,6 +108,9 @@ input {
   @include create_gtp_cell_portrait(11, '100%');
   @include create_gtp_cell_portrait(12, '100%');
 
+  .gtp-cell-none-phone {
+    visibility: hidden;
+  }
 }
 
 /* ================================================================================ */
@@ -285,14 +297,10 @@ input {
 
 /* ================================================================================ */
 
-@media (orientation: landscape) {
-
-  .highlight-mystery-of-day {
-    background-color: yellow;
-    border-width: 2px;
-    color: darkblue;
-  }
-
+.highlight-mystery-of-day {
+  background-color: yellow;
+  border-width: 2px;
+  color: darkblue;
 }
 
 /* ================================================================================ */

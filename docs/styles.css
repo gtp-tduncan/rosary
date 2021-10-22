@@ -1,51 +1,487 @@
-/* Mix-ins */
-/* You can add global styles to this file, and also import other style files */
-pre, body {
-  font-family: Arial, Helvetica, sans-serif;
-}
 body {
-  background-color: lightgray;
+  font-family: Consola;
+  background-image: repeating-linear-gradient(0deg, green, green 3px, darkgreen 3px, darkgreen 6px);
 }
+
+input {
+  font-family: Consola;
+  margin-bottom: 10px;
+}
+
 button {
-  margin: 5px;
-  min-height: 30px;
+  font-family: Consola;
 }
-.alternate-bold {
-  color: blue;
-  font-weight: bold;
-}
-.page-container {
-  text-align: center;
-}
-.page-row {
-  display: flex;
-}
-.page-section-left, .page-section-center, .page-section-right {
-  flex: 50%;
-  padding: 10px;
-}
-.page-section-left {
-  text-align: right;
-}
-.page-section-center {
-  text-align: center;
-}
-.page-section-right {
-  text-align: left;
-}
-.page-section-title {
-  font-weight: bold;
-  padding: 5px;
-  text-align: center;
-}
+
 .content-border {
   border: 1px dashed black;
   border-radius: 10px;
+  display: flexbox;
   text-align: center;
 }
+
 .content-no-border, .content-border {
-  margin: 5px;
+  background-color: lightgray;
+  box-sizing: border-box;
+  font-size: 3vw;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  opacity: 85%;
   padding: 5px;
+}
+
+.section-title {
+  font-weight: bold;
+  padding: 5px;
+  text-align: center;
+}
+
+/* ================================================================================ */
+
+@media (orientation: landscape) {
+  .gtp-cell-1, .gtp-cell-plain-1 {
+    background-color: transparent;
+    padding: 5px;
+    width: 833.3333333333%;
+    word-break: break-word;
+  }
+
+  .gtp-cell-1 {
+    border: 1px solid #c3c3c3;
+  }
+
+  .gtp-cell-2, .gtp-cell-plain-2 {
+    background-color: transparent;
+    padding: 5px;
+    width: 1666.6666666667%;
+    word-break: break-word;
+  }
+
+  .gtp-cell-2 {
+    border: 1px solid #c3c3c3;
+  }
+
+  .gtp-cell-3, .gtp-cell-plain-3 {
+    background-color: transparent;
+    padding: 5px;
+    width: 2500%;
+    word-break: break-word;
+  }
+
+  .gtp-cell-3 {
+    border: 1px solid #c3c3c3;
+  }
+
+  .gtp-cell-4, .gtp-cell-plain-4 {
+    background-color: transparent;
+    padding: 5px;
+    width: 3333.3333333333%;
+    word-break: break-word;
+  }
+
+  .gtp-cell-4 {
+    border: 1px solid #c3c3c3;
+  }
+
+  .gtp-cell-5, .gtp-cell-plain-5 {
+    background-color: transparent;
+    padding: 5px;
+    width: 4166.6666666667%;
+    word-break: break-word;
+  }
+
+  .gtp-cell-5 {
+    border: 1px solid #c3c3c3;
+  }
+
+  .gtp-cell-6, .gtp-cell-plain-6 {
+    background-color: transparent;
+    padding: 5px;
+    width: 5000%;
+    word-break: break-word;
+  }
+
+  .gtp-cell-6 {
+    border: 1px solid #c3c3c3;
+  }
+
+  .gtp-cell-7, .gtp-cell-plain-7 {
+    background-color: transparent;
+    padding: 5px;
+    width: 5833.3333333333%;
+    word-break: break-word;
+  }
+
+  .gtp-cell-7 {
+    border: 1px solid #c3c3c3;
+  }
+
+  .gtp-cell-8, .gtp-cell-plain-8 {
+    background-color: transparent;
+    padding: 5px;
+    width: 6666.6666666667%;
+    word-break: break-word;
+  }
+
+  .gtp-cell-8 {
+    border: 1px solid #c3c3c3;
+  }
+
+  .gtp-cell-9, .gtp-cell-plain-9 {
+    background-color: transparent;
+    padding: 5px;
+    width: 7500%;
+    word-break: break-word;
+  }
+
+  .gtp-cell-9 {
+    border: 1px solid #c3c3c3;
+  }
+
+  .gtp-cell-10, .gtp-cell-plain-10 {
+    background-color: transparent;
+    padding: 5px;
+    width: 8333.3333333333%;
+    word-break: break-word;
+  }
+
+  .gtp-cell-10 {
+    border: 1px solid #c3c3c3;
+  }
+
+  .gtp-cell-11, .gtp-cell-plain-11 {
+    background-color: transparent;
+    padding: 5px;
+    width: 9166.6666666667%;
+    word-break: break-word;
+  }
+
+  .gtp-cell-11 {
+    border: 1px solid #c3c3c3;
+  }
+
+  .gtp-cell-12, .gtp-cell-plain-12 {
+    background-color: transparent;
+    padding: 5px;
+    width: 10000%;
+    word-break: break-word;
+  }
+
+  .gtp-cell-12 {
+    border: 1px solid #c3c3c3;
+  }
+
+  .gtp-cell-none {
+    visibility: hidden;
+  }
+}
+
+/* -------------------------------------------------------------------------------- */
+
+@media (orientation: portrait) {
+  .gtp-cell-1-phone, .gtp-cell-plain-1-phone {
+    background-color: transparent;
+    padding: 5px;
+    width: "50%";
+    word-break: break-word;
+  }
+
+  .gtp-cell-1 {
+    border: 1px solid #c3c3c3;
+  }
+
+  .gtp-cell-2-phone, .gtp-cell-plain-2-phone {
+    background-color: transparent;
+    padding: 5px;
+    width: "50%";
+    word-break: break-word;
+  }
+
+  .gtp-cell-2 {
+    border: 1px solid #c3c3c3;
+  }
+
+  .gtp-cell-3-phone, .gtp-cell-plain-3-phone {
+    background-color: transparent;
+    padding: 5px;
+    width: "50%";
+    word-break: break-word;
+  }
+
+  .gtp-cell-3 {
+    border: 1px solid #c3c3c3;
+  }
+
+  .gtp-cell-4-phone, .gtp-cell-plain-4-phone {
+    background-color: transparent;
+    padding: 5px;
+    width: "100%";
+    word-break: break-word;
+  }
+
+  .gtp-cell-4 {
+    border: 1px solid #c3c3c3;
+  }
+
+  .gtp-cell-5-phone, .gtp-cell-plain-5-phone {
+    background-color: transparent;
+    padding: 5px;
+    width: "100%";
+    word-break: break-word;
+  }
+
+  .gtp-cell-5 {
+    border: 1px solid #c3c3c3;
+  }
+
+  .gtp-cell-6-phone, .gtp-cell-plain-6-phone {
+    background-color: transparent;
+    padding: 5px;
+    width: "100%";
+    word-break: break-word;
+  }
+
+  .gtp-cell-6 {
+    border: 1px solid #c3c3c3;
+  }
+
+  .gtp-cell-7-phone, .gtp-cell-plain-7-phone {
+    background-color: transparent;
+    padding: 5px;
+    width: "100%";
+    word-break: break-word;
+  }
+
+  .gtp-cell-7 {
+    border: 1px solid #c3c3c3;
+  }
+
+  .gtp-cell-8-phone, .gtp-cell-plain-8-phone {
+    background-color: transparent;
+    padding: 5px;
+    width: "100%";
+    word-break: break-word;
+  }
+
+  .gtp-cell-8 {
+    border: 1px solid #c3c3c3;
+  }
+
+  .gtp-cell-9-phone, .gtp-cell-plain-9-phone {
+    background-color: transparent;
+    padding: 5px;
+    width: "100%";
+    word-break: break-word;
+  }
+
+  .gtp-cell-9 {
+    border: 1px solid #c3c3c3;
+  }
+
+  .gtp-cell-10-phone, .gtp-cell-plain-10-phone {
+    background-color: transparent;
+    padding: 5px;
+    width: "100%";
+    word-break: break-word;
+  }
+
+  .gtp-cell-10 {
+    border: 1px solid #c3c3c3;
+  }
+
+  .gtp-cell-11-phone, .gtp-cell-plain-11-phone {
+    background-color: transparent;
+    padding: 5px;
+    width: "100%";
+    word-break: break-word;
+  }
+
+  .gtp-cell-11 {
+    border: 1px solid #c3c3c3;
+  }
+
+  .gtp-cell-12-phone, .gtp-cell-plain-12-phone {
+    background-color: transparent;
+    padding: 5px;
+    width: "100%";
+    word-break: break-word;
+  }
+
+  .gtp-cell-12 {
+    border: 1px solid #c3c3c3;
+  }
+
+  .gtp-cell-none-phone {
+    visibility: hidden;
+  }
+}
+
+/* ================================================================================ */
+
+@media (orientation: landscape) {
+  .box {
+    height: 200px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
+  .box > * {
+    flex: 0 0 33%;
+  }
+}
+
+/* -------------------------------------------------------------------------------- */
+
+@media (orientation: portrait) {
+  .box {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-top: 0.5em;
+  }
+
+  .box > * {
+    flex: 0 0 10%;
+  }
+}
+
+/* ================================================================================ */
+
+@media (orientation: landscape) {
+  .gtp-control {
+    width: 95%;
+  }
+}
+
+/* ================================================================================ */
+
+@media (orientation: landscape) {
+  .gtp-stacked {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* ================================================================================ */
+
+@media (orientation: landscape) {
+  .gtp-center {
+    text-align: center;
+  }
+}
+
+/* ================================================================================ */
+
+@media (orientation: landscape) {
+  .gtp-right {
+    text-align: right;
+  }
+}
+
+/* ================================================================================ */
+
+@media (orientation: landscape) {
+  .gtp-full-width {
+    width: 100%;
+  }
+}
+
+/* ================================================================================ */
+
+@media (orientation: landscape) {
+  .gtp-url {
+    background-color: #f0f0f0;
+    color: darkblue;
+    margin-left: 5px;
+    z-index: 200;
+  }
+}
+
+/* ================================================================================ */
+
+@media (orientation: landscape) {
+  input[readonly] {
+    background-color: #f5f5f5;
+  }
+}
+
+/* ================================================================================ */
+
+@media (orientation: landscape) {
+  .gtp-spacing-default, .gtp-cell {
+    padding: 5px;
+  }
+}
+
+/* ================================================================================ */
+
+@media (orientation: landscape) {
+  .gtp-table {
+    width: 100%;
+  }
+}
+
+/* ================================================================================ */
+
+@media (orientation: landscape) {
+  .gtp-row, .gtp-row-plain, .gtp-inline {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+/* ================================================================================ */
+
+@media (orientation: landscape) {
+  .gtp-row:nth-child(even) {
+    background-color: white;
+    color: darkblue;
+    font-family: Consola;
+  }
+}
+
+/* ================================================================================ */
+
+@media (orientation: landscape) {
+  .gtp-row:nth-child(odd) {
+    background-color: antiquewhite;
+    color: darkblue;
+    font-family: Consola;
+  }
+}
+
+/* ================================================================================ */
+
+@media (orientation: landscape) {
+  .gtp-cell-padding {
+    padding: 5px;
+  }
+}
+
+/* ================================================================================ */
+
+@media (orientation: landscape) {
+  .nav-button {
+    max-width: 150px;
+  }
+}
+
+/* ================================================================================ */
+
+.highlight-mystery-of-day {
+  background-color: yellow;
+  border-width: 2px;
+  color: darkblue;
+}
+
+/* ================================================================================ */
+
+@media (orientation: landscape) {
+  .section-row {
+    padding: 5px;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map*/

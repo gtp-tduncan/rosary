@@ -1,10 +1,10 @@
 <div id="active-prayer-section-container" class="section-container" [style]="sectionContainerStyle">
   <div class="gtp-row-plain">
-    <span class="gtp-cell-plain-5 right">
+    <span class="gtp-cell-plain-5 right gtp-cell-plain-5-phone">
       <span class="prayer-name">{{ prayerName }}</span>
     </span>
-    <span class="gtp-cell-plain-1"></span>
-    <span class="gtp-cell-plain-5">
+    <span class="gtp-cell-plain-1 gtp-cell-plain-1-phone"></span>
+    <span class="gtp-cell-plain-5 gtp-cell-plain-5-phone">
       <span class="active-nav" *ngIf="!isPrayerSequenceDone">
 
         &nbsp;
@@ -17,13 +17,22 @@
   </div>
 
   <div class="gtp-row-plain">
-    <span class="gtp-cell-plain-1">
+    <span class="gtp-cell-plain-1 gtp-cell-none-phone">
       <button (click)="onPrevious()">&lt;=</button>
     </span>
     <span class="gtp-cell-plain-10">
     <app-holy-rosary-prayer [activeBeadGroupList]="activeBeadGroupList" [prayerName]="prayerName"></app-holy-rosary-prayer>
     </span>
-    <span class="gtp-cell-plain-1">
+    <span class="gtp-cell-plain-1 gtp-cell-none-phone">
+      <button (click)="onNext()">=&gt;</button>
+    </span>
+  </div>
+
+  <div class="gtp-row-plain">
+    <span class="gtp-cell-none gtp-cell-6-phone">
+      <button (click)="onPrevious()">&lt;=</button>
+    </span>
+    <span class="gtp-cell-none gtp-cell-6-phone">
       <button (click)="onNext()">=&gt;</button>
     </span>
   </div>

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { BeadGroupList } from 'src/app/models/bead-group-list';
+import { RosaryMysteriesEnum } from 'src/app/sequences/rosary-helper';
+import { BeadGroupLoaderService } from 'src/app/services/bead-group-loader.service';
 
 @Component({
   selector: 'app-layouts',
@@ -7,11 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class  LayoutsComponent implements OnInit {
 
-  private imageWidth = undefined;
-  private imageHeight = undefined;
+  selectedBeadGroupList: BeadGroupList;
 
-  constructor() { }
+  constructor(private beadGroupLoader: BeadGroupLoaderService) { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.selectedBeadGroupList = this.beadGroupLoader.loadHolyRosaryContemporaryMysteryEnum(RosaryMysteriesEnum.GLORIOUS);
+  }
 
 }
