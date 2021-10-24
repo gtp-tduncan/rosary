@@ -14,6 +14,7 @@ import { MysterySelectorComponent } from './components/mystery-selector/mystery-
 import { NoticesComponent } from './components/notices/notices.component';
 import { PatsBeadsComponent } from './components/pats-beads/pats-beads.component';
 import { EndComponent } from './prayers/end/end.component';
+import { HeaderComponent } from './components/header/header.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { EndComponent } from './prayers/end/end.component';
     LayoutsComponent,
     HomeComponent,
     MysteryDisplayComponent,
-    CurrentPrayerComponent
+    CurrentPrayerComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

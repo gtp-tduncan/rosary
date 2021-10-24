@@ -1,0 +1,15 @@
+<div class="active-prayer-header">
+  <span class="left">
+    <span class="prayer-name">{{ prayerName }}</span>
+  </span>
+  <span class="right">
+    <span class="active-nav" *ngIf="!isPrayerSequenceDone">
+
+      &nbsp;
+      <button (click)="onStartNew()" i18n>Reset Prayer</button>
+    </span>
+    <span class="active-nav" *ngIf="isPrayerSequenceDone">
+      <button (click)="onStartNew()" i18n>Start New Prayer</button>
+    </span>
+  </span>
+</div>
