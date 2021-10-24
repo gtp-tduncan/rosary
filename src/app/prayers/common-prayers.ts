@@ -62,6 +62,64 @@ export class PrayerApostlesCreed extends GroupPrayer {
 
 }
 
+/* ================================================================================ */
+
+export class PrayerClosing1 extends Prayer {
+
+  constructor() {
+    super();
+  }
+
+  get name(): string {
+    return $localize`:@@closingName:Closing Prayer 1`;
+  }
+
+  get leader(): string {
+    return $localize`:@@closing-leader-1:Pray for us, O holy Mother of God.`;
+  }
+
+  get response(): string {
+    return $localize`:@@closing-response-1:That we may be made worthy of the promises of Christ.`;
+  }
+
+}
+
+/* ================================================================================ */
+
+export class PrayerClosing2 extends Prayer {
+
+  constructor() {
+    super();
+  }
+
+  get name(): string {
+    return $localize`:@@closingName:Closing Prayer 2`;
+  }
+
+  get leader(): string {
+    return $localize`:@@closing-leader-2:Let us pray:`;
+  }
+
+  get response(): string {
+    return $localize`:@@closing-response-2:O God, whose only begotten Son,
+      by His life, death and resurrection,
+      has purchased for us
+      the rewards of eternal life,
+      grant, we beseech Thee,
+      that meditating on these mysteries
+      of the Most Holy Rosary
+      of the Blessed Virgin Mary,
+      we may imitate what they contain,
+      and obtain what they promise,
+      through the same Christ, our Lord.
+
+      Amen.`
+  }
+
+}
+
+/* ================================================================================ */
+
 function gloryBeLeader(): string {
   return $localize`:@@glory-leader:Glory be to the Father, and the Son,
       and the Holy Spirit.`;
@@ -72,29 +130,6 @@ function gloryBeResponse(): string {
       and ever shall be, world without end.
 
       Amen.`;
-}
-
-/* ================================================================================ */
-
-export class PrayerGlory extends Prayer {
-
-  constructor() {
-    super();
-  }
-
-  // Reference: https://www.usccb.org/prayers/prayers-rosary
-  get name(): string {
-    return $localize`:@@gloryName:The Glory Be (The Doxology)`;
-  }
-
-  get leader(): string {
-    return gloryBeLeader();
-  }
-
-  get response(): string {
-    return gloryBeResponse();
-  }
-
 }
 
 /* ================================================================================ */
@@ -122,6 +157,29 @@ export class PrayerFatima extends GroupPrayer {
 
 /* ================================================================================ */
 
+export class PrayerGlory extends Prayer {
+
+  constructor() {
+    super();
+  }
+
+  // Reference: https://www.usccb.org/prayers/prayers-rosary
+  get name(): string {
+    return $localize`:@@gloryName:The Glory Be (The Doxology)`;
+  }
+
+  get leader(): string {
+    return gloryBeLeader();
+  }
+
+  get response(): string {
+    return gloryBeResponse();
+  }
+
+}
+
+/* ================================================================================ */
+
 export class PrayerGloryFatima extends Prayer {
 
   private gloryPrayer = new PrayerGlory();
@@ -143,6 +201,32 @@ export class PrayerGloryFatima extends Prayer {
     return `${this.gloryPrayer.response}
 
       ${this.fatimaPrayer.response}`;
+  }
+
+}
+
+/* ================================================================================ */
+
+export class PrayerHailHolyQueen extends GroupPrayer {
+
+  constructor() {
+    super();
+  }
+
+  get all(): string {
+    return $localize`:@@hail-holy-queen:Hail, Holy Queen, Mother of Mercy,
+      our life, our sweetness, and our hope.
+      To thee do we cry, poor banished children of Eve.
+      To thee do we send up our sighs, mourning and weeping in this vale of tears.
+      Turn then, most gracious advocate, thine eyes of mercy towards us,
+      and after this our exile show unto us the blessed fruit of thy womb, Jesus.
+      O clement, O loving, O sweet Virgin Mary.
+
+      Amen`;
+  }
+
+  get name(): string {
+    throw new Error("Method not implemented.");
   }
 
 }

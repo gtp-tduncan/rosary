@@ -10,6 +10,9 @@
     </div>
     <div class="active-prayer content-no-border">
       <app-current-prayer [activeBeadGroup]="activeBeadGroup" [currentPrayer]="currentPrayer"></app-current-prayer>
+      <div *ngIf="extraPrayer">
+        <app-current-prayer [activeBeadGroup]="activeBeadGroup" [currentPrayer]="extraPrayer"></app-current-prayer>
+      </div>
     </div>
   </span>
 </span>

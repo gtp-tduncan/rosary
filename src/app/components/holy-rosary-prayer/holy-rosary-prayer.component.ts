@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { BeadGroup } from 'src/app/models/bead-group';
 import { BeadGroupList } from 'src/app/models/bead-group-list';
-import { Prayer, PrayerApostlesCreed, PrayerFatima, PrayerGlory, PrayerGloryFatima, PrayerHailMary, PrayerOurFather, PrayerSignOfTheCross } from 'src/app/prayers/common-prayers';
+import { Prayer, PrayerApostlesCreed, PrayerClosing1, PrayerClosing2, PrayerFatima, PrayerGlory, PrayerGloryFatima, PrayerHailHolyQueen, PrayerHailMary, PrayerOurFather, PrayerSignOfTheCross } from 'src/app/prayers/common-prayers';
 
 @Component({
   selector: 'app-holy-rosary-prayer',
@@ -21,12 +21,16 @@ export class HolyRosaryPrayerComponent implements OnInit {
 
   activeBeadGroup: BeadGroup;
   currentPrayer: Prayer;
+  extraPrayer: Prayer;
   highlightBeadIndex: number;
 
+  private prayerClosing1 = new PrayerClosing1();
+  private prayerClosing2 = new PrayerClosing2();
   private prayerCreed = new PrayerApostlesCreed();
   private prayerGlory = new PrayerGlory();
   private prayerFatima = new PrayerFatima();
   private prayerGloryFatima = new PrayerGloryFatima();
+  private prayerHailHolyQueen = new PrayerHailHolyQueen();
   private prayerHailMary = new PrayerHailMary();
   private prayerOurFather = new PrayerOurFather();
   private prayerSignOfTheCross = new PrayerSignOfTheCross();
@@ -66,7 +70,13 @@ export class HolyRosaryPrayerComponent implements OnInit {
   }
 
   private findCurrentPrayer(): Prayer {
-    if (this.activeBeadGroup?.sequence === 'creed') {
+    this.extraPrayer = undefined;
+
+    if (this.activeBeadGroup?.sequence === 'closing') {
+      this.extraPrayer = this.prayerClosing2;
+      return this.prayerClosing1;
+    }
+    else if (this.activeBeadGroup?.sequence === 'creed') {
       return this.prayerCreed;
     }
     else if (this.activeBeadGroup?.sequence === 'glory') {
@@ -77,6 +87,9 @@ export class HolyRosaryPrayerComponent implements OnInit {
     }
     else if (this.activeBeadGroup?.sequence === 'glory-fatima') {
       return this.prayerGloryFatima;
+    }
+    else if (this.activeBeadGroup?.sequence === 'hail-holy-queen') {
+      return this.prayerHailHolyQueen;
     }
     else if (this.activeBeadGroup?.sequence === 'hail-mary') {
       return this.prayerHailMary;
