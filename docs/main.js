@@ -11,23 +11,11 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HolyRosaryPrayerComponent", function() { return HolyRosaryPrayerComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
-/* harmony import */ var _pats_beads_pats_beads_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../pats-beads/pats-beads.component */ "vJvT");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "ofXK");
-/* harmony import */ var _prayers_end_end_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../prayers/end/end.component */ "Uspq");
-/* harmony import */ var _prayers_sign_cross_sign_cross_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../prayers/sign-cross/sign-cross.component */ "H57s");
-/* harmony import */ var _prayers_creed_creed_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../prayers/creed/creed.component */ "Gbms");
-/* harmony import */ var _prayers_our_father_our_father_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../prayers/our-father/our-father.component */ "WkM5");
-/* harmony import */ var _prayers_hail_mary_hail_mary_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../prayers/hail-mary/hail-mary.component */ "QAE0");
-/* harmony import */ var _prayers_glory_glory_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../prayers/glory/glory.component */ "2z+R");
-/* harmony import */ var _prayers_fatima_fatima_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../prayers/fatima/fatima.component */ "2q+q");
-/* harmony import */ var _prayers_hail_holy_queen_hail_holy_queen_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../prayers/hail-holy-queen/hail-holy-queen.component */ "bsCt");
-/* harmony import */ var _prayers_closing_closing_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../prayers/closing/closing.component */ "lKog");
-
-
-
-
-
-
+/* harmony import */ var src_app_prayers_common_prayers__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/prayers/common-prayers */ "dxo7");
+/* harmony import */ var _pats_beads_pats_beads_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../pats-beads/pats-beads.component */ "vJvT");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "ofXK");
+/* harmony import */ var _current_prayer_current_prayer_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./current-prayer/current-prayer.component */ "60da");
+/* harmony import */ var _mystery_display_mystery_display_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./mystery-display/mystery-display.component */ "4f7d");
 
 
 
@@ -37,87 +25,36 @@ __webpack_require__.r(__webpack_exports__);
 
 function HolyRosaryPrayerComponent_div_4_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 8);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 0);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 9);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "div", 9);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "div", 10);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "div", 9);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](8, 11);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "div", 12);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](10);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](2, "app-mystery-display", 9);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
     const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate3"](" ", ctx_r0.mysteryNum, " ", ctx_r0.mysteryName, " ", ctx_r0.mysteryLiteralLabel, ": ");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", ctx_r0.activeBeadGroupList.mystery(), " ");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", ctx_r0.activeBeadGroupList.fruit(), " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("activeBeadGroupList", ctx_r0.activeBeadGroupList);
 } }
 function HolyRosaryPrayerComponent_div_7_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "app-end", 13);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "app-current-prayer", 6);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
     const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("prayerName", ctx_r1.prayerName);
-} }
-function HolyRosaryPrayerComponent_div_8_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "app-sign-cross");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-} }
-function HolyRosaryPrayerComponent_div_9_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "app-creed");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-} }
-function HolyRosaryPrayerComponent_div_10_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "app-our-father");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-} }
-function HolyRosaryPrayerComponent_div_11_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "app-hail-mary");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-} }
-function HolyRosaryPrayerComponent_div_12_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "app-glory");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-} }
-function HolyRosaryPrayerComponent_div_13_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "app-glory");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](2, "br");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](3, "br");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](4, "app-fatima");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-} }
-function HolyRosaryPrayerComponent_div_14_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "app-hail-holy-queen");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-} }
-function HolyRosaryPrayerComponent_div_15_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "app-closing");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("activeBeadGroup", ctx_r1.activeBeadGroup)("currentPrayer", ctx_r1.extraPrayer);
 } }
 class HolyRosaryPrayerComponent {
     constructor() {
-        this.mysteryNumbers = [undefined, 'First', 'Second', 'Third', 'Fourth', 'Fifth'];
+        this.prayerClosing1 = new src_app_prayers_common_prayers__WEBPACK_IMPORTED_MODULE_1__["PrayerClosing1"]();
+        this.prayerClosing2 = new src_app_prayers_common_prayers__WEBPACK_IMPORTED_MODULE_1__["PrayerClosing2"]();
+        this.prayerCreed = new src_app_prayers_common_prayers__WEBPACK_IMPORTED_MODULE_1__["PrayerApostlesCreed"]();
+        this.prayerGlory = new src_app_prayers_common_prayers__WEBPACK_IMPORTED_MODULE_1__["PrayerGlory"]();
+        this.prayerFatima = new src_app_prayers_common_prayers__WEBPACK_IMPORTED_MODULE_1__["PrayerFatima"]();
+        this.prayerGloryFatima = new src_app_prayers_common_prayers__WEBPACK_IMPORTED_MODULE_1__["PrayerGloryFatima"]();
+        this.prayerHailHolyQueen = new src_app_prayers_common_prayers__WEBPACK_IMPORTED_MODULE_1__["PrayerHailHolyQueen"]();
+        this.prayerHailMary = new src_app_prayers_common_prayers__WEBPACK_IMPORTED_MODULE_1__["PrayerHailMary"]();
+        this.prayerOurFather = new src_app_prayers_common_prayers__WEBPACK_IMPORTED_MODULE_1__["PrayerOurFather"]();
+        this.prayerSignOfTheCross = new src_app_prayers_common_prayers__WEBPACK_IMPORTED_MODULE_1__["PrayerSignOfTheCross"]();
     }
     ngOnInit() {
         this.activeBeadGroup = this.activeBeadGroupList.next();
@@ -125,6 +62,7 @@ class HolyRosaryPrayerComponent {
         if (this.orientation === undefined) {
             this.orientation = 'wide';
         }
+        this.currentPrayer = this.findCurrentPrayer();
     }
     get showMystery() {
         const mysteryNumber = this.activeBeadGroupList.mysteryNumber();
@@ -135,49 +73,60 @@ class HolyRosaryPrayerComponent {
         if (this.activeBeadGroup) {
             this.highlightBeadIndex++;
         }
+        this.currentPrayer = this.findCurrentPrayer();
     }
     onPrevious() {
         this.activeBeadGroup = this.activeBeadGroupList.previous();
         if (this.activeBeadGroup) {
             this.highlightBeadIndex--;
         }
+        this.currentPrayer = this.findCurrentPrayer();
     }
-    get mysteryNum() {
-        return this.mysteryNumbers[this.activeBeadGroupList.mysteryNumber()];
-    }
-    get mysteryName() {
-        return this.activeBeadGroupList.mysterySequenceName();
-    }
-    get mysteryLiteralLabel() {
-        return $localize `:@@mysteryLiteral:Mystery`;
+    findCurrentPrayer() {
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        this.extraPrayer = undefined;
+        if (((_a = this.activeBeadGroup) === null || _a === void 0 ? void 0 : _a.sequence) === 'closing') {
+            this.extraPrayer = this.prayerClosing2;
+            return this.prayerClosing1;
+        }
+        else if (((_b = this.activeBeadGroup) === null || _b === void 0 ? void 0 : _b.sequence) === 'creed') {
+            return this.prayerCreed;
+        }
+        else if (((_c = this.activeBeadGroup) === null || _c === void 0 ? void 0 : _c.sequence) === 'glory') {
+            return this.prayerGlory;
+        }
+        else if (((_d = this.activeBeadGroup) === null || _d === void 0 ? void 0 : _d.sequence) === 'fatima') {
+            return this.prayerFatima;
+        }
+        else if (((_e = this.activeBeadGroup) === null || _e === void 0 ? void 0 : _e.sequence) === 'glory-fatima') {
+            return this.prayerGloryFatima;
+        }
+        else if (((_f = this.activeBeadGroup) === null || _f === void 0 ? void 0 : _f.sequence) === 'hail-holy-queen') {
+            return this.prayerHailHolyQueen;
+        }
+        else if (((_g = this.activeBeadGroup) === null || _g === void 0 ? void 0 : _g.sequence) === 'hail-mary') {
+            return this.prayerHailMary;
+        }
+        else if (((_h = this.activeBeadGroup) === null || _h === void 0 ? void 0 : _h.sequence) === 'our-father') {
+            return this.prayerOurFather;
+        }
+        else if (((_j = this.activeBeadGroup) === null || _j === void 0 ? void 0 : _j.sequence) === 'sign-cross') {
+            return this.prayerSignOfTheCross;
+        }
+        return undefined;
     }
 }
 HolyRosaryPrayerComponent.ɵfac = function HolyRosaryPrayerComponent_Factory(t) { return new (t || HolyRosaryPrayerComponent)(); };
-HolyRosaryPrayerComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: HolyRosaryPrayerComponent, selectors: [["app-holy-rosary-prayer"]], inputs: { activeBeadGroupList: "activeBeadGroupList", prayerName: "prayerName", orientation: "orientation" }, decls: 16, vars: 11, consts: function () { let i18n_0; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
-        const MSG_EXTERNAL_7727154947471799200$$SRC_APP_COMPONENTS_HOLY_ROSARY_PRAYER_HOLY_ROSARY_PRAYER_COMPONENT_TS__1 = goog.getMsg(" Fruit of the Mystery: ");
-        i18n_0 = MSG_EXTERNAL_7727154947471799200$$SRC_APP_COMPONENTS_HOLY_ROSARY_PRAYER_HOLY_ROSARY_PRAYER_COMPONENT_TS__1;
-    }
-    else {
-        i18n_0 = $localize `:␟427ab47266bc7375483649b147111049d0f8bd10␟7727154947471799200: Fruit of the Mystery: `;
-    } return [[1, "gtp-row"], ["id", "rosary-beads-div", 1, "gtp-cell-plain-5", "gtp-cell-plain-12-phone"], [3, "highlightBeadIdx"], [1, "gtp-cell-plain-7", "gtp-cell-plain-12-phone"], ["class", "active-mystery", 4, "ngIf"], [1, "active-prayer", "content-no-border"], [1, "active-prayer-workspace"], [4, "ngIf"], [1, "active-mystery"], [1, "gtp-cell-plain-6", "gtp-cell-plain-1-phone"], [1, "gtp-row-plain"], i18n_0, [1, "gtp-cell-plain-6", "gtp-cell-1-plain-phone"], [3, "prayerName"]]; }, template: function HolyRosaryPrayerComponent_Template(rf, ctx) { if (rf & 1) {
+HolyRosaryPrayerComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: HolyRosaryPrayerComponent, selectors: [["app-holy-rosary-prayer"]], inputs: { activeBeadGroupList: "activeBeadGroupList", prayerName: "prayerName", orientation: "orientation" }, decls: 8, vars: 5, consts: [[1, "gtp-row"], ["id", "rosary-beads-div", 1, "gtp-cell-plain-4", "gtp-cell-plain-12-phone"], [3, "highlightBeadIdx"], [1, "gtp-cell-plain-8", "gtp-cell-plain-12-phone"], ["class", "active-mystery", 4, "ngIf"], [1, "active-prayer", "content-no-border"], [3, "activeBeadGroup", "currentPrayer"], [4, "ngIf"], [1, "active-mystery"], [3, "activeBeadGroupList"]], template: function HolyRosaryPrayerComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "span", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "span", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](2, "app-pats-beads", 2);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "span", 3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](4, HolyRosaryPrayerComponent_div_4_Template, 11, 5, "div", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](4, HolyRosaryPrayerComponent_div_4_Template, 3, 1, "div", 4);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "div", 5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "div", 6);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](7, HolyRosaryPrayerComponent_div_7_Template, 2, 1, "div", 7);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](8, HolyRosaryPrayerComponent_div_8_Template, 2, 0, "div", 7);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](9, HolyRosaryPrayerComponent_div_9_Template, 2, 0, "div", 7);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](10, HolyRosaryPrayerComponent_div_10_Template, 2, 0, "div", 7);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](11, HolyRosaryPrayerComponent_div_11_Template, 2, 0, "div", 7);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](12, HolyRosaryPrayerComponent_div_12_Template, 2, 0, "div", 7);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](13, HolyRosaryPrayerComponent_div_13_Template, 5, 0, "div", 7);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](14, HolyRosaryPrayerComponent_div_14_Template, 2, 0, "div", 7);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](15, HolyRosaryPrayerComponent_div_15_Template, 2, 0, "div", 7);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](6, "app-current-prayer", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](7, HolyRosaryPrayerComponent_div_7_Template, 2, 2, "div", 7);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -186,25 +135,11 @@ HolyRosaryPrayerComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵ
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("highlightBeadIdx", ctx.highlightBeadIndex);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.showMystery);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.activeBeadGroup === undefined);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("activeBeadGroup", ctx.activeBeadGroup)("currentPrayer", ctx.currentPrayer);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", (ctx.activeBeadGroup == null ? null : ctx.activeBeadGroup.sequence) === "sign-cross");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", (ctx.activeBeadGroup == null ? null : ctx.activeBeadGroup.sequence) === "creed");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", (ctx.activeBeadGroup == null ? null : ctx.activeBeadGroup.sequence) === "our-father");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", (ctx.activeBeadGroup == null ? null : ctx.activeBeadGroup.sequence) === "hail-mary");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", (ctx.activeBeadGroup == null ? null : ctx.activeBeadGroup.sequence) === "glory");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", (ctx.activeBeadGroup == null ? null : ctx.activeBeadGroup.sequence) === "glory-fatima");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", (ctx.activeBeadGroup == null ? null : ctx.activeBeadGroup.sequence) === "hail-holy-queen");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", (ctx.activeBeadGroup == null ? null : ctx.activeBeadGroup.sequence) === "closing");
-    } }, directives: [_pats_beads_pats_beads_component__WEBPACK_IMPORTED_MODULE_1__["PatsBeadsComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_2__["NgIf"], _prayers_end_end_component__WEBPACK_IMPORTED_MODULE_3__["EndComponent"], _prayers_sign_cross_sign_cross_component__WEBPACK_IMPORTED_MODULE_4__["SignCrossComponent"], _prayers_creed_creed_component__WEBPACK_IMPORTED_MODULE_5__["CreedComponent"], _prayers_our_father_our_father_component__WEBPACK_IMPORTED_MODULE_6__["OurFatherComponent"], _prayers_hail_mary_hail_mary_component__WEBPACK_IMPORTED_MODULE_7__["HailMaryComponent"], _prayers_glory_glory_component__WEBPACK_IMPORTED_MODULE_8__["GloryComponent"], _prayers_fatima_fatima_component__WEBPACK_IMPORTED_MODULE_9__["FatimaComponent"], _prayers_hail_holy_queen_hail_holy_queen_component__WEBPACK_IMPORTED_MODULE_10__["HailHolyQueenComponent"], _prayers_closing_closing_component__WEBPACK_IMPORTED_MODULE_11__["ClosingComponent"]], styles: ["@media (orientation: portrait) {\n  .active-prayer[_ngcontent-%COMP%], .active-mystery[_ngcontent-%COMP%] {\n    background-color: transparent;\n    font-size: 4vw;\n    transform: translateX(0vw) translateY(-60vh);\n  }\n}\n.active-mystery[_ngcontent-%COMP%] {\n  background-color: paleturquoise;\n  border-radius: 5px;\n  border-width: 2px;\n  color: black;\n  height: -webkit-fit-content;\n  height: -moz-fit-content;\n  height: fit-content;\n  padding: 10px;\n}\n.active-mystery[_ngcontent-%COMP%]   .left-cell[_ngcontent-%COMP%], .active-mystery[_ngcontent-%COMP%]   .right-cell[_ngcontent-%COMP%] {\n  margin: 5px;\n  padding: 5px;\n}\n.active-mystery[_ngcontent-%COMP%]   .left-cell[_ngcontent-%COMP%] {\n  font-weight: bold;\n  text-align: right;\n  width: 45%;\n}\n.active-mystery[_ngcontent-%COMP%]   .right-cell[_ngcontent-%COMP%] {\n  background-color: #bffefe;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFxob2x5LXJvc2FyeS1wcmF5ZXIuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBRUE7RUFFRTtJQUNFLDZCQUFBO0lBQ0EsY0FBQTtJQUNBLDRDQUFBO0VBRkY7QUFDRjtBQU1BO0VBQ0UsK0JBQUE7RUFDQSxrQkFBQTtFQUNBLGlCQUFBO0VBQ0EsWUFBQTtFQUNBLDJCQUFBO0VBQUEsd0JBQUE7RUFBQSxtQkFBQTtFQUNBLGFBQUE7QUFKRjtBQU9BO0VBQ0UsV0FBQTtFQUNBLFlBQUE7QUFKRjtBQU9BO0VBQ0UsaUJBQUE7RUFDQSxpQkFBQTtFQUNBLFVBQUE7QUFKRjtBQU9BO0VBQ0UseUJBQUE7QUFKRiIsImZpbGUiOiJob2x5LXJvc2FyeS1wcmF5ZXIuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJAaW1wb3J0ICcuLi8uLi8uLi9zdHlsZXMtc2hhcmVkLW1peGlucy5zY3NzJztcclxuXHJcbkBtZWRpYSAob3JpZW50YXRpb246IHBvcnRyYWl0KSB7XHJcblxyXG4gIC5hY3RpdmUtcHJheWVyLCAuYWN0aXZlLW15c3Rlcnkge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogdHJhbnNwYXJlbnQ7XHJcbiAgICBmb250LXNpemU6IDR2dztcclxuICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlWCgkcHJheWVyT2Zmc2V0WCkgdHJhbnNsYXRlWSgkcHJheWVyT2Zmc2V0WSk7XHJcbiAgfVxyXG5cclxufVxyXG5cclxuLmFjdGl2ZS1teXN0ZXJ5IHtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiBwYWxldHVycXVvaXNlO1xyXG4gIGJvcmRlci1yYWRpdXM6IDVweDtcclxuICBib3JkZXItd2lkdGg6IDJweDtcclxuICBjb2xvcjogYmxhY2s7XHJcbiAgaGVpZ2h0OiBmaXQtY29udGVudDtcclxuICBwYWRkaW5nOiAxMHB4O1xyXG59XHJcblxyXG4uYWN0aXZlLW15c3RlcnkgLmxlZnQtY2VsbCwgLmFjdGl2ZS1teXN0ZXJ5IC5yaWdodC1jZWxsIHtcclxuICBtYXJnaW46IDVweDtcclxuICBwYWRkaW5nOiA1cHg7XHJcbn1cclxuXHJcbi5hY3RpdmUtbXlzdGVyeSAubGVmdC1jZWxsIHtcclxuICBmb250LXdlaWdodDogYm9sZDtcclxuICB0ZXh0LWFsaWduOiByaWdodDtcclxuICB3aWR0aDogNDUlO1xyXG59XHJcblxyXG4uYWN0aXZlLW15c3RlcnkgLnJpZ2h0LWNlbGwge1xyXG4gIGJhY2tncm91bmQtY29sb3I6ICNiZmZlZmU7XHJcbn1cclxuIl19 */"] });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.extraPrayer);
+    } }, directives: [_pats_beads_pats_beads_component__WEBPACK_IMPORTED_MODULE_2__["PatsBeadsComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["NgIf"], _current_prayer_current_prayer_component__WEBPACK_IMPORTED_MODULE_4__["CurrentPrayerComponent"], _mystery_display_mystery_display_component__WEBPACK_IMPORTED_MODULE_5__["MysteryDisplayComponent"]], styles: ["@media (orientation: portrait) {\n  .active-prayer[_ngcontent-%COMP%], .active-mystery[_ngcontent-%COMP%] {\n    background-color: transparent;\n    font-size: 4vw;\n    transform: translateX(0vw) translateY(-60vh);\n  }\n}\n.active-mystery[_ngcontent-%COMP%] {\n  background-color: paleturquoise;\n  border-radius: 5px;\n  border-width: 2px;\n  color: black;\n  height: -webkit-fit-content;\n  height: -moz-fit-content;\n  height: fit-content;\n  padding: 10px;\n}\n.active-mystery[_ngcontent-%COMP%]   .left-cell[_ngcontent-%COMP%], .active-mystery[_ngcontent-%COMP%]   .right-cell[_ngcontent-%COMP%] {\n  margin: 5px;\n  padding: 5px;\n}\n.active-mystery[_ngcontent-%COMP%]   .left-cell[_ngcontent-%COMP%] {\n  font-weight: bold;\n  text-align: right;\n  width: 45%;\n}\n.active-mystery[_ngcontent-%COMP%]   .right-cell[_ngcontent-%COMP%] {\n  background-color: #bffefe;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFxob2x5LXJvc2FyeS1wcmF5ZXIuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBRUE7RUFFRTtJQUNFLDZCQUFBO0lBQ0EsY0FBQTtJQUNBLDRDQUFBO0VBRkY7QUFDRjtBQU1BO0VBQ0UsK0JBQUE7RUFDQSxrQkFBQTtFQUNBLGlCQUFBO0VBQ0EsWUFBQTtFQUNBLDJCQUFBO0VBQUEsd0JBQUE7RUFBQSxtQkFBQTtFQUNBLGFBQUE7QUFKRjtBQU9BO0VBQ0UsV0FBQTtFQUNBLFlBQUE7QUFKRjtBQU9BO0VBQ0UsaUJBQUE7RUFDQSxpQkFBQTtFQUNBLFVBQUE7QUFKRjtBQU9BO0VBQ0UseUJBQUE7QUFKRiIsImZpbGUiOiJob2x5LXJvc2FyeS1wcmF5ZXIuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJAaW1wb3J0ICcuLi8uLi8uLi9zdHlsZXMtc2hhcmVkLW1peGlucy5zY3NzJztcclxuXHJcbkBtZWRpYSAob3JpZW50YXRpb246IHBvcnRyYWl0KSB7XHJcblxyXG4gIC5hY3RpdmUtcHJheWVyLCAuYWN0aXZlLW15c3Rlcnkge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogdHJhbnNwYXJlbnQ7XHJcbiAgICBmb250LXNpemU6IDR2dztcclxuICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlWCgkcHJheWVyT2Zmc2V0WCkgdHJhbnNsYXRlWSgkcHJheWVyT2Zmc2V0WSk7XHJcbiAgfVxyXG5cclxufVxyXG5cclxuLmFjdGl2ZS1teXN0ZXJ5IHtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiBwYWxldHVycXVvaXNlO1xyXG4gIGJvcmRlci1yYWRpdXM6IDVweDtcclxuICBib3JkZXItd2lkdGg6IDJweDtcclxuICBjb2xvcjogYmxhY2s7XHJcbiAgaGVpZ2h0OiBmaXQtY29udGVudDtcclxuICBwYWRkaW5nOiAxMHB4O1xyXG59XHJcblxyXG4uYWN0aXZlLW15c3RlcnkgLmxlZnQtY2VsbCwgLmFjdGl2ZS1teXN0ZXJ5IC5yaWdodC1jZWxsIHtcclxuICBtYXJnaW46IDVweDtcclxuICBwYWRkaW5nOiA1cHg7XHJcbn1cclxuXHJcbi5hY3RpdmUtbXlzdGVyeSAubGVmdC1jZWxsIHtcclxuICBmb250LXdlaWdodDogYm9sZDtcclxuICB0ZXh0LWFsaWduOiByaWdodDtcclxuICB3aWR0aDogNDUlO1xyXG59XHJcblxyXG4uYWN0aXZlLW15c3RlcnkgLnJpZ2h0LWNlbGwge1xyXG4gIGJhY2tncm91bmQtY29sb3I6ICNiZmZlZmU7XHJcbn1cclxuIl19 */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](HolyRosaryPrayerComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
@@ -425,6 +360,236 @@ LayoutsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineC
     }], function () { return [{ type: src_app_services_bead_group_loader_service__WEBPACK_IMPORTED_MODULE_3__["BeadGroupLoaderService"] }]; }, { activePrayer: [{
             type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"],
             args: [_active_prayer_active_prayer_component__WEBPACK_IMPORTED_MODULE_2__["ActivePrayerComponent"]]
+        }] }); })();
+
+
+/***/ }),
+
+/***/ "4f7d":
+/*!********************************************************************************************!*\
+  !*** ./src/app/components/holy-rosary-prayer/mystery-display/mystery-display.component.ts ***!
+  \********************************************************************************************/
+/*! exports provided: MysteryDisplayComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MysteryDisplayComponent", function() { return MysteryDisplayComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
+
+
+class MysteryDisplayComponent {
+    constructor() {
+        this.mysteryNumbers = [undefined, 'First', 'Second', 'Third', 'Fourth', 'Fifth'];
+    }
+    ngOnInit() {
+    }
+    get mysteryNum() {
+        return this.mysteryNumbers[this.activeBeadGroupList.mysteryNumber()];
+    }
+    get mysteryName() {
+        return this.activeBeadGroupList.mysterySequenceName();
+    }
+    get mysteryLiteralLabel() {
+        return $localize `:@@mysteryLiteral:Mystery`;
+    }
+}
+MysteryDisplayComponent.ɵfac = function MysteryDisplayComponent_Factory(t) { return new (t || MysteryDisplayComponent)(); };
+MysteryDisplayComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: MysteryDisplayComponent, selectors: [["app-mystery-display"]], inputs: { activeBeadGroupList: "activeBeadGroupList" }, decls: 10, vars: 5, consts: function () { let i18n_0; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+        const MSG_EXTERNAL_605447931257735354$$SRC_APP_COMPONENTS_HOLY_ROSARY_PRAYER_MYSTERY_DISPLAY_MYSTERY_DISPLAY_COMPONENT_TS_1 = goog.getMsg(" Fruit of the Mystery: ");
+        i18n_0 = MSG_EXTERNAL_605447931257735354$$SRC_APP_COMPONENTS_HOLY_ROSARY_PRAYER_MYSTERY_DISPLAY_MYSTERY_DISPLAY_COMPONENT_TS_1;
+    }
+    else {
+        i18n_0 = $localize `:␟73939a52e084bfeeb0ca7b3e1f34245b02a920af␟605447931257735354: Fruit of the Mystery: `;
+    } return [[1, "mystery-row"], [1, "mystery-label-cell"], [1, "mystery-value"], [1, "fruit-label"], i18n_0, [1, "fruit-value"]]; }, template: function MysteryDisplayComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "span", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "span", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "div", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "span", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](7, 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "span", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](9);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    } if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate3"](" ", ctx.mysteryNum, " ", ctx.mysteryName, " ", ctx.mysteryLiteralLabel, ": ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", ctx.activeBeadGroupList.mystery(), " ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", ctx.activeBeadGroupList.fruit(), " ");
+    } }, styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJteXN0ZXJ5LWRpc3BsYXkuY29tcG9uZW50LnNjc3MifQ== */"] });
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](MysteryDisplayComponent, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
+        args: [{
+                selector: 'app-mystery-display',
+                templateUrl: './mystery-display.component.html',
+                styleUrls: ['./mystery-display.component.scss']
+            }]
+    }], function () { return []; }, { activeBeadGroupList: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
+        }] }); })();
+
+
+/***/ }),
+
+/***/ "60da":
+/*!******************************************************************************************!*\
+  !*** ./src/app/components/holy-rosary-prayer/current-prayer/current-prayer.component.ts ***!
+  \******************************************************************************************/
+/*! exports provided: CurrentPrayerComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CurrentPrayerComponent", function() { return CurrentPrayerComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var src_app_prayers_common_prayers__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/prayers/common-prayers */ "dxo7");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "ofXK");
+/* harmony import */ var _prayers_end_end_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../prayers/end/end.component */ "Uspq");
+
+
+
+
+
+function CurrentPrayerComponent_div_1_pre_1_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "pre", 3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("      ", ctx_r2.currentPrayer.all, "\n    ");
+} }
+function CurrentPrayerComponent_div_1_ng_container_2_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerStart"](0);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "div");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](4, 5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "div");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "div", 4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "div");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](9, 6);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "div");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](11);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerEnd"]();
+} if (rf & 2) {
+    const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassMap"](ctx_r3.leaderLabelCssClass());
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassMap"](ctx_r3.leaderCssClass());
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", ctx_r3.currentPrayerLeader(), " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassMap"](ctx_r3.responseLabelCssClass());
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassMap"](ctx_r3.responseCssClass());
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", ctx_r3.currentPrayer.response, " ");
+} }
+function CurrentPrayerComponent_div_1_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, CurrentPrayerComponent_div_1_pre_1_Template, 2, 1, "pre", 2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, CurrentPrayerComponent_div_1_ng_container_2_Template, 12, 10, "ng-container", 1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r0.currentPrayer.all);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r0.currentPrayer.all === undefined);
+} }
+function CurrentPrayerComponent_div_2_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "app-end", 7);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("prayerName", ctx_r1.prayerName);
+} }
+const cssClassesColumn1 = 'gtp-cell-plain-1 gtp-cell-plain-1-phone gtp-pre-line';
+const cssClassesColumn2 = 'gtp-cell-plain-11 gtp-cell-plain-11-phone gtp-pre-line';
+class CurrentPrayerComponent {
+    constructor() { }
+    ngOnInit() { }
+    beadStatus() {
+        return (this.currentPrayer instanceof src_app_prayers_common_prayers__WEBPACK_IMPORTED_MODULE_1__["PrayerHailMary"])
+            ? `(${this.activeBeadGroup.index + 1} / ${this.activeBeadGroup.maxIndex})`
+            : undefined;
+    }
+    currentPrayerLeader() {
+        var _a;
+        const prefix = (((_a = this.activeBeadGroup) === null || _a === void 0 ? void 0 : _a.maxIndex) > 1)
+            ? `(${this.activeBeadGroup.index + 1} / ${this.activeBeadGroup.maxIndex}) `
+            : '';
+        return `${prefix}${this.currentPrayer.leader}`;
+    }
+    leaderLabelCssClass() {
+        return `prayer-leader-label ${cssClassesColumn1}`;
+    }
+    leaderCssClass() {
+        return `prayer-leader ${cssClassesColumn2}`;
+    }
+    responseLabelCssClass() {
+        return `prayer-response-label ${cssClassesColumn1}`;
+    }
+    responseCssClass() {
+        return `prayer-response ${cssClassesColumn2}`;
+    }
+}
+CurrentPrayerComponent.ɵfac = function CurrentPrayerComponent_Factory(t) { return new (t || CurrentPrayerComponent)(); };
+CurrentPrayerComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: CurrentPrayerComponent, selectors: [["app-current-prayer"]], inputs: { activeBeadGroup: "activeBeadGroup", currentPrayer: "currentPrayer" }, decls: 3, vars: 2, consts: function () { let i18n_0; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+        const MSG_EXTERNAL_prayer_leader$$SRC_APP_COMPONENTS_HOLY_ROSARY_PRAYER_CURRENT_PRAYER_CURRENT_PRAYER_COMPONENT_TS___1 = goog.getMsg("L:");
+        i18n_0 = MSG_EXTERNAL_prayer_leader$$SRC_APP_COMPONENTS_HOLY_ROSARY_PRAYER_CURRENT_PRAYER_CURRENT_PRAYER_COMPONENT_TS___1;
+    }
+    else {
+        i18n_0 = $localize `:@@prayer-leader␟09420f897915df71bcb79c04370706942e0df738␟2705138319949054840:L:`;
+    } let i18n_2; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+        const MSG_EXTERNAL_prayer_response$$SRC_APP_COMPONENTS_HOLY_ROSARY_PRAYER_CURRENT_PRAYER_CURRENT_PRAYER_COMPONENT_TS___3 = goog.getMsg(" R: ");
+        i18n_2 = MSG_EXTERNAL_prayer_response$$SRC_APP_COMPONENTS_HOLY_ROSARY_PRAYER_CURRENT_PRAYER_CURRENT_PRAYER_COMPONENT_TS___3;
+    }
+    else {
+        i18n_2 = $localize `:@@prayer-response␟fed03cd1382fbd2e74f1ec1b2450a845c714d38a␟8704568481940108272: R: `;
+    } return [[1, "active-prayer-workspace"], [4, "ngIf"], ["class", "prayer-response gtp-pre-line", 4, "ngIf"], [1, "prayer-response", "gtp-pre-line"], [1, "gtp-row-plain"], i18n_0, i18n_2, [3, "prayerName"]]; }, template: function CurrentPrayerComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, CurrentPrayerComponent_div_1_Template, 3, 2, "div", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, CurrentPrayerComponent_div_2_Template, 2, 1, "div", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    } if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.currentPrayer);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.activeBeadGroup === undefined);
+    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["NgIf"], _prayers_end_end_component__WEBPACK_IMPORTED_MODULE_3__["EndComponent"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJjdXJyZW50LXByYXllci5jb21wb25lbnQuc2NzcyJ9 */"] });
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](CurrentPrayerComponent, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
+        args: [{
+                selector: 'app-current-prayer',
+                templateUrl: './current-prayer.component.html',
+                styleUrls: ['./current-prayer.component.scss']
+            }]
+    }], function () { return []; }, { activeBeadGroup: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
+        }], currentPrayer: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
         }] }); })();
 
 
@@ -1229,18 +1394,14 @@ class MysterySelectorComponent {
     }
     getMysteryOfTheDay() {
         if (this.dayOfWeek === SUN || this.dayOfWeek === WED) {
-            console.log('GLORIOUS');
             return src_app_sequences_rosary_helper__WEBPACK_IMPORTED_MODULE_1__["RosaryMysteriesEnum"].GLORIOUS;
         }
         else if (this.dayOfWeek === MON || this.dayOfWeek === SAT) {
-            console.log('JOYFUL');
             return src_app_sequences_rosary_helper__WEBPACK_IMPORTED_MODULE_1__["RosaryMysteriesEnum"].JOYFUL;
         }
         else if (this.dayOfWeek === TUE || this.dayOfWeek === FRI) {
-            console.log('SORROWFUL');
             return src_app_sequences_rosary_helper__WEBPACK_IMPORTED_MODULE_1__["RosaryMysteriesEnum"].SORROWFUL;
         }
-        console.log('LUMINOUS');
         return src_app_sequences_rosary_helper__WEBPACK_IMPORTED_MODULE_1__["RosaryMysteriesEnum"].LUMINOUS;
     }
     selectByDay() {
@@ -1281,7 +1442,7 @@ MysterySelectorComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵ�
     }
     else {
         i18n_0 = $localize `:␟40acf9c3b3d2ff26290656991b8c86617013c54e␟7300978048101236463:Select the desired Mystery:`;
-    } return [[1, "content-border"], [1, "section-title"], i18n_0, [1, "gtp-row-plain"], [1, "gtp-cell-plain-2"], [3, "click"]]; }, template: function MysterySelectorComponent_Template(rf, ctx) { if (rf & 1) {
+    } return [[1, "content-border"], [1, "section-title"], i18n_0, [1, "gtp-row-plain"], [1, "gtp-cell-plain-2", "gtp-cell-plain-12-phone"], [3, "click"]]; }, template: function MysterySelectorComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](2, 2);
@@ -1357,11 +1518,12 @@ MysterySelectorComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵ�
 /*!*****************************************************!*\
   !*** ./src/app/services/liturgical-year.service.ts ***!
   \*****************************************************/
-/*! exports provided: LiturgicalYearService */
+/*! exports provided: LiturgicalColors, LiturgicalYearService */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LiturgicalColors", function() { return LiturgicalColors; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LiturgicalYearService", function() { return LiturgicalYearService; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
 /* harmony import */ var src_utils_dates_advent_christmas__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/utils/dates-advent-christmas */ "Gl89");
@@ -1378,6 +1540,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+var LiturgicalColors;
+(function (LiturgicalColors) {
+    LiturgicalColors["GREEN"] = "green";
+    LiturgicalColors["RED"] = "red";
+    LiturgicalColors["ROSE"] = "rose";
+    LiturgicalColors["VIOLET"] = "violet";
+    LiturgicalColors["WHITE"] = "white";
+})(LiturgicalColors || (LiturgicalColors = {}));
 class LiturgicalYearService {
     constructor(appDate, localization) {
         this.appDate = appDate;
@@ -1389,22 +1559,22 @@ class LiturgicalYearService {
             || this.appDate.date === this.palmSunday
             || this.appDate.date === this.pentacostSunday)
             && this.appDate.date !== this.liturgicalDates.easter.startDate) {
-            return 'red';
+            return LiturgicalColors.RED;
         }
         else if (this.appDate.date === this.adventSunday3
             || this.appDate.date === this.lentSunday4) {
-            return 'rose';
+            return LiturgicalColors.ROSE;
         }
         else if (this.dateInRange(this.liturgicalDates.christmas)
             || this.dateInRange(this.liturgicalDates.easter)
             || this.appDate.date === this.allSaintsDay) {
-            return 'white';
+            return LiturgicalColors.WHITE;
         }
         else if (this.dateInRange(this.liturgicalDates.advent)
             || this.dateInRange(this.liturgicalDates.lent)) {
-            return 'violet';
+            return LiturgicalColors.VIOLET;
         }
-        return 'green';
+        return LiturgicalColors.GREEN;
     }
     validateDates() {
         let rawDates = window.localStorage.getItem('rosary.liturgical-dates');
@@ -1565,6 +1735,7 @@ const PATS_BEADS_COORDS = [
     { x: 1458, y: 1249 },
     { x: 1458, y: 1249 },
     { x: 1458, y: 1249 },
+    { x: 1458, y: 1249 },
     { x: 1425, y: 1018 },
     { x: 1430, y: 924 },
     { x: 1458, y: 836 },
@@ -1575,6 +1746,7 @@ const PATS_BEADS_COORDS = [
     { x: 1370, y: 429 },
     { x: 1287, y: 407 },
     { x: 1199, y: 396 },
+    { x: 1045, y: 495 },
     { x: 1045, y: 495 },
     { x: 1045, y: 495 },
     { x: 1045, y: 495 },
@@ -1591,6 +1763,7 @@ const PATS_BEADS_COORDS = [
     { x: 357, y: 459 },
     { x: 357, y: 459 },
     { x: 357, y: 459 },
+    { x: 357, y: 459 },
     { x: 391, y: 683 },
     { x: 351, y: 759 },
     { x: 279, y: 788 },
@@ -1604,6 +1777,7 @@ const PATS_BEADS_COORDS = [
     { x: 399, y: 1503 },
     { x: 399, y: 1503 },
     { x: 399, y: 1503 },
+    { x: 399, y: 1503 },
     { x: 341, y: 1710 },
     { x: 371, y: 1796 },
     { x: 405, y: 1871 },
@@ -1614,6 +1788,7 @@ const PATS_BEADS_COORDS = [
     { x: 738, y: 2082 },
     { x: 787, y: 2139 },
     { x: 810, y: 2215 },
+    { x: 805, y: 2368 },
     { x: 805, y: 2368 },
     { x: 805, y: 2368 },
     { x: 805, y: 2368 },
@@ -1649,14 +1824,21 @@ class AppComponent {
         this.title = $localize `:@@rosaryTitle:Rosary`;
         this.appVersion = _package_json__WEBPACK_IMPORTED_MODULE_1__["version"];
     }
+    backgroundImageClass() {
+        const color = this.liturgicalYear.liturgicalColor();
+        return `lit-color-${color.toString().toLowerCase()}`;
+    }
+    formatBackgroundImage(color, rgb) {
+        return `repeating-linear-gradient(-45deg, ${color}, ${color} 3px, ${rgb} 3px, ${rgb}, 6px`;
+    }
 }
 AppComponent.ɵfac = function AppComponent_Factory(t) { return new (t || AppComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_liturgical_year_service__WEBPACK_IMPORTED_MODULE_2__["LiturgicalYearService"])); };
-AppComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: AppComponent, selectors: [["app-root"]], decls: 2, vars: 3, template: function AppComponent_Template(rf, ctx) { if (rf & 1) {
+AppComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: AppComponent, selectors: [["app-root"]], decls: 2, vars: 2, template: function AppComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "router-outlet");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     } if (rf & 2) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassMapInterpolate1"]("repeating-linear-", ctx.liturgicalYear.liturgicalColor(), "");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassMap"](ctx.backgroundImageClass());
     } }, directives: [_angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterOutlet"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJhcHAuY29tcG9uZW50LnNjc3MifQ== */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](AppComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
@@ -1798,45 +1980,81 @@ class OurFatherComponent {
     constructor() { }
     ngOnInit() {
     }
+    ngAfterViewInit() {
+        // console.log(`C1: ${this.leader()}`);
+        // console.log(`C2: ${this.response()}`);
+        // console.log(`C3: ${this.all()}`);
+    }
 }
 OurFatherComponent.ɵfac = function OurFatherComponent_Factory(t) { return new (t || OurFatherComponent)(); };
-OurFatherComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: OurFatherComponent, selectors: [["app-our-father"]], decls: 14, vars: 0, consts: function () { let i18n_0; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
-        const MSG_EXTERNAL_our_father$$SRC_APP_PRAYERS_OUR_FATHER_OUR_FATHER_COMPONENT_TS_1 = goog.getMsg("\nOur Father who art in heaven,{$lineBreak}\nhallowed be Thy name;{$lineBreak}\nThy kingdom come;{$lineBreak}\nThy will be done{$lineBreak}\non earth as it is in heaven.{$lineBreak}{$lineBreak}\nGive us this day our daily bread;{$lineBreak}\nand forgive us our trespasses,{$lineBreak}\nas we forgive those who trespass against us;{$lineBreak}\nand lead us not into temptation;{$lineBreak}\nbut deliver us from evil.{$lineBreak}{$lineBreak}\nAmen.\n", { "lineBreak": "[\uFFFD#2\uFFFD\uFFFD/#2\uFFFD|\uFFFD#3\uFFFD\uFFFD/#3\uFFFD|\uFFFD#4\uFFFD\uFFFD/#4\uFFFD|\uFFFD#5\uFFFD\uFFFD/#5\uFFFD|\uFFFD#6\uFFFD\uFFFD/#6\uFFFD|\uFFFD#7\uFFFD\uFFFD/#7\uFFFD|\uFFFD#8\uFFFD\uFFFD/#8\uFFFD|\uFFFD#9\uFFFD\uFFFD/#9\uFFFD|\uFFFD#10\uFFFD\uFFFD/#10\uFFFD|\uFFFD#11\uFFFD\uFFFD/#11\uFFFD|\uFFFD#12\uFFFD\uFFFD/#12\uFFFD|\uFFFD#13\uFFFD\uFFFD/#13\uFFFD]" });
-        i18n_0 = MSG_EXTERNAL_our_father$$SRC_APP_PRAYERS_OUR_FATHER_OUR_FATHER_COMPONENT_TS_1;
+OurFatherComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: OurFatherComponent, selectors: [["app-our-father"]], decls: 18, vars: 0, consts: function () { let i18n_0; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+        const MSG_EXTERNAL_prayer_leader$$SRC_APP_PRAYERS_OUR_FATHER_OUR_FATHER_COMPONENT_TS_1 = goog.getMsg("Leader:");
+        i18n_0 = MSG_EXTERNAL_prayer_leader$$SRC_APP_PRAYERS_OUR_FATHER_OUR_FATHER_COMPONENT_TS_1;
     }
     else {
-        i18n_0 = $localize `:@@our-father␟95bc359e30b361231a2a6c54639774dad0bc334c␟7145864590591284739:
-Our Father who art in heaven,${"[\uFFFD#2\uFFFD\uFFFD/#2\uFFFD|\uFFFD#3\uFFFD\uFFFD/#3\uFFFD|\uFFFD#4\uFFFD\uFFFD/#4\uFFFD|\uFFFD#5\uFFFD\uFFFD/#5\uFFFD|\uFFFD#6\uFFFD\uFFFD/#6\uFFFD|\uFFFD#7\uFFFD\uFFFD/#7\uFFFD|\uFFFD#8\uFFFD\uFFFD/#8\uFFFD|\uFFFD#9\uFFFD\uFFFD/#9\uFFFD|\uFFFD#10\uFFFD\uFFFD/#10\uFFFD|\uFFFD#11\uFFFD\uFFFD/#11\uFFFD|\uFFFD#12\uFFFD\uFFFD/#12\uFFFD|\uFFFD#13\uFFFD\uFFFD/#13\uFFFD]"}:LINE_BREAK:
-hallowed be Thy name;${"[\uFFFD#2\uFFFD\uFFFD/#2\uFFFD|\uFFFD#3\uFFFD\uFFFD/#3\uFFFD|\uFFFD#4\uFFFD\uFFFD/#4\uFFFD|\uFFFD#5\uFFFD\uFFFD/#5\uFFFD|\uFFFD#6\uFFFD\uFFFD/#6\uFFFD|\uFFFD#7\uFFFD\uFFFD/#7\uFFFD|\uFFFD#8\uFFFD\uFFFD/#8\uFFFD|\uFFFD#9\uFFFD\uFFFD/#9\uFFFD|\uFFFD#10\uFFFD\uFFFD/#10\uFFFD|\uFFFD#11\uFFFD\uFFFD/#11\uFFFD|\uFFFD#12\uFFFD\uFFFD/#12\uFFFD|\uFFFD#13\uFFFD\uFFFD/#13\uFFFD]"}:LINE_BREAK:
-Thy kingdom come;${"[\uFFFD#2\uFFFD\uFFFD/#2\uFFFD|\uFFFD#3\uFFFD\uFFFD/#3\uFFFD|\uFFFD#4\uFFFD\uFFFD/#4\uFFFD|\uFFFD#5\uFFFD\uFFFD/#5\uFFFD|\uFFFD#6\uFFFD\uFFFD/#6\uFFFD|\uFFFD#7\uFFFD\uFFFD/#7\uFFFD|\uFFFD#8\uFFFD\uFFFD/#8\uFFFD|\uFFFD#9\uFFFD\uFFFD/#9\uFFFD|\uFFFD#10\uFFFD\uFFFD/#10\uFFFD|\uFFFD#11\uFFFD\uFFFD/#11\uFFFD|\uFFFD#12\uFFFD\uFFFD/#12\uFFFD|\uFFFD#13\uFFFD\uFFFD/#13\uFFFD]"}:LINE_BREAK:
-Thy will be done${"[\uFFFD#2\uFFFD\uFFFD/#2\uFFFD|\uFFFD#3\uFFFD\uFFFD/#3\uFFFD|\uFFFD#4\uFFFD\uFFFD/#4\uFFFD|\uFFFD#5\uFFFD\uFFFD/#5\uFFFD|\uFFFD#6\uFFFD\uFFFD/#6\uFFFD|\uFFFD#7\uFFFD\uFFFD/#7\uFFFD|\uFFFD#8\uFFFD\uFFFD/#8\uFFFD|\uFFFD#9\uFFFD\uFFFD/#9\uFFFD|\uFFFD#10\uFFFD\uFFFD/#10\uFFFD|\uFFFD#11\uFFFD\uFFFD/#11\uFFFD|\uFFFD#12\uFFFD\uFFFD/#12\uFFFD|\uFFFD#13\uFFFD\uFFFD/#13\uFFFD]"}:LINE_BREAK:
-on earth as it is in heaven.${"[\uFFFD#2\uFFFD\uFFFD/#2\uFFFD|\uFFFD#3\uFFFD\uFFFD/#3\uFFFD|\uFFFD#4\uFFFD\uFFFD/#4\uFFFD|\uFFFD#5\uFFFD\uFFFD/#5\uFFFD|\uFFFD#6\uFFFD\uFFFD/#6\uFFFD|\uFFFD#7\uFFFD\uFFFD/#7\uFFFD|\uFFFD#8\uFFFD\uFFFD/#8\uFFFD|\uFFFD#9\uFFFD\uFFFD/#9\uFFFD|\uFFFD#10\uFFFD\uFFFD/#10\uFFFD|\uFFFD#11\uFFFD\uFFFD/#11\uFFFD|\uFFFD#12\uFFFD\uFFFD/#12\uFFFD|\uFFFD#13\uFFFD\uFFFD/#13\uFFFD]"}:LINE_BREAK:${"[\uFFFD#2\uFFFD\uFFFD/#2\uFFFD|\uFFFD#3\uFFFD\uFFFD/#3\uFFFD|\uFFFD#4\uFFFD\uFFFD/#4\uFFFD|\uFFFD#5\uFFFD\uFFFD/#5\uFFFD|\uFFFD#6\uFFFD\uFFFD/#6\uFFFD|\uFFFD#7\uFFFD\uFFFD/#7\uFFFD|\uFFFD#8\uFFFD\uFFFD/#8\uFFFD|\uFFFD#9\uFFFD\uFFFD/#9\uFFFD|\uFFFD#10\uFFFD\uFFFD/#10\uFFFD|\uFFFD#11\uFFFD\uFFFD/#11\uFFFD|\uFFFD#12\uFFFD\uFFFD/#12\uFFFD|\uFFFD#13\uFFFD\uFFFD/#13\uFFFD]"}:LINE_BREAK:
-Give us this day our daily bread;${"[\uFFFD#2\uFFFD\uFFFD/#2\uFFFD|\uFFFD#3\uFFFD\uFFFD/#3\uFFFD|\uFFFD#4\uFFFD\uFFFD/#4\uFFFD|\uFFFD#5\uFFFD\uFFFD/#5\uFFFD|\uFFFD#6\uFFFD\uFFFD/#6\uFFFD|\uFFFD#7\uFFFD\uFFFD/#7\uFFFD|\uFFFD#8\uFFFD\uFFFD/#8\uFFFD|\uFFFD#9\uFFFD\uFFFD/#9\uFFFD|\uFFFD#10\uFFFD\uFFFD/#10\uFFFD|\uFFFD#11\uFFFD\uFFFD/#11\uFFFD|\uFFFD#12\uFFFD\uFFFD/#12\uFFFD|\uFFFD#13\uFFFD\uFFFD/#13\uFFFD]"}:LINE_BREAK:
-and forgive us our trespasses,${"[\uFFFD#2\uFFFD\uFFFD/#2\uFFFD|\uFFFD#3\uFFFD\uFFFD/#3\uFFFD|\uFFFD#4\uFFFD\uFFFD/#4\uFFFD|\uFFFD#5\uFFFD\uFFFD/#5\uFFFD|\uFFFD#6\uFFFD\uFFFD/#6\uFFFD|\uFFFD#7\uFFFD\uFFFD/#7\uFFFD|\uFFFD#8\uFFFD\uFFFD/#8\uFFFD|\uFFFD#9\uFFFD\uFFFD/#9\uFFFD|\uFFFD#10\uFFFD\uFFFD/#10\uFFFD|\uFFFD#11\uFFFD\uFFFD/#11\uFFFD|\uFFFD#12\uFFFD\uFFFD/#12\uFFFD|\uFFFD#13\uFFFD\uFFFD/#13\uFFFD]"}:LINE_BREAK:
-as we forgive those who trespass against us;${"[\uFFFD#2\uFFFD\uFFFD/#2\uFFFD|\uFFFD#3\uFFFD\uFFFD/#3\uFFFD|\uFFFD#4\uFFFD\uFFFD/#4\uFFFD|\uFFFD#5\uFFFD\uFFFD/#5\uFFFD|\uFFFD#6\uFFFD\uFFFD/#6\uFFFD|\uFFFD#7\uFFFD\uFFFD/#7\uFFFD|\uFFFD#8\uFFFD\uFFFD/#8\uFFFD|\uFFFD#9\uFFFD\uFFFD/#9\uFFFD|\uFFFD#10\uFFFD\uFFFD/#10\uFFFD|\uFFFD#11\uFFFD\uFFFD/#11\uFFFD|\uFFFD#12\uFFFD\uFFFD/#12\uFFFD|\uFFFD#13\uFFFD\uFFFD/#13\uFFFD]"}:LINE_BREAK:
-and lead us not into temptation;${"[\uFFFD#2\uFFFD\uFFFD/#2\uFFFD|\uFFFD#3\uFFFD\uFFFD/#3\uFFFD|\uFFFD#4\uFFFD\uFFFD/#4\uFFFD|\uFFFD#5\uFFFD\uFFFD/#5\uFFFD|\uFFFD#6\uFFFD\uFFFD/#6\uFFFD|\uFFFD#7\uFFFD\uFFFD/#7\uFFFD|\uFFFD#8\uFFFD\uFFFD/#8\uFFFD|\uFFFD#9\uFFFD\uFFFD/#9\uFFFD|\uFFFD#10\uFFFD\uFFFD/#10\uFFFD|\uFFFD#11\uFFFD\uFFFD/#11\uFFFD|\uFFFD#12\uFFFD\uFFFD/#12\uFFFD|\uFFFD#13\uFFFD\uFFFD/#13\uFFFD]"}:LINE_BREAK:
-but deliver us from evil.${"[\uFFFD#2\uFFFD\uFFFD/#2\uFFFD|\uFFFD#3\uFFFD\uFFFD/#3\uFFFD|\uFFFD#4\uFFFD\uFFFD/#4\uFFFD|\uFFFD#5\uFFFD\uFFFD/#5\uFFFD|\uFFFD#6\uFFFD\uFFFD/#6\uFFFD|\uFFFD#7\uFFFD\uFFFD/#7\uFFFD|\uFFFD#8\uFFFD\uFFFD/#8\uFFFD|\uFFFD#9\uFFFD\uFFFD/#9\uFFFD|\uFFFD#10\uFFFD\uFFFD/#10\uFFFD|\uFFFD#11\uFFFD\uFFFD/#11\uFFFD|\uFFFD#12\uFFFD\uFFFD/#12\uFFFD|\uFFFD#13\uFFFD\uFFFD/#13\uFFFD]"}:LINE_BREAK:${"[\uFFFD#2\uFFFD\uFFFD/#2\uFFFD|\uFFFD#3\uFFFD\uFFFD/#3\uFFFD|\uFFFD#4\uFFFD\uFFFD/#4\uFFFD|\uFFFD#5\uFFFD\uFFFD/#5\uFFFD|\uFFFD#6\uFFFD\uFFFD/#6\uFFFD|\uFFFD#7\uFFFD\uFFFD/#7\uFFFD|\uFFFD#8\uFFFD\uFFFD/#8\uFFFD|\uFFFD#9\uFFFD\uFFFD/#9\uFFFD|\uFFFD#10\uFFFD\uFFFD/#10\uFFFD|\uFFFD#11\uFFFD\uFFFD/#11\uFFFD|\uFFFD#12\uFFFD\uFFFD/#12\uFFFD|\uFFFD#13\uFFFD\uFFFD/#13\uFFFD]"}:LINE_BREAK:
+        i18n_0 = $localize `:@@prayer-leader␟e7f93903bdfd7dc32405b3528a32952df2c278aa␟5238047990163522235:Leader:`;
+    } let i18n_2; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+        const MSG_EXTERNAL_our_father_leader$$SRC_APP_PRAYERS_OUR_FATHER_OUR_FATHER_COMPONENT_TS_3 = goog.getMsg("\nOur Father who art in heaven,{$lineBreak}\nhallowed be Thy name;{$lineBreak}\nThy kingdom come;{$lineBreak}\nThy will be done{$lineBreak}\non earth as it is in heaven.\n", { "lineBreak": "[\uFFFD#4\uFFFD\uFFFD/#4\uFFFD|\uFFFD#5\uFFFD\uFFFD/#5\uFFFD|\uFFFD#6\uFFFD\uFFFD/#6\uFFFD|\uFFFD#7\uFFFD\uFFFD/#7\uFFFD]" });
+        i18n_2 = MSG_EXTERNAL_our_father_leader$$SRC_APP_PRAYERS_OUR_FATHER_OUR_FATHER_COMPONENT_TS_3;
+    }
+    else {
+        i18n_2 = $localize `:@@our-father-leader␟5a751ef1d75b27ad2bd12cd2af09cfce0469c319␟7097902638547054048:
+Our Father who art in heaven,${"[\uFFFD#4\uFFFD\uFFFD/#4\uFFFD|\uFFFD#5\uFFFD\uFFFD/#5\uFFFD|\uFFFD#6\uFFFD\uFFFD/#6\uFFFD|\uFFFD#7\uFFFD\uFFFD/#7\uFFFD]"}:LINE_BREAK:
+hallowed be Thy name;${"[\uFFFD#4\uFFFD\uFFFD/#4\uFFFD|\uFFFD#5\uFFFD\uFFFD/#5\uFFFD|\uFFFD#6\uFFFD\uFFFD/#6\uFFFD|\uFFFD#7\uFFFD\uFFFD/#7\uFFFD]"}:LINE_BREAK:
+Thy kingdom come;${"[\uFFFD#4\uFFFD\uFFFD/#4\uFFFD|\uFFFD#5\uFFFD\uFFFD/#5\uFFFD|\uFFFD#6\uFFFD\uFFFD/#6\uFFFD|\uFFFD#7\uFFFD\uFFFD/#7\uFFFD]"}:LINE_BREAK:
+Thy will be done${"[\uFFFD#4\uFFFD\uFFFD/#4\uFFFD|\uFFFD#5\uFFFD\uFFFD/#5\uFFFD|\uFFFD#6\uFFFD\uFFFD/#6\uFFFD|\uFFFD#7\uFFFD\uFFFD/#7\uFFFD]"}:LINE_BREAK:
+on earth as it is in heaven.
+`;
+    } i18n_2 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18nPostprocess"](i18n_2); let i18n_4; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+        const MSG_EXTERNAL_prayer_response$$SRC_APP_PRAYERS_OUR_FATHER_OUR_FATHER_COMPONENT_TS_5 = goog.getMsg("Response:");
+        i18n_4 = MSG_EXTERNAL_prayer_response$$SRC_APP_PRAYERS_OUR_FATHER_OUR_FATHER_COMPONENT_TS_5;
+    }
+    else {
+        i18n_4 = $localize `:@@prayer-response␟20fa923f713d65971258a4e3e2d361810d70851d␟8758731757327743503:Response:`;
+    } let i18n_6; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+        const MSG_EXTERNAL_our_father_response$$SRC_APP_PRAYERS_OUR_FATHER_OUR_FATHER_COMPONENT_TS_7 = goog.getMsg("\nGive us this day our daily bread;{$lineBreak}\nand forgive us our trespasses,{$lineBreak}\nas we forgive those who trespass against us;{$lineBreak}\nand lead us not into temptation;{$lineBreak}\nbut deliver us from evil.{$lineBreak}{$lineBreak}\nAmen.\n", { "lineBreak": "[\uFFFD#12\uFFFD\uFFFD/#12\uFFFD|\uFFFD#13\uFFFD\uFFFD/#13\uFFFD|\uFFFD#14\uFFFD\uFFFD/#14\uFFFD|\uFFFD#15\uFFFD\uFFFD/#15\uFFFD|\uFFFD#16\uFFFD\uFFFD/#16\uFFFD|\uFFFD#17\uFFFD\uFFFD/#17\uFFFD]" });
+        i18n_6 = MSG_EXTERNAL_our_father_response$$SRC_APP_PRAYERS_OUR_FATHER_OUR_FATHER_COMPONENT_TS_7;
+    }
+    else {
+        i18n_6 = $localize `:@@our-father-response␟1a68a8212989c7e748593ac27270b5d452ecccd8␟2757849017983034056:
+Give us this day our daily bread;${"[\uFFFD#12\uFFFD\uFFFD/#12\uFFFD|\uFFFD#13\uFFFD\uFFFD/#13\uFFFD|\uFFFD#14\uFFFD\uFFFD/#14\uFFFD|\uFFFD#15\uFFFD\uFFFD/#15\uFFFD|\uFFFD#16\uFFFD\uFFFD/#16\uFFFD|\uFFFD#17\uFFFD\uFFFD/#17\uFFFD]"}:LINE_BREAK:
+and forgive us our trespasses,${"[\uFFFD#12\uFFFD\uFFFD/#12\uFFFD|\uFFFD#13\uFFFD\uFFFD/#13\uFFFD|\uFFFD#14\uFFFD\uFFFD/#14\uFFFD|\uFFFD#15\uFFFD\uFFFD/#15\uFFFD|\uFFFD#16\uFFFD\uFFFD/#16\uFFFD|\uFFFD#17\uFFFD\uFFFD/#17\uFFFD]"}:LINE_BREAK:
+as we forgive those who trespass against us;${"[\uFFFD#12\uFFFD\uFFFD/#12\uFFFD|\uFFFD#13\uFFFD\uFFFD/#13\uFFFD|\uFFFD#14\uFFFD\uFFFD/#14\uFFFD|\uFFFD#15\uFFFD\uFFFD/#15\uFFFD|\uFFFD#16\uFFFD\uFFFD/#16\uFFFD|\uFFFD#17\uFFFD\uFFFD/#17\uFFFD]"}:LINE_BREAK:
+and lead us not into temptation;${"[\uFFFD#12\uFFFD\uFFFD/#12\uFFFD|\uFFFD#13\uFFFD\uFFFD/#13\uFFFD|\uFFFD#14\uFFFD\uFFFD/#14\uFFFD|\uFFFD#15\uFFFD\uFFFD/#15\uFFFD|\uFFFD#16\uFFFD\uFFFD/#16\uFFFD|\uFFFD#17\uFFFD\uFFFD/#17\uFFFD]"}:LINE_BREAK:
+but deliver us from evil.${"[\uFFFD#12\uFFFD\uFFFD/#12\uFFFD|\uFFFD#13\uFFFD\uFFFD/#13\uFFFD|\uFFFD#14\uFFFD\uFFFD/#14\uFFFD|\uFFFD#15\uFFFD\uFFFD/#15\uFFFD|\uFFFD#16\uFFFD\uFFFD/#16\uFFFD|\uFFFD#17\uFFFD\uFFFD/#17\uFFFD]"}:LINE_BREAK:${"[\uFFFD#12\uFFFD\uFFFD/#12\uFFFD|\uFFFD#13\uFFFD\uFFFD/#13\uFFFD|\uFFFD#14\uFFFD\uFFFD/#14\uFFFD|\uFFFD#15\uFFFD\uFFFD/#15\uFFFD|\uFFFD#16\uFFFD\uFFFD/#16\uFFFD|\uFFFD#17\uFFFD\uFFFD/#17\uFFFD]"}:LINE_BREAK:
 Amen.
 `;
-    } i18n_0 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18nPostprocess"](i18n_0); return [i18n_0]; }, template: function OurFatherComponent_Template(rf, ctx) { if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "span");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18nStart"](1, 0);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](2, "br");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](3, "br");
+    } i18n_6 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18nPostprocess"](i18n_6); return [[1, "prayer-leader-label"], i18n_0, [1, "prayer-leader"], i18n_2, [1, "prayer-response-label"], i18n_4, [1, "prayer-response"], i18n_6]; }, template: function OurFatherComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](1, 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18nStart"](3, 3);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](4, "br");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](5, "br");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](6, "br");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](7, "br");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](8, "br");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](9, "br");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](10, "br");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](11, "br");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18nEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "div", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](9, 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "div", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18nStart"](11, 7);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](12, "br");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](13, "br");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](14, "br");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](15, "br");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](16, "br");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](17, "br");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18nEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     } }, styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJvdXItZmF0aGVyLmNvbXBvbmVudC5zY3NzIn0= */"] });
+OurFatherComponent.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({ token: OurFatherComponent, factory: OurFatherComponent.ɵfac, providedIn: 'root' });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](OurFatherComponent, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
+        args: [{ providedIn: 'root' }]
+    }, {
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
                 selector: 'app-our-father',
@@ -1978,6 +2196,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_liturgical_dates_liturgical_dates_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./components/liturgical-dates/liturgical-dates.component */ "WsnB");
 /* harmony import */ var _components_layouts_layouts_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./components/layouts/layouts.component */ "4Ivf");
 /* harmony import */ var _components_home_home_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./components/home/home.component */ "BuFo");
+/* harmony import */ var _components_holy_rosary_prayer_mystery_display_mystery_display_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./components/holy-rosary-prayer/mystery-display/mystery-display.component */ "4f7d");
+/* harmony import */ var _components_holy_rosary_prayer_current_prayer_current_prayer_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./components/holy-rosary-prayer/current-prayer/current-prayer.component */ "60da");
+
+
 
 
 
@@ -2026,7 +2248,9 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
         _prayers_end_end_component__WEBPACK_IMPORTED_MODULE_12__["EndComponent"],
         _components_liturgical_dates_liturgical_dates_component__WEBPACK_IMPORTED_MODULE_19__["LiturgicalDatesComponent"],
         _components_layouts_layouts_component__WEBPACK_IMPORTED_MODULE_20__["LayoutsComponent"],
-        _components_home_home_component__WEBPACK_IMPORTED_MODULE_21__["HomeComponent"]], imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
+        _components_home_home_component__WEBPACK_IMPORTED_MODULE_21__["HomeComponent"],
+        _components_holy_rosary_prayer_mystery_display_mystery_display_component__WEBPACK_IMPORTED_MODULE_22__["MysteryDisplayComponent"],
+        _components_holy_rosary_prayer_current_prayer_current_prayer_component__WEBPACK_IMPORTED_MODULE_23__["CurrentPrayerComponent"]], imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
         _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"],
         _angular_forms__WEBPACK_IMPORTED_MODULE_18__["FormsModule"]] }); })();
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](AppModule, [{
@@ -2050,7 +2274,9 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
                     _prayers_end_end_component__WEBPACK_IMPORTED_MODULE_12__["EndComponent"],
                     _components_liturgical_dates_liturgical_dates_component__WEBPACK_IMPORTED_MODULE_19__["LiturgicalDatesComponent"],
                     _components_layouts_layouts_component__WEBPACK_IMPORTED_MODULE_20__["LayoutsComponent"],
-                    _components_home_home_component__WEBPACK_IMPORTED_MODULE_21__["HomeComponent"]
+                    _components_home_home_component__WEBPACK_IMPORTED_MODULE_21__["HomeComponent"],
+                    _components_holy_rosary_prayer_mystery_display_mystery_display_component__WEBPACK_IMPORTED_MODULE_22__["MysteryDisplayComponent"],
+                    _components_holy_rosary_prayer_current_prayer_current_prayer_component__WEBPACK_IMPORTED_MODULE_23__["CurrentPrayerComponent"]
                 ],
                 imports: [
                     _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -2196,6 +2422,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+/*
+IMPORTANT: If you change the order of prayers (ie: loadContemporaryHolyRosary),
+           you also need to check that it matches up with the bead arrays.
+
+           Search for things like:
+             export const PATS_BEADS_COORDS: BeadPosition[]
+*/
 const prayerName = "the Holy Rosary";
 class ContemporaryRosary extends _models_bead_group_list__WEBPACK_IMPORTED_MODULE_0__["BeadGroupList"] {
     constructor(mysteries) {
@@ -2214,23 +2447,28 @@ function loadContemporaryHolyRosary() {
         Object(_models_bead_group_template__WEBPACK_IMPORTED_MODULE_1__["initBeadGroup"])(_rosary_helper__WEBPACK_IMPORTED_MODULE_2__["MYSTERY_1"], beadGroupIndex++),
         Object(_models_bead_group_template__WEBPACK_IMPORTED_MODULE_1__["initBeadGroup"])(_rosary_helper__WEBPACK_IMPORTED_MODULE_2__["OUR_FATHER"], beadGroupIndex++),
         Object(_models_bead_group_template__WEBPACK_IMPORTED_MODULE_1__["initBeadGroup"])(_rosary_helper__WEBPACK_IMPORTED_MODULE_2__["HAIL_MARYS"], beadGroupIndex++),
-        Object(_models_bead_group_template__WEBPACK_IMPORTED_MODULE_1__["initBeadGroup"])(_rosary_helper__WEBPACK_IMPORTED_MODULE_2__["GLORY_FATIMA"], beadGroupIndex++),
+        Object(_models_bead_group_template__WEBPACK_IMPORTED_MODULE_1__["initBeadGroup"])(_rosary_helper__WEBPACK_IMPORTED_MODULE_2__["GLORY"], beadGroupIndex++),
+        Object(_models_bead_group_template__WEBPACK_IMPORTED_MODULE_1__["initBeadGroup"])(_rosary_helper__WEBPACK_IMPORTED_MODULE_2__["FATIMA"], beadGroupIndex++),
         Object(_models_bead_group_template__WEBPACK_IMPORTED_MODULE_1__["initBeadGroup"])(_rosary_helper__WEBPACK_IMPORTED_MODULE_2__["MYSTERY_2"], beadGroupIndex++),
         Object(_models_bead_group_template__WEBPACK_IMPORTED_MODULE_1__["initBeadGroup"])(_rosary_helper__WEBPACK_IMPORTED_MODULE_2__["OUR_FATHER"], beadGroupIndex++),
         Object(_models_bead_group_template__WEBPACK_IMPORTED_MODULE_1__["initBeadGroup"])(_rosary_helper__WEBPACK_IMPORTED_MODULE_2__["HAIL_MARYS"], beadGroupIndex++),
-        Object(_models_bead_group_template__WEBPACK_IMPORTED_MODULE_1__["initBeadGroup"])(_rosary_helper__WEBPACK_IMPORTED_MODULE_2__["GLORY_FATIMA"], beadGroupIndex++),
+        Object(_models_bead_group_template__WEBPACK_IMPORTED_MODULE_1__["initBeadGroup"])(_rosary_helper__WEBPACK_IMPORTED_MODULE_2__["GLORY"], beadGroupIndex++),
+        Object(_models_bead_group_template__WEBPACK_IMPORTED_MODULE_1__["initBeadGroup"])(_rosary_helper__WEBPACK_IMPORTED_MODULE_2__["FATIMA"], beadGroupIndex++),
         Object(_models_bead_group_template__WEBPACK_IMPORTED_MODULE_1__["initBeadGroup"])(_rosary_helper__WEBPACK_IMPORTED_MODULE_2__["MYSTERY_3"], beadGroupIndex++),
         Object(_models_bead_group_template__WEBPACK_IMPORTED_MODULE_1__["initBeadGroup"])(_rosary_helper__WEBPACK_IMPORTED_MODULE_2__["OUR_FATHER"], beadGroupIndex++),
         Object(_models_bead_group_template__WEBPACK_IMPORTED_MODULE_1__["initBeadGroup"])(_rosary_helper__WEBPACK_IMPORTED_MODULE_2__["HAIL_MARYS"], beadGroupIndex++),
-        Object(_models_bead_group_template__WEBPACK_IMPORTED_MODULE_1__["initBeadGroup"])(_rosary_helper__WEBPACK_IMPORTED_MODULE_2__["GLORY_FATIMA"], beadGroupIndex++),
+        Object(_models_bead_group_template__WEBPACK_IMPORTED_MODULE_1__["initBeadGroup"])(_rosary_helper__WEBPACK_IMPORTED_MODULE_2__["GLORY"], beadGroupIndex++),
+        Object(_models_bead_group_template__WEBPACK_IMPORTED_MODULE_1__["initBeadGroup"])(_rosary_helper__WEBPACK_IMPORTED_MODULE_2__["FATIMA"], beadGroupIndex++),
         Object(_models_bead_group_template__WEBPACK_IMPORTED_MODULE_1__["initBeadGroup"])(_rosary_helper__WEBPACK_IMPORTED_MODULE_2__["MYSTERY_4"], beadGroupIndex++),
         Object(_models_bead_group_template__WEBPACK_IMPORTED_MODULE_1__["initBeadGroup"])(_rosary_helper__WEBPACK_IMPORTED_MODULE_2__["OUR_FATHER"], beadGroupIndex++),
         Object(_models_bead_group_template__WEBPACK_IMPORTED_MODULE_1__["initBeadGroup"])(_rosary_helper__WEBPACK_IMPORTED_MODULE_2__["HAIL_MARYS"], beadGroupIndex++),
-        Object(_models_bead_group_template__WEBPACK_IMPORTED_MODULE_1__["initBeadGroup"])(_rosary_helper__WEBPACK_IMPORTED_MODULE_2__["GLORY_FATIMA"], beadGroupIndex++),
+        Object(_models_bead_group_template__WEBPACK_IMPORTED_MODULE_1__["initBeadGroup"])(_rosary_helper__WEBPACK_IMPORTED_MODULE_2__["GLORY"], beadGroupIndex++),
+        Object(_models_bead_group_template__WEBPACK_IMPORTED_MODULE_1__["initBeadGroup"])(_rosary_helper__WEBPACK_IMPORTED_MODULE_2__["FATIMA"], beadGroupIndex++),
         Object(_models_bead_group_template__WEBPACK_IMPORTED_MODULE_1__["initBeadGroup"])(_rosary_helper__WEBPACK_IMPORTED_MODULE_2__["MYSTERY_5"], beadGroupIndex++),
         Object(_models_bead_group_template__WEBPACK_IMPORTED_MODULE_1__["initBeadGroup"])(_rosary_helper__WEBPACK_IMPORTED_MODULE_2__["OUR_FATHER"], beadGroupIndex++),
         Object(_models_bead_group_template__WEBPACK_IMPORTED_MODULE_1__["initBeadGroup"])(_rosary_helper__WEBPACK_IMPORTED_MODULE_2__["HAIL_MARYS"], beadGroupIndex++),
-        Object(_models_bead_group_template__WEBPACK_IMPORTED_MODULE_1__["initBeadGroup"])(_rosary_helper__WEBPACK_IMPORTED_MODULE_2__["GLORY_FATIMA"], beadGroupIndex++),
+        Object(_models_bead_group_template__WEBPACK_IMPORTED_MODULE_1__["initBeadGroup"])(_rosary_helper__WEBPACK_IMPORTED_MODULE_2__["GLORY"], beadGroupIndex++),
+        Object(_models_bead_group_template__WEBPACK_IMPORTED_MODULE_1__["initBeadGroup"])(_rosary_helper__WEBPACK_IMPORTED_MODULE_2__["FATIMA"], beadGroupIndex++),
         Object(_models_bead_group_template__WEBPACK_IMPORTED_MODULE_1__["initBeadGroup"])(_rosary_helper__WEBPACK_IMPORTED_MODULE_2__["HAIL_HOLY_QUEEN"], beadGroupIndex++),
         Object(_models_bead_group_template__WEBPACK_IMPORTED_MODULE_1__["initBeadGroup"])(_rosary_helper__WEBPACK_IMPORTED_MODULE_2__["CLOSING"], beadGroupIndex++),
         Object(_models_bead_group_template__WEBPACK_IMPORTED_MODULE_1__["initBeadGroup"])(_rosary_helper__WEBPACK_IMPORTED_MODULE_2__["SIGN_CROSS"], beadGroupIndex++)
@@ -2240,11 +2478,272 @@ function loadContemporaryHolyRosary() {
 
 /***/ }),
 
+/***/ "dxo7":
+/*!*******************************************!*\
+  !*** ./src/app/prayers/common-prayers.ts ***!
+  \*******************************************/
+/*! exports provided: Prayer, GroupPrayer, PrayerApostlesCreed, PrayerClosing1, PrayerClosing2, PrayerFatima, PrayerGlory, PrayerGloryFatima, PrayerHailHolyQueen, PrayerHailMary, PrayerOurFather, PrayerSignOfTheCross */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Prayer", function() { return Prayer; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GroupPrayer", function() { return GroupPrayer; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PrayerApostlesCreed", function() { return PrayerApostlesCreed; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PrayerClosing1", function() { return PrayerClosing1; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PrayerClosing2", function() { return PrayerClosing2; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PrayerFatima", function() { return PrayerFatima; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PrayerGlory", function() { return PrayerGlory; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PrayerGloryFatima", function() { return PrayerGloryFatima; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PrayerHailHolyQueen", function() { return PrayerHailHolyQueen; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PrayerHailMary", function() { return PrayerHailMary; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PrayerOurFather", function() { return PrayerOurFather; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PrayerSignOfTheCross", function() { return PrayerSignOfTheCross; });
+class Prayer {
+    get all() {
+        return undefined;
+    }
+}
+/* ================================================================================ */
+class GroupPrayer extends Prayer {
+    get leader() {
+        return undefined;
+    }
+    get response() {
+        return undefined;
+    }
+}
+/* ================================================================================ */
+class PrayerApostlesCreed extends GroupPrayer {
+    constructor() {
+        super();
+    }
+    get name() {
+        return $localize `:@@creedName:Apostles' Creed`;
+    }
+    get all() {
+        return $localize `:@@creed:I believe in God the Father almighty
+      Creator of Heaven and Earth;
+      I believe in Jesus Christ, His only Son, Our Lord
+      who was conceived by the Holy Spirit,
+      born of the Virgin Mary,
+      suffered under Pontius Pilate,
+      was crucified, died and was buried;
+      He decended into hell;
+      the third day He rose again from the dead;
+      He ascended into heaven,
+      sits at the right hand of God the Father Almighty;
+      from there He shall come to judge
+         the living and the dead.
+      I believe in the Holy Spirit;
+      the Holy Catholic Church,
+      the communion of saints;
+      the forgiveness of sins;
+      the resurrection of the body;
+      and life everylasting.
+      Amen.`;
+    }
+}
+/* ================================================================================ */
+class PrayerClosing1 extends Prayer {
+    constructor() {
+        super();
+    }
+    get name() {
+        return $localize `:@@closingName:Closing Prayer 1`;
+    }
+    get leader() {
+        return $localize `:@@closing-leader-1:Pray for us, O holy Mother of God.`;
+    }
+    get response() {
+        return $localize `:@@closing-response-1:That we may be made worthy of the promises of Christ.`;
+    }
+}
+/* ================================================================================ */
+class PrayerClosing2 extends Prayer {
+    constructor() {
+        super();
+    }
+    get name() {
+        return $localize `:@@closingName:Closing Prayer 2`;
+    }
+    get leader() {
+        return $localize `:@@closing-leader-2:Let us pray:`;
+    }
+    get response() {
+        return $localize `:@@closing-response-2:O God, whose only begotten Son,
+      by His life, death and resurrection,
+      has purchased for us
+      the rewards of eternal life,
+      grant, we beseech Thee,
+      that meditating on these mysteries
+      of the Most Holy Rosary
+      of the Blessed Virgin Mary,
+      we may imitate what they contain,
+      and obtain what they promise,
+      through the same Christ, our Lord.
+
+      Amen.`;
+    }
+}
+/* ================================================================================ */
+function gloryBeLeader() {
+    return $localize `:@@glory-leader:Glory be to the Father, and the Son,
+      and the Holy Spirit.`;
+}
+function gloryBeResponse() {
+    return $localize `:@@glory-response:As it was in the beginning, is now,
+      and ever shall be, world without end.
+
+      Amen.`;
+}
+/* ================================================================================ */
+class PrayerFatima extends GroupPrayer {
+    constructor() {
+        super();
+    }
+    get name() {
+        return $localize `:@@fatimaName:The Fatima Prayer`;
+    }
+    get all() {
+        return $localize `:@@fatima:Oh my Jesus, forgive us our sins,
+      save us from the fires of hell;
+      lead all souls to heaven,
+      especially those in most need of your mercy!
+
+      Amen.`;
+    }
+}
+/* ================================================================================ */
+class PrayerGlory extends Prayer {
+    constructor() {
+        super();
+    }
+    // Reference: https://www.usccb.org/prayers/prayers-rosary
+    get name() {
+        return $localize `:@@gloryName:The Glory Be (The Doxology)`;
+    }
+    get leader() {
+        return gloryBeLeader();
+    }
+    get response() {
+        return gloryBeResponse();
+    }
+}
+/* ================================================================================ */
+class PrayerGloryFatima extends Prayer {
+    constructor() {
+        super();
+        this.gloryPrayer = new PrayerGlory();
+        this.fatimaPrayer = new PrayerFatima();
+    }
+    get name() {
+        return `${this.gloryPrayer.name} / ${this.fatimaPrayer.name}`;
+    }
+    get leader() {
+        return this.gloryPrayer.leader;
+    }
+    get response() {
+        return `${this.gloryPrayer.response}
+
+      ${this.fatimaPrayer.response}`;
+    }
+}
+/* ================================================================================ */
+class PrayerHailHolyQueen extends GroupPrayer {
+    constructor() {
+        super();
+    }
+    get all() {
+        return $localize `:@@hail-holy-queen:Hail, Holy Queen, Mother of Mercy,
+      our life, our sweetness, and our hope.
+      To thee do we cry, poor banished children of Eve.
+      To thee do we send up our sighs, mourning and weeping in this vale of tears.
+      Turn then, most gracious advocate, thine eyes of mercy towards us,
+      and after this our exile show unto us the blessed fruit of thy womb, Jesus.
+      O clement, O loving, O sweet Virgin Mary.
+
+      Amen`;
+    }
+    get name() {
+        throw new Error("Method not implemented.");
+    }
+}
+/* ================================================================================ */
+class PrayerHailMary extends Prayer {
+    constructor() {
+        super();
+    }
+    // Reference: https://www.usccb.org/prayers/prayers-rosary
+    get name() {
+        return $localize `:@@hailMaryName:Hail Mary`;
+    }
+    get leader() {
+        return $localize `:@@hail-mary-leader:Hail Mary, full of grace,
+      the Lord is with thee;
+      blessed art thou amongst women,
+      and blessed is the fruit of thy womb, Jesus.`;
+    }
+    get response() {
+        return $localize `:@@hail-mary-response:Holy Mary, Mother of God,
+      pray for us sinners,
+      now, and at the hour of our death.
+
+      Amen.`;
+    }
+}
+/* ================================================================================ */
+class PrayerOurFather extends Prayer {
+    constructor() {
+        super();
+    }
+    // Reference: https://www.usccb.org/prayers/prayers-rosary
+    get name() {
+        return $localize `:@@ourFatherName:Our Father`;
+    }
+    get leader() {
+        return $localize `:@@our-father-leader:Our Father who art in heaven,
+      hallowed be Thy name;
+      Thy kingdom come;
+      Thy will be done
+      on earth as it is in heaven.`;
+    }
+    get response() {
+        return $localize `:@@our-father-response:Give us this day our daily bread;
+      and forgive us our trespasses,
+      as we forgive those who trespass against us;
+      and lead us not into temptation;
+      but deliver us from evil.
+
+      Amen.`;
+    }
+}
+/* ================================================================================ */
+class PrayerSignOfTheCross extends GroupPrayer {
+    constructor() {
+        super();
+    }
+    // Reference: https://www.usccb.org/prayers/prayers-rosary
+    get name() {
+        return $localize `:@@signCrossName:The Sign of the Cross`;
+    }
+    get all() {
+        return $localize `:@@sign-cross:In the name of the Father,
+      and of the Son,
+      and of the Holy Spirit.
+
+      Amen.`;
+    }
+}
+
+
+/***/ }),
+
 /***/ "hwcc":
 /*!********************************************!*\
   !*** ./src/app/sequences/rosary-helper.ts ***!
   \********************************************/
-/*! exports provided: RosaryMysteriesEnum, lookupMystery, MYSTERY_1, MYSTERY_2, MYSTERY_3, MYSTERY_4, MYSTERY_5, SIGN_CROSS, APOSTLES_CREED, OUR_FATHER, OPENING_HAIL_MARYS, HAIL_MARYS, GLORY, GLORY_FATIMA, HAIL_HOLY_QUEEN, CLOSING */
+/*! exports provided: RosaryMysteriesEnum, lookupMystery, MYSTERY_1, MYSTERY_2, MYSTERY_3, MYSTERY_4, MYSTERY_5, SIGN_CROSS, APOSTLES_CREED, OUR_FATHER, OPENING_HAIL_MARYS, HAIL_MARYS, GLORY, FATIMA, GLORY_FATIMA, HAIL_HOLY_QUEEN, CLOSING */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2262,6 +2761,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OPENING_HAIL_MARYS", function() { return OPENING_HAIL_MARYS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HAIL_MARYS", function() { return HAIL_MARYS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GLORY", function() { return GLORY; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FATIMA", function() { return FATIMA; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GLORY_FATIMA", function() { return GLORY_FATIMA; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HAIL_HOLY_QUEEN", function() { return HAIL_HOLY_QUEEN; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CLOSING", function() { return CLOSING; });
@@ -2361,7 +2861,16 @@ const GLORY = {
     prayerIds: [
         '@@glory'
     ],
-    feedback: 'long'
+    phoneFeedback: 'long'
+};
+const FATIMA = {
+    sequence: 'fatima',
+    sequenceId: 'fatima',
+    repeatCount: 0,
+    prayerIds: [
+        '@@fatima'
+    ],
+    phoneFeedback: 'long'
 };
 const GLORY_FATIMA = {
     sequence: 'glory-fatima',
@@ -2371,12 +2880,12 @@ const GLORY_FATIMA = {
         '@@glory',
         '@@fatima'
     ],
-    feedback: 'long'
+    phoneFeedback: 'long'
 };
 const HAIL_HOLY_QUEEN = {
     sequence: 'hail-holy-queen',
     sequenceId: 'hail-holy-queen',
-    feedback: 'extra-long',
+    phoneFeedback: 'extra-long',
     incrementMysteryIdx: true
 };
 const CLOSING = {
@@ -2449,7 +2958,7 @@ class BeadGroup {
             this.beadGroupIndex = beadGroupIndex;
             this.repeatCount = (data.repeatCount) ? data.repeatCount : 0;
             this.prayerIds = data.prayerIds;
-            this.feedback = ((data === null || data === void 0 ? void 0 : data.feedback) || 'short');
+            this.phoneFeedback = ((data === null || data === void 0 ? void 0 : data.phoneFeedback) || 'short');
             this.incrementMysteryIdx = data === null || data === void 0 ? void 0 : data.incrementMysteryIdx;
             this.beadIndex = 0;
         }
