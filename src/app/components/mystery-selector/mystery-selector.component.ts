@@ -82,18 +82,14 @@ export class MysterySelectorComponent implements OnInit {
 
   getMysteryOfTheDay(): RosaryMysteriesEnum {
     if (this.dayOfWeek === SUN || this.dayOfWeek === WED) {
-      console.log('GLORIOUS');
       return RosaryMysteriesEnum.GLORIOUS;
     }
     else if (this.dayOfWeek === MON || this.dayOfWeek === SAT) {
-      console.log('JOYFUL');
       return RosaryMysteriesEnum.JOYFUL;
     }
     else if (this.dayOfWeek === TUE || this.dayOfWeek === FRI) {
-      console.log('SORROWFUL');
       return RosaryMysteriesEnum.SORROWFUL;
     }
-    console.log('LUMINOUS');
     return RosaryMysteriesEnum.LUMINOUS;
   }
 

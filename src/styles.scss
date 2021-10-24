@@ -1,9 +1,11 @@
 @import 'styles-mixin.scss';
 @import 'styles-shared-mixins.scss';
 
+/* ================================================================================ */
+
 body {
   font-family: $fontname;
-  background-image: repeating-linear-gradient(0deg, green, green 3px, rgb(0, 100, 0) 3px, rgb(0, 100, 0) 6px);
+  margin: unset;
 }
 
 input {
@@ -11,9 +13,59 @@ input {
   margin-bottom: $input-margin-bottom;
 }
 
-button {
+pre {
   font-family: $fontname;
 }
+
+@media (orientation: landscape) {
+
+  button {
+    font-family: $fontname;
+    font-size: $font-size-base;
+  }
+
+}
+
+@media (orientation: portrait) {
+
+  button {
+    font-family: $fontname;
+    font-size: $font-size-base-phone;
+  }
+
+}
+
+/* ================================================================================ */
+
+.lit-color-green, .lit-color-red, .lit-color-rose, .lit-color-violet, .lit-color-white {
+  position: absolute;
+  margin-left: 0px;
+  margin-top: 0px;
+  width: 100%;
+  height: 100%;
+}
+
+.lit-color-green {
+  background-image: repeating-linear-gradient(0deg, green, green 3px, rgb(0, 100, 0) 3px, rgb(0, 100, 0) 6px);
+}
+
+.lit-color-red {
+  background-image: repeating-linear-gradient(0deg, red, red 3px, rgb(56, 0, 0) 3px, rgb(56, 0, 0) 6px);
+}
+
+.lit-color-rose {
+  background-image: repeating-linear-gradient(0deg, pink, pink 3px, rgb(255, 192, 203, 0.411) 3px, rgb(255, 192, 203, 0.411) 6px);
+}
+
+.lit-color-violet {
+  background-image: repeating-linear-gradient(0deg, purple, purple 3px, rgb(56, 0, 56) 3px, rgb(56, 0, 56) 6px);
+}
+
+.lit-color-white {
+  background-image: repeating-linear-gradient(0deg, white, white 3px, gray 3px, gray 6px);
+}
+
+/* ================================================================================ */
 
 .content-border, .home-content-border {
   border: $border;
@@ -25,16 +77,66 @@ button {
 .content-no-border, .content-border, .home-content-border {
   background-color: lightgray;
   box-sizing: border-box;
-  font-size: 3vw;
-  // display: flexbox;
-  margin-top: $margins;   //calc($margins * 4);
-  margin-bottom: $margins;  //calc($margins * -2);
+  margin-top: $margins;
+  margin-bottom: $margins;
   margin-left: $margins;
   margin-right: $margins;
   opacity: 85%;
   padding: $padding;
-  // height: calc(100% - $margins);
-  // width: calc(100% - $margins);
+}
+
+.prayer-leader-label, .prayer-response-label {
+  background-color: $header-bgcolor;
+  border-color: $header-textcolor;
+  border-width: 1px;
+  color: $header-textcolor;
+  float: left;
+  font-style: italic;
+  font-weight: bold;
+  opacity: 100%;
+  padding: calc($padding / 2);
+}
+
+.gtp-pre-line {
+  white-space: pre-line;
+}
+
+@media (orientation: landscape) {
+
+  .prayer-leader-label, .prayer-response-label {
+    float: left;
+    width: unset;
+  }
+
+}
+
+.prayer-leader, .prayer-response, .prayer-leader-label, .prayer-response-label {
+  float: left;
+  text-align: left;
+}
+
+.prayer-response {
+  font-weight: bold;
+}
+
+.component-hidden {
+  visibility: hidden;
+}
+
+@media (orientation: landscape) {
+
+  .content-no-border, .content-border, .home-content-border {
+    font-size: $font-size-base;
+  }
+
+}
+
+@media (orientation: portrait) {
+
+  .content-no-border, .content-border, .home-content-border {
+    font-size: $font-size-base-phone;
+  }
+
 }
 
 @media (orientation: portrait) {
@@ -55,7 +157,6 @@ button {
   padding: $padding;
   text-align: center;
 }
-
 
 /* ================================================================================ */
 
@@ -163,6 +264,24 @@ button {
 
 /* ================================================================================ */
 
+.mystery-row {
+  text-align: left;
+  margin: calc($margins - 1);
+}
+
+.mystery-label, .fruit-label {
+  text-align: right;
+}
+
+.mystery-value, .fruit-value {
+  float: right;
+  font-weight: bold;
+  max-width: 60%;
+  text-align: left;
+}
+
+/* ================================================================================ */
+
 @media (orientation: landscape) {
 
   .gtp-control {
@@ -195,12 +314,9 @@ button {
 
 /* ================================================================================ */
 
-@media (orientation: landscape) {
-
-  .gtp-right {
-    text-align: right;
-  }
-
+.gtp-right {
+  float: right;
+  text-align: right;
 }
 
 /* ================================================================================ */
@@ -295,7 +411,9 @@ button {
 @media (orientation: portrait) {
 
   .gtp-row, .gtp-row-plain, .gtp-inline, .gtp-footer {
-    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    -webkit-flex-direction: column;
   }
 
   .phone-nav {
@@ -359,7 +477,9 @@ button {
   .section-row {
     padding: $padding;
   }
+
 }
+
 
 // ********************************************************
 
