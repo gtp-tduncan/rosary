@@ -33,15 +33,6 @@ describe('ActivePrayerComponent', () => {
         ActivePrayerComponent,
         HolyRosaryPrayerComponent,
         PatsBeadsComponent,
-
-        SignCrossComponent,
-        CreedComponent,
-        OurFatherComponent,
-        HailMaryComponent,
-        GloryComponent,
-        FatimaComponent,
-        HailHolyQueenComponent,
-        ClosingComponent,
         EndComponent
       ],
       providers: [

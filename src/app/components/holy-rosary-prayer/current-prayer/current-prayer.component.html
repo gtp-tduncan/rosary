@@ -1,5 +1,5 @@
 <div class="active-prayer-workspace">
-  <div *ngIf="currentPrayer">
+  <div *ngIf="currentPrayer && debugTheEnd === false">
     <pre *ngIf="currentPrayer.all" class="prayer-response gtp-pre-line">
       {{ currentPrayer.all }}
     </pre>
@@ -22,7 +22,7 @@
       </div>
     </ng-container>
   </div>
-  <div *ngIf="activeBeadGroup === undefined">
+  <div *ngIf="activeBeadGroup === undefined || debugTheEnd">
     <app-end [prayerName]="prayerName"></app-end>
   </div>
 </div>

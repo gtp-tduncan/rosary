@@ -18,9 +18,17 @@ export class CurrentPrayerComponent implements OnInit {
   @Input()
   currentPrayer: Prayer;
 
+  @Input()
+  prayerName: string;
+
+  @Input()
+  debugTheEnd: boolean;
+
   constructor() { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    console.log(`ngOnInit() debugTheEnd: ${this.debugTheEnd}`);
+  }
 
   beadStatus(): string {
     return (this.currentPrayer instanceof PrayerHailMary)
@@ -33,6 +41,10 @@ export class CurrentPrayerComponent implements OnInit {
       ? `(${this.activeBeadGroup.index + 1} / ${this.activeBeadGroup.maxIndex}) `
       : '';
     return `${prefix}${this.currentPrayer.leader}`;
+  }
+
+  updateDebugTheEnd(flag: boolean): void {
+    this.debugTheEnd = flag;
   }
 
   leaderLabelCssClass(): string {

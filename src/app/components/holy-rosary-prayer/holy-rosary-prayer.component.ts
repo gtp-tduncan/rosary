@@ -1,14 +1,26 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { AfterViewInit, Component, Input, OnInit, ViewChild } from '@angular/core';
 import { BeadGroup } from 'src/app/models/bead-group';
 import { BeadGroupList } from 'src/app/models/bead-group-list';
 import { Prayer, PrayerApostlesCreed, PrayerClosing1, PrayerClosing2, PrayerFatima, PrayerGlory, PrayerGloryFatima, PrayerHailHolyQueen, PrayerHailMary, PrayerOurFather, PrayerSignOfTheCross } from 'src/app/prayers/common-prayers';
+import { CurrentPrayerComponent } from './current-prayer/current-prayer.component';
+
+const seqMap = new Map<string, Prayer>();
+seqMap['closing'] = new PrayerClosing1();
+seqMap['creed'] = new PrayerApostlesCreed();
+seqMap['glory'] = new PrayerGlory();
+seqMap['fatima'] = new PrayerFatima();
+seqMap['glory-fatima'] = new PrayerGloryFatima();
+seqMap['hail-holy-queen'] = new PrayerHailHolyQueen();
+seqMap['hail-mary'] = new PrayerHailMary();
+seqMap['our-father'] = new PrayerOurFather();
+seqMap['sign-cross'] = new PrayerSignOfTheCross();
 
 @Component({
   selector: 'app-holy-rosary-prayer',
   templateUrl: './holy-rosary-prayer.component.html',
   styleUrls: ['./holy-rosary-prayer.component.scss']
 })
-export class HolyRosaryPrayerComponent implements OnInit {
+export class HolyRosaryPrayerComponent implements OnInit, AfterViewInit {
 
   @Input()
   activeBeadGroupList: BeadGroupList;
@@ -17,23 +29,20 @@ export class HolyRosaryPrayerComponent implements OnInit {
   prayerName: string;
 
   @Input()
+  debugTheEnd: boolean;
+
+  @Input()
   orientation: string;
+
+  @ViewChild('primaryPrayer')
+  currentPrayerComponent: CurrentPrayerComponent;
 
   activeBeadGroup: BeadGroup;
   currentPrayer: Prayer;
   extraPrayer: Prayer;
   highlightBeadIndex: number;
 
-  private prayerClosing1 = new PrayerClosing1();
   private prayerClosing2 = new PrayerClosing2();
-  private prayerCreed = new PrayerApostlesCreed();
-  private prayerGlory = new PrayerGlory();
-  private prayerFatima = new PrayerFatima();
-  private prayerGloryFatima = new PrayerGloryFatima();
-  private prayerHailHolyQueen = new PrayerHailHolyQueen();
-  private prayerHailMary = new PrayerHailMary();
-  private prayerOurFather = new PrayerOurFather();
-  private prayerSignOfTheCross = new PrayerSignOfTheCross();
 
   constructor() { }
 
@@ -46,6 +55,11 @@ export class HolyRosaryPrayerComponent implements OnInit {
     }
 
     this.currentPrayer = this.findCurrentPrayer();
+    console.log(`prayerName 1: ${this.prayerName}`);
+  }
+
+  ngAfterViewInit(): void {
+    console.log(`prayerName 2: ${this.prayerName}`);
   }
 
   get showMystery(): boolean {
@@ -70,37 +84,9 @@ export class HolyRosaryPrayerComponent implements OnInit {
   }
 
   private findCurrentPrayer(): Prayer {
-    this.extraPrayer = undefined;
+    this.extraPrayer = (this.activeBeadGroup?.sequence === 'closing')
+      ? this.extraPrayer = this.prayerClosing2 : undefined;
 
-    if (this.activeBeadGroup?.sequence === 'closing') {
-      this.extraPrayer = this.prayerClosing2;
-      return this.prayerClosing1;
-    }
-    else if (this.activeBeadGroup?.sequence === 'creed') {
-      return this.prayerCreed;
-    }
-    else if (this.activeBeadGroup?.sequence === 'glory') {
-      return this.prayerGlory;
-    }
-    else if (this.activeBeadGroup?.sequence === 'fatima') {
-      return this.prayerFatima;
-    }
-    else if (this.activeBeadGroup?.sequence === 'glory-fatima') {
-      return this.prayerGloryFatima;
-    }
-    else if (this.activeBeadGroup?.sequence === 'hail-holy-queen') {
-      return this.prayerHailHolyQueen;
-    }
-    else if (this.activeBeadGroup?.sequence === 'hail-mary') {
-      return this.prayerHailMary;
-    }
-    else if (this.activeBeadGroup?.sequence === 'our-father') {
-      return this.prayerOurFather;
-    }
-    else if (this.activeBeadGroup?.sequence === 'sign-cross') {
-      return this.prayerSignOfTheCross;
-    }
-
-    return undefined;
+    return seqMap[this.activeBeadGroup?.sequence];
   }
 }

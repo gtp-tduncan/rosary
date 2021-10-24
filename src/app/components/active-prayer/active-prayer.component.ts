@@ -12,6 +12,9 @@ export class ActivePrayerComponent implements OnInit, AfterViewInit {
   @Input()
   activeBeadGroupList: BeadGroupList;
 
+  @Input()
+  debugTheEnd: boolean;
+
   @Output()
   onResetEvent = new EventEmitter<boolean>();
 
@@ -25,9 +28,12 @@ export class ActivePrayerComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {
     this.prayerName = this.activeBeadGroupList.prayerName;
     this.prayerName = this.prayerName[0].toUpperCase() + this.prayerName.substring(1);
+    console.log(`prayerName: ${this.prayerName}`);
   }
 
-  ngAfterViewInit(): void { }
+  ngAfterViewInit(): void {
+    this.holyRosaryPrayer.debugTheEnd = this.debugTheEnd;
+  }
 
   get isPrayerSequenceDone(): boolean {
     return this.activeBeadGroupList.isPrayerSequenceDone;

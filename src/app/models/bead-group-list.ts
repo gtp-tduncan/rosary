@@ -1,9 +1,10 @@
+import { BeadGroupContainer } from "../sequences/contemporary-rosary";
 import { BeadGroup } from "./bead-group";
 import { fruitByNumber, Mysteries, mysteryByNumber } from "./mysteries";
 
 export class BeadGroupList {
 
-  prayerName: string;
+  debugTheEnd = false;
 
   private currentBeadGroup: BeadGroup;
 
@@ -14,13 +15,46 @@ export class BeadGroupList {
   private beadGroups: BeadGroup[];
   private beadGroupIdx: number;
 
-  constructor(prayerName: string, beadGroups: BeadGroup[], mysteries?: Mysteries) {
-    this.prayerName = prayerName;
+  private skipNext = false;
+  private beadIdxOverrideOccurred = false;
+
+  constructor(public prayerName: string, private beadContainer: BeadGroupContainer, mysteries?: Mysteries) {
     this.currentBeadGroup = undefined;
-    this.beadGroups = beadGroups;
+    this.beadGroups = beadContainer.beadGroups;
     this.beadGroupIdx = -1;
     this.activeMysteries = mysteries;
     this.activeMysteriesIdx = 0;
+  }
+
+  debugHasBeadIdxOverrideOccurred(resetOverrideFlag = true): boolean {
+    const result = this.beadIdxOverrideOccurred;
+    if (resetOverrideFlag) {
+      this.beadIdxOverrideOccurred = false;
+    }
+    return result;
+  }
+
+  debugWriteSequenceIds(): void {
+    if (this.beadGroups) {
+      this.beadGroups.forEach(beadGroup => console.log(`seqId: ${beadGroup.sequenceId}, mysteryIdx: ${beadGroup.mysteryIdx}, beadIdx: ${beadGroup.beadGroupIndex}`));
+    }
+  }
+
+  debugSetIndices(sequenceId: string): void {
+    const redirectBeadInfo: BeadGroup = this.beadContainer.beadMap[sequenceId];
+    if (redirectBeadInfo) {
+      this.currentBeadGroup = redirectBeadInfo;
+      this.activeMysteriesIdx = redirectBeadInfo.mysteryIdx;
+      this.beadGroupIdx = redirectBeadInfo.beadGroupIndex;
+      this.skipNext = true;
+      this.beadIdxOverrideOccurred = true;
+      console.log('debugTheEnd set to false');
+      this.debugTheEnd = false;
+    }
+    else if (sequenceId === 'end') {
+      console.log('debugTheEnd set to true');
+      this.debugTheEnd = true;
+    }
   }
 
   get isPrayerSequenceDone(): boolean {
@@ -32,6 +66,11 @@ export class BeadGroupList {
   }
 
   next(): BeadGroup {
+    if (this.skipNext) {
+      this.skipNext = false;
+      return this.currentBeadGroup;
+    }
+
     if (this.isCurrentBeadGroupDone()) {
       this.beadGroupIdx++;
       if (this.beadGroupIdx >= this.beadGroups.length) {
