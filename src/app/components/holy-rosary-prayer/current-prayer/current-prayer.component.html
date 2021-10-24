@@ -1,5 +1,5 @@
 <div class="active-prayer-workspace">
-  <div *ngIf="currentPrayer && debugTheEnd === false">
+  <div *ngIf="currentPrayer && debugTheEnd !== true">
     <pre *ngIf="currentPrayer.all" class="prayer-response gtp-pre-line">
       {{ currentPrayer.all }}
     </pre>

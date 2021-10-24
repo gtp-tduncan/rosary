@@ -1,28 +1,20 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SignCrossComponent } from './prayers/sign-cross/sign-cross.component';
-import { OurFatherComponent } from './prayers/our-father/our-father.component';
-import { HailMaryComponent } from './prayers/hail-mary/hail-mary.component';
-import { GloryComponent } from './prayers/glory/glory.component';
-import { CreedComponent } from './prayers/creed/creed.component';
-import { ClosingComponent } from './prayers/closing/closing.component';
-import { FatimaComponent } from './prayers/fatima/fatima.component';
-import { HailHolyQueenComponent } from './prayers/hail-holy-queen/hail-holy-queen.component';
-import { EndComponent } from './prayers/end/end.component';
-import { MysterySelectorComponent } from './components/mystery-selector/mystery-selector.component';
-import { HolyRosaryPrayerComponent } from './components/holy-rosary-prayer/holy-rosary-prayer.component';
 import { ActivePrayerComponent } from './components/active-prayer/active-prayer.component';
-import { PatsBeadsComponent } from './components/pats-beads/pats-beads.component';
-import { NoticesComponent } from './components/notices/notices.component';
-import { FormsModule } from '@angular/forms';
-import { LiturgicalDatesComponent } from './components/liturgical-dates/liturgical-dates.component';
-import { LayoutsComponent } from './components/layouts/layouts.component';
-import { HomeComponent } from './components/home/home.component';
-import { MysteryDisplayComponent } from './components/holy-rosary-prayer/mystery-display/mystery-display.component';
 import { CurrentPrayerComponent } from './components/holy-rosary-prayer/current-prayer/current-prayer.component';
+import { HolyRosaryPrayerComponent } from './components/holy-rosary-prayer/holy-rosary-prayer.component';
+import { MysteryDisplayComponent } from './components/holy-rosary-prayer/mystery-display/mystery-display.component';
+import { HomeComponent } from './components/home/home.component';
+import { LayoutsComponent } from './components/layouts/layouts.component';
+import { LiturgicalDatesComponent } from './components/liturgical-dates/liturgical-dates.component';
+import { MysterySelectorComponent } from './components/mystery-selector/mystery-selector.component';
+import { NoticesComponent } from './components/notices/notices.component';
+import { PatsBeadsComponent } from './components/pats-beads/pats-beads.component';
+import { EndComponent } from './prayers/end/end.component';
+
 
 @NgModule({
   declarations: [
@@ -33,14 +25,6 @@ import { CurrentPrayerComponent } from './components/holy-rosary-prayer/current-
     NoticesComponent,
     PatsBeadsComponent,
 
-    SignCrossComponent,
-    CreedComponent,
-    OurFatherComponent,
-    HailMaryComponent,
-    GloryComponent,
-    FatimaComponent,
-    HailHolyQueenComponent,
-    ClosingComponent,
     EndComponent,
     LiturgicalDatesComponent,
     LayoutsComponent,
