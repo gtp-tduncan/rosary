@@ -264,19 +264,34 @@ pre {
 
 /* ================================================================================ */
 
+.active-prayer-header {
+  display: block;
+  width: 100%;
+}
+
+.active-prayer-header .left {
+  font-weight: bold;
+  text-align: right;
+  width: 50%;
+}
+
+.active-prayer-header .right {
+  text-align: right;
+}
+
+/* ================================================================================ */
+
 .mystery-row {
   text-align: left;
   margin: calc($margins - 1);
 }
 
 .mystery-label, .fruit-label {
-  text-align: right;
+  font-size: xx-small;
 }
 
 .mystery-value, .fruit-value {
-  float: right;
   font-weight: bold;
-  max-width: 60%;
   text-align: left;
 }
 

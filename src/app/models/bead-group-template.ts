@@ -12,6 +12,8 @@ export interface BeadGroupTemplate {
 
 }
 
-export function initBeadGroup(template: BeadGroupTemplate, beadGroupIndex: number): BeadGroup {
-  return new BeadGroup(template, beadGroupIndex);
+export function initBeadGroup(beadMap: Map<string, BeadGroup>, template: BeadGroupTemplate, mysteryIdx: number, beadGroupIndex: number): BeadGroup {
+  const beadGroup = new BeadGroup(template, mysteryIdx, beadGroupIndex);
+  beadMap[beadGroup.sequenceId] = beadGroup;
+  return beadGroup;
 }

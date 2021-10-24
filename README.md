@@ -4,6 +4,17 @@ References:
 * https://www.vatican.va/special/rosary/documents/misteri_en.html
 * https://www.usccb.org/how-to-pray-the-rosary
 
+
+## Debug particular view state
+
+* Call `/layout-test?list` to get a list of sequence ids.
+
+* To see a particular sequence view, call `/layout-test?seqId=` with the sequence id you are interested.
+
+* **IMPORTANT** Using `/layout-test?seqId=` causes the state of the Rosary app to get out of sync and requires a refresh back to `layout-test` or `/`
+
+---------------------------------------------------------------------------------
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.6.
 
 ## Development server

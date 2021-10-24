@@ -8,11 +8,12 @@ export class BeadGroup implements BeadGroupTemplate {
   repeatCount?: number;
   prayerIds?: string[];
   phoneFeedback?: string;
+  mysteryIdx?: number;
   incrementMysteryIdx?: boolean;
 
   private beadIndex?: number;
 
-  constructor(data?: BeadGroupTemplate, beadGroupIndex?: number) {
+  constructor(data?: BeadGroupTemplate, mysteryIdx?: number, beadGroupIndex?: number) {
     if (data) {
       this.sequence = data.sequence;
       this.sequenceId = `${data.sequence}_${beadGroupIndex}`;
@@ -20,6 +21,7 @@ export class BeadGroup implements BeadGroupTemplate {
       this.repeatCount = (data.repeatCount) ? data.repeatCount : 0;
       this.prayerIds = data.prayerIds;
       this.phoneFeedback = (data?.phoneFeedback || 'short');
+      this.mysteryIdx = mysteryIdx;
       this.incrementMysteryIdx = data?.incrementMysteryIdx;
 
       this.beadIndex = 0;
