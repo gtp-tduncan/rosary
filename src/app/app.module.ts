@@ -21,6 +21,8 @@ import { FormsModule } from '@angular/forms';
 import { LiturgicalDatesComponent } from './components/liturgical-dates/liturgical-dates.component';
 import { LayoutsComponent } from './components/layouts/layouts.component';
 import { HomeComponent } from './components/home/home.component';
+import { MysteryDisplayComponent } from './components/holy-rosary-prayer/mystery-display/mystery-display.component';
+import { CurrentPrayerComponent } from './components/holy-rosary-prayer/current-prayer/current-prayer.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,9 @@ import { HomeComponent } from './components/home/home.component';
     EndComponent,
     LiturgicalDatesComponent,
     LayoutsComponent,
-    HomeComponent
+    HomeComponent,
+    MysteryDisplayComponent,
+    CurrentPrayerComponent
   ],
   imports: [
     BrowserModule,

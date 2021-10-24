@@ -1,55 +1,122 @@
+/* ================================================================================ */
 body {
   font-family: Consola;
-  background-image: repeating-linear-gradient(0deg, green, green 3px, darkgreen 3px, darkgreen 6px);
+  margin: unset;
 }
-
 input {
   font-family: Consola;
   margin-bottom: 10px;
 }
-
-button {
+pre {
   font-family: Consola;
 }
-
+@media (orientation: landscape) {
+  button {
+    font-family: Consola;
+    font-size: 2vw;
+  }
+}
+@media (orientation: portrait) {
+  button {
+    font-family: Consola;
+    font-size: 4vw;
+  }
+}
+/* ================================================================================ */
+.lit-color-green, .lit-color-red, .lit-color-rose, .lit-color-violet, .lit-color-white {
+  position: absolute;
+  margin-left: 0px;
+  margin-top: 0px;
+  width: 100%;
+  height: 100%;
+}
+.lit-color-green {
+  background-image: repeating-linear-gradient(0deg, green, green 3px, darkgreen 3px, darkgreen 6px);
+}
+.lit-color-red {
+  background-image: repeating-linear-gradient(0deg, red, red 3px, #380000 3px, #380000 6px);
+}
+.lit-color-rose {
+  background-image: repeating-linear-gradient(0deg, pink, pink 3px, rgba(255, 192, 203, 0.411) 3px, rgba(255, 192, 203, 0.411) 6px);
+}
+.lit-color-violet {
+  background-image: repeating-linear-gradient(0deg, purple, purple 3px, #380038 3px, #380038 6px);
+}
+.lit-color-white {
+  background-image: repeating-linear-gradient(0deg, white, white 3px, gray 3px, gray 6px);
+}
+/* ================================================================================ */
 .content-border, .home-content-border {
   border: 1px dashed black;
   border-radius: 10px;
   display: flexbox;
   text-align: center;
 }
-
 .content-no-border, .content-border, .home-content-border {
   background-color: lightgray;
   box-sizing: border-box;
-  font-size: 3vw;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
   opacity: 85%;
   padding: 5px;
 }
-
+.prayer-leader-label, .prayer-response-label {
+  background-color: lightblue;
+  border-color: darkblue;
+  border-width: 1px;
+  color: darkblue;
+  float: left;
+  font-style: italic;
+  font-weight: bold;
+  opacity: 100%;
+  padding: calc($padding / 2);
+}
+.gtp-pre-line {
+  white-space: pre-line;
+}
+@media (orientation: landscape) {
+  .prayer-leader-label, .prayer-response-label {
+    float: left;
+    width: unset;
+  }
+}
+.prayer-leader, .prayer-response, .prayer-leader-label, .prayer-response-label {
+  float: left;
+  text-align: left;
+}
+.prayer-response {
+  font-weight: bold;
+}
+.component-hidden {
+  visibility: hidden;
+}
+@media (orientation: landscape) {
+  .content-no-border, .content-border, .home-content-border {
+    font-size: 2vw;
+  }
+}
+@media (orientation: portrait) {
+  .content-no-border, .content-border, .home-content-border {
+    font-size: 4vw;
+  }
+}
 @media (orientation: portrait) {
   .home-content-border {
     display: flexbox;
     height: 97vh;
   }
 }
-
 .active-nav {
   padding: 4px;
 }
-
 .section-title {
   font-weight: bold;
   padding: 5px;
   text-align: center;
 }
-
 /* ================================================================================ */
-
 @media (orientation: landscape) {
   .gtp-cell-1, .gtp-cell-plain-1 {
     background-color: transparent;
@@ -187,9 +254,7 @@ button {
     visibility: hidden;
   }
 }
-
 /* -------------------------------------------------------------------------------- */
-
 @media (orientation: portrait) {
   .gtp-cell-1-phone, .gtp-cell-plain-1-phone {
     background-color: transparent;
@@ -327,9 +392,7 @@ button {
     visibility: hidden;
   }
 }
-
 /* ================================================================================ */
-
 @media (orientation: landscape) {
   .box {
     height: 200px;
@@ -342,9 +405,7 @@ button {
     flex: 0 0 33%;
   }
 }
-
 /* -------------------------------------------------------------------------------- */
-
 @media (orientation: portrait) {
   .box {
     display: flex;
@@ -357,50 +418,51 @@ button {
     flex: 0 0 10%;
   }
 }
-
 /* ================================================================================ */
-
+.mystery-row {
+  text-align: left;
+  margin: calc($margins - 1);
+}
+.mystery-label, .fruit-label {
+  text-align: right;
+}
+.mystery-value, .fruit-value {
+  float: right;
+  font-weight: bold;
+  max-width: 60%;
+  text-align: left;
+}
+/* ================================================================================ */
 @media (orientation: landscape) {
   .gtp-control {
     width: 95%;
   }
 }
-
 /* ================================================================================ */
-
 @media (orientation: landscape) {
   .gtp-stacked {
     display: flex;
     flex-direction: column;
   }
 }
-
 /* ================================================================================ */
-
 @media (orientation: landscape) {
   .gtp-center {
     text-align: center;
   }
 }
-
 /* ================================================================================ */
-
-@media (orientation: landscape) {
-  .gtp-right {
-    text-align: right;
-  }
+.gtp-right {
+  float: right;
+  text-align: right;
 }
-
 /* ================================================================================ */
-
 @media (orientation: landscape) {
   .gtp-full-width {
     width: 100%;
   }
 }
-
 /* ================================================================================ */
-
 @media (orientation: landscape) {
   .gtp-url {
     background-color: #f0f0f0;
@@ -409,45 +471,34 @@ button {
     z-index: 200;
   }
 }
-
 /* ================================================================================ */
-
 @media (orientation: landscape) {
   input[readonly] {
     background-color: #f5f5f5;
   }
 }
-
 /* ================================================================================ */
-
 @media (orientation: landscape) {
   .gtp-spacing-default, .gtp-cell {
     padding: 5px;
   }
 }
-
 /* ================================================================================ */
-
 @media (orientation: landscape) {
   .gtp-table {
     width: 100%;
   }
 }
-
 /* ================================================================================ */
-
 .gtp-footer {
   position: relative;
 }
-
 .gtp-footer * {
   position: absolute;
   bottom: 3vh;
   left: 1vw;
 }
-
 /* ================================================================================ */
-
 @media (orientation: landscape) {
   .gtp-row, .gtp-row-plain, .gtp-inline, .gtp-footer {
     display: flex;
@@ -458,21 +509,18 @@ button {
     visibility: hidden;
   }
 }
-
 /* -------------------------------------------------------------------------------- */
-
 @media (orientation: portrait) {
   .gtp-row, .gtp-row-plain, .gtp-inline, .gtp-footer {
-    width: 90vw;
+    display: flex;
+    flex-direction: column;
   }
 
   .phone-nav {
     float: left;
   }
 }
-
 /* ================================================================================ */
-
 @media (orientation: landscape) {
   .gtp-row:nth-child(even) {
     background-color: white;
@@ -480,9 +528,7 @@ button {
     font-family: Consola;
   }
 }
-
 /* ================================================================================ */
-
 @media (orientation: landscape) {
   .gtp-row:nth-child(odd) {
     background-color: antiquewhite;
@@ -490,33 +536,25 @@ button {
     font-family: Consola;
   }
 }
-
 /* ================================================================================ */
-
 @media (orientation: landscape) {
   .gtp-cell-padding {
     padding: 5px;
   }
 }
-
 /* ================================================================================ */
-
 @media (orientation: landscape) {
   .nav-button {
     max-width: 150px;
   }
 }
-
 /* ================================================================================ */
-
 .highlight-mystery-of-day {
   background-color: yellow;
   border-width: 2px;
   color: darkblue;
 }
-
 /* ================================================================================ */
-
 @media (orientation: landscape) {
   .section-row {
     padding: 5px;

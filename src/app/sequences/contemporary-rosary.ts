@@ -2,7 +2,15 @@ import { BeadGroup } from '../models/bead-group';
 import { BeadGroupList } from '../models/bead-group-list';
 import { initBeadGroup } from '../models/bead-group-template';
 import { Mysteries } from '../models/mysteries';
-import { SIGN_CROSS, APOSTLES_CREED, OUR_FATHER, OPENING_HAIL_MARYS, GLORY, MYSTERY_1, HAIL_MARYS, GLORY_FATIMA, MYSTERY_2, MYSTERY_3, MYSTERY_4, MYSTERY_5, HAIL_HOLY_QUEEN, CLOSING } from './rosary-helper';
+import { SIGN_CROSS, APOSTLES_CREED, OUR_FATHER, OPENING_HAIL_MARYS, GLORY, MYSTERY_1, HAIL_MARYS, GLORY_FATIMA, MYSTERY_2, MYSTERY_3, MYSTERY_4, MYSTERY_5, HAIL_HOLY_QUEEN, CLOSING, FATIMA } from './rosary-helper';
+
+/*
+IMPORTANT: If you change the order of prayers (ie: loadContemporaryHolyRosary),
+           you also need to check that it matches up with the bead arrays.
+
+           Search for things like:
+             export const PATS_BEADS_COORDS: BeadPosition[]
+*/
 
 const prayerName = "the Holy Rosary";
 
@@ -28,27 +36,32 @@ function loadContemporaryHolyRosary() {
     initBeadGroup(MYSTERY_1, beadGroupIndex++),
     initBeadGroup(OUR_FATHER, beadGroupIndex++),
     initBeadGroup(HAIL_MARYS, beadGroupIndex++),
-    initBeadGroup(GLORY_FATIMA, beadGroupIndex++),
+    initBeadGroup(GLORY, beadGroupIndex++),
+    initBeadGroup(FATIMA, beadGroupIndex++),
 
     initBeadGroup(MYSTERY_2, beadGroupIndex++),
     initBeadGroup(OUR_FATHER, beadGroupIndex++),
     initBeadGroup(HAIL_MARYS, beadGroupIndex++),
-    initBeadGroup(GLORY_FATIMA, beadGroupIndex++),
+    initBeadGroup(GLORY, beadGroupIndex++),
+    initBeadGroup(FATIMA, beadGroupIndex++),
 
     initBeadGroup(MYSTERY_3, beadGroupIndex++),
     initBeadGroup(OUR_FATHER, beadGroupIndex++),
     initBeadGroup(HAIL_MARYS, beadGroupIndex++),
-    initBeadGroup(GLORY_FATIMA, beadGroupIndex++),
+    initBeadGroup(GLORY, beadGroupIndex++),
+    initBeadGroup(FATIMA, beadGroupIndex++),
 
     initBeadGroup(MYSTERY_4, beadGroupIndex++),
     initBeadGroup(OUR_FATHER, beadGroupIndex++),
     initBeadGroup(HAIL_MARYS, beadGroupIndex++),
-    initBeadGroup(GLORY_FATIMA, beadGroupIndex++),
+    initBeadGroup(GLORY, beadGroupIndex++),
+    initBeadGroup(FATIMA, beadGroupIndex++),
 
     initBeadGroup(MYSTERY_5, beadGroupIndex++),
     initBeadGroup(OUR_FATHER, beadGroupIndex++),
     initBeadGroup(HAIL_MARYS, beadGroupIndex++),
-    initBeadGroup(GLORY_FATIMA, beadGroupIndex++),
+    initBeadGroup(GLORY, beadGroupIndex++),
+    initBeadGroup(FATIMA, beadGroupIndex++),
 
     initBeadGroup(HAIL_HOLY_QUEEN, beadGroupIndex++),
     initBeadGroup(CLOSING, beadGroupIndex++),

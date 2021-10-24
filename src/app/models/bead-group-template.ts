@@ -7,7 +7,7 @@ export interface BeadGroupTemplate {
   beadGroupIndex?: number;
   repeatCount?: number;
   prayerIds?: string[];
-  feedback?: string;
+  phoneFeedback?: string;
   incrementMysteryIdx?: boolean;
 
 }

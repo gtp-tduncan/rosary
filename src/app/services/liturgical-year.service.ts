@@ -6,6 +6,14 @@ import { LiturgicalDates, LiturgicalPeriod, PeriodStatus } from '../models/litur
 import { AppDateService } from './app-date.service';
 import { LocalizationService } from './localization.service';
 
+export enum LiturgicalColors {
+  GREEN = 'green',
+  RED = 'red',
+  ROSE = 'rose',
+  VIOLET = 'violet',
+  WHITE = 'white'
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -24,29 +32,29 @@ export class LiturgicalYearService {
     this.validateDates();
   }
 
-  liturgicalColor(): string {
+  liturgicalColor(): LiturgicalColors {
 
     if ((this.dateInRange(this.liturgicalDates.triduum)
       || this.appDate.date === this.palmSunday
       || this.appDate.date === this.pentacostSunday)
       && this.appDate.date !== this.liturgicalDates.easter.startDate) {
-        return 'red';
+        return LiturgicalColors.RED;
     }
     else if (this.appDate.date === this.adventSunday3
       || this.appDate.date === this.lentSunday4) {
-        return 'rose';
+        return LiturgicalColors.ROSE;
     }
     else if (this.dateInRange(this.liturgicalDates.christmas)
       || this.dateInRange(this.liturgicalDates.easter)
       || this.appDate.date === this.allSaintsDay) {
-        return 'white';
+        return LiturgicalColors.WHITE;
     }
     else if (this.dateInRange(this.liturgicalDates.advent)
       || this.dateInRange(this.liturgicalDates.lent)) {
-        return 'violet';
+        return LiturgicalColors.VIOLET;
     }
 
-    return 'green';
+    return LiturgicalColors.GREEN;
   }
 
   validateDates() {

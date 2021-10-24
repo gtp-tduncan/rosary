@@ -27,6 +27,7 @@ export const PATS_BEADS_COORDS: BeadPosition[] = [
   { x: 1353, y: 1442 },
 
   { x: 1458, y: 1249 }, // Glory Be
+  { x: 1458, y: 1249 }, // Fatima
   { x: 1458, y: 1249 }, // Second Mystery
   { x: 1458, y: 1249 }, // Our Father
 
@@ -42,6 +43,7 @@ export const PATS_BEADS_COORDS: BeadPosition[] = [
   { x: 1199, y: 396 },
 
   { x: 1045, y: 495 },  // Glory Be
+  { x: 1045, y: 495 },  // Fatima
   { x: 1045, y: 495 },  // Third Mystery
   { x: 1045, y: 495 },  // Our Father
 
@@ -57,6 +59,7 @@ export const PATS_BEADS_COORDS: BeadPosition[] = [
   { x: 408, y: 242 },
 
   { x: 357, y: 459 },   // Glory Be
+  { x: 357, y: 459 },   // Fatima
   { x: 357, y: 459 },   // Fourth Mystery
   { x: 357, y: 459 },   // Our Father
 
@@ -72,6 +75,7 @@ export const PATS_BEADS_COORDS: BeadPosition[] = [
   { x: 230, y: 1318 },
 
   { x: 399, y: 1503 },  // Glory Be
+  { x: 399, y: 1503 },  // Fatima
   { x: 399, y: 1503 },  // Fifth Mystery
   { x: 399, y: 1503 },  // Our Father
 
@@ -87,6 +91,7 @@ export const PATS_BEADS_COORDS: BeadPosition[] = [
   { x: 810, y: 2215 },
 
   { x: 805, y: 2368 },  // Glory Be
+  { x: 805, y: 2368 },  // Fatima
   { x: 805, y: 2368 },  // Hail, Holy Queen
   { x: 805, y: 2368 },  // Closing
 
