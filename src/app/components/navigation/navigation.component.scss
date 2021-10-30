@@ -1,24 +1,30 @@
 @import 'src/styles-shared-mixins.scss';
 
-.active-prayer-header {
+.navigation-footer {
 
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
   background-color: yellowgreen;
   display: flex;
   flex-direction: row;
   -webkit-flex-direction: row;
-  max-height: 4vh;
-  padding: $padding;
-
+  max-height: 5vh;
 }
 
-.active-prayer-header .left {
+.navigation-footer .left button, .navigation-footer .right button {
+  padding: $padding;
+  width: 100%;
+}
+
+.navigation-footer .left {
   background-color: palegoldenrod;
   padding: $padding;
   text-align: center;
   width: 50%;
 }
 
-.active-prayer-header .right {
+.navigation-footer .right {
   padding: $padding;
   text-align: center;
   width: 50%;

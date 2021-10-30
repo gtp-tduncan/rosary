@@ -1,23 +1,13 @@
-<div>
-  <div id="home-content-border" class="home-content-border">
-    <div *ngIf="showMysterySelector">
-      <app-mystery-selector (selectedMysteryEvent)="onMysterySelected($event)"></app-mystery-selector>
-      <app-notices></app-notices>
-    </div>
-    <div *ngIf="!showMysterySelector">
-      <app-active-prayer [activeBeadGroupList]="selectedBeadGroupList" (onResetEvent)="onResetEvent($event)"></app-active-prayer>
-    </div>
+<div id="home-content-border" class="home-content-border">
+  <div *ngIf="showMysterySelector">
+    <app-mystery-selector (selectedMysteryEvent)="onMysterySelected($event)"></app-mystery-selector>
+    <app-notices></app-notices>
   </div>
-</div>
-<div class="gtp-footer">
-  <div>
-    <span class="gtp-row-plain">
-      <span class="gtp-cell-none gtp-cell-1-phone phone-nav">
-        <button (click)="onPrevious()">&lt;=</button>
-      </span>
-      <span class="gtp-cell-none gtp-cell-1-phone phone-nav">
-        <button (click)="onNext()">=&gt;</button>
-      </span>
-    </span>
+  <div *ngIf="!showMysterySelector">
+    <app-active-prayer [activeBeadGroupList]="selectedBeadGroupList" (onResetEvent)="onResetEvent($event)"></app-active-prayer>
+    <div class="navigation-footer">
+      <app-navigation (onNextClickEvent)="onNext()" (onPreviousClickEvent)="onPrevious()">
+      </app-navigation>
+    </div>
   </div>
 </div>

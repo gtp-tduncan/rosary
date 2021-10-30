@@ -2,28 +2,33 @@
 
 /* ================================================================================ */
 
-.pats-beads {
-  position: relative;
-  text-align: right;
-}
+@media (orientation: landscape) {
 
-/* -------------------------------------------------------------------------------- */
+  #pats-beads {
+    max-height: 75vh;
+    text-align: left;
+  }
+
+}
 
 @media (orientation: portrait) {
 
-  .pats-beads {
-    max-width: 50vw;
+  #pats-beads-container {
+    // display: flex;
+    // flex-direction: row;
+    // -webkit-flex-direction: row;
+    height: 20vh;
+  }
+
+  #pats-beads {
+    margin-top: 5vh;
+    max-height: 75vh;
     transform: rotate(90deg) scale(.6) translateX($patsBeadsOffsetX) translateY($patsBeadsOffsetY);
   }
 
 }
 
 /* ================================================================================ */
-
-#pats-beads {
-  max-height: 75vh;
-  text-align: left;
-}
 
 .highlight-bead {
   position: absolute;
@@ -34,8 +39,4 @@
 
   opacity: 0.5;
   z-index: 2;
-}
-
-.pats-beads-container {
-  margin: 3px;
 }

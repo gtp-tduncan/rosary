@@ -1,10 +1,10 @@
 <div class="active-prayer-workspace">
   <div *ngIf="currentPrayer && debugTheEnd !== true">
-    <pre *ngIf="currentPrayer.all" class="prayer-response gtp-pre-line">
+    <pre *ngIf="currentPrayer.all">
       {{ currentPrayer.all }}
     </pre>
     <ng-container *ngIf="currentPrayer.all === undefined">
-      <div class="gtp-row-plain">
+      <div>
         <div [class]="leaderLabelCssClass()">
           <div i18n="@@prayer-leader">L:</div>
         </div>
@@ -12,7 +12,7 @@
           {{ currentPrayerLeader() }}
         </div>
       </div>
-      <div class="gtp-row-plain">
+      <div>
         <div [class]="responseLabelCssClass()" i18n="@@prayer-response">
           R:
         </div>

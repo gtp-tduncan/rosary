@@ -40,6 +40,7 @@ export class ActivePrayerComponent implements OnInit, AfterViewInit {
   }
 
   onNext() {
+    console.log('next - active prayers');
     this.holyRosaryPrayer.onNext();
   }
 

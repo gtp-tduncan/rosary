@@ -45,6 +45,7 @@ export class  LayoutsComponent implements OnInit, AfterViewInit {
   }
 
   onNext(): void {
+    console.log('next - layouts');
     this.activePrayer.onNext();
   }
 

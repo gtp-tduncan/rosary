@@ -1,9 +1,18 @@
-@import 'styles-mixin.scss';
+// @import 'styles-mixin.scss';
 @import 'styles-shared-mixins.scss';
 
 /* ================================================================================ */
 
-body {
+// html {
+//   position: absolute;
+//   top: 0px;
+//   left: 0px;
+//   bottom: 0px;
+//   right: 0px;
+//   margin: -100px;
+// }
+
+html, body {
   font-family: $fontname;
   margin: unset;
 }
@@ -37,6 +46,24 @@ pre {
 
 /* ================================================================================ */
 
+// .gtp-footer {
+//   position: absolute;
+//   bottom: 0px;    //$footerOffsetY;
+// }
+
+// // .gtp-footer * {
+// //   position: absolute;
+// //   bottom: 0px;    //$footerOffsetY;
+// //   // left: $footerOffsetX;
+// // }
+
+// // .gtp-footer * * {
+// //   bottom: auto;
+// //   left: auto;
+// // }
+
+/* ================================================================================ */
+
 .lit-color-green, .lit-color-red, .lit-color-rose, .lit-color-violet, .lit-color-white {
   position: absolute;
   margin-left: 0px;
@@ -67,628 +94,642 @@ pre {
 
 /* ================================================================================ */
 
+/*
+  // Reference: https://stackoverflow.com/questions/90178/make-a-div-fill-the-height-of-the-remaining-screen-space
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+*/
+
 .content-border, .home-content-border {
   border: $border;
   border-radius: $border-radius;
-  display: flexbox;
-  text-align: center;
+  display: flex;
+  flex-flow: column;
 }
 
 .content-no-border, .content-border, .home-content-border {
-  background-color: lightgray;
+  background-color: burlywood;
   box-sizing: border-box;
-  margin-top: $margins;
-  margin-bottom: $margins;
-  margin-left: $margins;
-  margin-right: $margins;
+  margin: $margins;
   opacity: 85%;
   padding: $padding;
 }
 
-.prayer-leader-label, .prayer-response-label {
-  background-color: $header-bgcolor;
-  border-color: $header-textcolor;
-  border-width: 1px;
-  color: $header-textcolor;
-  float: left;
-  font-style: italic;
-  font-weight: bold;
-  opacity: 100%;
-  padding: calc($padding / 2);
-}
-
-.gtp-pre-line {
-  white-space: pre-line;
-}
-
-@media (orientation: landscape) {
-
-  .prayer-leader-label, .prayer-response-label {
-    float: left;
-    width: unset;
-  }
-
-}
-
-.prayer-leader, .prayer-response, .prayer-leader-label, .prayer-response-label {
-  float: left;
-  text-align: left;
-}
-
-.prayer-response {
-  font-weight: bold;
-}
-
-.component-hidden {
-  visibility: hidden;
-}
-
-@media (orientation: landscape) {
-
-  .content-no-border, .content-border, .home-content-border {
-    font-size: $font-size-base;
-  }
-
-}
-
-@media (orientation: portrait) {
-
-  .content-no-border, .content-border, .home-content-border {
-    font-size: $font-size-base-phone;
-  }
-
-}
-
-@media (orientation: portrait) {
-
-  .home-content-border {
-    display: flexbox;
-    height: 97vh;
-  }
-
-}
-
-.active-nav {
-  padding: 4px;
-}
-
-.section-title {
-  font-weight: bold;
-  padding: $padding;
-  text-align: center;
-}
-
-/* ================================================================================ */
-
-@media (orientation: landscape) {
-
-  @mixin create_gtp_cell_landscape($width-indicator) {
-    .gtp-cell-#{$width-indicator}, .gtp-cell-plain-#{$width-indicator} {
-      background-color: transparent;
-      padding: $padding;
-      width: percentage(100 / ($width-sections / $width-indicator));
-      word-break: $word-break-type;
-    }
-
-    .gtp-cell-#{$width-indicator} {
-      border: 1px solid #c3c3c3;
-    }
-  }
-
-  @include create_gtp_cell_landscape(1);
-  @include create_gtp_cell_landscape(2);
-  @include create_gtp_cell_landscape(3);
-  @include create_gtp_cell_landscape(4);
-  @include create_gtp_cell_landscape(5);
-  @include create_gtp_cell_landscape(6);
-  @include create_gtp_cell_landscape(7);
-  @include create_gtp_cell_landscape(8);
-  @include create_gtp_cell_landscape(9);
-  @include create_gtp_cell_landscape(10);
-  @include create_gtp_cell_landscape(11);
-  @include create_gtp_cell_landscape(12);
-
-  .gtp-cell-none {
-    visibility: hidden;
-  }
-}
-
-/* -------------------------------------------------------------------------------- */
-
-@media (orientation: portrait) {
-
-  @mixin create_gtp_cell_portrait($width-indicator, $width-length) {
-    .gtp-cell-#{$width-indicator}-phone, .gtp-cell-plain-#{$width-indicator}-phone {
-      background-color: transparent;
-      padding: $padding;
-      width: $width-length;
-      word-break: $word-break-type;
-    }
-
-    .gtp-cell-#{$width-indicator} {
-      border: 1px solid #c3c3c3;
-    }
-  }
-
-  @include create_gtp_cell_portrait(1, '48%');
-  @include create_gtp_cell_portrait(2, '48%');
-  @include create_gtp_cell_portrait(3, '48%');
-  @include create_gtp_cell_portrait(4, '100%');
-  @include create_gtp_cell_portrait(5, '100%');
-  @include create_gtp_cell_portrait(6, '100%');
-  @include create_gtp_cell_portrait(7, '100%');
-  @include create_gtp_cell_portrait(8, '100%');
-  @include create_gtp_cell_portrait(9, '100%');
-  @include create_gtp_cell_portrait(10, '100%');
-  @include create_gtp_cell_portrait(11, '100%');
-  @include create_gtp_cell_portrait(12, '100%');
-
-  .gtp-cell-none-phone {
-    visibility: hidden;
-  }
-}
-
-/* ================================================================================ */
-
-@media (orientation: landscape) {
-
-  .box {
-    height: 200px;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-  }
-
-  .box>* {
-    flex: 0 0 33%;
-  }
-
-}
-
-/* -------------------------------------------------------------------------------- */
-
-@media (orientation: portrait) {
-
-  .box {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    margin-top: 0.5em;
-  }
-
-  .box>* {
-    flex: 0 0 10%;
-  }
-
-}
-
-/* ================================================================================ */
-
-.active-prayer-header {
-  display: block;
-  width: 100%;
-}
-
-.active-prayer-header .left {
-  font-weight: bold;
-  text-align: right;
-  width: 50%;
-}
-
-.active-prayer-header .right {
-  text-align: right;
-}
-
-/* ================================================================================ */
-
-.mystery-row {
-  text-align: left;
-  margin: calc($margins - 1);
-}
-
-.mystery-label, .fruit-label {
-  font-size: xx-small;
-}
-
-.mystery-value, .fruit-value {
-  font-weight: bold;
-  text-align: left;
-}
-
-/* ================================================================================ */
-
-@media (orientation: landscape) {
-
-  .gtp-control {
-    width: 95%;
-  }
-
-}
-
-/* ================================================================================ */
-
-@media (orientation: landscape) {
-
-  .gtp-stacked {
-    display: flex;
-    flex-direction: column;
-    -webkit-flex-direction: column;
-  }
-
-}
-
-/* ================================================================================ */
-
-@media (orientation: landscape) {
-
-  .gtp-center {
-    text-align: center;
-  }
-
-}
-
-/* ================================================================================ */
-
-.gtp-right {
-  float: right;
-  text-align: right;
-}
-
-/* ================================================================================ */
-
-@media (orientation: landscape) {
-
-  .gtp-full-width {
-    width: 100%;
-  }
-
-}
-
-/* ================================================================================ */
-
-@media (orientation: landscape) {
-
-  .gtp-url {
-    background-color: #f0f0f0;
-    color: darkblue;
-    margin-left: 5px;
-    z-index: 200;
-  }
-
-}
-
-/* ================================================================================ */
-
-@media (orientation: landscape) {
-
-  input[readonly]
-  {
-      background-color: #f5f5f5;
-  }
-
-}
-
-/* ================================================================================ */
-
-@media (orientation: landscape) {
-
-  .gtp-spacing-default, .gtp-cell {
-    padding: 5px;
-  }
-
-}
-
-/* ================================================================================ */
-
-@media (orientation: landscape) {
-
-  .gtp-table {
-    width: 100%;
-  }
-
-}
-
-/* ================================================================================ */
-
-.gtp-footer {
-  position: relative;
-}
-
-.gtp-footer * {
+.home-content-border {
   position: absolute;
-  bottom: $footerOffsetY;
-  left: $footerOffsetX;
+  top: $margins;
+  left: $margins;
+  right: $margins;
+  bottom: $margins;
+  padding: calc($padding * 2);
 }
 
-// .gtp-footer * * {
-//   bottom: auto;
-//   left: auto;
+
+// .prayer-leader-label, .prayer-response-label {
+//   background-color: $header-bgcolor;
+//   border-color: $header-textcolor;
+//   border-width: 1px;
+//   color: $header-textcolor;
+//   float: left;
+//   font-style: italic;
+//   font-weight: bold;
+//   opacity: 100%;
+//   padding: calc($padding / 2);
 // }
 
-/* ================================================================================ */
-
-@media (orientation: landscape) {
-
-  .gtp-row, .gtp-row-plain, .gtp-inline, .gtp-footer {
-    display: flex;
-    flex-direction: row;
-    -webkit-flex-direction: row;
-  }
-
-  .phone-nav {
-    visibility: hidden;
-  }
-
-}
-
-/* -------------------------------------------------------------------------------- */
-
-@media (orientation: portrait) {
-
-  .gtp-row, .gtp-row-plain, .gtp-inline, .gtp-footer {
-    display: flex;
-    flex-direction: column;
-    -webkit-flex-direction: column;
-  }
-
-  .phone-nav {
-    float: left;
-  }
-
-}
-
-/* ================================================================================ */
-
-@media (orientation: landscape) {
-
-  .gtp-row:nth-child(even) {
-    @include gtp-row-even-mixin;
-  }
-
-}
-
-/* ================================================================================ */
-
-@media (orientation: landscape) {
-
-  .gtp-row:nth-child(odd) {
-    @include gtp-row-odd-mixin;
-  }
-
-}
-
-/* ================================================================================ */
-
-@media (orientation: landscape) {
-
-  .gtp-cell-padding {
-    padding: $padding;
-  }
-
-}
-
-/* ================================================================================ */
-
-@media (orientation: landscape) {
-
-  .nav-button {
-    max-width: 150px;
-  }
-
-}
-
-/* ================================================================================ */
-
-.highlight-mystery-of-day {
-  background-color: yellow;
-  border-width: 2px;
-  color: darkblue;
-}
-
-/* ================================================================================ */
-
-@media (orientation: landscape) {
-
-  .section-row {
-    padding: $padding;
-  }
-
-}
-
-
-// ********************************************************
-
-// @import 'styles-mixin.scss';
-
-// /* You can add global styles to this file, and also import other style files */
-// pre, body {
-//   font-family: Arial, Helvetica, sans-serif;
-//   font-size: 9pt;
+// .gtp-pre-line {
+//   white-space: pre-line;
 // }
 
-// html {  //   , .page-full {
-//   background-image: repeating-linear-gradient(0deg, green, green 3px, rgb(0, 100, 0) 3px, rgb(0, 100, 0) 6px);
+// @media (orientation: landscape) {
+
+//   .prayer-leader-label, .prayer-response-label {
+//     float: left;
+//     width: unset;
+//   }
+
 // }
 
-// app-root,
-// .repeating-linear-green,
-// .repeating-linear-red,
-// .repeating-linear-rose,
-// .repeating-linear-violet,
-// .repeating-linear-white {
-//   // display: flexbox -ms-flexbox;
-//   max-height: 100%;
-//   max-width: 100%;
-//   // min-height: 100%;
-//   // min-width: 100%;
+// .prayer-leader, .prayer-response, .prayer-leader-label, .prayer-response-label {
+//   float: left;
+//   text-align: left;
 // }
 
-// img {
-//   object-fit: contain;
+// .prayer-response {
+//   font-weight: bold;
+// }
+
+// .component-hidden {
+//   visibility: hidden;
+// }
+
+// @media (orientation: landscape) {
+
+//   .content-no-border, .content-border, .home-content-border {
+//     font-size: $font-size-base;
+//   }
+
+// }
+
+// @media (orientation: portrait) {
+
+//   .content-no-border, .content-border, .home-content-border {
+//     font-size: $font-size-base-phone;
+//   }
+
+// }
+
+// @media (orientation: portrait) {
+
+//   .home-content-border {
+//     display: flexbox;
+//     height: 97vh;
+//   }
+
+// }
+
+// .active-nav {
+//   padding: 4px;
+// }
+
+// .section-title {
+//   font-weight: bold;
+//   padding: $padding;
+//   text-align: center;
+// }
+
+// /* ================================================================================ */
+
+// @media (orientation: landscape) {
+
+//   @mixin create_gtp_cell_landscape($width-indicator) {
+//     .gtp-cell-#{$width-indicator}, .gtp-cell-plain-#{$width-indicator} {
+//       background-color: transparent;
+//       padding: $padding;
+//       width: percentage(100 / ($width-sections / $width-indicator));
+//       word-break: $word-break-type;
+//     }
+
+//     .gtp-cell-#{$width-indicator} {
+//       border: 1px solid #c3c3c3;
+//     }
+//   }
+
+//   @include create_gtp_cell_landscape(1);
+//   @include create_gtp_cell_landscape(2);
+//   @include create_gtp_cell_landscape(3);
+//   @include create_gtp_cell_landscape(4);
+//   @include create_gtp_cell_landscape(5);
+//   @include create_gtp_cell_landscape(6);
+//   @include create_gtp_cell_landscape(7);
+//   @include create_gtp_cell_landscape(8);
+//   @include create_gtp_cell_landscape(9);
+//   @include create_gtp_cell_landscape(10);
+//   @include create_gtp_cell_landscape(11);
+//   @include create_gtp_cell_landscape(12);
+
+//   .gtp-cell-none {
+//     visibility: hidden;
+//   }
+// }
+
+// /* -------------------------------------------------------------------------------- */
+
+// @media (orientation: portrait) {
+
+//   @mixin create_gtp_cell_portrait($width-indicator, $width-length) {
+//     .gtp-cell-#{$width-indicator}-phone, .gtp-cell-plain-#{$width-indicator}-phone {
+//       background-color: transparent;
+//       padding: $padding;
+//       width: $width-length;
+//       word-break: $word-break-type;
+//     }
+
+//     .gtp-cell-#{$width-indicator} {
+//       border: 1px solid #c3c3c3;
+//     }
+//   }
+
+//   @include create_gtp_cell_portrait(1, '48%');
+//   @include create_gtp_cell_portrait(2, '48%');
+//   @include create_gtp_cell_portrait(3, '48%');
+//   @include create_gtp_cell_portrait(4, '100%');
+//   @include create_gtp_cell_portrait(5, '100%');
+//   @include create_gtp_cell_portrait(6, '100%');
+//   @include create_gtp_cell_portrait(7, '100%');
+//   @include create_gtp_cell_portrait(8, '100%');
+//   @include create_gtp_cell_portrait(9, '100%');
+//   @include create_gtp_cell_portrait(10, '100%');
+//   @include create_gtp_cell_portrait(11, '100%');
+//   @include create_gtp_cell_portrait(12, '100%');
+
+//   .gtp-cell-none-phone {
+//     visibility: hidden;
+//   }
+// }
+
+// /* ================================================================================ */
+
+// @media (orientation: landscape) {
+
+//   .box {
+//     height: 200px;
+//     display: flex;
+//     flex-wrap: wrap;
+//     flex-direction: column;
+//   }
+
+//   .box>* {
+//     flex: 0 0 33%;
+//   }
+
+// }
+
+// /* -------------------------------------------------------------------------------- */
+
+// @media (orientation: portrait) {
+
+//   .box {
+//     display: flex;
+//     flex-wrap: wrap;
+//     flex-direction: column;
+//     margin-top: 0.5em;
+//   }
+
+//   .box>* {
+//     flex: 0 0 10%;
+//   }
+
+// }
+
+// /* ================================================================================ */
+
+// .active-prayer-header {
+//   display: block;
+//   width: 100%;
+// }
+
+// .active-prayer-header .left {
+//   font-weight: bold;
+//   text-align: right;
+//   width: 50%;
+// }
+
+// .active-prayer-header .right {
+//   text-align: right;
+// }
+
+// /* ================================================================================ */
+
+// .mystery-row {
+//   text-align: left;
+//   margin: calc($margins - 1);
+// }
+
+// .mystery-label, .fruit-label {
+//   font-size: xx-small;
+// }
+
+// .mystery-value, .fruit-value {
+//   font-weight: bold;
+//   text-align: left;
+// }
+
+// /* ================================================================================ */
+
+// @media (orientation: landscape) {
+
+//   .gtp-control {
+//     width: 95%;
+//   }
+
+// }
+
+// /* ================================================================================ */
+
+// @media (orientation: landscape) {
+
+//   .gtp-stacked {
+//     display: flex;
+//     flex-direction: column;
+//     -webkit-flex-direction: column;
+//   }
+
+// }
+
+// /* ================================================================================ */
+
+// @media (orientation: landscape) {
+
+//   .gtp-center {
+//     text-align: center;
+//   }
+
+// }
+
+// /* ================================================================================ */
+
+// .gtp-right {
+//   float: right;
+//   text-align: right;
+// }
+
+// /* ================================================================================ */
+
+// @media (orientation: landscape) {
+
+//   .gtp-full-width {
+//     width: 100%;
+//   }
+
+// }
+
+// /* ================================================================================ */
+
+// @media (orientation: landscape) {
+
+//   .gtp-url {
+//     background-color: #f0f0f0;
+//     color: darkblue;
+//     margin-left: 5px;
+//     z-index: 200;
+//   }
+
+// }
+
+// /* ================================================================================ */
+
+// @media (orientation: landscape) {
+
+//   input[readonly]
+//   {
+//       background-color: #f5f5f5;
+//   }
+
+// }
+
+// /* ================================================================================ */
+
+// @media (orientation: landscape) {
+
+//   .gtp-spacing-default, .gtp-cell {
+//     padding: 5px;
+//   }
+
+// }
+
+// /* ================================================================================ */
+
+// @media (orientation: landscape) {
+
+//   .gtp-table {
+//     width: 100%;
+//   }
+
+// }
+
+// /* ================================================================================ */
+
+// .gtp-footer {
+//   position: relative;
+// }
+
+// .gtp-footer * {
+//   position: absolute;
+//   bottom: $footerOffsetY;
+//   left: $footerOffsetX;
+// }
+
+// // .gtp-footer * * {
+// //   bottom: auto;
+// //   left: auto;
+// // }
+
+// /* ================================================================================ */
+
+// @media (orientation: landscape) {
+
+//   .gtp-row, .gtp-row-plain, .gtp-inline, .gtp-footer {
+//     display: flex;
+//     flex-direction: row;
+//     -webkit-flex-direction: row;
+//   }
+
+//   .phone-nav {
+//     visibility: hidden;
+//   }
+
+// }
+
+// /* -------------------------------------------------------------------------------- */
+
+// @media (orientation: portrait) {
+
+//   .gtp-row, .gtp-row-plain, .gtp-inline, .gtp-footer {
+//     display: flex;
+//     flex-direction: column;
+//     -webkit-flex-direction: column;
+//   }
+
+//   .phone-nav {
+//     float: left;
+//   }
+
+// }
+
+// /* ================================================================================ */
+
+// @media (orientation: landscape) {
+
+//   .gtp-row:nth-child(even) {
+//     @include gtp-row-even-mixin;
+//   }
+
+// }
+
+// /* ================================================================================ */
+
+// @media (orientation: landscape) {
+
+//   .gtp-row:nth-child(odd) {
+//     @include gtp-row-odd-mixin;
+//   }
+
+// }
+
+// /* ================================================================================ */
+
+// @media (orientation: landscape) {
+
+//   .gtp-cell-padding {
+//     padding: $padding;
+//   }
+
+// }
+
+// /* ================================================================================ */
+
+// @media (orientation: landscape) {
+
+//   .nav-button {
+//     max-width: 150px;
+//   }
+
+// }
+
+// /* ================================================================================ */
+
+// .highlight-mystery-of-day {
+//   background-color: yellow;
+//   border-width: 2px;
+//   color: darkblue;
+// }
+
+// /* ================================================================================ */
+
+// @media (orientation: landscape) {
+
+//   .section-row {
+//     padding: $padding;
+//   }
+
 // }
 
 
-// // .repeating-linear-green, .repeating-linear-red, .repeating-linear-rose, .repeating-linear-violet, .repeating-linear-white {
-// //   margin: unset;
-// //   padding: unset;
-// //   height: 100%;
-// //   width: 100%;
+// // ********************************************************
+
+// // @import 'styles-mixin.scss';
+
+// // /* You can add global styles to this file, and also import other style files */
+// // pre, body {
+// //   font-family: Arial, Helvetica, sans-serif;
+// //   font-size: 9pt;
 // // }
 
-// // .repeating-linear-green {
-// //   background: repeating-linear-gradient(-45deg, green, green 3px, rgb(0, 56, 0) 3px, rgb(0, 56, 0) 6px);
+// // html {  //   , .page-full {
+// //   background-image: repeating-linear-gradient(0deg, green, green 3px, rgb(0, 100, 0) 3px, rgb(0, 100, 0) 6px);
 // // }
 
-// // .repeating-linear-red {
-// //   background: repeating-linear-gradient(-45deg, red, red 5px, rgb(56, 0, 0) 5px, rgb(56, 0, 0) 10px);
-// // }
-
-// // .repeating-linear-rose {
-// //   background: repeating-linear-gradient(-45deg, pink, pink 5px, rgba(255, 192, 203, 0.411) 5px,  rgba(255, 192, 203, 0.411) 10px);
-// // }
-
-// // .repeating-linear-violet {
-// //   background: repeating-linear-gradient(-45deg, purple, purple 5px, rgb(56, 0, 56) 5px, rgb(56, 0, 56) 10px);
-// // }
-
+// // app-root,
+// // .repeating-linear-green,
+// // .repeating-linear-red,
+// // .repeating-linear-rose,
+// // .repeating-linear-violet,
 // // .repeating-linear-white {
-// //   background: repeating-linear-gradient(-45deg, white, white 5px, gray 5px, gray 10px);
+// //   // display: flexbox -ms-flexbox;
+// //   max-height: 100%;
+// //   max-width: 100%;
+// //   // min-height: 100%;
+// //   // min-width: 100%;
+// // }
+
+// // img {
+// //   object-fit: contain;
+// // }
+
+
+// // // .repeating-linear-green, .repeating-linear-red, .repeating-linear-rose, .repeating-linear-violet, .repeating-linear-white {
+// // //   margin: unset;
+// // //   padding: unset;
+// // //   height: 100%;
+// // //   width: 100%;
+// // // }
+
+// // // .repeating-linear-green {
+// // //   background: repeating-linear-gradient(-45deg, green, green 3px, rgb(0, 56, 0) 3px, rgb(0, 56, 0) 6px);
+// // // }
+
+// // // .repeating-linear-red {
+// // //   background: repeating-linear-gradient(-45deg, red, red 5px, rgb(56, 0, 0) 5px, rgb(56, 0, 0) 10px);
+// // // }
+
+// // // .repeating-linear-rose {
+// // //   background: repeating-linear-gradient(-45deg, pink, pink 5px, rgba(255, 192, 203, 0.411) 5px,  rgba(255, 192, 203, 0.411) 10px);
+// // // }
+
+// // // .repeating-linear-violet {
+// // //   background: repeating-linear-gradient(-45deg, purple, purple 5px, rgb(56, 0, 56) 5px, rgb(56, 0, 56) 10px);
+// // // }
+
+// // // .repeating-linear-white {
+// // //   background: repeating-linear-gradient(-45deg, white, white 5px, gray 5px, gray 10px);
+// // // }
+
+// // // .content-border {
+// // //   border: $border;
+// // //   border-radius: $border-radius;
+// // //   display: flexbox;
+// // //   text-align: center;
+// // // }
+
+// // .gtp-row, .gtp-row-plain, .gtp-inline {
+// //   display: flex;
+// //   flex-direction: row;
+// //   -webkit-flex-direction: row;
+// // }
+
+// // .gtp-row:nth-child(even) {
+// //   @include gtp-row-even-mixin;
+// // }
+
+// // .gtp-row:nth-child(odd) {
+// //   @include gtp-row-odd-mixin;
+// // }
+
+// // @mixin create_gtp_cell($width-indicator) {
+// //   .gtp-cell-#{$width-indicator}, .gtp-cell-plain-#{$width-indicator} {
+// //     background-color: transparent;
+// //     padding: $padding;
+// //     width: percentage(100 / ($width-sections / $width-indicator));
+// //     word-break: $word-break-type;
+// //   }
+
+// //   .gtp-cell-#{$width-indicator} {
+// //     border: 1px solid #c3c3c3;
+// //   }
+// // }
+
+// // @include create_gtp_cell(1);
+// // @include create_gtp_cell(2);
+// // @include create_gtp_cell(3);
+// // @include create_gtp_cell(4);
+// // @include create_gtp_cell(5);
+// // @include create_gtp_cell(6);
+// // @include create_gtp_cell(7);
+// // @include create_gtp_cell(8);
+// // @include create_gtp_cell(9);
+// // @include create_gtp_cell(10);
+// // @include create_gtp_cell(11);
+// // @include create_gtp_cell(12);
+
+// // .nav-button {
+// //   max-width: 150px;
 // // }
 
 // // .content-border {
 // //   border: $border;
 // //   border-radius: $border-radius;
-// //   display: flexbox;
 // //   text-align: center;
 // // }
 
-// .gtp-row, .gtp-row-plain, .gtp-inline {
-//   display: flex;
-//   flex-direction: row;
-//   -webkit-flex-direction: row;
-// }
+// // .content-no-border, .content-border {
+// //   background-color: lightgray;
+// //   box-sizing: border-box;
+// //   // display: flexbox;
+// //   margin-top: $margins;   //calc($margins * 4);
+// //   margin-bottom: $margins;  //calc($margins * -2);
+// //   margin-left: $margins;
+// //   margin-right: $margins;
+// //   opacity: 85%;
+// //   padding: $padding;
+// //   // height: calc(100% - $margins);
+// //   // width: calc(100% - $margins);
+// // }
 
-// .gtp-row:nth-child(even) {
-//   @include gtp-row-even-mixin;
-// }
+// // // // img {
+// // // //   // display: block;
+// // // //   max-height: 100%;
+// // // //   max-width: 100%;
+// // // // }
 
-// .gtp-row:nth-child(odd) {
-//   @include gtp-row-odd-mixin;
-// }
+// // button {
+// //   margin: $margins;
+// //   min-height: 30px;
+// // }
 
-// @mixin create_gtp_cell($width-indicator) {
-//   .gtp-cell-#{$width-indicator}, .gtp-cell-plain-#{$width-indicator} {
-//     background-color: transparent;
-//     padding: $padding;
-//     width: percentage(100 / ($width-sections / $width-indicator));
-//     word-break: $word-break-type;
-//   }
+// // .alternate-bold {
+// //   color: blue;
+// //   font-weight: bold;
+// // }
 
-//   .gtp-cell-#{$width-indicator} {
-//     border: 1px solid #c3c3c3;
-//   }
-// }
+// // .nav-btn-left, .nav-btn-right {
+// //   width: 10hmin;
+// // }
 
-// @include create_gtp_cell(1);
-// @include create_gtp_cell(2);
-// @include create_gtp_cell(3);
-// @include create_gtp_cell(4);
-// @include create_gtp_cell(5);
-// @include create_gtp_cell(6);
-// @include create_gtp_cell(7);
-// @include create_gtp_cell(8);
-// @include create_gtp_cell(9);
-// @include create_gtp_cell(10);
-// @include create_gtp_cell(11);
-// @include create_gtp_cell(12);
+// // .section-container {
+// //   height: 90vmin;
+// //   overflow: hidden;
+// //   text-align: center;
+// // }
 
-// .nav-button {
-//   max-width: 150px;
-// }
+// // .section-row, .section-row-full {
+// //   display: flex;
+// // }
 
-// .content-border {
-//   border: $border;
-//   border-radius: $border-radius;
-//   text-align: center;
-// }
+// // .section-row-full {
+// //   height: 100%;
+// // }
 
-// .content-no-border, .content-border {
-//   background-color: lightgray;
-//   box-sizing: border-box;
-//   // display: flexbox;
-//   margin-top: $margins;   //calc($margins * 4);
-//   margin-bottom: $margins;  //calc($margins * -2);
-//   margin-left: $margins;
-//   margin-right: $margins;
-//   opacity: 85%;
-//   padding: $padding;
-//   // height: calc(100% - $margins);
-//   // width: calc(100% - $margins);
-// }
-
-// // // img {
-// // //   // display: block;
-// // //   max-height: 100%;
-// // //   max-width: 100%;
+// // // .section-far-left, .section-left, .section-center, .section-right, .section-far-right, .section-left-2x, .section-right-2x {
+// // //   padding: 5px;
 // // // }
 
-// button {
-//   margin: $margins;
-//   min-height: 30px;
-// }
+// // // .section-far-left, .section-far-right {
+// // //   flex: 10%;
+// // // }
 
-// .alternate-bold {
-//   color: blue;
-//   font-weight: bold;
-// }
+// // // .section-left, .section-center, .section-right {
+// // //   flex: 33%;
+// // // }
 
-// .nav-btn-left, .nav-btn-right {
-//   width: 10hmin;
-// }
+// // // .section-left-2x, .section-right-2x {
+// // //   flex: 66%
+// // // }
 
-// .section-container {
-//   height: 90vmin;
-//   overflow: hidden;
-//   text-align: center;
-// }
+// // // .section-left, .section-left-2x {
+// // //   text-align: right;
+// // // }
 
-// .section-row, .section-row-full {
-//   display: flex;
-// }
+// // // .section-center {
+// // //   text-align: center;
+// // // }
 
-// .section-row-full {
-//   height: 100%;
-// }
+// // // .section-right, .section-right-2x {
+// // //   text-align: left;
+// // // }
 
-// // .section-far-left, .section-left, .section-center, .section-right, .section-far-right, .section-left-2x, .section-right-2x {
-// //   padding: 5px;
-// // }
-
-// // .section-far-left, .section-far-right {
-// //   flex: 10%;
-// // }
-
-// // .section-left, .section-center, .section-right {
-// //   flex: 33%;
-// // }
-
-// // .section-left-2x, .section-right-2x {
-// //   flex: 66%
-// // }
-
-// // .section-left, .section-left-2x {
-// //   text-align: right;
-// // }
-
-// // .section-center {
-// //   text-align: center;
-// // }
-
-// // .section-right, .section-right-2x {
-// //   text-align: left;
-// // }
-
-// // .spacer {
-// //   font-size: xx-small;
-// // }
+// // // .spacer {
+// // //   font-size: xx-small;
+// // // }
 

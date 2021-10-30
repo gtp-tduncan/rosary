@@ -5,14 +5,8 @@
   </div>
 </div>
 <div class="gtp-footer">
-  <div>
-    <span class="gtp-row-plain">
-      <span class="gtp-cell-none gtp-cell-1-phone phone-nav">
-        <button (click)="onPrevious()">&lt;=</button>
-      </span>
-      <span class="gtp-cell-none gtp-cell-1-phone phone-nav">
-        <button (click)="onNext()">=&gt;</button>
-      </span>
-    </span>
-  </div>
+  <app-navigation
+    (onNextClickEvent)="onNext()"
+    (onPreviousClickEvent)="onPrevious()">
+  </app-navigation>
 </div>

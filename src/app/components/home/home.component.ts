@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { BeadGroupLoaderService } from '../../services/bead-group-loader.service';
 import { RosaryMysteriesEnum } from '../../sequences/rosary-helper';
 import { BeadGroupList } from '../../models/bead-group-list';
@@ -11,6 +11,9 @@ import { ActivePrayerComponent } from '../active-prayer/active-prayer.component'
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+
+  @Input()
+  selectedMystery: RosaryMysteriesEnum;
 
   selectedBeadGroupList: BeadGroupList;
 
