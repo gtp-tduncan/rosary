@@ -13,7 +13,7 @@ import { ActivePrayerComponent } from '../active-prayer/active-prayer.component'
 export class HomeComponent implements OnInit {
 
   @Input()
-  selectedMystery: RosaryMysteriesEnum;
+  selectedMysteryId: string;
 
   selectedBeadGroupList: BeadGroupList;
 
@@ -24,7 +24,12 @@ export class HomeComponent implements OnInit {
               public appConfig: AppConfigService) {
   }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    console.log(`selectedMysteryId: ${this.selectedMysteryId}`);
+    if (this.selectedMysteryId) {
+      this.onMysterySelected(RosaryMysteriesEnum[this.selectedMysteryId]);
+    }
+  }
 
   onMysterySelected(selectedMystery: RosaryMysteriesEnum): void {
     this.selectedBeadGroupList = this.beadGroupLoader.loadHolyRosaryContemporaryMysteryEnum(selectedMystery);
