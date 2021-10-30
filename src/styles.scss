@@ -101,14 +101,14 @@ pre {
   height: 100%;
 */
 
-.content-border, .home-content-border {
+.content-border, #home-content-border {
   border: $border;
   border-radius: $border-radius;
   display: flex;
   flex-flow: column;
 }
 
-.content-no-border, .content-border, .home-content-border {
+.content-no-border, .content-border, #home-content-border {
   background-color: burlywood;
   box-sizing: border-box;
   margin: $margins;
@@ -116,13 +116,45 @@ pre {
   padding: $padding;
 }
 
-.home-content-border {
+#home-content-border {
   position: absolute;
   top: $margins;
   left: $margins;
   right: $margins;
   bottom: $margins;
-  padding: calc($padding * 2);
+}
+
+#nav-footer {
+  position: absolute;
+  bottom: $margins;
+  max-height: 6vh;
+  width: 100%;
+}
+
+#nav-footer app-navigation {
+
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  -webkit-flex-direction: row;
+
+}
+
+#nav-footer app-navigation .left button, #nav-footer app-navigation .right button {
+  padding: $padding;
+  width: 90%;
+}
+
+#nav-footer app-navigation .left {
+  padding: $padding;
+  text-align: right;
+  width: 45%;
+}
+
+#nav-footer app-navigation .right {
+  padding: $padding;
+  text-align: left;
+  width: 45%;
 }
 
 
