@@ -1,13 +1,36 @@
 @import '../../../styles-shared-mixins.scss';
 
+#rosary-beads-img-div {
+  display: block;
+}
+
 @media (orientation: landscape) {
 
   #rosary-beads-img-div {
-    display: block;
     float: left;
   }
 
 }
+
+// @media (orientation: landscape) {
+
+//   #rosary-beads-img-div, app-pats-beads {
+//     transform: rotate(90deg) scale(.6); // translateX($patsBeadsOffsetX) translateY($patsBeadsOffsetY);
+//   }
+
+// }
+
+//   #pats-beads {
+//     margin-top: 5vh;
+//     max-height: 75vh;
+//   }
+
+//   .highlight-bead {
+//     // margin-top: 5vh;
+//     // max-height: 75vh;
+//     // transform: rotate(90deg) scale(.6) translateX($patsBeadsOffsetX) translateY($patsBeadsOffsetY);
+//   }
+
 
 
 // @media (orientation: portrait) {

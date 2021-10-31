@@ -1,5 +1,6 @@
 <div id="pats-beads-container">
-  <img id="pats-beads" src="assets/cropped-2.png" (window:resize)="onResize($event)">
+  <img id="pats-beads" src="assets/cropped-2.png" [style]="beadStyle()" (window:resize)="onResize($event)">
+  <!-- <img id="pats-beads" src="assets/x.png" (window:resize)="onResize($event)"> -->
   <div *ngIf="highlightStyle()">
     <div id="pats-highlight" class="highlight-bead" [style]="highlightStyle()"></div>
   </div>

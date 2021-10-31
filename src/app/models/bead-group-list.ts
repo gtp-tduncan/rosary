@@ -66,7 +66,6 @@ export class BeadGroupList {
   }
 
   next(): BeadGroup {
-    console.log('next - bead group list');
     if (this.skipNext) {
       this.skipNext = false;
       return this.currentBeadGroup;

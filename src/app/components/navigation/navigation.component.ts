@@ -19,7 +19,6 @@ export class NavigationComponent implements OnInit {
   }
 
   onNext() {
-    console.log('next - navigation');
     this.onNextClickEvent.emit('next');
   }
 

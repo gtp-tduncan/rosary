@@ -1,0 +1,41 @@
+.rotate-container {
+  background-color: lightgray;
+  display: block;
+  opacity: 85%;
+  // height: 100%;
+  margin: 10px;
+  padding: 10px;
+  // width: 100%;
+}
+
+.rotate-div {
+  background-color: rosybrown;
+  height: 5vh;
+  width: 20vw;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  padding-left: 3vw;
+  padding-right: 3vw;
+  text-align: center;
+  transform: rotate(10deg) scale(1.5);
+  transform-origin: left top;
+}
+
+#rotate-img {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+}
+
+.rotate-highligh-div {
+  position: absolute;
+  left: 15px;
+  top: 15px;
+
+  background-color: red;
+  border: 5px solid darkred;
+  border-radius: 50%;
+
+  opacity: 0.5;
+  z-index: 2;
+}

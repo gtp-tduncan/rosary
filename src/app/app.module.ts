@@ -16,6 +16,7 @@ import { PatsBeadsComponent } from './components/pats-beads/pats-beads.component
 import { EndComponent } from './prayers/end/end.component';
 import { HeaderComponent } from './components/header/header.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
+import { RotateDivComponent } from './components/rotate-div/rotate-div.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { NavigationComponent } from './components/navigation/navigation.componen
     MysteryDisplayComponent,
     CurrentPrayerComponent,
     HeaderComponent,
-    NavigationComponent
+    NavigationComponent,
+    RotateDivComponent
   ],
   imports: [
     BrowserModule,

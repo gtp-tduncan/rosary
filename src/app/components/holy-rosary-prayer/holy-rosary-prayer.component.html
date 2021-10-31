@@ -2,6 +2,8 @@
   <div id="rosary-beads-img-div">
     <app-pats-beads [highlightBeadIdx]="highlightBeadIndex"></app-pats-beads>
   </div>
+  <app-navigation (onNextClickEvent)="onNext()" (onPreviousClickEvent)="onPrevious()">
+  </app-navigation>
   <div>
     <div *ngIf="showMystery">
       <app-mystery-display [activeBeadGroupList]="activeBeadGroupList"></app-mystery-display>

@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { version } from '../../package.json';
-import { LiturgicalColors, LiturgicalYearService } from './services/liturgical-year.service';
+import { AppConfigService } from './services/app-config.service';
+import { LiturgicalYearService } from './services/liturgical-year.service';
 
 @Component({
   selector: 'app-root',
@@ -13,14 +14,33 @@ export class AppComponent {
 
   appVersion: string = version;
 
-  constructor(public liturgicalYear: LiturgicalYearService) { }
+  constructor(public liturgicalYear: LiturgicalYearService,
+              private appConfig: AppConfigService) {
+    this.checkOrientation();
+  }
 
   backgroundImageClass(): string {
     const color = this.liturgicalYear.liturgicalColor();
     return `lit-color-${color.toString().toLowerCase()}`;
   }
 
-  private formatBackgroundImage(color: string, rgb: string) {
-    return `repeating-linear-gradient(-45deg, ${color}, ${color} 3px, ${rgb} 3px, ${rgb}, 6px`;
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.checkOrientation();
   }
+
+  private checkOrientation(): void {
+    if (window.matchMedia('(orientation: portrait)').matches) {
+      console.log(`you're in PORTRAIT mode`);
+      this.appConfig.isPortrait = true;
+    }
+    else if (window.matchMedia('(orientation: landscape)').matches) {
+      console.log(`you're in LANDSCAPE mode`);
+      this.appConfig.isPortrait = false;
+    }
+    else {
+      this.appConfig.isPortrait = undefined;
+    }
+  }
+
 }
