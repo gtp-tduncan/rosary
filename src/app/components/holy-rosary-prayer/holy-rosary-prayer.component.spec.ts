@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { EndComponent } from 'src/app/prayers/end/end.component';
 import { RosaryMysteriesEnum } from 'src/app/sequences/rosary-helper';
 import { BeadGroupLoaderService } from 'src/app/services/bead-group-loader.service';
-import { PatsBeadsComponent } from '../pats-beads/pats-beads.component';
+import { PatsBeadsComponent } from '../pats-beads/v1-pats-beads.component';
 import { HolyRosaryPrayerComponent } from './holy-rosary-prayer.component';
 
 
