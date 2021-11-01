@@ -11,7 +11,7 @@ import { PATS_BEADS_COORDS_LONG } from "./pats-beads-coords";
 export class PatsBeadsComponent implements OnInit, OnChanges, AfterViewInit, RosaryBeads {
 
   @Input()
-  highlightBeadIdx: number;
+  highlightBeadIdx: number = 0;
 
   imageWidth: number;
   imageHeight: number;
@@ -38,22 +38,21 @@ export class PatsBeadsComponent implements OnInit, OnChanges, AfterViewInit, Ros
     //throw new Error("Method not implemented.");
   }
 
-  highlightStyle(idx: number): string {
-    console.log(`highlightStyle - start`);
-    const point = this.rawCoords[idx];
-    const style = `left: ${point.x}px; top: ${point.y}px;` + this.imageStyle();
-    console.log(`highlightStyle: ${idx} - ${style}`);
-    return style;
+  highlightStyle(): string {
+    const point = this.rawCoords[this.highlightBeadIdx];
+    return `left: ${point.x}px; top: ${point.y}px;` + this.imageStyle();
   }
 
   beadsTransformStyle(): string {
-    return 'transform: rotate(90deg) scale(0.10);';
-    // return 'transform: scale(0.10);';
+    return (this.appConfig.isPortrait)
+      ? 'transform: rotate(90deg) scale(0.10);'
+      : 'transform: scale(0.09);'
   }
 
   imageStyle(): string {
-    return 'margin-top: -3704px;';
-    // return '';
+    return (this.appConfig.isPortrait)
+      ? `margin-top: ${this.rawHeight * -1}px;`
+      : '';
   }
 
 }

@@ -10,5 +10,5 @@ export interface RosaryBeads {
 
   calculateHighlightPosition(): void;
 
-  highlightStyle(idx: number): string;
+  highlightStyle(): string;
 }
