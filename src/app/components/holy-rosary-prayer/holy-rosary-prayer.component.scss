@@ -1,68 +1,15 @@
 @import '../../../styles-shared-mixins.scss';
 
-#rosary-beads-img-div {
-  display: block;
-}
-
 @media (orientation: landscape) {
 
   #rosary-beads-img-div {
     float: left;
+    width: 30%;
+  }
+
+  #rosary-beads-prayer-div {
+    float: right;
+    width: 70%;
   }
 
 }
-
-// @media (orientation: landscape) {
-
-//   #rosary-beads-img-div, app-pats-beads {
-//     transform: rotate(90deg) scale(.6); // translateX($patsBeadsOffsetX) translateY($patsBeadsOffsetY);
-//   }
-
-// }
-
-//   #pats-beads {
-//     margin-top: 5vh;
-//     max-height: 75vh;
-//   }
-
-//   .highlight-bead {
-//     // margin-top: 5vh;
-//     // max-height: 75vh;
-//     // transform: rotate(90deg) scale(.6) translateX($patsBeadsOffsetX) translateY($patsBeadsOffsetY);
-//   }
-
-
-
-// @media (orientation: portrait) {
-
-//   .active-prayer, .active-mystery {
-//     background-color: transparent;
-//     font-size: 4vw;
-//     transform: translateX($prayerOffsetX) translateY($prayerOffsetY);
-//   }
-
-// }
-
-// .active-mystery {
-//   background-color: paleturquoise;
-//   border-radius: 5px;
-//   border-width: 2px;
-//   color: black;
-//   height: fit-content;
-//   padding: 10px;
-// }
-
-// .active-mystery .left-cell, .active-mystery .right-cell {
-//   margin: 5px;
-//   padding: 5px;
-// }
-
-// .active-mystery .left-cell {
-//   font-weight: bold;
-//   text-align: right;
-//   width: 45%;
-// }
-
-// .active-mystery .right-cell {
-//   background-color: #bffefe;
-// }

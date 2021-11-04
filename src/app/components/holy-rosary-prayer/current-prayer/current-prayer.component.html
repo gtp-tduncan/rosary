@@ -5,16 +5,16 @@
     </pre>
     <ng-container *ngIf="currentPrayer.all === undefined">
       <div>
-        <div [class]="leaderLabelCssClass()">
-          <div i18n="@@prayer-leader">L:</div>
-        </div>
-        <div [class]="leaderCssClass()">
+        <span [class]="leaderLabelCssClass()">
+          <div i18n="@@prayer-leader">Leader:</div>
+        </span>
+        <span [class]="leaderCssClass()">
           {{ currentPrayerLeader() }}
-        </div>
+        </span>
       </div>
       <div>
         <div [class]="responseLabelCssClass()" i18n="@@prayer-response">
-          R:
+          Response:
         </div>
         <div [class]="responseCssClass()">
           {{ currentPrayer.response }}

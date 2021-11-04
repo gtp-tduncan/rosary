@@ -1,14 +1,18 @@
 <div class="mystery-row">
-  <div class="mystery-label">
-    {{ mysteryNum }} {{ mysteryName }} {{ mysteryLiteralLabel }}:
+  <div class="mystery-row-inner">
+    <div class="mystery-label">
+      {{ mysteryNum }} {{ mysteryName }} {{ mysteryLiteralLabel }}:
+    </div>
+    <div class="mystery-value">
+      {{ activeBeadGroupList.mystery() }}
+    </div>
   </div>
-  <div class="mystery-value">
-    {{ activeBeadGroupList.mystery() }}
-  </div>
-  <div class="fruit-label" i18n>
-    Fruit of the Mystery:
-  </div>
-  <div class="fruit-value">
-    {{ activeBeadGroupList.fruit() }}
+  <div class="mystery-row-inner">
+    <div class="fruit-label" i18n>
+      Fruit of the Mystery:
+    </div>
+    <div class="fruit-value">
+      {{ activeBeadGroupList.fruit() }}
+    </div>
   </div>
 </div>

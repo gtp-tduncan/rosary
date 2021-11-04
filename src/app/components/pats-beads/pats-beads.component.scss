@@ -1,32 +1,52 @@
-.pats-beads-container {
-  height: fit-content;
+@media (orientation: portrait) {
+  .pats-beads-container {
+    height: 24vh;
+    width: 24vw;
+  }
 }
 
-.pats-beads-div {
+#pats-beads-div {
   background-color: transparent;
-  height: fit-content;
   width: 10px;
 }
 
 #pats-beads-img {
   position: absolute;
   height: fit-content;
-  // margin-top: -20vw;
   left: 0px;
   top: 0px;
 }
 
 .pats-beads-highlight-div {
   position: absolute;
-  // left: 15px;
-  // top: 15px;
-  // margin-top: -20vw;
 
   background-color: red;
   border: 50px solid darkred;
   border-radius: 50%;
-  max-height: 500vh;
+  // max-height: 500vh;
+  height: 20vh;
+  width: 20vh;
 
   opacity: 0.5;
   z-index: 2;
+}
+
+@media (orientation: landscape) {
+  .pats-beads-highlight-div {
+    margin-top: -15vw;
+    margin-left: -10vw;
+  }
+}
+
+@media (orientation: portrait) {
+  .pats-beads-highlight-div {
+    // margin-top: -15vw;
+    margin-left: -20vw;
+    padding-top: -30vw;
+  }
+}
+
+#pats-beads-image-placeholder {
+  background-color: blueviolet;
+  z-index: 1;
 }

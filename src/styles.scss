@@ -33,6 +33,12 @@ pre {
     font-size: $font-size-base;
   }
 
+  pre {
+    font-family: $fontname;
+    font-size: $font-size-base;
+  }
+
+
 }
 
 @media (orientation: portrait) {
@@ -126,9 +132,24 @@ pre {
 
 #nav-footer {
   position: absolute;
-  bottom: $margins;
   max-height: 6vh;
   width: 100%;
+}
+
+@media (orientation: landscape) {
+
+  #nav-footer {
+    bottom: $nav-landscape-margin;
+  }
+
+}
+
+@media (orientation: portrait) {
+
+  #nav-footer {
+    bottom: $margins;
+  }
+
 }
 
 #nav-footer app-navigation {
@@ -157,6 +178,17 @@ pre {
   width: 45%;
 }
 
+.gtp-stacked-column {
+  display: flex;
+  flex-direction: column;
+  -webkit-flex-direction: column;
+}
+
+.gtp-stacked-row {
+  display: flex;
+  flex-direction: row;
+  -webkit-flex-direction: row;
+}
 
 // .prayer-leader-label, .prayer-response-label {
 //   background-color: $header-bgcolor;

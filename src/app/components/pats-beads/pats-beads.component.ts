@@ -26,17 +26,9 @@ export class PatsBeadsComponent implements OnInit, OnChanges, AfterViewInit, Ros
 
   ngOnInit(): void { }
 
-  ngOnChanges(changes: SimpleChanges): void {
-    this.calculateHighlightPosition();
-  }
+  ngOnChanges(changes: SimpleChanges): void { }
 
-  ngAfterViewInit(): void {
-    this.calculateHighlightPosition();
-  }
-
-  calculateHighlightPosition(): void {
-    //throw new Error("Method not implemented.");
-  }
+  ngAfterViewInit(): void { }
 
   highlightStyle(): string {
     const point = this.rawCoords[this.highlightBeadIdx];
@@ -55,4 +47,12 @@ export class PatsBeadsComponent implements OnInit, OnChanges, AfterViewInit, Ros
       : '';
   }
 
+  imagePlaceholderStyle(): string {
+    return '';
+    // return (this.appConfig.isPortrait)
+    //   ? `height: ${this.imageWidth}px;`
+    //   : '';
+  }
+
 }
+
