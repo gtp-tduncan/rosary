@@ -1,35 +1,15 @@
 @import '../../../styles-shared-mixins.scss';
 
-@media (orientation: portrait) {
+@media (orientation: landscape) {
 
-  .active-prayer, .active-mystery {
-    background-color: transparent;
-    font-size: 4vw;
-    transform: translateX($prayerOffsetX) translateY($prayerOffsetY);
+  #rosary-beads-img-div {
+    float: left;
+    width: 30%;
   }
 
-}
+  #rosary-beads-prayer-div {
+    float: right;
+    width: 70%;
+  }
 
-.active-mystery {
-  background-color: paleturquoise;
-  border-radius: 5px;
-  border-width: 2px;
-  color: black;
-  height: fit-content;
-  padding: 10px;
-}
-
-.active-mystery .left-cell, .active-mystery .right-cell {
-  margin: 5px;
-  padding: 5px;
-}
-
-.active-mystery .left-cell {
-  font-weight: bold;
-  text-align: right;
-  width: 45%;
-}
-
-.active-mystery .right-cell {
-  background-color: #bffefe;
 }

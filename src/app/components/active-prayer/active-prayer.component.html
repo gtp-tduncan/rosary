@@ -1,24 +1,17 @@
 <div id="active-prayer-section-container">
-  <app-header
-    [prayerName]="prayerName"
-    [isPrayerSequenceDone]="isPrayerSequenceDone"
-    (onResetEvent)="onStartNew()"></app-header>
+  <div class="app-header-div">
+    <app-header
+      [prayerName]="prayerName"
+      [isPrayerSequenceDone]="isPrayerSequenceDone"
+      (onResetEvent)="onStartNew()">
+    </app-header>
+  </div>
 
-  <app-holy-rosary-prayer
-    [activeBeadGroupList]="activeBeadGroupList"
-    [prayerName]="prayerName"
-    [debugTheEnd]="debugTheEnd">
-  </app-holy-rosary-prayer>
-
-  <div class="gtp-row-plain">
-    <span class="gtp-cell-plain-1 gtp-cell-none-phone">
-      <button (click)="onPrevious()">&lt;=</button>
-    </span>
-    <span class="gtp-cell-plain-10">
-    </span>
-    <span class="gtp-cell-plain-1 gtp-cell-none-phone">
-      <button (click)="onNext()">=&gt;</button>
-    </span>
+  <div>
+    <app-holy-rosary-prayer
+      [activeBeadGroupList]="activeBeadGroupList"
+      [prayerName]="prayerName"
+      [debugTheEnd]="debugTheEnd">
+    </app-holy-rosary-prayer>
   </div>
 </div>
-

@@ -1,5 +1,5 @@
 /* ================================================================================ */
-body {
+html, body {
   font-family: Consola;
   margin: unset;
 }
@@ -15,6 +15,11 @@ pre {
     font-family: Consola;
     font-size: 2vw;
   }
+
+  pre {
+    font-family: Consola;
+    font-size: 2vw;
+  }
 }
 @media (orientation: portrait) {
   button {
@@ -22,6 +27,7 @@ pre {
     font-size: 4vw;
   }
 }
+/* ================================================================================ */
 /* ================================================================================ */
 .lit-color-green, .lit-color-red, .lit-color-rose, .lit-color-violet, .lit-color-white {
   position: absolute;
@@ -46,519 +52,73 @@ pre {
   background-image: repeating-linear-gradient(0deg, white, white 3px, gray 3px, gray 6px);
 }
 /* ================================================================================ */
-.content-border, .home-content-border {
+/*
+  // Reference: https://stackoverflow.com/questions/90178/make-a-div-fill-the-height-of-the-remaining-screen-space
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+*/
+.content-border, #home-content-border {
   border: 1px dashed black;
   border-radius: 10px;
-  display: flexbox;
-  text-align: center;
+  display: flex;
+  flex-flow: column;
 }
-.content-no-border, .content-border, .home-content-border {
+.content-no-border, .content-border, #home-content-border {
   background-color: lightgray;
   box-sizing: border-box;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  margin-left: 5px;
-  margin-right: 5px;
+  margin: 5px;
   opacity: 85%;
   padding: 5px;
 }
-.prayer-leader-label, .prayer-response-label {
-  background-color: lightblue;
-  border-color: darkblue;
-  border-width: 1px;
-  color: darkblue;
-  float: left;
-  font-style: italic;
-  font-weight: bold;
-  opacity: 100%;
-  padding: calc($padding / 2);
-}
-.gtp-pre-line {
-  white-space: pre-line;
-}
-@media (orientation: landscape) {
-  .prayer-leader-label, .prayer-response-label {
-    float: left;
-    width: unset;
-  }
-}
-.prayer-leader, .prayer-response, .prayer-leader-label, .prayer-response-label {
-  float: left;
-  text-align: left;
-}
-.prayer-response {
-  font-weight: bold;
-}
-.component-hidden {
-  visibility: hidden;
-}
-@media (orientation: landscape) {
-  .content-no-border, .content-border, .home-content-border {
-    font-size: 2vw;
-  }
-}
-@media (orientation: portrait) {
-  .content-no-border, .content-border, .home-content-border {
-    font-size: 4vw;
-  }
-}
-@media (orientation: portrait) {
-  .home-content-border {
-    display: flexbox;
-    height: 97vh;
-  }
-}
-.active-nav {
-  padding: 4px;
-}
-.section-title {
-  font-weight: bold;
-  padding: 5px;
-  text-align: center;
-}
-/* ================================================================================ */
-@media (orientation: landscape) {
-  .gtp-cell-1, .gtp-cell-plain-1 {
-    background-color: transparent;
-    padding: 5px;
-    width: 833.3333333333%;
-    word-break: break-word;
-  }
-
-  .gtp-cell-1 {
-    border: 1px solid #c3c3c3;
-  }
-
-  .gtp-cell-2, .gtp-cell-plain-2 {
-    background-color: transparent;
-    padding: 5px;
-    width: 1666.6666666667%;
-    word-break: break-word;
-  }
-
-  .gtp-cell-2 {
-    border: 1px solid #c3c3c3;
-  }
-
-  .gtp-cell-3, .gtp-cell-plain-3 {
-    background-color: transparent;
-    padding: 5px;
-    width: 2500%;
-    word-break: break-word;
-  }
-
-  .gtp-cell-3 {
-    border: 1px solid #c3c3c3;
-  }
-
-  .gtp-cell-4, .gtp-cell-plain-4 {
-    background-color: transparent;
-    padding: 5px;
-    width: 3333.3333333333%;
-    word-break: break-word;
-  }
-
-  .gtp-cell-4 {
-    border: 1px solid #c3c3c3;
-  }
-
-  .gtp-cell-5, .gtp-cell-plain-5 {
-    background-color: transparent;
-    padding: 5px;
-    width: 4166.6666666667%;
-    word-break: break-word;
-  }
-
-  .gtp-cell-5 {
-    border: 1px solid #c3c3c3;
-  }
-
-  .gtp-cell-6, .gtp-cell-plain-6 {
-    background-color: transparent;
-    padding: 5px;
-    width: 5000%;
-    word-break: break-word;
-  }
-
-  .gtp-cell-6 {
-    border: 1px solid #c3c3c3;
-  }
-
-  .gtp-cell-7, .gtp-cell-plain-7 {
-    background-color: transparent;
-    padding: 5px;
-    width: 5833.3333333333%;
-    word-break: break-word;
-  }
-
-  .gtp-cell-7 {
-    border: 1px solid #c3c3c3;
-  }
-
-  .gtp-cell-8, .gtp-cell-plain-8 {
-    background-color: transparent;
-    padding: 5px;
-    width: 6666.6666666667%;
-    word-break: break-word;
-  }
-
-  .gtp-cell-8 {
-    border: 1px solid #c3c3c3;
-  }
-
-  .gtp-cell-9, .gtp-cell-plain-9 {
-    background-color: transparent;
-    padding: 5px;
-    width: 7500%;
-    word-break: break-word;
-  }
-
-  .gtp-cell-9 {
-    border: 1px solid #c3c3c3;
-  }
-
-  .gtp-cell-10, .gtp-cell-plain-10 {
-    background-color: transparent;
-    padding: 5px;
-    width: 8333.3333333333%;
-    word-break: break-word;
-  }
-
-  .gtp-cell-10 {
-    border: 1px solid #c3c3c3;
-  }
-
-  .gtp-cell-11, .gtp-cell-plain-11 {
-    background-color: transparent;
-    padding: 5px;
-    width: 9166.6666666667%;
-    word-break: break-word;
-  }
-
-  .gtp-cell-11 {
-    border: 1px solid #c3c3c3;
-  }
-
-  .gtp-cell-12, .gtp-cell-plain-12 {
-    background-color: transparent;
-    padding: 5px;
-    width: 10000%;
-    word-break: break-word;
-  }
-
-  .gtp-cell-12 {
-    border: 1px solid #c3c3c3;
-  }
-
-  .gtp-cell-none {
-    visibility: hidden;
-  }
-}
-/* -------------------------------------------------------------------------------- */
-@media (orientation: portrait) {
-  .gtp-cell-1-phone, .gtp-cell-plain-1-phone {
-    background-color: transparent;
-    padding: 5px;
-    width: "48%";
-    word-break: break-word;
-  }
-
-  .gtp-cell-1 {
-    border: 1px solid #c3c3c3;
-  }
-
-  .gtp-cell-2-phone, .gtp-cell-plain-2-phone {
-    background-color: transparent;
-    padding: 5px;
-    width: "48%";
-    word-break: break-word;
-  }
-
-  .gtp-cell-2 {
-    border: 1px solid #c3c3c3;
-  }
-
-  .gtp-cell-3-phone, .gtp-cell-plain-3-phone {
-    background-color: transparent;
-    padding: 5px;
-    width: "48%";
-    word-break: break-word;
-  }
-
-  .gtp-cell-3 {
-    border: 1px solid #c3c3c3;
-  }
-
-  .gtp-cell-4-phone, .gtp-cell-plain-4-phone {
-    background-color: transparent;
-    padding: 5px;
-    width: "100%";
-    word-break: break-word;
-  }
-
-  .gtp-cell-4 {
-    border: 1px solid #c3c3c3;
-  }
-
-  .gtp-cell-5-phone, .gtp-cell-plain-5-phone {
-    background-color: transparent;
-    padding: 5px;
-    width: "100%";
-    word-break: break-word;
-  }
-
-  .gtp-cell-5 {
-    border: 1px solid #c3c3c3;
-  }
-
-  .gtp-cell-6-phone, .gtp-cell-plain-6-phone {
-    background-color: transparent;
-    padding: 5px;
-    width: "100%";
-    word-break: break-word;
-  }
-
-  .gtp-cell-6 {
-    border: 1px solid #c3c3c3;
-  }
-
-  .gtp-cell-7-phone, .gtp-cell-plain-7-phone {
-    background-color: transparent;
-    padding: 5px;
-    width: "100%";
-    word-break: break-word;
-  }
-
-  .gtp-cell-7 {
-    border: 1px solid #c3c3c3;
-  }
-
-  .gtp-cell-8-phone, .gtp-cell-plain-8-phone {
-    background-color: transparent;
-    padding: 5px;
-    width: "100%";
-    word-break: break-word;
-  }
-
-  .gtp-cell-8 {
-    border: 1px solid #c3c3c3;
-  }
-
-  .gtp-cell-9-phone, .gtp-cell-plain-9-phone {
-    background-color: transparent;
-    padding: 5px;
-    width: "100%";
-    word-break: break-word;
-  }
-
-  .gtp-cell-9 {
-    border: 1px solid #c3c3c3;
-  }
-
-  .gtp-cell-10-phone, .gtp-cell-plain-10-phone {
-    background-color: transparent;
-    padding: 5px;
-    width: "100%";
-    word-break: break-word;
-  }
-
-  .gtp-cell-10 {
-    border: 1px solid #c3c3c3;
-  }
-
-  .gtp-cell-11-phone, .gtp-cell-plain-11-phone {
-    background-color: transparent;
-    padding: 5px;
-    width: "100%";
-    word-break: break-word;
-  }
-
-  .gtp-cell-11 {
-    border: 1px solid #c3c3c3;
-  }
-
-  .gtp-cell-12-phone, .gtp-cell-plain-12-phone {
-    background-color: transparent;
-    padding: 5px;
-    width: "100%";
-    word-break: break-word;
-  }
-
-  .gtp-cell-12 {
-    border: 1px solid #c3c3c3;
-  }
-
-  .gtp-cell-none-phone {
-    visibility: hidden;
-  }
-}
-/* ================================================================================ */
-@media (orientation: landscape) {
-  .box {
-    height: 200px;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-  }
-
-  .box > * {
-    flex: 0 0 33%;
-  }
-}
-/* -------------------------------------------------------------------------------- */
-@media (orientation: portrait) {
-  .box {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    margin-top: 0.5em;
-  }
-
-  .box > * {
-    flex: 0 0 10%;
-  }
-}
-/* ================================================================================ */
-.mystery-row {
-  text-align: left;
-  margin: calc($margins - 1);
-}
-.mystery-label, .fruit-label {
-  text-align: right;
-}
-.mystery-value, .fruit-value {
-  float: right;
-  font-weight: bold;
-  max-width: 60%;
-  text-align: left;
-}
-/* ================================================================================ */
-@media (orientation: landscape) {
-  .gtp-control {
-    width: 95%;
-  }
-}
-/* ================================================================================ */
-@media (orientation: landscape) {
-  .gtp-stacked {
-    display: flex;
-    flex-direction: column;
-  }
-}
-/* ================================================================================ */
-@media (orientation: landscape) {
-  .gtp-center {
-    text-align: center;
-  }
-}
-/* ================================================================================ */
-.gtp-right {
-  float: right;
-  text-align: right;
-}
-/* ================================================================================ */
-@media (orientation: landscape) {
-  .gtp-full-width {
-    width: 100%;
-  }
-}
-/* ================================================================================ */
-@media (orientation: landscape) {
-  .gtp-url {
-    background-color: #f0f0f0;
-    color: darkblue;
-    margin-left: 5px;
-    z-index: 200;
-  }
-}
-/* ================================================================================ */
-@media (orientation: landscape) {
-  input[readonly] {
-    background-color: #f5f5f5;
-  }
-}
-/* ================================================================================ */
-@media (orientation: landscape) {
-  .gtp-spacing-default, .gtp-cell {
-    padding: 5px;
-  }
-}
-/* ================================================================================ */
-@media (orientation: landscape) {
-  .gtp-table {
-    width: 100%;
-  }
-}
-/* ================================================================================ */
-.gtp-footer {
-  position: relative;
-}
-.gtp-footer * {
+#home-content-border {
   position: absolute;
-  bottom: 3vh;
-  left: 1vw;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
 }
-/* ================================================================================ */
+#nav-footer {
+  position: absolute;
+  max-height: 6vh;
+  width: 100%;
+}
 @media (orientation: landscape) {
-  .gtp-row, .gtp-row-plain, .gtp-inline, .gtp-footer {
-    display: flex;
-    flex-direction: row;
-  }
-
-  .phone-nav {
-    visibility: hidden;
+  #nav-footer {
+    bottom: 3vh;
   }
 }
-/* -------------------------------------------------------------------------------- */
 @media (orientation: portrait) {
-  .gtp-row, .gtp-row-plain, .gtp-inline, .gtp-footer {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .phone-nav {
-    float: left;
+  #nav-footer {
+    bottom: 5px;
   }
 }
-/* ================================================================================ */
-@media (orientation: landscape) {
-  .gtp-row:nth-child(even) {
-    background-color: white;
-    color: darkblue;
-    font-family: Consola;
-  }
+#nav-footer app-navigation {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
 }
-/* ================================================================================ */
-@media (orientation: landscape) {
-  .gtp-row:nth-child(odd) {
-    background-color: antiquewhite;
-    color: darkblue;
-    font-family: Consola;
-  }
+#nav-footer app-navigation .left button, #nav-footer app-navigation .right button {
+  padding: 5px;
+  width: 90%;
 }
-/* ================================================================================ */
-@media (orientation: landscape) {
-  .gtp-cell-padding {
-    padding: 5px;
-  }
+#nav-footer app-navigation .left {
+  padding: 5px;
+  text-align: right;
+  width: 45%;
 }
-/* ================================================================================ */
-@media (orientation: landscape) {
-  .nav-button {
-    max-width: 150px;
-  }
+#nav-footer app-navigation .right {
+  padding: 5px;
+  text-align: left;
+  width: 45%;
 }
-/* ================================================================================ */
-.highlight-mystery-of-day {
-  background-color: yellow;
-  border-width: 2px;
-  color: darkblue;
+.gtp-stacked-column {
+  display: flex;
+  flex-direction: column;
 }
-/* ================================================================================ */
-@media (orientation: landscape) {
-  .section-row {
-    padding: 5px;
-  }
+.gtp-stacked-row {
+  display: flex;
+  flex-direction: row;
 }
 
 /*# sourceMappingURL=styles.css.map*/

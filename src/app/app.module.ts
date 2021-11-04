@@ -15,6 +15,8 @@ import { NoticesComponent } from './components/notices/notices.component';
 import { PatsBeadsComponent } from './components/pats-beads/pats-beads.component';
 import { EndComponent } from './prayers/end/end.component';
 import { HeaderComponent } from './components/header/header.component';
+import { NavigationComponent } from './components/navigation/navigation.component';
+import { RotateDivComponent } from './components/rotate-div/rotate-div.component';
 
 
 @NgModule({
@@ -32,7 +34,9 @@ import { HeaderComponent } from './components/header/header.component';
     HomeComponent,
     MysteryDisplayComponent,
     CurrentPrayerComponent,
-    HeaderComponent
+    HeaderComponent,
+    NavigationComponent,
+    RotateDivComponent
   ],
   imports: [
     BrowserModule,

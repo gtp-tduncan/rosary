@@ -1,20 +1,20 @@
 <div class="active-prayer-workspace">
   <div *ngIf="currentPrayer && debugTheEnd !== true">
-    <pre *ngIf="currentPrayer.all" class="prayer-response gtp-pre-line">
+    <pre *ngIf="currentPrayer.all">
       {{ currentPrayer.all }}
     </pre>
     <ng-container *ngIf="currentPrayer.all === undefined">
-      <div class="gtp-row-plain">
-        <div [class]="leaderLabelCssClass()">
-          <div i18n="@@prayer-leader">L:</div>
-        </div>
-        <div [class]="leaderCssClass()">
+      <div>
+        <span [class]="leaderLabelCssClass()">
+          <div i18n="@@prayer-leader">Leader:</div>
+        </span>
+        <span [class]="leaderCssClass()">
           {{ currentPrayerLeader() }}
-        </div>
+        </span>
       </div>
-      <div class="gtp-row-plain">
+      <div>
         <div [class]="responseLabelCssClass()" i18n="@@prayer-response">
-          R:
+          Response:
         </div>
         <div [class]="responseCssClass()">
           {{ currentPrayer.response }}

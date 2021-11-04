@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { BeadGroupLoaderService } from '../../services/bead-group-loader.service';
 import { RosaryMysteriesEnum } from '../../sequences/rosary-helper';
 import { BeadGroupList } from '../../models/bead-group-list';
@@ -12,6 +12,9 @@ import { ActivePrayerComponent } from '../active-prayer/active-prayer.component'
 })
 export class HomeComponent implements OnInit {
 
+  @Input()
+  selectedMysteryId: string;
+
   selectedBeadGroupList: BeadGroupList;
 
   @ViewChild(ActivePrayerComponent)
@@ -21,7 +24,12 @@ export class HomeComponent implements OnInit {
               public appConfig: AppConfigService) {
   }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    console.log(`selectedMysteryId: ${this.selectedMysteryId}`);
+    if (this.selectedMysteryId) {
+      this.onMysterySelected(RosaryMysteriesEnum[this.selectedMysteryId]);
+    }
+  }
 
   onMysterySelected(selectedMystery: RosaryMysteriesEnum): void {
     this.selectedBeadGroupList = this.beadGroupLoader.loadHolyRosaryContemporaryMysteryEnum(selectedMystery);

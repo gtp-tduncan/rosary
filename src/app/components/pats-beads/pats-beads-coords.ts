@@ -1,6 +1,6 @@
 import { BeadPosition } from "src/app/models/bead-position";
 
-export const PATS_BEADS_COORDS: BeadPosition[] = [
+export const PATS_BEADS_COORDS_LONG: BeadPosition[] = [
 
   { x: 853, y: 3454 },  // Sign of the cross
 

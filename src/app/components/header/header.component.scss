@@ -1,0 +1,57 @@
+@import 'src/styles-shared-mixins.scss';
+
+.active-prayer-header {
+
+  background-color: yellowgreen;
+  display: flex;
+  flex-direction: row;
+  -webkit-flex-direction: row;
+  padding: $padding;
+
+}
+
+@media (orientation: landscape) {
+
+  .active-prayer-header {
+    max-height: 6vh;
+  }
+
+}
+
+@media (orientation: portrait) {
+
+  .active-prayer-header {
+    max-height: 4vh;
+  }
+
+}
+
+.active-prayer-header .left {
+  background-color: palegoldenrod;
+  padding: $padding;
+  text-align: center;
+  width: 50%;
+}
+
+.active-prayer-header .right {
+  padding: $padding;
+  text-align: center;
+  width: 50%;
+}
+
+@media (orientation: landscape) {
+
+  .active-prayer-header .right {
+    margin-top: -1vh;
+  }
+
+}
+
+@media (orientation: portrait) {
+
+  .active-prayer-header .right {
+    margin-top: -0.5vh;
+  }
+
+}
+

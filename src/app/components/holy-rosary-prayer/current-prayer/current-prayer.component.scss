@@ -1,0 +1,24 @@
+@import '../../../../styles-shared-mixins.scss';
+
+.active-prayer-workspace {
+  display: flex;
+  flex-direction: column;
+}
+
+.prayer-leader-label, .prayer-response-label {
+  border-width: 1px;
+  font-style: italic;
+  font-weight: bold;
+  margin-top: $margins;
+  opacity: 100%;
+  width: 5vh;
+}
+
+.prayer-leader, .prayer-response, .prayer-leader-label, .prayer-response-label {
+  display: block;
+  margin-left: $margins;
+  margin-right: $margins;
+  padding: $padding;
+  text-align: left;
+  width: auto;
+}

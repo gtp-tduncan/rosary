@@ -6,9 +6,6 @@ export interface RosaryBeads {
 
   highlightTop: string;
   highlightLeft: string;
-  highlightRight: string;
-
-  calculateHighlightPosition(): void;
 
   highlightStyle(): string;
 }

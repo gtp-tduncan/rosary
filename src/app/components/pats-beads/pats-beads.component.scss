@@ -1,41 +1,51 @@
-@import '../../../styles-shared-mixins.scss';
-
-/* ================================================================================ */
-
-.pats-beads {
-  position: relative;
-  text-align: right;
-}
-
-/* -------------------------------------------------------------------------------- */
-
 @media (orientation: portrait) {
-
-  .pats-beads {
-    max-width: 50vw;
-    transform: rotate(90deg) scale(.6) translateX($patsBeadsOffsetX) translateY($patsBeadsOffsetY);
+  .pats-beads-container {
+    height: 24vh;
+    width: 24vw;
   }
-
 }
 
-/* ================================================================================ */
-
-#pats-beads {
-  max-height: 75vh;
-  text-align: left;
+#pats-beads-div {
+  background-color: transparent;
+  width: 10px;
 }
 
-.highlight-bead {
+#pats-beads-img {
+  position: absolute;
+  height: fit-content;
+  left: 0px;
+  top: 0px;
+}
+
+.pats-beads-highlight-div {
   position: absolute;
 
   background-color: red;
-  border: 5px solid darkred;
+  border: 50px solid darkred;
   border-radius: 50%;
+  // max-height: 500vh;
+  height: 20vh;
+  width: 20vh;
 
   opacity: 0.5;
   z-index: 2;
 }
 
-.pats-beads-container {
-  margin: 3px;
+@media (orientation: landscape) {
+  .pats-beads-highlight-div {
+    margin-top: -15vw;
+    margin-left: -10vw;
+  }
+}
+
+@media (orientation: portrait) {
+  .pats-beads-highlight-div {
+    // margin-top: -15vw;
+    margin-left: -20vw;
+  }
+}
+
+#pats-beads-image-placeholder {
+  background-color: blueviolet;
+  z-index: 1;
 }

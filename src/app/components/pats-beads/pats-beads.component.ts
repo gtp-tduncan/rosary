@@ -1,7 +1,7 @@
-import { AfterViewInit, Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { AppConfigService } from 'src/app/services/app-config.service';
-import { RosaryBeads } from '../rosary-beads';
-import { PATS_BEADS_COORDS } from './pats-beads-coords';
+import { Component, OnInit, OnChanges, AfterViewInit, SimpleChanges, Input } from "@angular/core";
+import { AppConfigService } from "src/app/services/app-config.service";
+import { RosaryBeads } from "../rosary-beads";
+import { PATS_BEADS_COORDS_LONG } from "./pats-beads-coords";
 
 @Component({
   selector: 'app-pats-beads',
@@ -11,80 +11,48 @@ import { PATS_BEADS_COORDS } from './pats-beads-coords';
 export class PatsBeadsComponent implements OnInit, OnChanges, AfterViewInit, RosaryBeads {
 
   @Input()
-  highlightBeadIdx: number;
+  highlightBeadIdx: number = 0;
 
-  imageWidth = 273;
-
-  imageHeight = 630;
-
+  imageWidth: number;
+  imageHeight: number;
   highlightTop: string;
   highlightLeft: string;
-  highlightRight: string;
-
-  highlightHeight: string;
-  highlightWidth: string;
-  highlightDiameter: number;
-
-  private beadsElement: HTMLImageElement;
 
   private rawWidth = 1608;
   private rawHeight = 3704;
-  private rawCoords = PATS_BEADS_COORDS;
+  rawCoords = PATS_BEADS_COORDS_LONG;
 
   constructor(private appConfig: AppConfigService) { }
 
   ngOnInit(): void { }
 
-  ngAfterViewInit(): void {
-    this.calculateHighlightPosition();
-  }
+  ngOnChanges(changes: SimpleChanges): void { }
 
-  ngOnChanges(changes: SimpleChanges): void {
-    this.calculateHighlightPosition();
-  }
-
-  calculateHighlightPosition() {
-
-    if (this.beadsElement === undefined) {
-      this.beadsElement = document.querySelector('#pats-beads');
-    }
-
-    if (this.beadsElement.width === 0 || this.beadsElement.height === 0) {
-      return;
-    }
-
-    this.imageWidth = this.beadsElement.width;
-    this.imageHeight = this.beadsElement.height;
-
-    this.highlightDiameter = 150 * (this.imageHeight / this.rawHeight);
-
-    const highlightRadius = this.highlightDiameter / 2;
-    const offsetX = highlightRadius + 7;  // Half the size of the highlight div with some tweaking
-    const offsetY = highlightRadius + 5;  // Half the size of the highlight div with some tweaking
-
-    const rawCoord = this.rawCoords[this.highlightBeadIdx];
-    const baseLeft = ((rawCoord.x / this.rawWidth * this.imageWidth) + offsetX);
-
-    this.highlightRight = ((baseLeft - this.imageWidth) * -1).toString() + 'px';
-    this.highlightTop = ((rawCoord.y / this.rawHeight * this.imageHeight) - offsetY).toString() + 'px';
-  }
+  ngAfterViewInit(): void { }
 
   highlightStyle(): string {
-    if (this.highlightTop && this.highlightRight) {
-      return `top: ${this.highlightTop}; right: ${this.highlightRight}; height: ${this.highlightDiameter}px; width: ${this.highlightDiameter}px`;
-    }
-    return undefined;
+    const point = this.rawCoords[this.highlightBeadIdx];
+    return `left: ${point.x}px; top: ${point.y}px;` + this.imageStyle();
   }
 
-  onResize(event) {
-    const element = document.querySelector('#pats-beads');
-    console.log(`3) w: ${element.clientWidth}, h: ${element.clientHeight}`);
-    this.calculateHighlightPosition();
+  beadsTransformStyle(): string {
+    return (this.appConfig.isPortrait)
+      ? 'transform: rotate(90deg) scale(0.10);'
+      : 'transform: scale(0.09);'
+  }
+
+  imageStyle(): string {
+    return (this.appConfig.isPortrait)
+      ? `margin-top: ${this.rawHeight * -1}px;`
+      : '';
+  }
+
+  imagePlaceholderStyle(): string {
+    return '';
+    // return (this.appConfig.isPortrait)
+    //   ? `height: ${this.imageWidth}px;`
+    //   : '';
   }
 
 }
 
-interface BeadsDimensions {
-  height: number;
-  width: number;
-}

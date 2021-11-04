@@ -1,18 +1,16 @@
-<span class="gtp-row">
-  <span id="rosary-beads-div" class="gtp-cell-plain-4 gtp-cell-plain-12-phone">
+<div id="rosary-beads">
+  <div id="rosary-beads-img-div">
     <app-pats-beads [highlightBeadIdx]="highlightBeadIndex"></app-pats-beads>
-  </span>
-  <span class="gtp-cell-plain-8 gtp-cell-plain-12-phone">
-    <div class="active-mystery" *ngIf="showMystery">
-      <div>
-        <app-mystery-display [activeBeadGroupList]="activeBeadGroupList"></app-mystery-display>
-      </div>
+  </div>
+  <div id="rosary-beads-prayer-div">
+    <div *ngIf="showMystery">
+      <app-mystery-display [activeBeadGroupList]="activeBeadGroupList"></app-mystery-display>
     </div>
-    <div class="active-prayer content-no-border">
+    <div id="active-prayer">
       <app-current-prayer #primaryPrayer [prayerName]="prayerName" [activeBeadGroup]="activeBeadGroup" [currentPrayer]="currentPrayer" [debugTheEnd]="debugTheEnd"></app-current-prayer>
       <div *ngIf="extraPrayer">
         <app-current-prayer [activeBeadGroup]="activeBeadGroup" [currentPrayer]="extraPrayer"></app-current-prayer>
       </div>
     </div>
-  </span>
-</span>
+  </div>
+</div>
