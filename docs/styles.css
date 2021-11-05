@@ -3,6 +3,10 @@ html, body {
   font-family: Consola;
   margin: unset;
 }
+button {
+  border-radius: 10px;
+  padding: 5px;
+}
 input {
   font-family: Consola;
   margin-bottom: 10px;
@@ -24,7 +28,12 @@ pre {
 @media (orientation: portrait) {
   button {
     font-family: Consola;
-    font-size: 4vw;
+    font-size: 5vw;
+  }
+
+  pre {
+    font-family: Consola;
+    font-size: 5vw;
   }
 }
 /* ================================================================================ */
@@ -119,6 +128,11 @@ pre {
 .gtp-stacked-row {
   display: flex;
   flex-direction: row;
+}
+.section-title {
+  font-weight: bold;
+  padding: 5px;
+  text-align: center;
 }
 
 /*# sourceMappingURL=styles.css.map*/

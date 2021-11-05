@@ -5,6 +5,23 @@
   flex-direction: column;
 }
 
+@media (orientation: landscape) {
+  .active-prayer-workspace {
+    font-size: $font-size-base;
+    margin-top: 10vh;
+  }
+}
+
+@media (orientation: portrait) {
+  .active-prayer-workspace {
+    font-size: $font-size-base-phone;
+  }
+}
+
+.leaderPrayerRight {
+  float: right;
+}
+
 .prayer-leader-label, .prayer-response-label {
   border-width: 1px;
   font-style: italic;

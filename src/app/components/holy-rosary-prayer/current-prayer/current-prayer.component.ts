@@ -36,31 +36,18 @@ export class CurrentPrayerComponent implements OnInit {
       : undefined;
   }
 
-  currentPrayerLeader(): string {
-    const prefix = (this.activeBeadGroup?.maxIndex > 1)
+  currentPrayerCounter(): string {
+    return (this.activeBeadGroup?.maxIndex > 1)
       ? `(${this.activeBeadGroup.index + 1} / ${this.activeBeadGroup.maxIndex}) `
       : '';
-    return `${prefix}${this.currentPrayer.leader}`;
+  }
+
+  currentPrayerLeader(): string {
+    return `${this.currentPrayer.leader}`;
   }
 
   updateDebugTheEnd(flag: boolean): void {
     this.debugTheEnd = flag;
-  }
-
-  leaderLabelCssClass(): string {
-    return `prayer-leader-label ${cssClassesColumn1}`;
-  }
-
-  leaderCssClass(): string {
-    return `prayer-leader ${cssClassesColumn2}`;
-  }
-
-  responseLabelCssClass(): string {
-    return `prayer-response-label ${cssClassesColumn1}`;
-  }
-
-  responseCssClass(): string {
-    return `prayer-response ${cssClassesColumn2}`;
   }
 
 }
