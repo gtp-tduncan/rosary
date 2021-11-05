@@ -1,0 +1,42 @@
+@import '../../../styles-shared-mixins.scss';
+
+@media (orientation: landscape) {
+
+  .box {
+    height: 150px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .box>* {
+    flex: 0 0 33%;
+    height: 5vh;
+  }
+
+}
+
+/* -------------------------------------------------------------------------------- */
+
+@media (orientation: portrait) {
+
+  .box {
+    display: flex;
+    // flex-wrap: wrap;
+    flex-direction: column;
+    height: 300px;
+    text-align: center;
+  }
+
+  .box>* {
+    flex: 0 0 10%;
+  }
+
+}
+
+.label {
+  font-weight: bold;
+  margin: 0.5vh;
+  padding-top: $padding;
+}

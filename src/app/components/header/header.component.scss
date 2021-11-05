@@ -11,19 +11,15 @@
 }
 
 @media (orientation: landscape) {
-
   .active-prayer-header {
     max-height: 6vh;
   }
-
 }
 
 @media (orientation: portrait) {
-
   .active-prayer-header {
     max-height: 4vh;
   }
-
 }
 
 .active-prayer-header .left {
@@ -42,7 +38,7 @@
 @media (orientation: landscape) {
 
   .active-prayer-header .right {
-    margin-top: -1vh;
+    margin-top: -1.5vh;
   }
 
 }
@@ -50,7 +46,7 @@
 @media (orientation: portrait) {
 
   .active-prayer-header .right {
-    margin-top: -0.5vh;
+    margin-top: -1vh;
   }
 
 }

@@ -17,6 +17,11 @@ html, body {
   margin: unset;
 }
 
+button {
+  border-radius: $border-radius;
+  padding: $padding;
+}
+
 input {
   font-family: $fontname;
   margin-bottom: $input-margin-bottom;
@@ -44,6 +49,11 @@ pre {
 @media (orientation: portrait) {
 
   button {
+    font-family: $fontname;
+    font-size: $font-size-base-phone;
+  }
+
+  pre {
     font-family: $fontname;
     font-size: $font-size-base-phone;
   }
@@ -188,6 +198,12 @@ pre {
   display: flex;
   flex-direction: row;
   -webkit-flex-direction: row;
+}
+
+.section-title {
+  font-weight: bold;
+  padding: $padding;
+  text-align: center;
 }
 
 // .prayer-leader-label, .prayer-response-label {

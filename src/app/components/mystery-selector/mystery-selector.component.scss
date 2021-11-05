@@ -1,3 +1,37 @@
+@import '../../../styles-shared-mixins.scss';
+
+@media (orientation: landscape) {
+  .button-row {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .button-cell {
+    width: 24%;
+  }
+}
+
+@media (orientation: portrait) {
+  .button-row {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .button-cell {
+    width: 97%;
+  }
+}
+
+.button-cell {
+  padding: $padding;
+}
+
 button {
   width: 100%;
+}
+
+.highlight-mystery-of-day {
+  background-color: yellow;
+  border-width: 2px;
+  color: darkblue;
 }
