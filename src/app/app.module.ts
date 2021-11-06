@@ -1,6 +1,6 @@
-import { NgModule } from '@angular/core';
+import { Injectable, NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, HammerGestureConfig, HammerModule, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ActivePrayerComponent } from './components/active-prayer/active-prayer.component';
@@ -17,7 +17,26 @@ import { EndComponent } from './prayers/end/end.component';
 import { HeaderComponent } from './components/header/header.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { RotateDivComponent } from './components/rotate-div/rotate-div.component';
+import * as Hammer from 'hammerjs';
 
+@Injectable({
+  providedIn: 'root'
+})
+export class AppHammerConfig extends HammerGestureConfig {
+  overrides = <any> {
+    'swipe': { enable: true, direction: Hammer.DIRECTION_HORIZONTAL},
+    'pinch': { enable: false },
+    'rotate': { enable: false }
+  }
+
+  buildHammer(element: HTMLElement) {
+    console.log(`buildHammer: ${element?.nodeName}`);
+    const mc = new Hammer(element, {
+      touchAction: 'pan-x'
+    });
+    return mc;
+  }
+}
 
 @NgModule({
   declarations: [
@@ -41,9 +60,12 @@ import { RotateDivComponent } from './components/rotate-div/rotate-div.component
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HammerModule
   ],
-  providers: [],
+  providers: [
+    { provide: HAMMER_GESTURE_CONFIG, useClass: AppHammerConfig }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

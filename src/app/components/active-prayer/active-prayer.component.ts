@@ -47,6 +47,11 @@ export class ActivePrayerComponent implements OnInit, AfterViewInit {
     this.holyRosaryPrayer.onPrevious();
   }
 
+  onSwipe(event) {
+    console.log(`ActivePrayerComponent - swipe: ${event}`);
+    this.onNext();
+  }
+
   onStartNew() {
     this.onResetEvent.emit(true);
   }

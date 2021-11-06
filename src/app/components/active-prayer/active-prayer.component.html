@@ -11,7 +11,8 @@
     <app-holy-rosary-prayer
       [activeBeadGroupList]="activeBeadGroupList"
       [prayerName]="prayerName"
-      [debugTheEnd]="debugTheEnd">
+      [debugTheEnd]="debugTheEnd"
+      (swipe)="onSwipe($event)">
     </app-holy-rosary-prayer>
   </div>
 </div>
