@@ -31,8 +31,10 @@ export class PatsBeadsComponent implements OnInit, OnChanges, AfterViewInit, Ros
   ngAfterViewInit(): void { }
 
   highlightStyle(): string {
+    const offsetX = this.appConfig.isPortrait ? -100 : 0;
+    const offsetY = this.appConfig.isPortrait ? -100 : 0;
     const point = this.rawCoords[this.highlightBeadIdx];
-    return `left: ${point.x}px; top: ${point.y}px;` + this.imageStyle();
+    return `left: ${point.x + offsetX}px; top: ${point.y + offsetY}px;` + this.imageStyle();
   }
 
   beadsTransformStyle(): string {

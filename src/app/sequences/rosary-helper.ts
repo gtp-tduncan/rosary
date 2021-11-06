@@ -134,12 +134,20 @@ export const HAIL_HOLY_QUEEN: BeadGroupTemplate = {
   incrementMysteryIdx: true
 }
 
-export const CLOSING: BeadGroupTemplate = {
-  sequence: 'closing',
-  sequenceId: 'closing',
+export const CLOSING_1: BeadGroupTemplate = {
+  sequence: 'closing1',
+  sequenceId: 'closing1',
   repeatCount: 0,
   prayerIds: [
-    '@@closing-1',
+    '@@closing-1'
+  ]
+}
+
+export const CLOSING_2: BeadGroupTemplate = {
+  sequence: 'closing2',
+  sequenceId: 'closing2',
+  repeatCount: 0,
+  prayerIds: [
     '@@closing-2'
   ]
 }

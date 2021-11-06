@@ -15,6 +15,10 @@ pre {
   font-family: Consola;
 }
 @media (orientation: landscape) {
+  html, body {
+    font-size: 2vw;
+  }
+
   button {
     font-family: Consola;
     font-size: 2vw;
@@ -26,6 +30,10 @@ pre {
   }
 }
 @media (orientation: portrait) {
+  html, body {
+    font-size: 5vw;
+  }
+
   button {
     font-family: Consola;
     font-size: 5vw;
@@ -49,7 +57,7 @@ pre {
   background-image: repeating-linear-gradient(0deg, green, green 3px, darkgreen 3px, darkgreen 6px);
 }
 .lit-color-red {
-  background-image: repeating-linear-gradient(0deg, red, red 3px, #380000 3px, #380000 6px);
+  background-image: repeating-linear-gradient(0deg, #d20000, #d20000 3px, #960000 3px, #960000 6px);
 }
 .lit-color-rose {
   background-image: repeating-linear-gradient(0deg, pink, pink 3px, rgba(255, 192, 203, 0.411) 3px, rgba(255, 192, 203, 0.411) 6px);
@@ -58,7 +66,7 @@ pre {
   background-image: repeating-linear-gradient(0deg, purple, purple 3px, #380038 3px, #380038 6px);
 }
 .lit-color-white {
-  background-image: repeating-linear-gradient(0deg, white, white 3px, gray 3px, gray 6px);
+  background-image: repeating-linear-gradient(0deg, white, white 3px, #ebebeb 3px, #ebebeb 6px);
 }
 /* ================================================================================ */
 /*

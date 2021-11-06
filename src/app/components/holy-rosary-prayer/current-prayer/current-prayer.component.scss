@@ -15,6 +15,7 @@
 @media (orientation: portrait) {
   .active-prayer-workspace {
     font-size: $font-size-base-phone;
+    margin-top: -2vh;
   }
 }
 
@@ -31,7 +32,7 @@
   width: 5vh;
 }
 
-.prayer-leader, .prayer-response, .prayer-leader-label, .prayer-response-label {
+.prayer-all, .prayer-leader, .prayer-response, .prayer-leader-label, .prayer-response-label {
   display: block;
   margin-left: $margins;
   margin-right: $margins;

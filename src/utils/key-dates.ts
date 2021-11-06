@@ -1,3 +1,4 @@
+import { LiturgicalColors } from "src/app/models/liturgical-colors";
 import { LiturgicalDates } from "src/app/models/liturgical-dates";
 
 export enum Months {
@@ -25,27 +26,32 @@ export const LIT_DATES_2020: LiturgicalDates = {
   advent: {
     startDate: new Date(2020, Months.NOV, 29),
     endDate: new Date(2020, Months.DEC, 24),
-    name: 'test-advent'
+    name: 'test-advent',
+    color: LiturgicalColors.VIOLET
   },
   christmas: {
     startDate: new Date(2020, Months.DEC, 25),
     endDate: new Date(2021, Months.JAN, 10),
-    name: 'test-christmas'
+    name: 'test-christmas',
+    color: LiturgicalColors.WHITE
   },
   lent: {
     startDate: new Date(2020, Months.FEB, 26),
     endDate: new Date(2020, Months.APR, 9),
-    name: 'test-lent'
+    name: 'test-lent',
+    color: LiturgicalColors.VIOLET
   },
   triduum: {
     startDate: new Date(2020, Months.APR, 9),
     endDate: new Date(2020, Months.APR, 12),
-    name: 'test-triduum'
+    name: 'test-triduum',
+    color: LiturgicalColors.RED
   },
   easter: {
     startDate: new Date(2020, Months.APR, 12),
     endDate: new Date(2020, Months.MAY, 31),
-    name: 'test-easter'
+    name: 'test-easter',
+    color: LiturgicalColors.WHITE
   }
 };
 
@@ -53,27 +59,32 @@ export const LIT_DATES_2021: LiturgicalDates = {
   advent: {
     startDate: new Date(2021, Months.NOV, 28),
     endDate: new Date(2021, Months.DEC, 24),
-    name: 'test-advent'
+    name: 'test-advent',
+    color: LiturgicalColors.VIOLET
   },
   christmas: {
     startDate: new Date(2021, Months.DEC, 25),
     endDate: new Date(2022, Months.JAN, 9),
-    name: 'test-christmas'
+    name: 'test-christmas',
+    color: LiturgicalColors.WHITE
   },
   lent: {
     startDate: new Date(2021, Months.FEB, 17),
     endDate: new Date(2021, Months.APR, 1),
-    name: 'test-lent'
+    name: 'test-lent',
+    color: LiturgicalColors.VIOLET
   },
   triduum: {
     startDate: new Date(2021, Months.APR, 1),
     endDate: new Date(2021, Months.APR, 4),
-    name: 'test-triduum'
+    name: 'test-triduum',
+    color: LiturgicalColors.RED
   },
   easter: {
     startDate: new Date(2021, Months.APR, 4),
     endDate: new Date(2021, Months.MAY, 23),
-    name: 'test-easter'
+    name: 'test-easter',
+    color: LiturgicalColors.WHITE
   }
 };
 

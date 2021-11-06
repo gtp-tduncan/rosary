@@ -5,7 +5,8 @@ import { Prayer, PrayerApostlesCreed, PrayerClosing1, PrayerClosing2, PrayerFati
 import { CurrentPrayerComponent } from './current-prayer/current-prayer.component';
 
 const seqMap = new Map<string, Prayer>();
-seqMap['closing'] = new PrayerClosing1();
+seqMap['closing1'] = new PrayerClosing1();
+seqMap['closing2'] = new PrayerClosing2();
 seqMap['creed'] = new PrayerApostlesCreed();
 seqMap['glory'] = new PrayerGlory();
 seqMap['fatima'] = new PrayerFatima();
@@ -39,7 +40,6 @@ export class HolyRosaryPrayerComponent implements OnInit, AfterViewInit {
 
   activeBeadGroup: BeadGroup;
   currentPrayer: Prayer;
-  extraPrayer: Prayer;
   highlightBeadIndex: number;
 
   private prayerClosing2 = new PrayerClosing2();
@@ -84,9 +84,6 @@ export class HolyRosaryPrayerComponent implements OnInit, AfterViewInit {
   }
 
   private findCurrentPrayer(): Prayer {
-    this.extraPrayer = (this.activeBeadGroup?.sequence === 'closing')
-      ? this.extraPrayer = this.prayerClosing2 : undefined;
-
     return seqMap[this.activeBeadGroup?.sequence];
   }
 }

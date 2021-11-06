@@ -4,6 +4,7 @@ import { RosaryMysteriesEnum } from '../../sequences/rosary-helper';
 import { BeadGroupList } from '../../models/bead-group-list';
 import { AppConfigService } from '../../services/app-config.service';
 import { ActivePrayerComponent } from '../active-prayer/active-prayer.component';
+import { LiturgicalYearService } from 'src/app/services/liturgical-year.service';
 
 @Component({
   selector: 'app-home',
@@ -21,7 +22,8 @@ export class HomeComponent implements OnInit {
   activePrayer: ActivePrayerComponent;
 
   constructor(private beadGroupLoader: BeadGroupLoaderService,
-              public appConfig: AppConfigService) {
+              public appConfig: AppConfigService,
+              private liturgicalYear: LiturgicalYearService) {
   }
 
   ngOnInit(): void {
@@ -41,6 +43,7 @@ export class HomeComponent implements OnInit {
 
   onResetEvent(flag: boolean): void {
     this.selectedBeadGroupList = undefined;
+    this.liturgicalYear.overrideLiturgicalColor = undefined;
   }
 
   onNext(): void {

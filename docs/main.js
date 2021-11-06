@@ -33,17 +33,9 @@ function HolyRosaryPrayerComponent_div_4_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("activeBeadGroupList", ctx_r0.activeBeadGroupList);
 } }
-function HolyRosaryPrayerComponent_div_8_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "app-current-prayer", 9);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-} if (rf & 2) {
-    const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("activeBeadGroup", ctx_r2.activeBeadGroup)("currentPrayer", ctx_r2.extraPrayer);
-} }
 const seqMap = new Map();
-seqMap['closing'] = new src_app_prayers_common_prayers__WEBPACK_IMPORTED_MODULE_1__["PrayerClosing1"]();
+seqMap['closing1'] = new src_app_prayers_common_prayers__WEBPACK_IMPORTED_MODULE_1__["PrayerClosing1"]();
+seqMap['closing2'] = new src_app_prayers_common_prayers__WEBPACK_IMPORTED_MODULE_1__["PrayerClosing2"]();
 seqMap['creed'] = new src_app_prayers_common_prayers__WEBPACK_IMPORTED_MODULE_1__["PrayerApostlesCreed"]();
 seqMap['glory'] = new src_app_prayers_common_prayers__WEBPACK_IMPORTED_MODULE_1__["PrayerGlory"]();
 seqMap['fatima'] = new src_app_prayers_common_prayers__WEBPACK_IMPORTED_MODULE_1__["PrayerFatima"]();
@@ -87,10 +79,8 @@ class HolyRosaryPrayerComponent {
         this.currentPrayer = this.findCurrentPrayer();
     }
     findCurrentPrayer() {
-        var _a, _b;
-        this.extraPrayer = (((_a = this.activeBeadGroup) === null || _a === void 0 ? void 0 : _a.sequence) === 'closing')
-            ? this.extraPrayer = this.prayerClosing2 : undefined;
-        return seqMap[(_b = this.activeBeadGroup) === null || _b === void 0 ? void 0 : _b.sequence];
+        var _a;
+        return seqMap[(_a = this.activeBeadGroup) === null || _a === void 0 ? void 0 : _a.sequence];
     }
 }
 HolyRosaryPrayerComponent.ɵfac = function HolyRosaryPrayerComponent_Factory(t) { return new (t || HolyRosaryPrayerComponent)(); };
@@ -99,7 +89,7 @@ HolyRosaryPrayerComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵ
     } if (rf & 2) {
         let _t;
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.currentPrayerComponent = _t.first);
-    } }, inputs: { activeBeadGroupList: "activeBeadGroupList", prayerName: "prayerName", debugTheEnd: "debugTheEnd", orientation: "orientation" }, decls: 9, vars: 7, consts: [["id", "rosary-beads"], ["id", "rosary-beads-img-div"], [3, "highlightBeadIdx"], ["id", "rosary-beads-prayer-div"], [4, "ngIf"], ["id", "active-prayer"], [3, "prayerName", "activeBeadGroup", "currentPrayer", "debugTheEnd"], ["primaryPrayer", ""], [3, "activeBeadGroupList"], [3, "activeBeadGroup", "currentPrayer"]], template: function HolyRosaryPrayerComponent_Template(rf, ctx) { if (rf & 1) {
+    } }, inputs: { activeBeadGroupList: "activeBeadGroupList", prayerName: "prayerName", debugTheEnd: "debugTheEnd", orientation: "orientation" }, decls: 8, vars: 6, consts: [["id", "rosary-beads"], ["id", "rosary-beads-img-div"], [3, "highlightBeadIdx"], ["id", "rosary-beads-prayer-div"], [4, "ngIf"], ["id", "active-prayer"], [3, "prayerName", "activeBeadGroup", "currentPrayer", "debugTheEnd"], ["primaryPrayer", ""], [3, "activeBeadGroupList"]], template: function HolyRosaryPrayerComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](2, "app-pats-beads", 2);
@@ -108,7 +98,6 @@ HolyRosaryPrayerComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵ
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](4, HolyRosaryPrayerComponent_div_4_Template, 2, 1, "div", 4);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "div", 5);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](6, "app-current-prayer", 6, 7);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](8, HolyRosaryPrayerComponent_div_8_Template, 2, 2, "div", 4);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -119,8 +108,6 @@ HolyRosaryPrayerComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵ
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.showMystery);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("prayerName", ctx.prayerName)("activeBeadGroup", ctx.activeBeadGroup)("currentPrayer", ctx.currentPrayer)("debugTheEnd", ctx.debugTheEnd);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.extraPrayer);
     } }, directives: [_pats_beads_pats_beads_component__WEBPACK_IMPORTED_MODULE_2__["PatsBeadsComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["NgIf"], _current_prayer_current_prayer_component__WEBPACK_IMPORTED_MODULE_4__["CurrentPrayerComponent"], _mystery_display_mystery_display_component__WEBPACK_IMPORTED_MODULE_5__["MysteryDisplayComponent"]], styles: ["@media (orientation: landscape) {\n  #rosary-beads-img-div[_ngcontent-%COMP%] {\n    float: left;\n    width: 30%;\n  }\n\n  #rosary-beads-prayer-div[_ngcontent-%COMP%] {\n    float: right;\n    width: 70%;\n  }\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFxob2x5LXJvc2FyeS1wcmF5ZXIuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBRUE7RUFFRTtJQUNFLFdBQUE7SUFDQSxVQUFBO0VBRkY7O0VBS0E7SUFDRSxZQUFBO0lBQ0EsVUFBQTtFQUZGO0FBQ0YiLCJmaWxlIjoiaG9seS1yb3NhcnktcHJheWVyLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiQGltcG9ydCAnLi4vLi4vLi4vc3R5bGVzLXNoYXJlZC1taXhpbnMuc2Nzcyc7XHJcblxyXG5AbWVkaWEgKG9yaWVudGF0aW9uOiBsYW5kc2NhcGUpIHtcclxuXHJcbiAgI3Jvc2FyeS1iZWFkcy1pbWctZGl2IHtcclxuICAgIGZsb2F0OiBsZWZ0O1xyXG4gICAgd2lkdGg6IDMwJTtcclxuICB9XHJcblxyXG4gICNyb3NhcnktYmVhZHMtcHJheWVyLWRpdiB7XHJcbiAgICBmbG9hdDogcmlnaHQ7XHJcbiAgICB3aWR0aDogNzAlO1xyXG4gIH1cclxuXHJcbn1cclxuIl19 */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](HolyRosaryPrayerComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
@@ -231,7 +218,7 @@ HeaderComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineCo
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", !ctx.isPrayerSequenceDone);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.isPrayerSequenceDone);
-    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["NgIf"]], styles: [".active-prayer-header[_ngcontent-%COMP%] {\n  background-color: yellowgreen;\n  display: flex;\n  flex-direction: row;\n  padding: 5px;\n}\n\n@media (orientation: landscape) {\n  .active-prayer-header[_ngcontent-%COMP%] {\n    max-height: 6vh;\n  }\n}\n\n@media (orientation: portrait) {\n  .active-prayer-header[_ngcontent-%COMP%] {\n    max-height: 4vh;\n  }\n}\n\n.active-prayer-header[_ngcontent-%COMP%]   .left[_ngcontent-%COMP%] {\n  background-color: palegoldenrod;\n  padding: 5px;\n  text-align: center;\n  width: 50%;\n}\n\n.active-prayer-header[_ngcontent-%COMP%]   .right[_ngcontent-%COMP%] {\n  padding: 5px;\n  text-align: center;\n  width: 50%;\n}\n\n@media (orientation: landscape) {\n  .active-prayer-header[_ngcontent-%COMP%]   .right[_ngcontent-%COMP%] {\n    margin-top: -1.5vh;\n  }\n}\n\n@media (orientation: portrait) {\n  .active-prayer-header[_ngcontent-%COMP%]   .right[_ngcontent-%COMP%] {\n    margin-top: -1vh;\n  }\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFxoZWFkZXIuY29tcG9uZW50LnNjc3MiLCIuLlxcLi5cXC4uXFwuLlxcLi5cXC4uXFwuLlxcc3R5bGVzLXNoYXJlZC1taXhpbnMuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFFQTtFQUVFLDZCQUFBO0VBQ0EsYUFBQTtFQUNBLG1CQUFBO0VBRUEsWUNEUTtBRERWOztBQU1BO0VBQ0U7SUFDRSxlQUFBO0VBSEY7QUFDRjs7QUFNQTtFQUNFO0lBQ0UsZUFBQTtFQUpGO0FBQ0Y7O0FBT0E7RUFDRSwrQkFBQTtFQUNBLFlDbkJRO0VEb0JSLGtCQUFBO0VBQ0EsVUFBQTtBQUxGOztBQVFBO0VBQ0UsWUN6QlE7RUQwQlIsa0JBQUE7RUFDQSxVQUFBO0FBTEY7O0FBUUE7RUFFRTtJQUNFLGtCQUFBO0VBTkY7QUFDRjs7QUFVQTtFQUVFO0lBQ0UsZ0JBQUE7RUFURjtBQUNGIiwiZmlsZSI6ImhlYWRlci5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIkBpbXBvcnQgJ3NyYy9zdHlsZXMtc2hhcmVkLW1peGlucy5zY3NzJztcclxuXHJcbi5hY3RpdmUtcHJheWVyLWhlYWRlciB7XHJcblxyXG4gIGJhY2tncm91bmQtY29sb3I6IHllbGxvd2dyZWVuO1xyXG4gIGRpc3BsYXk6IGZsZXg7XHJcbiAgZmxleC1kaXJlY3Rpb246IHJvdztcclxuICAtd2Via2l0LWZsZXgtZGlyZWN0aW9uOiByb3c7XHJcbiAgcGFkZGluZzogJHBhZGRpbmc7XHJcblxyXG59XHJcblxyXG5AbWVkaWEgKG9yaWVudGF0aW9uOiBsYW5kc2NhcGUpIHtcclxuICAuYWN0aXZlLXByYXllci1oZWFkZXIge1xyXG4gICAgbWF4LWhlaWdodDogNnZoO1xyXG4gIH1cclxufVxyXG5cclxuQG1lZGlhIChvcmllbnRhdGlvbjogcG9ydHJhaXQpIHtcclxuICAuYWN0aXZlLXByYXllci1oZWFkZXIge1xyXG4gICAgbWF4LWhlaWdodDogNHZoO1xyXG4gIH1cclxufVxyXG5cclxuLmFjdGl2ZS1wcmF5ZXItaGVhZGVyIC5sZWZ0IHtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiBwYWxlZ29sZGVucm9kO1xyXG4gIHBhZGRpbmc6ICRwYWRkaW5nO1xyXG4gIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICB3aWR0aDogNTAlO1xyXG59XHJcblxyXG4uYWN0aXZlLXByYXllci1oZWFkZXIgLnJpZ2h0IHtcclxuICBwYWRkaW5nOiAkcGFkZGluZztcclxuICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgd2lkdGg6IDUwJTtcclxufVxyXG5cclxuQG1lZGlhIChvcmllbnRhdGlvbjogbGFuZHNjYXBlKSB7XHJcblxyXG4gIC5hY3RpdmUtcHJheWVyLWhlYWRlciAucmlnaHQge1xyXG4gICAgbWFyZ2luLXRvcDogLTEuNXZoO1xyXG4gIH1cclxuXHJcbn1cclxuXHJcbkBtZWRpYSAob3JpZW50YXRpb246IHBvcnRyYWl0KSB7XHJcblxyXG4gIC5hY3RpdmUtcHJheWVyLWhlYWRlciAucmlnaHQge1xyXG4gICAgbWFyZ2luLXRvcDogLTF2aDtcclxuICB9XHJcblxyXG59XHJcblxyXG4iLCIkZm9udG5hbWU6IENvbnNvbGE7XHJcbiRmb250LXNpemUtYmFzZTogMnZ3O1xyXG4kZm9udC1zaXplLWJhc2UtcGhvbmU6IDV2dztcclxuXHJcbiRtYXJnaW5zOiA1cHg7XHJcbiRuYXYtbGFuZHNjYXBlLW1hcmdpbjogM3ZoO1xyXG5cclxuJHBhZGRpbmc6IDVweDtcclxuXHJcbiRib3JkZXI6IDFweCBkYXNoZWQgYmxhY2s7XHJcbiRib3JkZXItcmFkaXVzOiAxMHB4O1xyXG5cclxuJGlucHV0LW1hcmdpbi1ib3R0b206IDEwcHg7XHJcblxyXG4vLyAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tXHJcblxyXG4vLyAkcGF0c0JlYWRzT2Zmc2V0WDogLTkwdnc7XHJcbi8vICRwYXRzQmVhZHNPZmZzZXRZOiAtMTh2aDtcclxuXHJcbiRwcmF5ZXJPZmZzZXRYOiAwdnc7XHJcbiRwcmF5ZXJPZmZzZXRZOiAtNjB2aDtcclxuXHJcbiRwaG9uZU5hdk9mZnNldFg6IDB2dztcclxuJHBob25lTmF2T2Zmc2V0WTogMHZ3O1xyXG5cclxuJGZvb3Rlck9mZnNldFg6IDF2dztcclxuJGZvb3Rlck9mZnNldFk6IDN2aDtcclxuIl19 */"] });
+    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["NgIf"]], styles: [".active-prayer-header[_ngcontent-%COMP%] {\n  background-color: yellowgreen;\n  display: flex;\n  flex-direction: row;\n  padding: 5px;\n}\n\n@media (orientation: landscape) {\n  .active-prayer-header[_ngcontent-%COMP%] {\n    max-height: 6vh;\n  }\n}\n\n@media (orientation: portrait) {\n  .active-prayer-header[_ngcontent-%COMP%] {\n    max-height: 4vh;\n  }\n}\n\n.active-prayer-header[_ngcontent-%COMP%]   .left[_ngcontent-%COMP%] {\n  background-color: palegoldenrod;\n  padding: 5px;\n  text-align: center;\n  width: 50%;\n}\n\n.active-prayer-header[_ngcontent-%COMP%]   .right[_ngcontent-%COMP%] {\n  padding: 5px;\n  text-align: center;\n  width: 50%;\n}\n\n@media (orientation: landscape) {\n  .active-prayer-header[_ngcontent-%COMP%]   .right[_ngcontent-%COMP%] {\n    margin-top: -1.5vh;\n  }\n}\n\n@media (orientation: portrait) {\n  .active-prayer-header[_ngcontent-%COMP%]   .right[_ngcontent-%COMP%] {\n    margin-top: -1.25vh;\n  }\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFxoZWFkZXIuY29tcG9uZW50LnNjc3MiLCIuLlxcLi5cXC4uXFwuLlxcLi5cXC4uXFwuLlxcc3R5bGVzLXNoYXJlZC1taXhpbnMuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFFQTtFQUVFLDZCQUFBO0VBQ0EsYUFBQTtFQUNBLG1CQUFBO0VBRUEsWUNEUTtBRERWOztBQU1BO0VBQ0U7SUFDRSxlQUFBO0VBSEY7QUFDRjs7QUFNQTtFQUNFO0lBQ0UsZUFBQTtFQUpGO0FBQ0Y7O0FBT0E7RUFDRSwrQkFBQTtFQUNBLFlDbkJRO0VEb0JSLGtCQUFBO0VBQ0EsVUFBQTtBQUxGOztBQVFBO0VBQ0UsWUN6QlE7RUQwQlIsa0JBQUE7RUFDQSxVQUFBO0FBTEY7O0FBUUE7RUFFRTtJQUNFLGtCQUFBO0VBTkY7QUFDRjs7QUFVQTtFQUVFO0lBQ0UsbUJBQUE7RUFURjtBQUNGIiwiZmlsZSI6ImhlYWRlci5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIkBpbXBvcnQgJ3NyYy9zdHlsZXMtc2hhcmVkLW1peGlucy5zY3NzJztcclxuXHJcbi5hY3RpdmUtcHJheWVyLWhlYWRlciB7XHJcblxyXG4gIGJhY2tncm91bmQtY29sb3I6IHllbGxvd2dyZWVuO1xyXG4gIGRpc3BsYXk6IGZsZXg7XHJcbiAgZmxleC1kaXJlY3Rpb246IHJvdztcclxuICAtd2Via2l0LWZsZXgtZGlyZWN0aW9uOiByb3c7XHJcbiAgcGFkZGluZzogJHBhZGRpbmc7XHJcblxyXG59XHJcblxyXG5AbWVkaWEgKG9yaWVudGF0aW9uOiBsYW5kc2NhcGUpIHtcclxuICAuYWN0aXZlLXByYXllci1oZWFkZXIge1xyXG4gICAgbWF4LWhlaWdodDogNnZoO1xyXG4gIH1cclxufVxyXG5cclxuQG1lZGlhIChvcmllbnRhdGlvbjogcG9ydHJhaXQpIHtcclxuICAuYWN0aXZlLXByYXllci1oZWFkZXIge1xyXG4gICAgbWF4LWhlaWdodDogNHZoO1xyXG4gIH1cclxufVxyXG5cclxuLmFjdGl2ZS1wcmF5ZXItaGVhZGVyIC5sZWZ0IHtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiBwYWxlZ29sZGVucm9kO1xyXG4gIHBhZGRpbmc6ICRwYWRkaW5nO1xyXG4gIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICB3aWR0aDogNTAlO1xyXG59XHJcblxyXG4uYWN0aXZlLXByYXllci1oZWFkZXIgLnJpZ2h0IHtcclxuICBwYWRkaW5nOiAkcGFkZGluZztcclxuICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgd2lkdGg6IDUwJTtcclxufVxyXG5cclxuQG1lZGlhIChvcmllbnRhdGlvbjogbGFuZHNjYXBlKSB7XHJcblxyXG4gIC5hY3RpdmUtcHJheWVyLWhlYWRlciAucmlnaHQge1xyXG4gICAgbWFyZ2luLXRvcDogLTEuNXZoO1xyXG4gIH1cclxuXHJcbn1cclxuXHJcbkBtZWRpYSAob3JpZW50YXRpb246IHBvcnRyYWl0KSB7XHJcblxyXG4gIC5hY3RpdmUtcHJheWVyLWhlYWRlciAucmlnaHQge1xyXG4gICAgbWFyZ2luLXRvcDogLTEuMjV2aDtcclxuICB9XHJcblxyXG59XHJcblxyXG4iLCIkZm9udG5hbWU6IENvbnNvbGE7XHJcbiRmb250LXNpemUtYmFzZTogMnZ3O1xyXG4kZm9udC1zaXplLWJhc2UtcGhvbmU6IDV2dztcclxuXHJcbiRtYXJnaW5zOiA1cHg7XHJcbiRuYXYtbGFuZHNjYXBlLW1hcmdpbjogM3ZoO1xyXG5cclxuJHBhZGRpbmc6IDVweDtcclxuXHJcbiRib3JkZXI6IDFweCBkYXNoZWQgYmxhY2s7XHJcbiRib3JkZXItcmFkaXVzOiAxMHB4O1xyXG5cclxuJGlucHV0LW1hcmdpbi1ib3R0b206IDEwcHg7XHJcblxyXG4vLyAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tXHJcblxyXG4vLyAkcGF0c0JlYWRzT2Zmc2V0WDogLTkwdnc7XHJcbi8vICRwYXRzQmVhZHNPZmZzZXRZOiAtMTh2aDtcclxuXHJcbiRwcmF5ZXJPZmZzZXRYOiAwdnc7XHJcbiRwcmF5ZXJPZmZzZXRZOiAtNjB2aDtcclxuXHJcbiRwaG9uZU5hdk9mZnNldFg6IDB2dztcclxuJHBob25lTmF2T2Zmc2V0WTogMHZ3O1xyXG5cclxuJGZvb3Rlck9mZnNldFg6IDF2dztcclxuJGZvb3Rlck9mZnNldFk6IDN2aDtcclxuIl19 */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](HeaderComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
@@ -408,7 +395,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function CurrentPrayerComponent_div_1_div_1_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 3);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
@@ -419,23 +406,23 @@ function CurrentPrayerComponent_div_1_div_1_Template(rf, ctx) { if (rf & 1) {
 function CurrentPrayerComponent_div_1_ng_container_2_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerStart"](0);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "span", 2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "span", 3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](4, 4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "span", 4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "span", 5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](4, 6);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "span", 5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "span", 7);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "span", 6);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "span", 8);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "div");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "div", 7);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](11, 8);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "div", 9);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](11, 10);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "div", 9);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "div", 11);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](13);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -451,7 +438,7 @@ function CurrentPrayerComponent_div_1_ng_container_2_Template(rf, ctx) { if (rf 
 } }
 function CurrentPrayerComponent_div_1_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, CurrentPrayerComponent_div_1_div_1_Template, 2, 1, "div", 1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, CurrentPrayerComponent_div_1_div_1_Template, 2, 1, "div", 2);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, CurrentPrayerComponent_div_1_ng_container_2_Template, 14, 3, "ng-container", 1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
@@ -463,7 +450,7 @@ function CurrentPrayerComponent_div_1_Template(rf, ctx) { if (rf & 1) {
 } }
 function CurrentPrayerComponent_div_2_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "app-end", 10);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "app-end", 12);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
     const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
@@ -508,7 +495,7 @@ CurrentPrayerComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵd
     }
     else {
         i18n_2 = $localize `:@@prayer-response␟14f66d64b276b9b6a2a5a7c2f2c92d3e83ef17d3␟6552250481309160969: Response: `;
-    } return [[1, "active-prayer-workspace"], [4, "ngIf"], [1, "prayer-leader-label"], [1, "leaderPrayerLeft"], i18n_0, [1, "leaderPrayerRight"], [1, "prayer-leader"], [1, "prayer-response-label"], i18n_2, [1, "prayer-response"], [3, "prayerName"]]; }, template: function CurrentPrayerComponent_Template(rf, ctx) { if (rf & 1) {
+    } return [[1, "active-prayer-workspace"], [4, "ngIf"], ["class", "prayer-all", 4, "ngIf"], [1, "prayer-all"], [1, "prayer-leader-label"], [1, "leaderPrayerLeft"], i18n_0, [1, "leaderPrayerRight"], [1, "prayer-leader"], [1, "prayer-response-label"], i18n_2, [1, "prayer-response"], [3, "prayerName"]]; }, template: function CurrentPrayerComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, CurrentPrayerComponent_div_1_Template, 3, 2, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, CurrentPrayerComponent_div_2_Template, 2, 1, "div", 1);
@@ -518,7 +505,7 @@ CurrentPrayerComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵd
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.currentPrayer && ctx.debugTheEnd !== true);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.activeBeadGroup === undefined || ctx.debugTheEnd);
-    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["NgIf"], _prayers_end_end_component__WEBPACK_IMPORTED_MODULE_3__["EndComponent"]], styles: [".active-prayer-workspace[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n}\n\n@media (orientation: landscape) {\n  .active-prayer-workspace[_ngcontent-%COMP%] {\n    font-size: 2vw;\n    margin-top: 10vh;\n  }\n}\n\n@media (orientation: portrait) {\n  .active-prayer-workspace[_ngcontent-%COMP%] {\n    font-size: 5vw;\n  }\n}\n\n.leaderPrayerRight[_ngcontent-%COMP%] {\n  float: right;\n}\n\n.prayer-leader-label[_ngcontent-%COMP%], .prayer-response-label[_ngcontent-%COMP%] {\n  border-width: 1px;\n  font-style: italic;\n  font-weight: bold;\n  margin-top: 5px;\n  opacity: 100%;\n  width: 5vh;\n}\n\n.prayer-leader[_ngcontent-%COMP%], .prayer-response[_ngcontent-%COMP%], .prayer-leader-label[_ngcontent-%COMP%], .prayer-response-label[_ngcontent-%COMP%] {\n  display: block;\n  margin-left: 5px;\n  margin-right: 5px;\n  padding: 5px;\n  text-align: left;\n  width: auto;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFwuLlxcY3VycmVudC1wcmF5ZXIuY29tcG9uZW50LnNjc3MiLCIuLlxcLi5cXC4uXFwuLlxcLi5cXC4uXFwuLlxcLi5cXC4uXFxzdHlsZXMtc2hhcmVkLW1peGlucy5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUVBO0VBQ0UsYUFBQTtFQUNBLHNCQUFBO0FBREY7O0FBSUE7RUFDRTtJQUNFLGNDUmE7SURTYixnQkFBQTtFQURGO0FBQ0Y7O0FBSUE7RUFDRTtJQUNFLGNDZG1CO0VEWXJCO0FBQ0Y7O0FBS0E7RUFDRSxZQUFBO0FBSEY7O0FBTUE7RUFDRSxpQkFBQTtFQUNBLGtCQUFBO0VBQ0EsaUJBQUE7RUFDQSxlQ3hCUTtFRHlCUixhQUFBO0VBQ0EsVUFBQTtBQUhGOztBQU1BO0VBQ0UsY0FBQTtFQUNBLGdCQy9CUTtFRGdDUixpQkNoQ1E7RURpQ1IsWUM5QlE7RUQrQlIsZ0JBQUE7RUFDQSxXQUFBO0FBSEYiLCJmaWxlIjoiY3VycmVudC1wcmF5ZXIuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJAaW1wb3J0ICcuLi8uLi8uLi8uLi9zdHlsZXMtc2hhcmVkLW1peGlucy5zY3NzJztcclxuXHJcbi5hY3RpdmUtcHJheWVyLXdvcmtzcGFjZSB7XHJcbiAgZGlzcGxheTogZmxleDtcclxuICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xyXG59XHJcblxyXG5AbWVkaWEgKG9yaWVudGF0aW9uOiBsYW5kc2NhcGUpIHtcclxuICAuYWN0aXZlLXByYXllci13b3Jrc3BhY2Uge1xyXG4gICAgZm9udC1zaXplOiAkZm9udC1zaXplLWJhc2U7XHJcbiAgICBtYXJnaW4tdG9wOiAxMHZoO1xyXG4gIH1cclxufVxyXG5cclxuQG1lZGlhIChvcmllbnRhdGlvbjogcG9ydHJhaXQpIHtcclxuICAuYWN0aXZlLXByYXllci13b3Jrc3BhY2Uge1xyXG4gICAgZm9udC1zaXplOiAkZm9udC1zaXplLWJhc2UtcGhvbmU7XHJcbiAgfVxyXG59XHJcblxyXG4ubGVhZGVyUHJheWVyUmlnaHQge1xyXG4gIGZsb2F0OiByaWdodDtcclxufVxyXG5cclxuLnByYXllci1sZWFkZXItbGFiZWwsIC5wcmF5ZXItcmVzcG9uc2UtbGFiZWwge1xyXG4gIGJvcmRlci13aWR0aDogMXB4O1xyXG4gIGZvbnQtc3R5bGU6IGl0YWxpYztcclxuICBmb250LXdlaWdodDogYm9sZDtcclxuICBtYXJnaW4tdG9wOiAkbWFyZ2lucztcclxuICBvcGFjaXR5OiAxMDAlO1xyXG4gIHdpZHRoOiA1dmg7XHJcbn1cclxuXHJcbi5wcmF5ZXItbGVhZGVyLCAucHJheWVyLXJlc3BvbnNlLCAucHJheWVyLWxlYWRlci1sYWJlbCwgLnByYXllci1yZXNwb25zZS1sYWJlbCB7XHJcbiAgZGlzcGxheTogYmxvY2s7XHJcbiAgbWFyZ2luLWxlZnQ6ICRtYXJnaW5zO1xyXG4gIG1hcmdpbi1yaWdodDogJG1hcmdpbnM7XHJcbiAgcGFkZGluZzogJHBhZGRpbmc7XHJcbiAgdGV4dC1hbGlnbjogbGVmdDtcclxuICB3aWR0aDogYXV0bztcclxufVxyXG4iLCIkZm9udG5hbWU6IENvbnNvbGE7XHJcbiRmb250LXNpemUtYmFzZTogMnZ3O1xyXG4kZm9udC1zaXplLWJhc2UtcGhvbmU6IDV2dztcclxuXHJcbiRtYXJnaW5zOiA1cHg7XHJcbiRuYXYtbGFuZHNjYXBlLW1hcmdpbjogM3ZoO1xyXG5cclxuJHBhZGRpbmc6IDVweDtcclxuXHJcbiRib3JkZXI6IDFweCBkYXNoZWQgYmxhY2s7XHJcbiRib3JkZXItcmFkaXVzOiAxMHB4O1xyXG5cclxuJGlucHV0LW1hcmdpbi1ib3R0b206IDEwcHg7XHJcblxyXG4vLyAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tXHJcblxyXG4vLyAkcGF0c0JlYWRzT2Zmc2V0WDogLTkwdnc7XHJcbi8vICRwYXRzQmVhZHNPZmZzZXRZOiAtMTh2aDtcclxuXHJcbiRwcmF5ZXJPZmZzZXRYOiAwdnc7XHJcbiRwcmF5ZXJPZmZzZXRZOiAtNjB2aDtcclxuXHJcbiRwaG9uZU5hdk9mZnNldFg6IDB2dztcclxuJHBob25lTmF2T2Zmc2V0WTogMHZ3O1xyXG5cclxuJGZvb3Rlck9mZnNldFg6IDF2dztcclxuJGZvb3Rlck9mZnNldFk6IDN2aDtcclxuIl19 */"] });
+    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["NgIf"], _prayers_end_end_component__WEBPACK_IMPORTED_MODULE_3__["EndComponent"]], styles: [".active-prayer-workspace[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n}\n\n@media (orientation: landscape) {\n  .active-prayer-workspace[_ngcontent-%COMP%] {\n    font-size: 2vw;\n    margin-top: 10vh;\n  }\n}\n\n@media (orientation: portrait) {\n  .active-prayer-workspace[_ngcontent-%COMP%] {\n    font-size: 5vw;\n    margin-top: -2vh;\n  }\n}\n\n.leaderPrayerRight[_ngcontent-%COMP%] {\n  float: right;\n}\n\n.prayer-leader-label[_ngcontent-%COMP%], .prayer-response-label[_ngcontent-%COMP%] {\n  border-width: 1px;\n  font-style: italic;\n  font-weight: bold;\n  margin-top: 5px;\n  opacity: 100%;\n  width: 5vh;\n}\n\n.prayer-all[_ngcontent-%COMP%], .prayer-leader[_ngcontent-%COMP%], .prayer-response[_ngcontent-%COMP%], .prayer-leader-label[_ngcontent-%COMP%], .prayer-response-label[_ngcontent-%COMP%] {\n  display: block;\n  margin-left: 5px;\n  margin-right: 5px;\n  padding: 5px;\n  text-align: left;\n  width: auto;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFwuLlxcY3VycmVudC1wcmF5ZXIuY29tcG9uZW50LnNjc3MiLCIuLlxcLi5cXC4uXFwuLlxcLi5cXC4uXFwuLlxcLi5cXC4uXFxzdHlsZXMtc2hhcmVkLW1peGlucy5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUVBO0VBQ0UsYUFBQTtFQUNBLHNCQUFBO0FBREY7O0FBSUE7RUFDRTtJQUNFLGNDUmE7SURTYixnQkFBQTtFQURGO0FBQ0Y7O0FBSUE7RUFDRTtJQUNFLGNDZG1CO0lEZW5CLGdCQUFBO0VBRkY7QUFDRjs7QUFLQTtFQUNFLFlBQUE7QUFIRjs7QUFNQTtFQUNFLGlCQUFBO0VBQ0Esa0JBQUE7RUFDQSxpQkFBQTtFQUNBLGVDekJRO0VEMEJSLGFBQUE7RUFDQSxVQUFBO0FBSEY7O0FBTUE7RUFDRSxjQUFBO0VBQ0EsZ0JDaENRO0VEaUNSLGlCQ2pDUTtFRGtDUixZQy9CUTtFRGdDUixnQkFBQTtFQUNBLFdBQUE7QUFIRiIsImZpbGUiOiJjdXJyZW50LXByYXllci5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIkBpbXBvcnQgJy4uLy4uLy4uLy4uL3N0eWxlcy1zaGFyZWQtbWl4aW5zLnNjc3MnO1xyXG5cclxuLmFjdGl2ZS1wcmF5ZXItd29ya3NwYWNlIHtcclxuICBkaXNwbGF5OiBmbGV4O1xyXG4gIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XHJcbn1cclxuXHJcbkBtZWRpYSAob3JpZW50YXRpb246IGxhbmRzY2FwZSkge1xyXG4gIC5hY3RpdmUtcHJheWVyLXdvcmtzcGFjZSB7XHJcbiAgICBmb250LXNpemU6ICRmb250LXNpemUtYmFzZTtcclxuICAgIG1hcmdpbi10b3A6IDEwdmg7XHJcbiAgfVxyXG59XHJcblxyXG5AbWVkaWEgKG9yaWVudGF0aW9uOiBwb3J0cmFpdCkge1xyXG4gIC5hY3RpdmUtcHJheWVyLXdvcmtzcGFjZSB7XHJcbiAgICBmb250LXNpemU6ICRmb250LXNpemUtYmFzZS1waG9uZTtcclxuICAgIG1hcmdpbi10b3A6IC0ydmg7XHJcbiAgfVxyXG59XHJcblxyXG4ubGVhZGVyUHJheWVyUmlnaHQge1xyXG4gIGZsb2F0OiByaWdodDtcclxufVxyXG5cclxuLnByYXllci1sZWFkZXItbGFiZWwsIC5wcmF5ZXItcmVzcG9uc2UtbGFiZWwge1xyXG4gIGJvcmRlci13aWR0aDogMXB4O1xyXG4gIGZvbnQtc3R5bGU6IGl0YWxpYztcclxuICBmb250LXdlaWdodDogYm9sZDtcclxuICBtYXJnaW4tdG9wOiAkbWFyZ2lucztcclxuICBvcGFjaXR5OiAxMDAlO1xyXG4gIHdpZHRoOiA1dmg7XHJcbn1cclxuXHJcbi5wcmF5ZXItYWxsLCAucHJheWVyLWxlYWRlciwgLnByYXllci1yZXNwb25zZSwgLnByYXllci1sZWFkZXItbGFiZWwsIC5wcmF5ZXItcmVzcG9uc2UtbGFiZWwge1xyXG4gIGRpc3BsYXk6IGJsb2NrO1xyXG4gIG1hcmdpbi1sZWZ0OiAkbWFyZ2lucztcclxuICBtYXJnaW4tcmlnaHQ6ICRtYXJnaW5zO1xyXG4gIHBhZGRpbmc6ICRwYWRkaW5nO1xyXG4gIHRleHQtYWxpZ246IGxlZnQ7XHJcbiAgd2lkdGg6IGF1dG87XHJcbn1cclxuIiwiJGZvbnRuYW1lOiBDb25zb2xhO1xyXG4kZm9udC1zaXplLWJhc2U6IDJ2dztcclxuJGZvbnQtc2l6ZS1iYXNlLXBob25lOiA1dnc7XHJcblxyXG4kbWFyZ2luczogNXB4O1xyXG4kbmF2LWxhbmRzY2FwZS1tYXJnaW46IDN2aDtcclxuXHJcbiRwYWRkaW5nOiA1cHg7XHJcblxyXG4kYm9yZGVyOiAxcHggZGFzaGVkIGJsYWNrO1xyXG4kYm9yZGVyLXJhZGl1czogMTBweDtcclxuXHJcbiRpbnB1dC1tYXJnaW4tYm90dG9tOiAxMHB4O1xyXG5cclxuLy8gLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLVxyXG5cclxuLy8gJHBhdHNCZWFkc09mZnNldFg6IC05MHZ3O1xyXG4vLyAkcGF0c0JlYWRzT2Zmc2V0WTogLTE4dmg7XHJcblxyXG4kcHJheWVyT2Zmc2V0WDogMHZ3O1xyXG4kcHJheWVyT2Zmc2V0WTogLTYwdmg7XHJcblxyXG4kcGhvbmVOYXZPZmZzZXRYOiAwdnc7XHJcbiRwaG9uZU5hdk9mZnNldFk6IDB2dztcclxuXHJcbiRmb290ZXJPZmZzZXRYOiAxdnc7XHJcbiRmb290ZXJPZmZzZXRZOiAzdmg7XHJcbiJdfQ== */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](CurrentPrayerComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
@@ -535,6 +522,28 @@ CurrentPrayerComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵd
         }], debugTheEnd: [{
             type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
         }] }); })();
+
+
+/***/ }),
+
+/***/ "72Gp":
+/*!*********************************************!*\
+  !*** ./src/app/models/liturgical-colors.ts ***!
+  \*********************************************/
+/*! exports provided: LiturgicalColors */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LiturgicalColors", function() { return LiturgicalColors; });
+var LiturgicalColors;
+(function (LiturgicalColors) {
+    LiturgicalColors["GREEN"] = "green";
+    LiturgicalColors["RED"] = "red";
+    LiturgicalColors["ROSE"] = "rose";
+    LiturgicalColors["VIOLET"] = "violet";
+    LiturgicalColors["WHITE"] = "white";
+})(LiturgicalColors || (LiturgicalColors = {}));
 
 
 /***/ }),
@@ -683,10 +692,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _active_prayer_active_prayer_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../active-prayer/active-prayer.component */ "K4TB");
 /* harmony import */ var _services_bead_group_loader_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/bead-group-loader.service */ "ivI1");
 /* harmony import */ var _services_app_config_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../services/app-config.service */ "JvtB");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common */ "ofXK");
-/* harmony import */ var _mystery_selector_mystery_selector_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../mystery-selector/mystery-selector.component */ "MKlP");
-/* harmony import */ var _notices_notices_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../notices/notices.component */ "z+NF");
-/* harmony import */ var _navigation_navigation_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../navigation/navigation.component */ "mvyS");
+/* harmony import */ var src_app_services_liturgical_year_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/services/liturgical-year.service */ "N8x+");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common */ "ofXK");
+/* harmony import */ var _mystery_selector_mystery_selector_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../mystery-selector/mystery-selector.component */ "MKlP");
+/* harmony import */ var _notices_notices_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../notices/notices.component */ "z+NF");
+/* harmony import */ var _navigation_navigation_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../navigation/navigation.component */ "mvyS");
+
 
 
 
@@ -725,9 +736,10 @@ function HomeComponent_ng_container_2_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("activeBeadGroupList", ctx_r1.selectedBeadGroupList);
 } }
 class HomeComponent {
-    constructor(beadGroupLoader, appConfig) {
+    constructor(beadGroupLoader, appConfig, liturgicalYear) {
         this.beadGroupLoader = beadGroupLoader;
         this.appConfig = appConfig;
+        this.liturgicalYear = liturgicalYear;
     }
     ngOnInit() {
         console.log(`selectedMysteryId: ${this.selectedMysteryId}`);
@@ -743,6 +755,7 @@ class HomeComponent {
     }
     onResetEvent(flag) {
         this.selectedBeadGroupList = undefined;
+        this.liturgicalYear.overrideLiturgicalColor = undefined;
     }
     onNext() {
         this.activePrayer.onNext();
@@ -751,7 +764,7 @@ class HomeComponent {
         this.activePrayer.onPrevious();
     }
 }
-HomeComponent.ɵfac = function HomeComponent_Factory(t) { return new (t || HomeComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_bead_group_loader_service__WEBPACK_IMPORTED_MODULE_3__["BeadGroupLoaderService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_app_config_service__WEBPACK_IMPORTED_MODULE_4__["AppConfigService"])); };
+HomeComponent.ɵfac = function HomeComponent_Factory(t) { return new (t || HomeComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_bead_group_loader_service__WEBPACK_IMPORTED_MODULE_3__["BeadGroupLoaderService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_app_config_service__WEBPACK_IMPORTED_MODULE_4__["AppConfigService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_services_liturgical_year_service__WEBPACK_IMPORTED_MODULE_5__["LiturgicalYearService"])); };
 HomeComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: HomeComponent, selectors: [["app-home"]], viewQuery: function HomeComponent_Query(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵviewQuery"](_active_prayer_active_prayer_component__WEBPACK_IMPORTED_MODULE_2__["ActivePrayerComponent"], true);
     } if (rf & 2) {
@@ -767,7 +780,7 @@ HomeComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComp
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.showMysterySelector);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", !ctx.showMysterySelector);
-    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_5__["NgIf"], _mystery_selector_mystery_selector_component__WEBPACK_IMPORTED_MODULE_6__["MysterySelectorComponent"], _notices_notices_component__WEBPACK_IMPORTED_MODULE_7__["NoticesComponent"], _active_prayer_active_prayer_component__WEBPACK_IMPORTED_MODULE_2__["ActivePrayerComponent"], _navigation_navigation_component__WEBPACK_IMPORTED_MODULE_8__["NavigationComponent"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJob21lLmNvbXBvbmVudC5zY3NzIn0= */"] });
+    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_6__["NgIf"], _mystery_selector_mystery_selector_component__WEBPACK_IMPORTED_MODULE_7__["MysterySelectorComponent"], _notices_notices_component__WEBPACK_IMPORTED_MODULE_8__["NoticesComponent"], _active_prayer_active_prayer_component__WEBPACK_IMPORTED_MODULE_2__["ActivePrayerComponent"], _navigation_navigation_component__WEBPACK_IMPORTED_MODULE_9__["NavigationComponent"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJob21lLmNvbXBvbmVudC5zY3NzIn0= */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](HomeComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
@@ -775,7 +788,7 @@ HomeComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComp
                 templateUrl: './home.component.html',
                 styleUrls: ['./home.component.scss']
             }]
-    }], function () { return [{ type: _services_bead_group_loader_service__WEBPACK_IMPORTED_MODULE_3__["BeadGroupLoaderService"] }, { type: _services_app_config_service__WEBPACK_IMPORTED_MODULE_4__["AppConfigService"] }]; }, { selectedMysteryId: [{
+    }], function () { return [{ type: _services_bead_group_loader_service__WEBPACK_IMPORTED_MODULE_3__["BeadGroupLoaderService"] }, { type: _services_app_config_service__WEBPACK_IMPORTED_MODULE_4__["AppConfigService"] }, { type: src_app_services_liturgical_year_service__WEBPACK_IMPORTED_MODULE_5__["LiturgicalYearService"] }]; }, { selectedMysteryId: [{
             type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
         }], activePrayer: [{
             type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"],
@@ -919,19 +932,21 @@ class BeadGroupList {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "refreshNeeded", function() { return refreshNeeded; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "calculateAdventAndChristmas", function() { return calculateAdventAndChristmas; });
-/* harmony import */ var src_app_models_liturgical_dates__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/app/models/liturgical-dates */ "t1Hb");
-/* harmony import */ var _key_dates__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./key-dates */ "rOcc");
+/* harmony import */ var src_app_models_liturgical_colors__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/app/models/liturgical-colors */ "72Gp");
+/* harmony import */ var src_app_models_liturgical_dates__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/models/liturgical-dates */ "t1Hb");
+/* harmony import */ var _key_dates__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./key-dates */ "rOcc");
+
 
 
 function refreshNeeded(period, appDate) {
     const hasStart = (period === null || period === void 0 ? void 0 : period.startDate) !== undefined;
     const hasEnd = (period === null || period === void 0 ? void 0 : period.endDate) !== undefined;
     if (!hasStart && !hasEnd) {
-        return src_app_models_liturgical_dates__WEBPACK_IMPORTED_MODULE_0__["PeriodStatus"].MISSING;
+        return src_app_models_liturgical_dates__WEBPACK_IMPORTED_MODULE_1__["PeriodStatus"].MISSING;
     }
     return (hasEnd && period.endDate > appDate.date) || (!hasEnd && period.startDate > appDate.date)
-        ? src_app_models_liturgical_dates__WEBPACK_IMPORTED_MODULE_0__["PeriodStatus"].INCREMENT_YEAR
-        : src_app_models_liturgical_dates__WEBPACK_IMPORTED_MODULE_0__["PeriodStatus"].GOOD;
+        ? src_app_models_liturgical_dates__WEBPACK_IMPORTED_MODULE_1__["PeriodStatus"].INCREMENT_YEAR
+        : src_app_models_liturgical_dates__WEBPACK_IMPORTED_MODULE_1__["PeriodStatus"].GOOD;
 }
 function calculateAdventAndChristmas(appDate, localization) {
     const nextChristmasDay = calculateNextChristmas(appDate, localization);
@@ -940,34 +955,36 @@ function calculateAdventAndChristmas(appDate, localization) {
     const sundayBeforeChristmas = (dowChristmasDay === 0) ? 7 : dowChristmasDay;
     const adventStartsDaysBack = nextChristmasDay.startDate.getDate() - 21 - sundayBeforeChristmas;
     const adventStarts = (adventStartsDaysBack >= 1)
-        ? new Date(adventYear, _key_dates__WEBPACK_IMPORTED_MODULE_1__["Months"].DEC, adventStartsDaysBack)
-        : new Date(adventYear, _key_dates__WEBPACK_IMPORTED_MODULE_1__["Months"].NOV, adventStartsDaysBack + 30);
+        ? new Date(adventYear, _key_dates__WEBPACK_IMPORTED_MODULE_2__["Months"].DEC, adventStartsDaysBack)
+        : new Date(adventYear, _key_dates__WEBPACK_IMPORTED_MODULE_2__["Months"].NOV, adventStartsDaysBack + 30);
     return {
         christmas: nextChristmasDay,
         advent: {
             startDate: adventStarts,
-            endDate: new Date(adventYear, _key_dates__WEBPACK_IMPORTED_MODULE_1__["Months"].DEC, 24),
-            name: localization.adventLabel
+            endDate: new Date(adventYear, _key_dates__WEBPACK_IMPORTED_MODULE_2__["Months"].DEC, 24),
+            name: localization.adventLabel,
+            color: src_app_models_liturgical_colors__WEBPACK_IMPORTED_MODULE_0__["LiturgicalColors"].VIOLET
         }
     };
 }
 function calculateNextChristmas(appDate, localization) {
-    let christmasDay = new Date(appDate.currentYear, _key_dates__WEBPACK_IMPORTED_MODULE_1__["Months"].DEC, 25);
+    let christmasDay = new Date(appDate.currentYear, _key_dates__WEBPACK_IMPORTED_MODULE_2__["Months"].DEC, 25);
     if (appDate.date > christmasDay) {
-        christmasDay = new Date(appDate.currentYear + 1, _key_dates__WEBPACK_IMPORTED_MODULE_1__["Months"].DEC, 25);
+        christmasDay = new Date(appDate.currentYear + 1, _key_dates__WEBPACK_IMPORTED_MODULE_2__["Months"].DEC, 25);
     }
     const endOfChristmas = calculateEndOfChristmasSeason(christmasDay);
     return {
         startDate: christmasDay,
         endDate: endOfChristmas,
-        name: localization.christmasLabel
+        name: localization.christmasLabel,
+        color: src_app_models_liturgical_colors__WEBPACK_IMPORTED_MODULE_0__["LiturgicalColors"].WHITE
     };
 }
 function calculateEndOfChristmasSeason(christmasDay) {
     // TODO: Less certain about how end of Christmas season is determined
-    const jan6 = new Date(christmasDay.getFullYear() + 1, _key_dates__WEBPACK_IMPORTED_MODULE_1__["Months"].JAN, 6);
+    const jan6 = new Date(christmasDay.getFullYear() + 1, _key_dates__WEBPACK_IMPORTED_MODULE_2__["Months"].JAN, 6);
     const daysInFuture = 7 - jan6.getDay();
-    return Object(_key_dates__WEBPACK_IMPORTED_MODULE_1__["addDays"])(jan6, daysInFuture);
+    return Object(_key_dates__WEBPACK_IMPORTED_MODULE_2__["addDays"])(jan6, daysInFuture);
 }
 
 
@@ -1288,20 +1305,20 @@ MysterySelectorComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵ�
 /*!*****************************************************!*\
   !*** ./src/app/services/liturgical-year.service.ts ***!
   \*****************************************************/
-/*! exports provided: LiturgicalColors, LiturgicalYearService */
+/*! exports provided: LiturgicalYearService */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LiturgicalColors", function() { return LiturgicalColors; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LiturgicalYearService", function() { return LiturgicalYearService; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
 /* harmony import */ var src_utils_dates_advent_christmas__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/utils/dates-advent-christmas */ "Gl89");
 /* harmony import */ var src_utils_dates_lent_easter__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/utils/dates-lent-easter */ "tV7K");
 /* harmony import */ var src_utils_key_dates__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/utils/key-dates */ "rOcc");
-/* harmony import */ var _models_liturgical_dates__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../models/liturgical-dates */ "t1Hb");
-/* harmony import */ var _app_date_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./app-date.service */ "tdVI");
-/* harmony import */ var _localization_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./localization.service */ "c2Te");
+/* harmony import */ var _models_liturgical_colors__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../models/liturgical-colors */ "72Gp");
+/* harmony import */ var _models_liturgical_dates__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../models/liturgical-dates */ "t1Hb");
+/* harmony import */ var _app_date_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./app-date.service */ "tdVI");
+/* harmony import */ var _localization_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./localization.service */ "c2Te");
 
 
 
@@ -1310,14 +1327,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var LiturgicalColors;
-(function (LiturgicalColors) {
-    LiturgicalColors["GREEN"] = "green";
-    LiturgicalColors["RED"] = "red";
-    LiturgicalColors["ROSE"] = "rose";
-    LiturgicalColors["VIOLET"] = "violet";
-    LiturgicalColors["WHITE"] = "white";
-})(LiturgicalColors || (LiturgicalColors = {}));
+
 class LiturgicalYearService {
     constructor(appDate, localization) {
         this.appDate = appDate;
@@ -1325,26 +1335,29 @@ class LiturgicalYearService {
         this.validateDates();
     }
     liturgicalColor() {
+        if (this.overrideLiturgicalColor) {
+            return this.overrideLiturgicalColor;
+        }
         if ((this.dateInRange(this.liturgicalDates.triduum)
             || this.appDate.date === this.palmSunday
             || this.appDate.date === this.pentacostSunday)
             && this.appDate.date !== this.liturgicalDates.easter.startDate) {
-            return LiturgicalColors.RED;
+            return _models_liturgical_colors__WEBPACK_IMPORTED_MODULE_4__["LiturgicalColors"].RED;
         }
         else if (this.appDate.date === this.adventSunday3
             || this.appDate.date === this.lentSunday4) {
-            return LiturgicalColors.ROSE;
+            return _models_liturgical_colors__WEBPACK_IMPORTED_MODULE_4__["LiturgicalColors"].ROSE;
         }
         else if (this.dateInRange(this.liturgicalDates.christmas)
             || this.dateInRange(this.liturgicalDates.easter)
             || this.appDate.date === this.allSaintsDay) {
-            return LiturgicalColors.WHITE;
+            return _models_liturgical_colors__WEBPACK_IMPORTED_MODULE_4__["LiturgicalColors"].WHITE;
         }
         else if (this.dateInRange(this.liturgicalDates.advent)
             || this.dateInRange(this.liturgicalDates.lent)) {
-            return LiturgicalColors.VIOLET;
+            return _models_liturgical_colors__WEBPACK_IMPORTED_MODULE_4__["LiturgicalColors"].VIOLET;
         }
-        return LiturgicalColors.GREEN;
+        return _models_liturgical_colors__WEBPACK_IMPORTED_MODULE_4__["LiturgicalColors"].GREEN;
     }
     validateDates() {
         let rawDates = window.localStorage.getItem('rosary.liturgical-dates');
@@ -1373,7 +1386,7 @@ class LiturgicalYearService {
         return period.startDate <= this.appDate.date && this.appDate.date <= period.endDate;
     }
     refreshLiturgicalDates() {
-        let workingCopy = new _models_liturgical_dates__WEBPACK_IMPORTED_MODULE_4__["LiturgicalDates"](this.liturgicalDates);
+        let workingCopy = new _models_liturgical_dates__WEBPACK_IMPORTED_MODULE_5__["LiturgicalDates"](this.liturgicalDates);
         this.refreshAdventAndChristmas(workingCopy);
         this.refreshLentAndEaster(workingCopy);
         this.liturgicalDates = workingCopy;
@@ -1381,7 +1394,7 @@ class LiturgicalYearService {
     refreshAdventAndChristmas(workingCopy) {
         const adventStatus = Object(src_utils_dates_advent_christmas__WEBPACK_IMPORTED_MODULE_1__["refreshNeeded"])(workingCopy === null || workingCopy === void 0 ? void 0 : workingCopy.advent, this.appDate);
         const christmasStatus = Object(src_utils_dates_advent_christmas__WEBPACK_IMPORTED_MODULE_1__["refreshNeeded"])(workingCopy === null || workingCopy === void 0 ? void 0 : workingCopy.christmas, this.appDate);
-        if (_models_liturgical_dates__WEBPACK_IMPORTED_MODULE_4__["PeriodStatus"].GOOD !== adventStatus || _models_liturgical_dates__WEBPACK_IMPORTED_MODULE_4__["PeriodStatus"].GOOD !== christmasStatus) {
+        if (_models_liturgical_dates__WEBPACK_IMPORTED_MODULE_5__["PeriodStatus"].GOOD !== adventStatus || _models_liturgical_dates__WEBPACK_IMPORTED_MODULE_5__["PeriodStatus"].GOOD !== christmasStatus) {
             const updatedAdventChristmas = Object(src_utils_dates_advent_christmas__WEBPACK_IMPORTED_MODULE_1__["calculateAdventAndChristmas"])(this.appDate, this.localization);
             workingCopy.christmas = updatedAdventChristmas.christmas;
             workingCopy.advent = updatedAdventChristmas.advent;
@@ -1391,7 +1404,7 @@ class LiturgicalYearService {
         const lentStatus = Object(src_utils_dates_advent_christmas__WEBPACK_IMPORTED_MODULE_1__["refreshNeeded"])(workingCopy === null || workingCopy === void 0 ? void 0 : workingCopy.lent, this.appDate);
         const triduumStatus = Object(src_utils_dates_advent_christmas__WEBPACK_IMPORTED_MODULE_1__["refreshNeeded"])(workingCopy === null || workingCopy === void 0 ? void 0 : workingCopy.triduum, this.appDate);
         const easterStatus = Object(src_utils_dates_advent_christmas__WEBPACK_IMPORTED_MODULE_1__["refreshNeeded"])(workingCopy === null || workingCopy === void 0 ? void 0 : workingCopy.easter, this.appDate);
-        if (_models_liturgical_dates__WEBPACK_IMPORTED_MODULE_4__["PeriodStatus"].GOOD !== lentStatus || _models_liturgical_dates__WEBPACK_IMPORTED_MODULE_4__["PeriodStatus"].GOOD !== triduumStatus || _models_liturgical_dates__WEBPACK_IMPORTED_MODULE_4__["PeriodStatus"].GOOD !== easterStatus) {
+        if (_models_liturgical_dates__WEBPACK_IMPORTED_MODULE_5__["PeriodStatus"].GOOD !== lentStatus || _models_liturgical_dates__WEBPACK_IMPORTED_MODULE_5__["PeriodStatus"].GOOD !== triduumStatus || _models_liturgical_dates__WEBPACK_IMPORTED_MODULE_5__["PeriodStatus"].GOOD !== easterStatus) {
             const updatedLentEaster = Object(src_utils_dates_lent_easter__WEBPACK_IMPORTED_MODULE_2__["calculateLentAndEaster"])(this.appDate, this.localization);
             workingCopy.lent = updatedLentEaster.lent;
             workingCopy.easter = updatedLentEaster.easter;
@@ -1399,14 +1412,14 @@ class LiturgicalYearService {
         }
     }
 }
-LiturgicalYearService.ɵfac = function LiturgicalYearService_Factory(t) { return new (t || LiturgicalYearService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_app_date_service__WEBPACK_IMPORTED_MODULE_5__["AppDateService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_localization_service__WEBPACK_IMPORTED_MODULE_6__["LocalizationService"])); };
+LiturgicalYearService.ɵfac = function LiturgicalYearService_Factory(t) { return new (t || LiturgicalYearService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_app_date_service__WEBPACK_IMPORTED_MODULE_6__["AppDateService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_localization_service__WEBPACK_IMPORTED_MODULE_7__["LocalizationService"])); };
 LiturgicalYearService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({ token: LiturgicalYearService, factory: LiturgicalYearService.ɵfac, providedIn: 'root' });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](LiturgicalYearService, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
         args: [{
                 providedIn: 'root'
             }]
-    }], function () { return [{ type: _app_date_service__WEBPACK_IMPORTED_MODULE_5__["AppDateService"] }, { type: _localization_service__WEBPACK_IMPORTED_MODULE_6__["LocalizationService"] }]; }, null); })();
+    }], function () { return [{ type: _app_date_service__WEBPACK_IMPORTED_MODULE_6__["AppDateService"] }, { type: _localization_service__WEBPACK_IMPORTED_MODULE_7__["LocalizationService"] }]; }, null); })();
 
 
 /***/ }),
@@ -1497,6 +1510,7 @@ const PATS_BEADS_COORDS_LONG = [
     { x: 738, y: 2082 },
     { x: 787, y: 2139 },
     { x: 810, y: 2215 },
+    { x: 805, y: 2368 },
     { x: 805, y: 2368 },
     { x: 805, y: 2368 },
     { x: 805, y: 2368 },
@@ -1705,15 +1719,30 @@ EndComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineCompo
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LiturgicalDatesComponent", function() { return LiturgicalDatesComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
-/* harmony import */ var src_app_services_liturgical_year_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/services/liturgical-year.service */ "N8x+");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "ofXK");
+/* harmony import */ var src_app_models_liturgical_dates__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/models/liturgical-dates */ "t1Hb");
+/* harmony import */ var src_app_services_liturgical_year_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/liturgical-year.service */ "N8x+");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "ofXK");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ "3Pt+");
 
 
 
 
-function LiturgicalDatesComponent_div_1_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 3);
+
+
+function LiturgicalDatesComponent_option_5_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "option", 6);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const periodSelector_r2 = ctx.$implicit;
+    const i_r3 = ctx.index;
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("value", i_r3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", periodSelector_r2.name, " ");
+} }
+function LiturgicalDatesComponent_div_7_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 7);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 8);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3);
@@ -1721,11 +1750,11 @@ function LiturgicalDatesComponent_div_1_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipe"](5, "date");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const period_r1 = ctx.$implicit;
+    const period_r4 = ctx.$implicit;
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("", period_r1.name, ":");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("", period_r4.name, ":");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate2"](" ", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind1"](4, 3, period_r1.startDate), " - ", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind1"](5, 5, period_r1.endDate), " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate2"](" ", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind1"](4, 3, period_r4.startDate), " - ", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind1"](5, 5, period_r4.endDate), " ");
 } }
 class LiturgicalDatesComponent {
     constructor(liturgicalYear) {
@@ -1751,17 +1780,49 @@ class LiturgicalDatesComponent {
             periods[3], periods[4]
         ];
         this.periods = periods;
+        this.litYearColorSelector = [
+            src_app_models_liturgical_dates__WEBPACK_IMPORTED_MODULE_1__["automaticSelection"],
+            src_app_models_liturgical_dates__WEBPACK_IMPORTED_MODULE_1__["ordinaryTime"],
+            ...periods
+        ];
+    }
+    onLiturgicalPeriodChanged(newValue) {
+        const idx = Number.parseInt(newValue);
+        if (idx === 0) {
+            this.liturgicalYear.overrideLiturgicalColor = undefined;
+        }
+        else if (idx >= 1 && idx < this.litYearColorSelector.length) {
+            this.liturgicalYear.overrideLiturgicalColor = this.litYearColorSelector[idx].color;
+        }
     }
 }
-LiturgicalDatesComponent.ɵfac = function LiturgicalDatesComponent_Factory(t) { return new (t || LiturgicalDatesComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_services_liturgical_year_service__WEBPACK_IMPORTED_MODULE_1__["LiturgicalYearService"])); };
-LiturgicalDatesComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: LiturgicalDatesComponent, selectors: [["app-liturgical-dates"]], decls: 2, vars: 1, consts: [[1, "box"], ["class", "period", 4, "ngFor", "ngForOf"], [1, "period"], [1, "label"]], template: function LiturgicalDatesComponent_Template(rf, ctx) { if (rf & 1) {
+LiturgicalDatesComponent.ɵfac = function LiturgicalDatesComponent_Factory(t) { return new (t || LiturgicalDatesComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_services_liturgical_year_service__WEBPACK_IMPORTED_MODULE_2__["LiturgicalYearService"])); };
+LiturgicalDatesComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: LiturgicalDatesComponent, selectors: [["app-liturgical-dates"]], decls: 8, vars: 2, consts: function () { let i18n_0; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+        const MSG_EXTERNAL_5084243658804306074$$SRC_APP_COMPONENTS_LITURGICAL_DATES_LITURGICAL_DATES_COMPONENT_TS_1 = goog.getMsg("Selected Liturgical period:");
+        i18n_0 = MSG_EXTERNAL_5084243658804306074$$SRC_APP_COMPONENTS_LITURGICAL_DATES_LITURGICAL_DATES_COMPONENT_TS_1;
+    }
+    else {
+        i18n_0 = $localize `:␟3caf177d07b6c6910990ec9424f282dbd65b9e14␟5084243658804306074:Selected Liturgical period:`;
+    } return [[1, "liturgical-div"], i18n_0, [3, "change"], [3, "value", 4, "ngFor", "ngForOf"], [1, "box"], ["class", "period", 4, "ngFor", "ngForOf"], [3, "value"], [1, "period"], [1, "label"]]; }, template: function LiturgicalDatesComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, LiturgicalDatesComponent_div_1_Template, 6, 7, "div", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "label");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](2, 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, "\u00A0 ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "select", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("change", function LiturgicalDatesComponent_Template_select_change_4_listener($event) { return ctx.onLiturgicalPeriodChanged($event.target.value); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](5, LiturgicalDatesComponent_option_5_Template, 2, 2, "option", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "div", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](7, LiturgicalDatesComponent_div_7_Template, 6, 7, "div", 5);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     } if (rf & 2) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.litYearColorSelector);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.periods);
-    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["NgForOf"]], pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["DatePipe"]], styles: ["@media (orientation: landscape) {\n  .box[_ngcontent-%COMP%] {\n    height: 150px;\n    display: flex;\n    flex-wrap: wrap;\n    flex-direction: column;\n    text-align: center;\n  }\n\n  .box[_ngcontent-%COMP%]    > *[_ngcontent-%COMP%] {\n    flex: 0 0 33%;\n    height: 5vh;\n  }\n}\n\n@media (orientation: portrait) {\n  .box[_ngcontent-%COMP%] {\n    display: flex;\n    flex-direction: column;\n    height: 300px;\n    text-align: center;\n  }\n\n  .box[_ngcontent-%COMP%]    > *[_ngcontent-%COMP%] {\n    flex: 0 0 10%;\n  }\n}\n.label[_ngcontent-%COMP%] {\n  font-weight: bold;\n  margin: 0.5vh;\n  padding-top: 5px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFxsaXR1cmdpY2FsLWRhdGVzLmNvbXBvbmVudC5zY3NzIiwiLi5cXC4uXFwuLlxcLi5cXC4uXFwuLlxcLi5cXHN0eWxlcy1zaGFyZWQtbWl4aW5zLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBRUE7RUFFRTtJQUNFLGFBQUE7SUFDQSxhQUFBO0lBQ0EsZUFBQTtJQUNBLHNCQUFBO0lBQ0Esa0JBQUE7RUFGRjs7RUFLQTtJQUNFLGFBQUE7SUFDQSxXQUFBO0VBRkY7QUFDRjtBQU1BLHFGQUFBO0FBRUE7RUFFRTtJQUNFLGFBQUE7SUFFQSxzQkFBQTtJQUNBLGFBQUE7SUFDQSxrQkFBQTtFQVBGOztFQVVBO0lBQ0UsYUFBQTtFQVBGO0FBQ0Y7QUFXQTtFQUNFLGlCQUFBO0VBQ0EsYUFBQTtFQUNBLGdCQ2pDUTtBRHdCViIsImZpbGUiOiJsaXR1cmdpY2FsLWRhdGVzLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiQGltcG9ydCAnLi4vLi4vLi4vc3R5bGVzLXNoYXJlZC1taXhpbnMuc2Nzcyc7XHJcblxyXG5AbWVkaWEgKG9yaWVudGF0aW9uOiBsYW5kc2NhcGUpIHtcclxuXHJcbiAgLmJveCB7XHJcbiAgICBoZWlnaHQ6IDE1MHB4O1xyXG4gICAgZGlzcGxheTogZmxleDtcclxuICAgIGZsZXgtd3JhcDogd3JhcDtcclxuICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgfVxyXG5cclxuICAuYm94Pioge1xyXG4gICAgZmxleDogMCAwIDMzJTtcclxuICAgIGhlaWdodDogNXZoO1xyXG4gIH1cclxuXHJcbn1cclxuXHJcbi8qIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tICovXHJcblxyXG5AbWVkaWEgKG9yaWVudGF0aW9uOiBwb3J0cmFpdCkge1xyXG5cclxuICAuYm94IHtcclxuICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICAvLyBmbGV4LXdyYXA6IHdyYXA7XHJcbiAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xyXG4gICAgaGVpZ2h0OiAzMDBweDtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICB9XHJcblxyXG4gIC5ib3g+KiB7XHJcbiAgICBmbGV4OiAwIDAgMTAlO1xyXG4gIH1cclxuXHJcbn1cclxuXHJcbi5sYWJlbCB7XHJcbiAgZm9udC13ZWlnaHQ6IGJvbGQ7XHJcbiAgbWFyZ2luOiAwLjV2aDtcclxuICBwYWRkaW5nLXRvcDogJHBhZGRpbmc7XHJcbn1cclxuIiwiJGZvbnRuYW1lOiBDb25zb2xhO1xyXG4kZm9udC1zaXplLWJhc2U6IDJ2dztcclxuJGZvbnQtc2l6ZS1iYXNlLXBob25lOiA1dnc7XHJcblxyXG4kbWFyZ2luczogNXB4O1xyXG4kbmF2LWxhbmRzY2FwZS1tYXJnaW46IDN2aDtcclxuXHJcbiRwYWRkaW5nOiA1cHg7XHJcblxyXG4kYm9yZGVyOiAxcHggZGFzaGVkIGJsYWNrO1xyXG4kYm9yZGVyLXJhZGl1czogMTBweDtcclxuXHJcbiRpbnB1dC1tYXJnaW4tYm90dG9tOiAxMHB4O1xyXG5cclxuLy8gLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLVxyXG5cclxuLy8gJHBhdHNCZWFkc09mZnNldFg6IC05MHZ3O1xyXG4vLyAkcGF0c0JlYWRzT2Zmc2V0WTogLTE4dmg7XHJcblxyXG4kcHJheWVyT2Zmc2V0WDogMHZ3O1xyXG4kcHJheWVyT2Zmc2V0WTogLTYwdmg7XHJcblxyXG4kcGhvbmVOYXZPZmZzZXRYOiAwdnc7XHJcbiRwaG9uZU5hdk9mZnNldFk6IDB2dztcclxuXHJcbiRmb290ZXJPZmZzZXRYOiAxdnc7XHJcbiRmb290ZXJPZmZzZXRZOiAzdmg7XHJcbiJdfQ== */"] });
+    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_3__["NgForOf"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["NgSelectOption"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["ɵangular_packages_forms_forms_x"]], pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_3__["DatePipe"]], styles: [".liturgical-div[_ngcontent-%COMP%] {\n  text-align: center;\n  width: 99%;\n}\n\n@media (orientation: landscape) {\n  .liturgical-div[_ngcontent-%COMP%]   select[_ngcontent-%COMP%] {\n    font-weight: 2vw;\n    height: vh;\n  }\n\n  .box[_ngcontent-%COMP%] {\n    height: 150px;\n    display: flex;\n    flex-wrap: wrap;\n    flex-direction: column;\n    text-align: center;\n  }\n\n  .box[_ngcontent-%COMP%]    > *[_ngcontent-%COMP%] {\n    flex: 0 0 33%;\n    height: 5vh;\n  }\n}\n\n\n\n@media (orientation: portrait) {\n  select[_ngcontent-%COMP%] {\n    font-weight: 5vw;\n    height: 3vh;\n  }\n\n  .box[_ngcontent-%COMP%] {\n    display: flex;\n    flex-direction: column;\n    height: 300px;\n    text-align: center;\n  }\n\n  .box[_ngcontent-%COMP%]    > *[_ngcontent-%COMP%] {\n    flex: 0 0 10%;\n  }\n}\n\n.label[_ngcontent-%COMP%] {\n  font-weight: bold;\n  margin: 0.5vh;\n  padding-top: 5px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFxsaXR1cmdpY2FsLWRhdGVzLmNvbXBvbmVudC5zY3NzIiwiLi5cXC4uXFwuLlxcLi5cXC4uXFwuLlxcLi5cXHN0eWxlcy1zaGFyZWQtbWl4aW5zLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBRUE7RUFDRSxrQkFBQTtFQUNBLFVBQUE7QUFERjs7QUFJQTtFQUVFO0lBQ0UsZ0JDVGE7SURVYixVQUFBO0VBRkY7O0VBS0E7SUFDRSxhQUFBO0lBQ0EsYUFBQTtJQUNBLGVBQUE7SUFDQSxzQkFBQTtJQUNBLGtCQUFBO0VBRkY7O0VBS0E7SUFDRSxhQUFBO0lBQ0EsV0FBQTtFQUZGO0FBQ0Y7O0FBTUEscUZBQUE7O0FBRUE7RUFFRTtJQUNFLGdCQ2hDbUI7SURpQ25CLFdBQUE7RUFORjs7RUFTQTtJQUNFLGFBQUE7SUFFQSxzQkFBQTtJQUNBLGFBQUE7SUFDQSxrQkFBQTtFQVBGOztFQVVBO0lBQ0UsYUFBQTtFQVBGO0FBQ0Y7O0FBV0E7RUFDRSxpQkFBQTtFQUNBLGFBQUE7RUFDQSxnQkNoRFE7QUR1Q1YiLCJmaWxlIjoibGl0dXJnaWNhbC1kYXRlcy5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIkBpbXBvcnQgJy4uLy4uLy4uL3N0eWxlcy1zaGFyZWQtbWl4aW5zLnNjc3MnO1xyXG5cclxuLmxpdHVyZ2ljYWwtZGl2IHtcclxuICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgd2lkdGg6IDk5JTtcclxufVxyXG5cclxuQG1lZGlhIChvcmllbnRhdGlvbjogbGFuZHNjYXBlKSB7XHJcblxyXG4gIC5saXR1cmdpY2FsLWRpdiBzZWxlY3Qge1xyXG4gICAgZm9udC13ZWlnaHQ6ICRmb250LXNpemUtYmFzZTtcclxuICAgIGhlaWdodDogdmg7XHJcbiAgfVxyXG5cclxuICAuYm94IHtcclxuICAgIGhlaWdodDogMTUwcHg7XHJcbiAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgZmxleC13cmFwOiB3cmFwO1xyXG4gICAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICB9XHJcblxyXG4gIC5ib3g+KiB7XHJcbiAgICBmbGV4OiAwIDAgMzMlO1xyXG4gICAgaGVpZ2h0OiA1dmg7XHJcbiAgfVxyXG5cclxufVxyXG5cclxuLyogLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0gKi9cclxuXHJcbkBtZWRpYSAob3JpZW50YXRpb246IHBvcnRyYWl0KSB7XHJcblxyXG4gIHNlbGVjdCB7XHJcbiAgICBmb250LXdlaWdodDogJGZvbnQtc2l6ZS1iYXNlLXBob25lO1xyXG4gICAgaGVpZ2h0OiAzdmg7XHJcbiAgfVxyXG5cclxuICAuYm94IHtcclxuICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICAvLyBmbGV4LXdyYXA6IHdyYXA7XHJcbiAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xyXG4gICAgaGVpZ2h0OiAzMDBweDtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICB9XHJcblxyXG4gIC5ib3g+KiB7XHJcbiAgICBmbGV4OiAwIDAgMTAlO1xyXG4gIH1cclxuXHJcbn1cclxuXHJcbi5sYWJlbCB7XHJcbiAgZm9udC13ZWlnaHQ6IGJvbGQ7XHJcbiAgbWFyZ2luOiAwLjV2aDtcclxuICBwYWRkaW5nLXRvcDogJHBhZGRpbmc7XHJcbn1cclxuIiwiJGZvbnRuYW1lOiBDb25zb2xhO1xyXG4kZm9udC1zaXplLWJhc2U6IDJ2dztcclxuJGZvbnQtc2l6ZS1iYXNlLXBob25lOiA1dnc7XHJcblxyXG4kbWFyZ2luczogNXB4O1xyXG4kbmF2LWxhbmRzY2FwZS1tYXJnaW46IDN2aDtcclxuXHJcbiRwYWRkaW5nOiA1cHg7XHJcblxyXG4kYm9yZGVyOiAxcHggZGFzaGVkIGJsYWNrO1xyXG4kYm9yZGVyLXJhZGl1czogMTBweDtcclxuXHJcbiRpbnB1dC1tYXJnaW4tYm90dG9tOiAxMHB4O1xyXG5cclxuLy8gLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLVxyXG5cclxuLy8gJHBhdHNCZWFkc09mZnNldFg6IC05MHZ3O1xyXG4vLyAkcGF0c0JlYWRzT2Zmc2V0WTogLTE4dmg7XHJcblxyXG4kcHJheWVyT2Zmc2V0WDogMHZ3O1xyXG4kcHJheWVyT2Zmc2V0WTogLTYwdmg7XHJcblxyXG4kcGhvbmVOYXZPZmZzZXRYOiAwdnc7XHJcbiRwaG9uZU5hdk9mZnNldFk6IDB2dztcclxuXHJcbiRmb290ZXJPZmZzZXRYOiAxdnc7XHJcbiRmb290ZXJPZmZzZXRZOiAzdmg7XHJcbiJdfQ== */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](LiturgicalDatesComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
@@ -1769,7 +1830,7 @@ LiturgicalDatesComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵ�
                 templateUrl: './liturgical-dates.component.html',
                 styleUrls: ['./liturgical-dates.component.scss']
             }]
-    }], function () { return [{ type: src_app_services_liturgical_year_service__WEBPACK_IMPORTED_MODULE_1__["LiturgicalYearService"] }]; }, null); })();
+    }], function () { return [{ type: src_app_services_liturgical_year_service__WEBPACK_IMPORTED_MODULE_2__["LiturgicalYearService"] }]; }, null); })();
 
 
 /***/ }),
@@ -2086,7 +2147,8 @@ function loadContemporaryHolyRosary() {
         Object(_models_bead_group_template__WEBPACK_IMPORTED_MODULE_1__["initBeadGroup"])(beadMap, _rosary_helper__WEBPACK_IMPORTED_MODULE_2__["GLORY"], mysteryIdx, beadGroupIndex++),
         Object(_models_bead_group_template__WEBPACK_IMPORTED_MODULE_1__["initBeadGroup"])(beadMap, _rosary_helper__WEBPACK_IMPORTED_MODULE_2__["FATIMA"], mysteryIdx++, beadGroupIndex++),
         Object(_models_bead_group_template__WEBPACK_IMPORTED_MODULE_1__["initBeadGroup"])(beadMap, _rosary_helper__WEBPACK_IMPORTED_MODULE_2__["HAIL_HOLY_QUEEN"], undefined, beadGroupIndex++),
-        Object(_models_bead_group_template__WEBPACK_IMPORTED_MODULE_1__["initBeadGroup"])(beadMap, _rosary_helper__WEBPACK_IMPORTED_MODULE_2__["CLOSING"], undefined, beadGroupIndex++),
+        Object(_models_bead_group_template__WEBPACK_IMPORTED_MODULE_1__["initBeadGroup"])(beadMap, _rosary_helper__WEBPACK_IMPORTED_MODULE_2__["CLOSING_1"], undefined, beadGroupIndex++),
+        Object(_models_bead_group_template__WEBPACK_IMPORTED_MODULE_1__["initBeadGroup"])(beadMap, _rosary_helper__WEBPACK_IMPORTED_MODULE_2__["CLOSING_2"], undefined, beadGroupIndex++),
         Object(_models_bead_group_template__WEBPACK_IMPORTED_MODULE_1__["initBeadGroup"])(beadMap, _rosary_helper__WEBPACK_IMPORTED_MODULE_2__["SIGN_CROSS"], undefined, beadGroupIndex++)
     ];
     return {
@@ -2363,7 +2425,7 @@ class PrayerSignOfTheCross extends GroupPrayer {
 /*!********************************************!*\
   !*** ./src/app/sequences/rosary-helper.ts ***!
   \********************************************/
-/*! exports provided: RosaryMysteriesEnum, lookupMystery, MYSTERY_1, MYSTERY_2, MYSTERY_3, MYSTERY_4, MYSTERY_5, SIGN_CROSS, APOSTLES_CREED, OUR_FATHER, OPENING_HAIL_MARYS, HAIL_MARYS, GLORY, FATIMA, GLORY_FATIMA, HAIL_HOLY_QUEEN, CLOSING */
+/*! exports provided: RosaryMysteriesEnum, lookupMystery, MYSTERY_1, MYSTERY_2, MYSTERY_3, MYSTERY_4, MYSTERY_5, SIGN_CROSS, APOSTLES_CREED, OUR_FATHER, OPENING_HAIL_MARYS, HAIL_MARYS, GLORY, FATIMA, GLORY_FATIMA, HAIL_HOLY_QUEEN, CLOSING_1, CLOSING_2 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2384,7 +2446,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FATIMA", function() { return FATIMA; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GLORY_FATIMA", function() { return GLORY_FATIMA; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HAIL_HOLY_QUEEN", function() { return HAIL_HOLY_QUEEN; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CLOSING", function() { return CLOSING; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CLOSING_1", function() { return CLOSING_1; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CLOSING_2", function() { return CLOSING_2; });
 /* harmony import */ var _components_holy_rosary_prayer_mysteries_mystery_glorious__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/holy-rosary-prayer/mysteries/mystery-glorious */ "TJLn");
 /* harmony import */ var _components_holy_rosary_prayer_mysteries_mystery_joyful__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/holy-rosary-prayer/mysteries/mystery-joyful */ "BB6k");
 /* harmony import */ var _components_holy_rosary_prayer_mysteries_mystery_luminous__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/holy-rosary-prayer/mysteries/mystery-luminous */ "8pZM");
@@ -2508,12 +2571,19 @@ const HAIL_HOLY_QUEEN = {
     phoneFeedback: 'extra-long',
     incrementMysteryIdx: true
 };
-const CLOSING = {
-    sequence: 'closing',
-    sequenceId: 'closing',
+const CLOSING_1 = {
+    sequence: 'closing1',
+    sequenceId: 'closing1',
     repeatCount: 0,
     prayerIds: [
-        '@@closing-1',
+        '@@closing-1'
+    ]
+};
+const CLOSING_2 = {
+    sequence: 'closing2',
+    sequenceId: 'closing2',
+    repeatCount: 0,
+    prayerIds: [
         '@@closing-2'
     ]
 };
@@ -2620,7 +2690,7 @@ class BeadGroup {
 /*! exports provided: name, version, scripts, private, dependencies, devDependencies, default */
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"name\":\"rosary\",\"version\":\"0.0.5\",\"scripts\":{\"ng\":\"ng\",\"start\":\"ng serve\",\"build\":\"ng build\",\"test\":\"ng test\",\"lint\":\"ng lint\",\"e2e\":\"ng e2e\",\"i18n\":\"ng extract-i18n --output-path src/assets/i18n/\"},\"private\":true,\"dependencies\":{\"@angular/animations\":\"~11.0.6\",\"@angular/common\":\"~11.0.6\",\"@angular/compiler\":\"~11.0.6\",\"@angular/core\":\"~11.0.6\",\"@angular/forms\":\"~11.0.6\",\"@angular/localize\":\"^12.2.6\",\"@angular/platform-browser\":\"~11.0.6\",\"@angular/platform-browser-dynamic\":\"~11.0.6\",\"@angular/router\":\"~11.0.6\",\"rxjs\":\"~6.6.0\",\"tslib\":\"^2.0.0\",\"zone.js\":\"~0.10.2\"},\"devDependencies\":{\"@angular-devkit/build-angular\":\"~0.1100.6\",\"@angular/cli\":\"~11.0.6\",\"@angular/compiler-cli\":\"~11.0.6\",\"@types/jasmine\":\"~3.6.0\",\"@types/node\":\"^12.11.1\",\"codelyzer\":\"^6.0.0\",\"jasmine-core\":\"~3.6.0\",\"jasmine-spec-reporter\":\"~5.0.0\",\"karma\":\"~5.1.0\",\"karma-chrome-launcher\":\"~3.1.0\",\"karma-coverage\":\"~2.0.3\",\"karma-jasmine\":\"~4.0.0\",\"karma-jasmine-html-reporter\":\"^1.5.0\",\"protractor\":\"~7.0.0\",\"ts-node\":\"~8.3.0\",\"tslint\":\"~6.1.0\",\"typescript\":\"~4.0.2\"}}");
+module.exports = JSON.parse("{\"name\":\"rosary\",\"version\":\"0.0.6\",\"scripts\":{\"ng\":\"ng\",\"start\":\"ng serve\",\"build\":\"ng build\",\"test\":\"ng test\",\"lint\":\"ng lint\",\"e2e\":\"ng e2e\",\"i18n\":\"ng extract-i18n --output-path src/assets/i18n/\"},\"private\":true,\"dependencies\":{\"@angular/animations\":\"~11.0.6\",\"@angular/common\":\"~11.0.6\",\"@angular/compiler\":\"~11.0.6\",\"@angular/core\":\"~11.0.6\",\"@angular/forms\":\"~11.0.6\",\"@angular/localize\":\"^12.2.6\",\"@angular/platform-browser\":\"~11.0.6\",\"@angular/platform-browser-dynamic\":\"~11.0.6\",\"@angular/router\":\"~11.0.6\",\"rxjs\":\"~6.6.0\",\"tslib\":\"^2.0.0\",\"zone.js\":\"~0.10.2\"},\"devDependencies\":{\"@angular-devkit/build-angular\":\"~0.1100.6\",\"@angular/cli\":\"~11.0.6\",\"@angular/compiler-cli\":\"~11.0.6\",\"@types/jasmine\":\"~3.6.0\",\"@types/node\":\"^12.11.1\",\"codelyzer\":\"^6.0.0\",\"jasmine-core\":\"~3.6.0\",\"jasmine-spec-reporter\":\"~5.0.0\",\"karma\":\"~5.1.0\",\"karma-chrome-launcher\":\"~3.1.0\",\"karma-coverage\":\"~2.0.3\",\"karma-jasmine\":\"~4.0.0\",\"karma-jasmine-html-reporter\":\"^1.5.0\",\"protractor\":\"~7.0.0\",\"ts-node\":\"~8.3.0\",\"tslint\":\"~6.1.0\",\"typescript\":\"~4.0.2\"}}");
 
 /***/ }),
 
@@ -2747,6 +2817,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LIT_DATES_2020", function() { return LIT_DATES_2020; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LIT_DATES_2021", function() { return LIT_DATES_2021; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LIT_YEAR_2020_2021", function() { return LIT_YEAR_2020_2021; });
+/* harmony import */ var src_app_models_liturgical_colors__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/app/models/liturgical-colors */ "72Gp");
+
 var Months;
 (function (Months) {
     Months[Months["JAN"] = 0] = "JAN";
@@ -2771,54 +2843,64 @@ const LIT_DATES_2020 = {
     advent: {
         startDate: new Date(2020, Months.NOV, 29),
         endDate: new Date(2020, Months.DEC, 24),
-        name: 'test-advent'
+        name: 'test-advent',
+        color: src_app_models_liturgical_colors__WEBPACK_IMPORTED_MODULE_0__["LiturgicalColors"].VIOLET
     },
     christmas: {
         startDate: new Date(2020, Months.DEC, 25),
         endDate: new Date(2021, Months.JAN, 10),
-        name: 'test-christmas'
+        name: 'test-christmas',
+        color: src_app_models_liturgical_colors__WEBPACK_IMPORTED_MODULE_0__["LiturgicalColors"].WHITE
     },
     lent: {
         startDate: new Date(2020, Months.FEB, 26),
         endDate: new Date(2020, Months.APR, 9),
-        name: 'test-lent'
+        name: 'test-lent',
+        color: src_app_models_liturgical_colors__WEBPACK_IMPORTED_MODULE_0__["LiturgicalColors"].VIOLET
     },
     triduum: {
         startDate: new Date(2020, Months.APR, 9),
         endDate: new Date(2020, Months.APR, 12),
-        name: 'test-triduum'
+        name: 'test-triduum',
+        color: src_app_models_liturgical_colors__WEBPACK_IMPORTED_MODULE_0__["LiturgicalColors"].RED
     },
     easter: {
         startDate: new Date(2020, Months.APR, 12),
         endDate: new Date(2020, Months.MAY, 31),
-        name: 'test-easter'
+        name: 'test-easter',
+        color: src_app_models_liturgical_colors__WEBPACK_IMPORTED_MODULE_0__["LiturgicalColors"].WHITE
     }
 };
 const LIT_DATES_2021 = {
     advent: {
         startDate: new Date(2021, Months.NOV, 28),
         endDate: new Date(2021, Months.DEC, 24),
-        name: 'test-advent'
+        name: 'test-advent',
+        color: src_app_models_liturgical_colors__WEBPACK_IMPORTED_MODULE_0__["LiturgicalColors"].VIOLET
     },
     christmas: {
         startDate: new Date(2021, Months.DEC, 25),
         endDate: new Date(2022, Months.JAN, 9),
-        name: 'test-christmas'
+        name: 'test-christmas',
+        color: src_app_models_liturgical_colors__WEBPACK_IMPORTED_MODULE_0__["LiturgicalColors"].WHITE
     },
     lent: {
         startDate: new Date(2021, Months.FEB, 17),
         endDate: new Date(2021, Months.APR, 1),
-        name: 'test-lent'
+        name: 'test-lent',
+        color: src_app_models_liturgical_colors__WEBPACK_IMPORTED_MODULE_0__["LiturgicalColors"].VIOLET
     },
     triduum: {
         startDate: new Date(2021, Months.APR, 1),
         endDate: new Date(2021, Months.APR, 4),
-        name: 'test-triduum'
+        name: 'test-triduum',
+        color: src_app_models_liturgical_colors__WEBPACK_IMPORTED_MODULE_0__["LiturgicalColors"].RED
     },
     easter: {
         startDate: new Date(2021, Months.APR, 4),
         endDate: new Date(2021, Months.MAY, 23),
-        name: 'test-easter'
+        name: 'test-easter',
+        color: src_app_models_liturgical_colors__WEBPACK_IMPORTED_MODULE_0__["LiturgicalColors"].WHITE
     }
 };
 const LIT_YEAR_2020_2021 = {
@@ -2836,13 +2918,17 @@ const LIT_YEAR_2020_2021 = {
 /*!********************************************!*\
   !*** ./src/app/models/liturgical-dates.ts ***!
   \********************************************/
-/*! exports provided: LiturgicalDates, PeriodStatus */
+/*! exports provided: LiturgicalDates, PeriodStatus, automaticSelection, ordinaryTime */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LiturgicalDates", function() { return LiturgicalDates; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PeriodStatus", function() { return PeriodStatus; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "automaticSelection", function() { return automaticSelection; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ordinaryTime", function() { return ordinaryTime; });
+/* harmony import */ var _liturgical_colors__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./liturgical-colors */ "72Gp");
+
 class LiturgicalDates {
     constructor(source) {
         if (source) {
@@ -2860,6 +2946,14 @@ var PeriodStatus;
     PeriodStatus[PeriodStatus["MISSING"] = 1] = "MISSING";
     PeriodStatus[PeriodStatus["INCREMENT_YEAR"] = 2] = "INCREMENT_YEAR";
 })(PeriodStatus || (PeriodStatus = {}));
+const automaticSelection = {
+    name: $localize `:@@:Automatic`,
+    color: undefined
+};
+const ordinaryTime = {
+    name: $localize `:@@:Ordinary Time`,
+    color: _liturgical_colors__WEBPACK_IMPORTED_MODULE_0__["LiturgicalColors"].GREEN
+};
 
 
 /***/ }),
@@ -2875,7 +2969,9 @@ var PeriodStatus;
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "gaussEaster", function() { return gaussEaster; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "calculateLentAndEaster", function() { return calculateLentAndEaster; });
-/* harmony import */ var _key_dates__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./key-dates */ "rOcc");
+/* harmony import */ var src_app_models_liturgical_colors__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/app/models/liturgical-colors */ "72Gp");
+/* harmony import */ var _key_dates__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./key-dates */ "rOcc");
+
 
 /**
  * References:
@@ -2898,38 +2994,41 @@ function gaussEaster(year) {
     const e = Math.floor(2 * b + 4 * c + 6 * d + n) % 7;
     const days = Math.floor(22 + d + e);
     if (d == 29 && e == 6) {
-        return new Date(year, _key_dates__WEBPACK_IMPORTED_MODULE_0__["Months"].APR, 19);
+        return new Date(year, _key_dates__WEBPACK_IMPORTED_MODULE_1__["Months"].APR, 19);
     }
     else if (d == 28 && e == 6) {
-        return new Date(year, _key_dates__WEBPACK_IMPORTED_MODULE_0__["Months"].APR, 18);
+        return new Date(year, _key_dates__WEBPACK_IMPORTED_MODULE_1__["Months"].APR, 18);
     }
     return (days > 31)
-        ? new Date(year, _key_dates__WEBPACK_IMPORTED_MODULE_0__["Months"].APR, days - 31)
-        : new Date(year, _key_dates__WEBPACK_IMPORTED_MODULE_0__["Months"].MAR, days);
+        ? new Date(year, _key_dates__WEBPACK_IMPORTED_MODULE_1__["Months"].APR, days - 31)
+        : new Date(year, _key_dates__WEBPACK_IMPORTED_MODULE_1__["Months"].MAR, days);
 }
 function calculateLentAndEaster(appDate, localization) {
     let easterDay = gaussEaster(appDate.currentYear);
     if (appDate.date > easterDay) {
         easterDay = gaussEaster(appDate.currentYear + 1);
     }
-    const endEaster = Object(_key_dates__WEBPACK_IMPORTED_MODULE_0__["addDays"])(easterDay, 49);
-    const lentEnds = Object(_key_dates__WEBPACK_IMPORTED_MODULE_0__["addDays"])(easterDay, -3);
-    const lentStarts = Object(_key_dates__WEBPACK_IMPORTED_MODULE_0__["addDays"])(lentEnds, -43);
+    const endEaster = Object(_key_dates__WEBPACK_IMPORTED_MODULE_1__["addDays"])(easterDay, 49);
+    const lentEnds = Object(_key_dates__WEBPACK_IMPORTED_MODULE_1__["addDays"])(easterDay, -3);
+    const lentStarts = Object(_key_dates__WEBPACK_IMPORTED_MODULE_1__["addDays"])(lentEnds, -43);
     return {
         lent: {
             startDate: lentStarts,
             endDate: lentEnds,
-            name: localization.lentLabel
+            name: localization.lentLabel,
+            color: src_app_models_liturgical_colors__WEBPACK_IMPORTED_MODULE_0__["LiturgicalColors"].VIOLET
         },
         triduum: {
             startDate: lentEnds,
             endDate: easterDay,
-            name: localization.triduumLabel
+            name: localization.triduumLabel,
+            color: src_app_models_liturgical_colors__WEBPACK_IMPORTED_MODULE_0__["LiturgicalColors"].RED
         },
         easter: {
             startDate: easterDay,
             endDate: endEaster,
-            name: localization.easterLabel
+            name: localization.easterLabel,
+            color: src_app_models_liturgical_colors__WEBPACK_IMPORTED_MODULE_0__["LiturgicalColors"].WHITE
         }
     };
 }
@@ -2948,10 +3047,20 @@ function calculateLentAndEaster(appDate, localization) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppDateService", function() { return AppDateService; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "tyNb");
+
 
 
 class AppDateService {
-    constructor() {
+    constructor(activateRoute) {
+        this.activateRoute = activateRoute;
+        this.activateRoute.queryParams.subscribe(params => {
+            if ('use-date' in params) {
+                const value = params['use-date'];
+                const useDate = new Date(value);
+                this.updateDate(this.addDays(useDate, 1));
+            }
+        });
         this.updateDate(new Date());
     }
     get date() {
@@ -2960,20 +3069,31 @@ class AppDateService {
     get currentYear() {
         return this._currentYear;
     }
+    normalizeStringDate(source) {
+        return (source) ? this.normalizeDate(new Date(source)) : undefined;
+    }
+    normalizeDate(source) {
+        const xformDate = new Date(source);
+        return new Date(xformDate.getFullYear(), xformDate.getMonth(), xformDate.getDate());
+    }
+    addDays(source, adjustDays) {
+        return new Date(source.getFullYear(), source.getMonth(), source.getDate() + adjustDays);
+    }
     updateDate(date) {
-        const baseDate = (date) ? date : new Date();
+        const baseDate = (date) ? this.normalizeDate(date) : this.normalizeDate(new Date());
+        console.log(`processing: ${baseDate}`);
         this._currentYear = baseDate.getFullYear();
         this._date = new Date(this._currentYear, baseDate.getMonth(), baseDate.getDate());
     }
 }
-AppDateService.ɵfac = function AppDateService_Factory(t) { return new (t || AppDateService)(); };
+AppDateService.ɵfac = function AppDateService_Factory(t) { return new (t || AppDateService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"])); };
 AppDateService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({ token: AppDateService, factory: AppDateService.ɵfac, providedIn: 'root' });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](AppDateService, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
         args: [{
                 providedIn: 'root'
             }]
-    }], function () { return []; }, null); })();
+    }], function () { return [{ type: _angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"] }]; }, null); })();
 
 
 /***/ }),
@@ -3007,8 +3127,10 @@ class PatsBeadsComponent {
     ngOnChanges(changes) { }
     ngAfterViewInit() { }
     highlightStyle() {
+        const offsetX = this.appConfig.isPortrait ? -100 : 0;
+        const offsetY = this.appConfig.isPortrait ? -100 : 0;
         const point = this.rawCoords[this.highlightBeadIdx];
-        return `left: ${point.x}px; top: ${point.y}px;` + this.imageStyle();
+        return `left: ${point.x + offsetX}px; top: ${point.y + offsetY}px;` + this.imageStyle();
     }
     beadsTransformStyle() {
         return (this.appConfig.isPortrait)
@@ -3042,7 +3164,7 @@ PatsBeadsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefin
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵstyleMap"](ctx.imageStyle());
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵstyleMap"](ctx.highlightStyle());
-    } }, styles: ["@media (orientation: portrait) {\n  .pats-beads-container[_ngcontent-%COMP%] {\n    height: 24vh;\n    width: 24vw;\n  }\n}\n#pats-beads-div[_ngcontent-%COMP%] {\n  background-color: transparent;\n  width: 10px;\n}\n#pats-beads-img[_ngcontent-%COMP%] {\n  position: absolute;\n  height: -webkit-fit-content;\n  height: -moz-fit-content;\n  height: fit-content;\n  left: 0px;\n  top: 0px;\n}\n.pats-beads-highlight-div[_ngcontent-%COMP%] {\n  position: absolute;\n  background-color: red;\n  border: 50px solid darkred;\n  border-radius: 50%;\n  height: 20vh;\n  width: 20vh;\n  opacity: 0.5;\n  z-index: 2;\n}\n@media (orientation: landscape) {\n  .pats-beads-highlight-div[_ngcontent-%COMP%] {\n    margin-top: -15vw;\n    margin-left: -10vw;\n  }\n}\n@media (orientation: portrait) {\n  .pats-beads-highlight-div[_ngcontent-%COMP%] {\n    margin-left: -20vw;\n  }\n}\n#pats-beads-image-placeholder[_ngcontent-%COMP%] {\n  background-color: blueviolet;\n  z-index: 1;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFxwYXRzLWJlYWRzLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0U7SUFDRSxZQUFBO0lBQ0EsV0FBQTtFQUNGO0FBQ0Y7QUFFQTtFQUNFLDZCQUFBO0VBQ0EsV0FBQTtBQUFGO0FBR0E7RUFDRSxrQkFBQTtFQUNBLDJCQUFBO0VBQUEsd0JBQUE7RUFBQSxtQkFBQTtFQUNBLFNBQUE7RUFDQSxRQUFBO0FBQUY7QUFHQTtFQUNFLGtCQUFBO0VBRUEscUJBQUE7RUFDQSwwQkFBQTtFQUNBLGtCQUFBO0VBRUEsWUFBQTtFQUNBLFdBQUE7RUFFQSxZQUFBO0VBQ0EsVUFBQTtBQUhGO0FBTUE7RUFDRTtJQUNFLGlCQUFBO0lBQ0Esa0JBQUE7RUFIRjtBQUNGO0FBTUE7RUFDRTtJQUVFLGtCQUFBO0VBTEY7QUFDRjtBQVFBO0VBQ0UsNEJBQUE7RUFDQSxVQUFBO0FBTkYiLCJmaWxlIjoicGF0cy1iZWFkcy5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIkBtZWRpYSAob3JpZW50YXRpb246IHBvcnRyYWl0KSB7XHJcbiAgLnBhdHMtYmVhZHMtY29udGFpbmVyIHtcclxuICAgIGhlaWdodDogMjR2aDtcclxuICAgIHdpZHRoOiAyNHZ3O1xyXG4gIH1cclxufVxyXG5cclxuI3BhdHMtYmVhZHMtZGl2IHtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiB0cmFuc3BhcmVudDtcclxuICB3aWR0aDogMTBweDtcclxufVxyXG5cclxuI3BhdHMtYmVhZHMtaW1nIHtcclxuICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgaGVpZ2h0OiBmaXQtY29udGVudDtcclxuICBsZWZ0OiAwcHg7XHJcbiAgdG9wOiAwcHg7XHJcbn1cclxuXHJcbi5wYXRzLWJlYWRzLWhpZ2hsaWdodC1kaXYge1xyXG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuXHJcbiAgYmFja2dyb3VuZC1jb2xvcjogcmVkO1xyXG4gIGJvcmRlcjogNTBweCBzb2xpZCBkYXJrcmVkO1xyXG4gIGJvcmRlci1yYWRpdXM6IDUwJTtcclxuICAvLyBtYXgtaGVpZ2h0OiA1MDB2aDtcclxuICBoZWlnaHQ6IDIwdmg7XHJcbiAgd2lkdGg6IDIwdmg7XHJcblxyXG4gIG9wYWNpdHk6IDAuNTtcclxuICB6LWluZGV4OiAyO1xyXG59XHJcblxyXG5AbWVkaWEgKG9yaWVudGF0aW9uOiBsYW5kc2NhcGUpIHtcclxuICAucGF0cy1iZWFkcy1oaWdobGlnaHQtZGl2IHtcclxuICAgIG1hcmdpbi10b3A6IC0xNXZ3O1xyXG4gICAgbWFyZ2luLWxlZnQ6IC0xMHZ3O1xyXG4gIH1cclxufVxyXG5cclxuQG1lZGlhIChvcmllbnRhdGlvbjogcG9ydHJhaXQpIHtcclxuICAucGF0cy1iZWFkcy1oaWdobGlnaHQtZGl2IHtcclxuICAgIC8vIG1hcmdpbi10b3A6IC0xNXZ3O1xyXG4gICAgbWFyZ2luLWxlZnQ6IC0yMHZ3O1xyXG4gIH1cclxufVxyXG5cclxuI3BhdHMtYmVhZHMtaW1hZ2UtcGxhY2Vob2xkZXIge1xyXG4gIGJhY2tncm91bmQtY29sb3I6IGJsdWV2aW9sZXQ7XHJcbiAgei1pbmRleDogMTtcclxufVxyXG4iXX0= */"] });
+    } }, styles: ["@media (orientation: portrait) {\n  .pats-beads-container[_ngcontent-%COMP%] {\n    height: 24vh;\n    width: 24vw;\n  }\n}\n#pats-beads-div[_ngcontent-%COMP%] {\n  background-color: transparent;\n  width: 10px;\n}\n#pats-beads-img[_ngcontent-%COMP%] {\n  position: absolute;\n  height: -webkit-fit-content;\n  height: -moz-fit-content;\n  height: fit-content;\n  left: 0px;\n  top: 0px;\n}\n.pats-beads-highlight-div[_ngcontent-%COMP%] {\n  position: absolute;\n  background-color: red;\n  border: 50px solid darkred;\n  border-radius: 50%;\n  height: 20vh;\n  width: 20vh;\n  opacity: 0.5;\n  z-index: 2;\n}\n@media (orientation: landscape) {\n  .pats-beads-highlight-div[_ngcontent-%COMP%] {\n    margin-top: -15vw;\n    margin-left: -10vw;\n  }\n}\n#pats-beads-image-placeholder[_ngcontent-%COMP%] {\n  background-color: blueviolet;\n  z-index: 1;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFxwYXRzLWJlYWRzLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0U7SUFDRSxZQUFBO0lBQ0EsV0FBQTtFQUNGO0FBQ0Y7QUFFQTtFQUNFLDZCQUFBO0VBQ0EsV0FBQTtBQUFGO0FBR0E7RUFDRSxrQkFBQTtFQUNBLDJCQUFBO0VBQUEsd0JBQUE7RUFBQSxtQkFBQTtFQUNBLFNBQUE7RUFDQSxRQUFBO0FBQUY7QUFHQTtFQUNFLGtCQUFBO0VBRUEscUJBQUE7RUFDQSwwQkFBQTtFQUNBLGtCQUFBO0VBRUEsWUFBQTtFQUNBLFdBQUE7RUFFQSxZQUFBO0VBQ0EsVUFBQTtBQUhGO0FBTUE7RUFDRTtJQUNFLGlCQUFBO0lBQ0Esa0JBQUE7RUFIRjtBQUNGO0FBTUE7RUFDRSw0QkFBQTtFQUNBLFVBQUE7QUFKRiIsImZpbGUiOiJwYXRzLWJlYWRzLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiQG1lZGlhIChvcmllbnRhdGlvbjogcG9ydHJhaXQpIHtcclxuICAucGF0cy1iZWFkcy1jb250YWluZXIge1xyXG4gICAgaGVpZ2h0OiAyNHZoO1xyXG4gICAgd2lkdGg6IDI0dnc7XHJcbiAgfVxyXG59XHJcblxyXG4jcGF0cy1iZWFkcy1kaXYge1xyXG4gIGJhY2tncm91bmQtY29sb3I6IHRyYW5zcGFyZW50O1xyXG4gIHdpZHRoOiAxMHB4O1xyXG59XHJcblxyXG4jcGF0cy1iZWFkcy1pbWcge1xyXG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICBoZWlnaHQ6IGZpdC1jb250ZW50O1xyXG4gIGxlZnQ6IDBweDtcclxuICB0b3A6IDBweDtcclxufVxyXG5cclxuLnBhdHMtYmVhZHMtaGlnaGxpZ2h0LWRpdiB7XHJcbiAgcG9zaXRpb246IGFic29sdXRlO1xyXG5cclxuICBiYWNrZ3JvdW5kLWNvbG9yOiByZWQ7XHJcbiAgYm9yZGVyOiA1MHB4IHNvbGlkIGRhcmtyZWQ7XHJcbiAgYm9yZGVyLXJhZGl1czogNTAlO1xyXG4gIC8vIG1heC1oZWlnaHQ6IDUwMHZoO1xyXG4gIGhlaWdodDogMjB2aDtcclxuICB3aWR0aDogMjB2aDtcclxuXHJcbiAgb3BhY2l0eTogMC41O1xyXG4gIHotaW5kZXg6IDI7XHJcbn1cclxuXHJcbkBtZWRpYSAob3JpZW50YXRpb246IGxhbmRzY2FwZSkge1xyXG4gIC5wYXRzLWJlYWRzLWhpZ2hsaWdodC1kaXYge1xyXG4gICAgbWFyZ2luLXRvcDogLTE1dnc7XHJcbiAgICBtYXJnaW4tbGVmdDogLTEwdnc7XHJcbiAgfVxyXG59XHJcblxyXG4jcGF0cy1iZWFkcy1pbWFnZS1wbGFjZWhvbGRlciB7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogYmx1ZXZpb2xldDtcclxuICB6LWluZGV4OiAxO1xyXG59XHJcbiJdfQ== */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](PatsBeadsComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
@@ -3198,7 +3320,7 @@ NoticesComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineC
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](9, " Currently, this web application does not render well on mobile devices and \"swipes\" do not work.\n");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](9, " Currently, \"swipes\" do not work on this web application.\n");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     } if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](8);

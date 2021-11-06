@@ -1,3 +1,4 @@
+import { LiturgicalColors } from "src/app/models/liturgical-colors";
 import { LiturgicalDates, LiturgicalPeriod, PeriodStatus } from "src/app/models/liturgical-dates";
 import { AppDateService } from "src/app/services/app-date.service";
 import { LocalizationService } from "src/app/services/localization.service";
@@ -33,7 +34,8 @@ export function calculateAdventAndChristmas(appDate: AppDateService, localizatio
     advent: {
       startDate: adventStarts,
       endDate: new Date(adventYear, Months.DEC, 24),
-      name: localization.adventLabel
+      name: localization.adventLabel,
+      color: LiturgicalColors.VIOLET
     }
   }
 }
@@ -50,7 +52,8 @@ function calculateNextChristmas(appDate: AppDateService, localization: Localizat
   return {
     startDate: christmasDay,
     endDate: endOfChristmas,
-    name: localization.christmasLabel
+    name: localization.christmasLabel,
+    color: LiturgicalColors.WHITE
   };
 }
 

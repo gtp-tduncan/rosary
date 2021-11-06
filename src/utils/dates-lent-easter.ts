@@ -1,3 +1,4 @@
+import { LiturgicalColors } from "src/app/models/liturgical-colors";
 import { LiturgicalDates } from "src/app/models/liturgical-dates";
 import { AppDateService } from "src/app/services/app-date.service";
 import { LocalizationService } from "src/app/services/localization.service";
@@ -54,17 +55,20 @@ export function calculateLentAndEaster(appDate: AppDateService, localization: Lo
     lent: {
       startDate: lentStarts,
       endDate: lentEnds,
-      name: localization.lentLabel
+      name: localization.lentLabel,
+      color: LiturgicalColors.VIOLET
     },
     triduum: {
       startDate: lentEnds,
       endDate: easterDay,
-      name: localization.triduumLabel
+      name: localization.triduumLabel,
+      color: LiturgicalColors.RED
     },
     easter: {
       startDate: easterDay,
       endDate: endEaster,
-      name: localization.easterLabel
+      name: localization.easterLabel,
+      color: LiturgicalColors.WHITE
     }
   }
 }
