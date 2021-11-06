@@ -54,4 +54,9 @@ export class HomeComponent implements OnInit {
     this.activePrayer.onPrevious();
   }
 
+  onSwipe(event) {
+    console.log(`HomeComponent - swipe: ${event}`);
+    this.onNext();
+  }
+
 }

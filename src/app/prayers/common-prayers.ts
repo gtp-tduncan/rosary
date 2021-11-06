@@ -71,7 +71,7 @@ export class PrayerClosing1 extends Prayer {
   }
 
   get name(): string {
-    return $localize`:@@closingName:Closing Prayer 1`;
+    return $localize`:@@closingName1:Closing Prayer 1`;
   }
 
   get leader(): string {
@@ -93,7 +93,7 @@ export class PrayerClosing2 extends Prayer {
   }
 
   get name(): string {
-    return $localize`:@@closingName:Closing Prayer 2`;
+    return $localize`:@@closingName2:Closing Prayer 2`;
   }
 
   get leader(): string {

@@ -4,7 +4,7 @@
     <app-notices></app-notices>
   </div>
   <ng-container *ngIf="!showMysterySelector">
-    <app-active-prayer [activeBeadGroupList]="selectedBeadGroupList" (onResetEvent)="onResetEvent($event)"></app-active-prayer>
+    <app-active-prayer [activeBeadGroupList]="selectedBeadGroupList" (onResetEvent)="onResetEvent($event)" (swipe)="onSwipe($event)"></app-active-prayer>
     <div id="nav-footer">
       <app-navigation (onNextClickEvent)="onNext()" (onPreviousClickEvent)="onPrevious()">
       </app-navigation>

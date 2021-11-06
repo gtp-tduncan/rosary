@@ -4,10 +4,10 @@
   </div>
   <div id="rosary-beads-prayer-div">
     <div *ngIf="showMystery">
-      <app-mystery-display [activeBeadGroupList]="activeBeadGroupList"></app-mystery-display>
+      <app-mystery-display [activeBeadGroupList]="activeBeadGroupList" (swipe)="onSwipe($event)"></app-mystery-display>
     </div>
     <div id="active-prayer">
-      <app-current-prayer #primaryPrayer [prayerName]="prayerName" [activeBeadGroup]="activeBeadGroup" [currentPrayer]="currentPrayer" [debugTheEnd]="debugTheEnd"></app-current-prayer>
+      <app-current-prayer #primaryPrayer [prayerName]="prayerName" [activeBeadGroup]="activeBeadGroup" [currentPrayer]="currentPrayer" [debugTheEnd]="debugTheEnd" (swipe)="onSwipe($event)"></app-current-prayer>
     </div>
   </div>
 </div>
