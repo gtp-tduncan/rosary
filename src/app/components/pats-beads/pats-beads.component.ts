@@ -41,9 +41,12 @@ export class PatsBeadsComponent implements OnInit, OnChanges, AfterViewInit, Ros
     console.log(`RAW => ${this.rawWidth}, ${this.rawHeight}`);
     console.log(`window (inner) => ${window.innerWidth}, ${window.innerHeight}`);
     console.log(`window (outer) => ${window.outerWidth}, ${window.outerHeight}`);
-    const hscale = window.innerHeight / this.rawHeight;
-    const wscale = window.innerWidth / this.rawWidth;
-    const scale = (hscale < wscale) ? hscale - 0.03 : wscale - 0.03;
+    const useRawWidth = (this.appConfig.isPortrait) ? this.rawHeight : this.rawWidth;
+    const useRawHeight = (this.appConfig.isPortrait) ? this.rawWidth : this.rawHeight;
+    const hscale = window.innerHeight / useRawHeight;
+    const wscale = window.innerWidth / useRawWidth;
+    const offset = (this.appConfig.isPortrait) ? -0.015 : -0.04;
+    const scale = (hscale < wscale) ? hscale + offset : wscale + offset;
     console.log(`hscale: ${hscale}, wscale: ${wscale}, scale: ${scale}`);
     return (this.appConfig.isPortrait)
       ? `transform: rotate(90deg) scale(${scale});`
