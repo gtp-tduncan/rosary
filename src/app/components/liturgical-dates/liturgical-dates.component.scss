@@ -1,6 +1,16 @@
 @import '../../../styles-shared-mixins.scss';
 
+.liturgical-div {
+  text-align: center;
+  width: 99%;
+}
+
 @media (orientation: landscape) {
+
+  .liturgical-div select {
+    font-weight: $font-size-base;
+    height: vh;
+  }
 
   .box {
     height: 150px;
@@ -20,6 +30,11 @@
 /* -------------------------------------------------------------------------------- */
 
 @media (orientation: portrait) {
+
+  select {
+    font-weight: $font-size-base-phone;
+    height: 3vh;
+  }
 
   .box {
     display: flex;

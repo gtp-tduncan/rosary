@@ -92,8 +92,12 @@ pre {
   background-image: repeating-linear-gradient(0deg, green, green 3px, rgb(0, 100, 0) 3px, rgb(0, 100, 0) 6px);
 }
 
+$off-white: rgb(235, 235, 235);
+$main-red: rgb(210, 0, 0);
+$offset-red: rgb(150, 0, 0);
+
 .lit-color-red {
-  background-image: repeating-linear-gradient(0deg, red, red 3px, rgb(56, 0, 0) 3px, rgb(56, 0, 0) 6px);
+  background-image: repeating-linear-gradient(0deg, $main-red, $main-red 3px, $offset-red 3px, $offset-red 6px);
 }
 
 .lit-color-rose {
@@ -105,7 +109,8 @@ pre {
 }
 
 .lit-color-white {
-  background-image: repeating-linear-gradient(0deg, white, white 3px, gray 3px, gray 6px);
+  background-image: repeating-linear-gradient(0deg, white, white 3px, $off-white 3px, $off-white 6px);
+  // background-color: whitesmoke;
 }
 
 /* ================================================================================ */

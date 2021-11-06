@@ -1,5 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { LiturgicalDates, LiturgicalPeriod } from 'src/app/models/liturgical-dates';
+import { Component, OnInit } from '@angular/core';
+import { LiturgicalColors } from 'src/app/models/liturgical-colors';
+import { automaticSelection, LiturgicalPeriod, ordinaryTime } from 'src/app/models/liturgical-dates';
+import { AppConfigService } from 'src/app/services/app-config.service';
 import { LiturgicalYearService } from 'src/app/services/liturgical-year.service';
 
 @Component({
@@ -12,6 +14,8 @@ export class LiturgicalDatesComponent implements OnInit {
   periods: LiturgicalPeriod[];
   periodsLeft: LiturgicalPeriod[];
   periodsRight: LiturgicalPeriod[];
+
+  litYearColorSelector: LiturgicalPeriod[];
 
   constructor(private liturgicalYear: LiturgicalYearService) { }
 
@@ -39,6 +43,21 @@ export class LiturgicalDatesComponent implements OnInit {
     ];
 
     this.periods = periods;
+
+    this.litYearColorSelector = [
+      automaticSelection,
+      ordinaryTime,
+      ...periods
+    ]
   }
 
+  onLiturgicalPeriodChanged(newValue: string): void {
+    const idx = Number.parseInt(newValue);
+    if (idx === 0) {
+      this.liturgicalYear.overrideLiturgicalColor = undefined;
+    }
+    else if (idx >= 1 && idx < this.litYearColorSelector.length) {
+      this.liturgicalYear.overrideLiturgicalColor = this.litYearColorSelector[idx].color;
+    }
+  }
 }

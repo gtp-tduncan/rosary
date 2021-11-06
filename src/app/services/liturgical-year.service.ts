@@ -2,17 +2,10 @@ import { Injectable } from '@angular/core';
 import { calculateAdventAndChristmas, refreshNeeded } from 'src/utils/dates-advent-christmas';
 import { calculateLentAndEaster } from 'src/utils/dates-lent-easter';
 import { Months } from 'src/utils/key-dates';
+import { LiturgicalColors } from '../models/liturgical-colors';
 import { LiturgicalDates, LiturgicalPeriod, PeriodStatus } from '../models/liturgical-dates';
 import { AppDateService } from './app-date.service';
 import { LocalizationService } from './localization.service';
-
-export enum LiturgicalColors {
-  GREEN = 'green',
-  RED = 'red',
-  ROSE = 'rose',
-  VIOLET = 'violet',
-  WHITE = 'white'
-}
 
 @Injectable({
   providedIn: 'root'
@@ -27,12 +20,18 @@ export class LiturgicalYearService {
   palmSunday: Date;
   pentacostSunday: Date;
 
+  overrideLiturgicalColor: LiturgicalColors;
+
   constructor(private readonly appDate: AppDateService,
               private localization: LocalizationService) {
     this.validateDates();
   }
 
   liturgicalColor(): LiturgicalColors {
+
+    if (this.overrideLiturgicalColor) {
+      return this.overrideLiturgicalColor;
+    }
 
     if ((this.dateInRange(this.liturgicalDates.triduum)
       || this.appDate.date === this.palmSunday

@@ -1,3 +1,5 @@
+import { LiturgicalColors } from "./liturgical-colors";
+
 export class LiturgicalDates {
 
   constructor(source?: LiturgicalDates) {
@@ -23,13 +25,24 @@ export class LiturgicalDates {
 }
 
 export interface LiturgicalPeriod {
-  startDate: Date;
+  startDate?: Date;
   endDate?: Date;
   name: string;
+  color: LiturgicalColors;
 }
 
 export enum PeriodStatus {
   GOOD,
   MISSING,
   INCREMENT_YEAR
+}
+
+export const automaticSelection: LiturgicalPeriod = {
+  name: $localize`:@@:Automatic`,
+  color: undefined
+}
+
+export const ordinaryTime: LiturgicalPeriod = {
+  name: $localize`:@@:Ordinary Time`,
+  color: LiturgicalColors.GREEN
 }

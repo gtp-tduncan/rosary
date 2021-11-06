@@ -1,3 +1,11 @@
+<div class="liturgical-div">
+  <label i18n>Selected Liturgical period:</label>&nbsp;
+  <select (change)="onLiturgicalPeriodChanged($event.target.value)">
+    <option *ngFor="let periodSelector of litYearColorSelector; let i = index" value="{{ i }}">
+      {{ periodSelector.name }}
+    </option>
+  </select>
+</div>
 <div class="box">
   <div *ngFor="let period of periods" class="period">
     <div class="label">{{ period.name }}:</div>
