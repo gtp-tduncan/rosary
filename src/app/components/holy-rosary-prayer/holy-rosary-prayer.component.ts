@@ -83,11 +83,6 @@ export class HolyRosaryPrayerComponent implements OnInit, AfterViewInit {
     this.currentPrayer = this.findCurrentPrayer();
   }
 
-  onSwipe(event) {
-    console.log(`HolyRosaryPrayerComponent - swipe: ${event}`);
-    this.onNext();
-  }
-
   private findCurrentPrayer(): Prayer {
     return seqMap[this.activeBeadGroup?.sequence];
   }
