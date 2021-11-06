@@ -2,7 +2,7 @@ import { BeadGroup } from '../models/bead-group';
 import { BeadGroupList } from '../models/bead-group-list';
 import { initBeadGroup } from '../models/bead-group-template';
 import { Mysteries } from '../models/mysteries';
-import { SIGN_CROSS, APOSTLES_CREED, OUR_FATHER, OPENING_HAIL_MARYS, GLORY, MYSTERY_1, HAIL_MARYS, GLORY_FATIMA, MYSTERY_2, MYSTERY_3, MYSTERY_4, MYSTERY_5, HAIL_HOLY_QUEEN, CLOSING, FATIMA } from './rosary-helper';
+import { SIGN_CROSS, APOSTLES_CREED, OUR_FATHER, OPENING_HAIL_MARYS, GLORY, MYSTERY_1, HAIL_MARYS, GLORY_FATIMA, MYSTERY_2, MYSTERY_3, MYSTERY_4, MYSTERY_5, HAIL_HOLY_QUEEN, CLOSING_1, FATIMA, CLOSING_2 } from './rosary-helper';
 
 /*
 IMPORTANT: If you change the order of prayers (ie: loadContemporaryHolyRosary),
@@ -72,7 +72,8 @@ function loadContemporaryHolyRosary(): BeadGroupContainer {
     initBeadGroup(beadMap, FATIMA, mysteryIdx++, beadGroupIndex++),
 
     initBeadGroup(beadMap, HAIL_HOLY_QUEEN, undefined, beadGroupIndex++),
-    initBeadGroup(beadMap, CLOSING, undefined, beadGroupIndex++),
+    initBeadGroup(beadMap, CLOSING_1, undefined, beadGroupIndex++),
+    initBeadGroup(beadMap, CLOSING_2, undefined, beadGroupIndex++),
     initBeadGroup(beadMap, SIGN_CROSS, undefined, beadGroupIndex++)
   ];
 

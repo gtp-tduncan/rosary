@@ -93,7 +93,8 @@ export const PATS_BEADS_COORDS_LONG: BeadPosition[] = [
   { x: 805, y: 2368 },  // Glory Be
   { x: 805, y: 2368 },  // Fatima
   { x: 805, y: 2368 },  // Hail, Holy Queen
-  { x: 805, y: 2368 },  // Closing
+  { x: 805, y: 2368 },  // Closing #1
+  { x: 805, y: 2368 },  // Closing #2
 
   { x: 853, y: 3454 }   // Sign of the cross
 

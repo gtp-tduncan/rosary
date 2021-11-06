@@ -139,7 +139,7 @@ function expectClosing(beadGroup: BeadGroup, expectedGroupIndex: number) {
   expect(beadGroup.groupIndex).toEqual(expectedGroupIndex);
   expect(beadGroup.index).toEqual(0);
   expect(beadGroup.maxIndex).toEqual(0);
-  expect(beadGroup.sequence).toEqual('closing');
+  expect(beadGroup.sequence).toEqual('closing1');
   expect(beadGroup.prayerIds).toEqual(['@@closing-1', '@@closing-2']);
 }
 

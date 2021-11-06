@@ -33,6 +33,10 @@ pre {
 
 @media (orientation: landscape) {
 
+  html, body {
+    font-size: $font-size-base;
+  }
+
   button {
     font-family: $fontname;
     font-size: $font-size-base;
@@ -47,6 +51,10 @@ pre {
 }
 
 @media (orientation: portrait) {
+
+  html, body {
+    font-size: $font-size-base-phone;
+  }
 
   button {
     font-family: $fontname;
