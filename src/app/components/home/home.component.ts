@@ -16,8 +16,6 @@ export class HomeComponent implements OnInit {
   @Input()
   selectedMysteryId: string;
 
-  direction: string;
-
   selectedBeadGroupList: BeadGroupList;
 
   @ViewChild(ActivePrayerComponent)
@@ -57,9 +55,12 @@ export class HomeComponent implements OnInit {
   }
 
   onSwipe(event) {
-    console.log(`HomeComponent - 1) swipe: ${event}`);
-    this.onNext();
-    this.direction = event?.direction;
+    if (Hammer.DIRECTION_LEFT === event?.direction) {
+      this.onNext();
+    }
+    else if (Hammer.DIRECTION_RIGHT === event?.direction) {
+      this.onPrevious();
+    }
   }
 
 }

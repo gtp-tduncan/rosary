@@ -1,6 +1,6 @@
 {
   "name": "rosary",
-  "version": "0.0.9b",
+  "version": "0.0.9c",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
