@@ -55,8 +55,9 @@ export class HomeComponent implements OnInit {
   }
 
   onSwipe(event) {
-    console.log(`HomeComponent - swipe: ${event}`);
+    console.log(`HomeComponent - 1) swipe: ${event}`);
     this.onNext();
+    console.log(`HomeComponent - 2) swipe: ${event?.direction}`);
   }
 
 }
