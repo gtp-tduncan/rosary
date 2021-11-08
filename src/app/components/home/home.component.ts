@@ -18,6 +18,8 @@ export class HomeComponent implements OnInit {
 
   selectedBeadGroupList: BeadGroupList;
 
+  navigationEnabled: boolean;
+
   @ViewChild(ActivePrayerComponent)
   activePrayer: ActivePrayerComponent;
 
@@ -44,6 +46,11 @@ export class HomeComponent implements OnInit {
   onResetEvent(flag: boolean): void {
     this.selectedBeadGroupList = undefined;
     this.liturgicalYear.overrideLiturgicalColor = undefined;
+  }
+
+  onEnableNavigation(flag: boolean): void {
+    console.log(`home: ${flag}`);
+    this.navigationEnabled = flag;
   }
 
   onNext(): void {

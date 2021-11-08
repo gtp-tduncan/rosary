@@ -18,6 +18,9 @@ export class ActivePrayerComponent implements OnInit, AfterViewInit {
   @Output()
   onResetEvent = new EventEmitter<boolean>();
 
+  @Output()
+  onEnableNavigationEvent = new EventEmitter<boolean>();
+
   @ViewChild(HolyRosaryPrayerComponent)
   holyRosaryPrayer: HolyRosaryPrayerComponent;
 
@@ -49,6 +52,11 @@ export class ActivePrayerComponent implements OnInit, AfterViewInit {
 
   onStartNew() {
     this.onResetEvent.emit(true);
+  }
+
+  onEnableNavigation(flag: boolean) {
+    console.log(`active prayer nav flag: ${flag}`);
+    this.onEnableNavigationEvent.emit(flag);
   }
 
 }

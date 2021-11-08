@@ -10,8 +10,20 @@
   text-align: left;
 }
 
-.mystery-row-inner {
-  margin-top: $margins;
+@media (orientation: landscape) {
+
+  .mystery-row-inner {
+    margin-top: $margins;
+  }
+
+}
+
+@media (orientation: portrait) {
+
+  .mystery-row-inner {
+    margin-top: 0.5vh;
+  }
+
 }
 
 .mystery-label, .fruit-label {

@@ -23,7 +23,6 @@
 }
 
 .active-prayer-header .left {
-  background-color: palegoldenrod;
   padding: $padding;
   text-align: center;
   width: 50%;
@@ -46,7 +45,7 @@
 @media (orientation: portrait) {
 
   .active-prayer-header .right {
-    margin-top: -1.25vh;
+    margin-top: -1.9vh;
   }
 
 }

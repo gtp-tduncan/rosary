@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { AppConfigService } from 'src/app/services/app-config.service';
 
 @Component({
   selector: 'app-header',
@@ -16,7 +17,13 @@ export class HeaderComponent implements OnInit {
   @Output()
   onResetEvent = new EventEmitter<boolean>();
 
-  constructor() { }
+  @Output()
+  onEnableNavigationEvent = new EventEmitter<boolean>();
+
+  @ViewChild('navEnabledChkbox')
+  navEnabledChkbox: ElementRef;
+
+  constructor(public appConfig: AppConfigService) { }
 
   ngOnInit(): void { }
 
@@ -24,4 +31,8 @@ export class HeaderComponent implements OnInit {
     this.onResetEvent.emit(true);
   }
 
+  onEnableNavigation(): void {
+    console.log(`header nav flag: ${this.navEnabledChkbox?.nativeElement?.checked}`);
+    this.onEnableNavigationEvent.emit(this.navEnabledChkbox?.nativeElement?.checked);
+  }
 }

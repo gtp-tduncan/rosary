@@ -27,9 +27,12 @@
   border-width: 1px;
   font-style: italic;
   font-weight: bold;
-  margin-top: $margins;
   opacity: 100%;
   width: 5vh;
+}
+
+.prayer-all, .prayer-leader-label, .prayer-response-label {
+  margin-top: $margins;
 }
 
 .prayer-all, .prayer-leader, .prayer-response, .prayer-leader-label, .prayer-response-label {

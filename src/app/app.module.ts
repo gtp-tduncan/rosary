@@ -30,7 +30,6 @@ export class AppHammerConfig extends HammerGestureConfig {
   }
 
   buildHammer(element: HTMLElement) {
-    console.log(`buildHammer: ${element?.nodeName}`);
     const mc = new Hammer(element, {
       touchAction: 'pan-x'
     });

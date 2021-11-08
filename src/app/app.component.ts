@@ -17,6 +17,7 @@ export class AppComponent {
   constructor(public liturgicalYear: LiturgicalYearService,
               private appConfig: AppConfigService) {
     this.checkOrientation();
+    console.log(`user-agent: ${window.navigator.userAgent}`);
   }
 
   backgroundImageClass(): string {

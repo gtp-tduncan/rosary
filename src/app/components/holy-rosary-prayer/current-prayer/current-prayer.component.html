@@ -1,7 +1,9 @@
 <div class="active-prayer-workspace">
   <div *ngIf="currentPrayer && debugTheEnd !== true">
+    <div>
     <div *ngIf="currentPrayer.all" class="prayer-all">
       {{ currentPrayer.all }}
+    </div>
     </div>
     <ng-container *ngIf="currentPrayer.all === undefined">
       <div>
