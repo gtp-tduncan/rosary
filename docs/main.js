@@ -1118,9 +1118,11 @@ class ActivePrayerComponent {
         return this.activeBeadGroupList.isPrayerSequenceDone;
     }
     onNext() {
+        console.log('active-prayer next');
         this.holyRosaryPrayer.onNext();
     }
     onPrevious() {
+        console.log('active-prayer prev');
         this.holyRosaryPrayer.onPrevious();
     }
     onStartNew() {
