@@ -55,10 +55,12 @@ export class HomeComponent implements OnInit {
 
   onNext(): void {
     this.activePrayer.onNext();
+    navigator.vibrate(250);
   }
 
   onPrevious(): void {
     this.activePrayer.onPrevious();
+    navigator.vibrate(250);
   }
 
   onSwipe(event) {
