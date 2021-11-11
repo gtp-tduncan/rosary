@@ -84,16 +84,34 @@ pre {
 .content-no-border, .content-border, #home-content-border {
   background-color: lightgray;
   box-sizing: border-box;
-  margin: 1vh;
   opacity: 85%;
   padding: 1vh;
 }
-#home-content-border {
-  position: absolute;
-  top: 1vh;
-  left: 1vh;
-  right: 1vh;
-  bottom: 1vh;
+@media (orientation: landscape) {
+  .content-no-border, .content-border, #home-content-border {
+    margin: 1vh;
+  }
+
+  #home-content-border {
+    position: absolute;
+    top: 1vh;
+    left: 1vh;
+    right: 1vh;
+    bottom: 1vh;
+  }
+}
+@media (orientation: portrait) {
+  .content-no-border, .content-border, #home-content-border {
+    margin: 0.3vh;
+  }
+
+  #home-content-border {
+    position: absolute;
+    top: 0.3vh;
+    left: 0.3vh;
+    right: 0.3vh;
+    bottom: 0.3vh;
+  }
 }
 #nav-footer {
   position: absolute;

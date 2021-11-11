@@ -140,17 +140,37 @@ $offset-red: rgb(150, 0, 0);
 .content-no-border, .content-border, #home-content-border {
   background-color: lightgray;
   box-sizing: border-box;
-  margin: $margins;
   opacity: 85%;
   padding: $padding;
 }
 
-#home-content-border {
-  position: absolute;
-  top: $margins;
-  left: $margins;
-  right: $margins;
-  bottom: $margins;
+
+@media (orientation: landscape) {
+  .content-no-border, .content-border, #home-content-border {
+    margin: $margins;
+  }
+
+  #home-content-border {
+    position: absolute;
+    top: $margins;
+    left: $margins;
+    right: $margins;
+    bottom: $margins;
+  }
+}
+
+@media (orientation: portrait) {
+  .content-no-border, .content-border, #home-content-border {
+    margin: $margins-phone;
+  }
+
+  #home-content-border {
+    position: absolute;
+    top: $margins-phone;
+    left: $margins-phone;
+    right: $margins-phone;
+    bottom: $margins-phone;
+  }
 }
 
 #nav-footer {
