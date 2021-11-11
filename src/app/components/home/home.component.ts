@@ -57,14 +57,12 @@ export class HomeComponent implements OnInit {
     console.log('home - window.navigator.vibrate([1000, 100, 250]);');
     this.activePrayer.onNext();
     // navigator.vibrate([1000, 100, 250]);
-    window.navigator.vibrate([1000, 100, 250]);
   }
 
   onPrevious(): void {
     console.log('home - window.navigator.vibrate([250, 250, 250]);');
     this.activePrayer.onPrevious();
     // navigator.vibrate([250, 250, 250]);
-    window.navigator.vibrate([250, 250, 250]);
   }
 
   onSwipe(event) {
