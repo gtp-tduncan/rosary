@@ -268,67 +268,6 @@ HeaderComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineCo
 
 /***/ }),
 
-/***/ "4Ivf":
-/*!*********************************************************!*\
-  !*** ./src/app/components/layouts/layouts.component.ts ***!
-  \*********************************************************/
-/*! exports provided: LayoutsComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LayoutsComponent", function() { return LayoutsComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
-/* harmony import */ var src_app_services_bead_group_loader_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/services/bead-group-loader.service */ "ivI1");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "tyNb");
-/* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../home/home.component */ "BuFo");
-
-
-
-
-
-class LayoutsComponent {
-    // selectedBeadGroupList: BeadGroupList;
-    // debugTheEnd: boolean;
-    // @ViewChild(ActivePrayerComponent)
-    // activePrayer: ActivePrayerComponent;
-    constructor(beadGroupLoader, activateRoute) {
-        this.beadGroupLoader = beadGroupLoader;
-        this.activateRoute = activateRoute;
-    }
-    ngOnInit() {
-        // this.selectedBeadGroupList = this.beadGroupLoader.loadHolyRosaryContemporaryMysteryEnum(RosaryMysteriesEnum.GLORIOUS);
-        // this.activateRoute.queryParams.subscribe(params => {
-        //   if (('list' in params)) {
-        //     this.selectedBeadGroupList.debugWriteSequenceIds();
-        //   }
-        //   else {
-        //     console.log('Received message');
-        //     const sequenceId = params['seqId'];
-        //     console.log(`setting rosary to ${sequenceId}`);
-        //     this.selectedBeadGroupList.debugSetIndices(sequenceId);
-        //     this.debugTheEnd = (sequenceId === 'end');
-        //     console.log(`LayoutsComponent - debugTheEnd: ${this.debugTheEnd}`);
-        //   }
-        // })
-    }
-}
-LayoutsComponent.ɵfac = function LayoutsComponent_Factory(t) { return new (t || LayoutsComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_services_bead_group_loader_service__WEBPACK_IMPORTED_MODULE_1__["BeadGroupLoaderService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"])); };
-LayoutsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: LayoutsComponent, selectors: [["app-layouts"]], decls: 1, vars: 0, consts: [["selectedMysteryId", "GLORIOUS"]], template: function LayoutsComponent_Template(rf, ctx) { if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "app-home", 0);
-    } }, directives: [_home_home_component__WEBPACK_IMPORTED_MODULE_3__["HomeComponent"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJsYXlvdXRzLmNvbXBvbmVudC5zY3NzIn0= */"] });
-/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](LayoutsComponent, [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
-        args: [{
-                selector: 'app-layouts',
-                templateUrl: './layouts.component.html',
-                styleUrls: ['./layouts.component.scss']
-            }]
-    }], function () { return [{ type: src_app_services_bead_group_loader_service__WEBPACK_IMPORTED_MODULE_1__["BeadGroupLoaderService"] }, { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"] }]; }, null); })();
-
-
-/***/ }),
-
 /***/ "4f7d":
 /*!********************************************************************************************!*\
   !*** ./src/app/components/holy-rosary-prayer/mystery-display/mystery-display.component.ts ***!
@@ -801,15 +740,15 @@ class HomeComponent {
         this.navigationEnabled = flag;
     }
     onNext() {
+        console.log('home - window.navigator.vibrate([1000, 100, 250]);');
         this.activePrayer.onNext();
         // navigator.vibrate([1000, 100, 250]);
-        console.log('window.navigator.vibrate([1000, 100, 250]);');
         window.navigator.vibrate([1000, 100, 250]);
     }
     onPrevious() {
+        console.log('home - window.navigator.vibrate([250, 250, 250]);');
         this.activePrayer.onPrevious();
         // navigator.vibrate([250, 250, 250]);
-        console.log('window.navigator.vibrate([250, 250, 250]);');
         window.navigator.vibrate([250, 250, 250]);
     }
     onSwipe(event) {
@@ -975,6 +914,67 @@ class BeadGroupList {
             || this.beadGroupIdx < 0 || this.currentBeadGroup.isBeadGroupDone();
     }
 }
+
+
+/***/ }),
+
+/***/ "DZO2":
+/*!*****************************************************************!*\
+  !*** ./src/app/components/testing/layouts/layouts.component.ts ***!
+  \*****************************************************************/
+/*! exports provided: LayoutsComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LayoutsComponent", function() { return LayoutsComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var src_app_services_bead_group_loader_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/services/bead-group-loader.service */ "ivI1");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "tyNb");
+/* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../home/home.component */ "BuFo");
+
+
+
+
+
+class LayoutsComponent {
+    // selectedBeadGroupList: BeadGroupList;
+    // debugTheEnd: boolean;
+    // @ViewChild(ActivePrayerComponent)
+    // activePrayer: ActivePrayerComponent;
+    constructor(beadGroupLoader, activateRoute) {
+        this.beadGroupLoader = beadGroupLoader;
+        this.activateRoute = activateRoute;
+    }
+    ngOnInit() {
+        // this.selectedBeadGroupList = this.beadGroupLoader.loadHolyRosaryContemporaryMysteryEnum(RosaryMysteriesEnum.GLORIOUS);
+        // this.activateRoute.queryParams.subscribe(params => {
+        //   if (('list' in params)) {
+        //     this.selectedBeadGroupList.debugWriteSequenceIds();
+        //   }
+        //   else {
+        //     console.log('Received message');
+        //     const sequenceId = params['seqId'];
+        //     console.log(`setting rosary to ${sequenceId}`);
+        //     this.selectedBeadGroupList.debugSetIndices(sequenceId);
+        //     this.debugTheEnd = (sequenceId === 'end');
+        //     console.log(`LayoutsComponent - debugTheEnd: ${this.debugTheEnd}`);
+        //   }
+        // })
+    }
+}
+LayoutsComponent.ɵfac = function LayoutsComponent_Factory(t) { return new (t || LayoutsComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_services_bead_group_loader_service__WEBPACK_IMPORTED_MODULE_1__["BeadGroupLoaderService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"])); };
+LayoutsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: LayoutsComponent, selectors: [["app-layouts"]], decls: 1, vars: 0, consts: [["selectedMysteryId", "GLORIOUS"]], template: function LayoutsComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "app-home", 0);
+    } }, directives: [_home_home_component__WEBPACK_IMPORTED_MODULE_3__["HomeComponent"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJsYXlvdXRzLmNvbXBvbmVudC5zY3NzIn0= */"] });
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](LayoutsComponent, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
+        args: [{
+                selector: 'app-layouts',
+                templateUrl: './layouts.component.html',
+                styleUrls: ['./layouts.component.scss']
+            }]
+    }], function () { return [{ type: src_app_services_bead_group_loader_service__WEBPACK_IMPORTED_MODULE_1__["BeadGroupLoaderService"] }, { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"] }]; }, null); })();
 
 
 /***/ }),
@@ -1175,6 +1175,71 @@ ActivePrayerComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵde
             type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"],
             args: [_holy_rosary_prayer_holy_rosary_prayer_component__WEBPACK_IMPORTED_MODULE_1__["HolyRosaryPrayerComponent"]]
         }] }); })();
+
+
+/***/ }),
+
+/***/ "Kn0e":
+/*!*****************************************************************************!*\
+  !*** ./src/app/components/testing/buzz-feedback/buzz-feedback.component.ts ***!
+  \*****************************************************************************/
+/*! exports provided: BuzzFeedbackComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BuzzFeedbackComponent", function() { return BuzzFeedbackComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/forms */ "3Pt+");
+
+
+
+
+class BuzzFeedbackComponent {
+    constructor() {
+        this.fg = new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormGroup"]({
+            time: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](200)
+        });
+    }
+    ngOnInit() {
+    }
+    onSubmit() {
+        console.log(`onSubmit 1: ${JSON.stringify(this.fg.value)}`);
+        const value = this.fg.controls['time'].value;
+        console.log(`onSubmit 2: ${value}`);
+        window.navigator.vibrate(value);
+    }
+    onReset() {
+        console.log(`onReset: ${JSON.stringify(this.fg.value)}`);
+    }
+}
+BuzzFeedbackComponent.ɵfac = function BuzzFeedbackComponent_Factory(t) { return new (t || BuzzFeedbackComponent)(); };
+BuzzFeedbackComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: BuzzFeedbackComponent, selectors: [["app-buzz-feedback"]], decls: 8, vars: 1, consts: [[3, "formGroup", "ngSubmit"], ["for", "time"], ["type", "text", "formControlName", "time"], ["type", "submit"], ["type", "reset", 3, "click"]], template: function BuzzFeedbackComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "form", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngSubmit", function BuzzFeedbackComponent_Template_form_ngSubmit_0_listener() { return ctx.onSubmit(); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "label", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Time (ms)");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](3, "input", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "button", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5, "Submit");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "button", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function BuzzFeedbackComponent_Template_button_click_6_listener() { return ctx.onReset(); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](7, "Reset");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    } if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("formGroup", ctx.fg);
+    } }, directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormGroupDirective"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["DefaultValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControlName"]], styles: ["label[_ngcontent-%COMP%] {\n  color: white;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uLy4uL2J1enotZmVlZGJhY2suY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxZQUFBO0FBQ0oiLCJmaWxlIjoiYnV6ei1mZWVkYmFjay5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbImxhYmVsIHtcbiAgICBjb2xvcjogd2hpdGU7XG59Il19 */"] });
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](BuzzFeedbackComponent, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
+        args: [{
+                selector: 'app-buzz-feedback',
+                templateUrl: './buzz-feedback.component.html',
+                styleUrls: ['./buzz-feedback.component.scss']
+            }]
+    }], function () { return []; }, null); })();
 
 
 /***/ }),
@@ -1945,7 +2010,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_holy_rosary_prayer_holy_rosary_prayer_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/holy-rosary-prayer/holy-rosary-prayer.component */ "+dEH");
 /* harmony import */ var _components_holy_rosary_prayer_mystery_display_mystery_display_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/holy-rosary-prayer/mystery-display/mystery-display.component */ "4f7d");
 /* harmony import */ var _components_home_home_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/home/home.component */ "BuFo");
-/* harmony import */ var _components_layouts_layouts_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/layouts/layouts.component */ "4Ivf");
+/* harmony import */ var _components_testing_layouts_layouts_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/testing/layouts/layouts.component */ "DZO2");
 /* harmony import */ var _components_liturgical_dates_liturgical_dates_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/liturgical-dates/liturgical-dates.component */ "WsnB");
 /* harmony import */ var _components_mystery_selector_mystery_selector_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/mystery-selector/mystery-selector.component */ "MKlP");
 /* harmony import */ var _components_notices_notices_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/notices/notices.component */ "z+NF");
@@ -1956,6 +2021,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_rotate_div_rotate_div_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./components/rotate-div/rotate-div.component */ "aFVH");
 /* harmony import */ var hammerjs__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! hammerjs */ "yLV6");
 /* harmony import */ var hammerjs__WEBPACK_IMPORTED_MODULE_19___default = /*#__PURE__*/__webpack_require__.n(hammerjs__WEBPACK_IMPORTED_MODULE_19__);
+/* harmony import */ var _components_testing_buzz_feedback_buzz_feedback_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./components/testing/buzz-feedback/buzz-feedback.component */ "Kn0e");
+
 
 
 
@@ -2011,7 +2078,8 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["BrowserModule"],
             _app_routing_module__WEBPACK_IMPORTED_MODULE_3__["AppRoutingModule"],
             _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormsModule"],
-            _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["HammerModule"]
+            _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["HammerModule"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_1__["ReactiveFormsModule"]
         ]] });
 (function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsetNgModuleScope"](AppModule, { declarations: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"],
         _components_active_prayer_active_prayer_component__WEBPACK_IMPORTED_MODULE_5__["ActivePrayerComponent"],
@@ -2021,16 +2089,18 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector
         _components_pats_beads_pats_beads_component__WEBPACK_IMPORTED_MODULE_14__["PatsBeadsComponent"],
         _prayers_end_end_component__WEBPACK_IMPORTED_MODULE_15__["EndComponent"],
         _components_liturgical_dates_liturgical_dates_component__WEBPACK_IMPORTED_MODULE_11__["LiturgicalDatesComponent"],
-        _components_layouts_layouts_component__WEBPACK_IMPORTED_MODULE_10__["LayoutsComponent"],
+        _components_testing_layouts_layouts_component__WEBPACK_IMPORTED_MODULE_10__["LayoutsComponent"],
         _components_home_home_component__WEBPACK_IMPORTED_MODULE_9__["HomeComponent"],
         _components_holy_rosary_prayer_mystery_display_mystery_display_component__WEBPACK_IMPORTED_MODULE_8__["MysteryDisplayComponent"],
         _components_holy_rosary_prayer_current_prayer_current_prayer_component__WEBPACK_IMPORTED_MODULE_6__["CurrentPrayerComponent"],
         _components_header_header_component__WEBPACK_IMPORTED_MODULE_16__["HeaderComponent"],
         _components_navigation_navigation_component__WEBPACK_IMPORTED_MODULE_17__["NavigationComponent"],
-        _components_rotate_div_rotate_div_component__WEBPACK_IMPORTED_MODULE_18__["RotateDivComponent"]], imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["BrowserModule"],
+        _components_rotate_div_rotate_div_component__WEBPACK_IMPORTED_MODULE_18__["RotateDivComponent"],
+        _components_testing_buzz_feedback_buzz_feedback_component__WEBPACK_IMPORTED_MODULE_20__["BuzzFeedbackComponent"]], imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["BrowserModule"],
         _app_routing_module__WEBPACK_IMPORTED_MODULE_3__["AppRoutingModule"],
         _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormsModule"],
-        _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["HammerModule"]] }); })();
+        _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["HammerModule"],
+        _angular_forms__WEBPACK_IMPORTED_MODULE_1__["ReactiveFormsModule"]] }); })();
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](AppModule, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"],
         args: [{
@@ -2043,19 +2113,21 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector
                     _components_pats_beads_pats_beads_component__WEBPACK_IMPORTED_MODULE_14__["PatsBeadsComponent"],
                     _prayers_end_end_component__WEBPACK_IMPORTED_MODULE_15__["EndComponent"],
                     _components_liturgical_dates_liturgical_dates_component__WEBPACK_IMPORTED_MODULE_11__["LiturgicalDatesComponent"],
-                    _components_layouts_layouts_component__WEBPACK_IMPORTED_MODULE_10__["LayoutsComponent"],
+                    _components_testing_layouts_layouts_component__WEBPACK_IMPORTED_MODULE_10__["LayoutsComponent"],
                     _components_home_home_component__WEBPACK_IMPORTED_MODULE_9__["HomeComponent"],
                     _components_holy_rosary_prayer_mystery_display_mystery_display_component__WEBPACK_IMPORTED_MODULE_8__["MysteryDisplayComponent"],
                     _components_holy_rosary_prayer_current_prayer_current_prayer_component__WEBPACK_IMPORTED_MODULE_6__["CurrentPrayerComponent"],
                     _components_header_header_component__WEBPACK_IMPORTED_MODULE_16__["HeaderComponent"],
                     _components_navigation_navigation_component__WEBPACK_IMPORTED_MODULE_17__["NavigationComponent"],
-                    _components_rotate_div_rotate_div_component__WEBPACK_IMPORTED_MODULE_18__["RotateDivComponent"]
+                    _components_rotate_div_rotate_div_component__WEBPACK_IMPORTED_MODULE_18__["RotateDivComponent"],
+                    _components_testing_buzz_feedback_buzz_feedback_component__WEBPACK_IMPORTED_MODULE_20__["BuzzFeedbackComponent"]
                 ],
                 imports: [
                     _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["BrowserModule"],
                     _app_routing_module__WEBPACK_IMPORTED_MODULE_3__["AppRoutingModule"],
                     _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormsModule"],
-                    _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["HammerModule"]
+                    _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["HammerModule"],
+                    _angular_forms__WEBPACK_IMPORTED_MODULE_1__["ReactiveFormsModule"]
                 ],
                 providers: [
                     { provide: _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["HAMMER_GESTURE_CONFIG"], useClass: AppHammerConfig }
@@ -2794,7 +2866,7 @@ class BeadGroup {
 /*! exports provided: name, version, scripts, private, dependencies, devDependencies, default */
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"name\":\"rosary\",\"version\":\"0.0.9g\",\"scripts\":{\"ng\":\"ng\",\"start\":\"ng serve\",\"build\":\"ng build\",\"test\":\"ng test\",\"lint\":\"ng lint\",\"e2e\":\"ng e2e\",\"i18n\":\"ng extract-i18n --output-path src/assets/i18n/\"},\"private\":true,\"dependencies\":{\"@angular/animations\":\"~11.0.6\",\"@angular/common\":\"~11.0.6\",\"@angular/compiler\":\"~11.0.6\",\"@angular/core\":\"~11.0.6\",\"@angular/forms\":\"~11.0.6\",\"@angular/localize\":\"^12.2.6\",\"@angular/platform-browser\":\"~11.0.6\",\"@angular/platform-browser-dynamic\":\"~11.0.6\",\"@angular/router\":\"~11.0.6\",\"@types/hammerjs\":\"^2.0.40\",\"hammerjs\":\"^2.0.8\",\"rxjs\":\"~6.6.0\",\"tslib\":\"^2.0.0\",\"zone.js\":\"~0.10.2\"},\"devDependencies\":{\"@angular-devkit/build-angular\":\"~0.1100.6\",\"@angular/cli\":\"~11.0.6\",\"@angular/compiler-cli\":\"~11.0.6\",\"@types/jasmine\":\"~3.6.0\",\"@types/node\":\"^12.11.1\",\"codelyzer\":\"^6.0.0\",\"jasmine-core\":\"~3.6.0\",\"jasmine-spec-reporter\":\"~5.0.0\",\"karma\":\"~5.1.0\",\"karma-chrome-launcher\":\"~3.1.0\",\"karma-coverage\":\"~2.0.3\",\"karma-jasmine\":\"~4.0.0\",\"karma-jasmine-html-reporter\":\"^1.5.0\",\"protractor\":\"~7.0.0\",\"ts-node\":\"~8.3.0\",\"tslint\":\"~6.1.0\",\"typescript\":\"~4.0.2\"}}");
+module.exports = JSON.parse("{\"name\":\"rosary\",\"version\":\"0.0.9j\",\"scripts\":{\"ng\":\"ng\",\"start\":\"ng serve\",\"build\":\"ng build\",\"test\":\"ng test\",\"lint\":\"ng lint\",\"e2e\":\"ng e2e\",\"i18n\":\"ng extract-i18n --output-path src/assets/i18n/\"},\"private\":true,\"dependencies\":{\"@angular/animations\":\"~11.0.6\",\"@angular/common\":\"~11.0.6\",\"@angular/compiler\":\"~11.0.6\",\"@angular/core\":\"~11.0.6\",\"@angular/forms\":\"~11.0.6\",\"@angular/localize\":\"^12.2.6\",\"@angular/platform-browser\":\"~11.0.6\",\"@angular/platform-browser-dynamic\":\"~11.0.6\",\"@angular/router\":\"~11.0.6\",\"@types/hammerjs\":\"^2.0.40\",\"hammerjs\":\"^2.0.8\",\"rxjs\":\"~6.6.0\",\"tslib\":\"^2.0.0\",\"zone.js\":\"~0.10.2\"},\"devDependencies\":{\"@angular-devkit/build-angular\":\"~0.1100.6\",\"@angular/cli\":\"~11.0.6\",\"@angular/compiler-cli\":\"~11.0.6\",\"@types/jasmine\":\"~3.6.0\",\"@types/node\":\"^12.11.1\",\"codelyzer\":\"^6.0.0\",\"jasmine-core\":\"~3.6.0\",\"jasmine-spec-reporter\":\"~5.0.0\",\"karma\":\"~5.1.0\",\"karma-chrome-launcher\":\"~3.1.0\",\"karma-coverage\":\"~2.0.3\",\"karma-jasmine\":\"~4.0.0\",\"karma-jasmine-html-reporter\":\"^1.5.0\",\"protractor\":\"~7.0.0\",\"ts-node\":\"~8.3.0\",\"tslint\":\"~6.1.0\",\"typescript\":\"~4.0.2\"}}");
 
 /***/ }),
 
@@ -3302,7 +3374,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "tyNb");
 /* harmony import */ var _components_home_home_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/home/home.component */ "BuFo");
-/* harmony import */ var _components_layouts_layouts_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/layouts/layouts.component */ "4Ivf");
+/* harmony import */ var _components_testing_buzz_feedback_buzz_feedback_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/testing/buzz-feedback/buzz-feedback.component */ "Kn0e");
+/* harmony import */ var _components_testing_layouts_layouts_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/testing/layouts/layouts.component */ "DZO2");
+
 
 
 
@@ -3311,7 +3385,8 @@ __webpack_require__.r(__webpack_exports__);
 
 const routes = [
     { path: '', component: _components_home_home_component__WEBPACK_IMPORTED_MODULE_2__["HomeComponent"] },
-    { path: 'layout-test', component: _components_layouts_layouts_component__WEBPACK_IMPORTED_MODULE_3__["LayoutsComponent"] }
+    { path: 'testing/layout', component: _components_testing_layouts_layouts_component__WEBPACK_IMPORTED_MODULE_4__["LayoutsComponent"] },
+    { path: 'testing/buzz', component: _components_testing_buzz_feedback_buzz_feedback_component__WEBPACK_IMPORTED_MODULE_3__["BuzzFeedbackComponent"] }
 ];
 class AppRoutingModule {
 }
