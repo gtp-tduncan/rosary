@@ -1,5 +1,5 @@
 import { Injectable, NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule, HammerGestureConfig, HammerModule, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -8,7 +8,7 @@ import { CurrentPrayerComponent } from './components/holy-rosary-prayer/current-
 import { HolyRosaryPrayerComponent } from './components/holy-rosary-prayer/holy-rosary-prayer.component';
 import { MysteryDisplayComponent } from './components/holy-rosary-prayer/mystery-display/mystery-display.component';
 import { HomeComponent } from './components/home/home.component';
-import { LayoutsComponent } from './components/layouts/layouts.component';
+import { LayoutsComponent } from './components/testing/layouts/layouts.component';
 import { LiturgicalDatesComponent } from './components/liturgical-dates/liturgical-dates.component';
 import { MysterySelectorComponent } from './components/mystery-selector/mystery-selector.component';
 import { NoticesComponent } from './components/notices/notices.component';
@@ -18,6 +18,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { RotateDivComponent } from './components/rotate-div/rotate-div.component';
 import * as Hammer from 'hammerjs';
+import { BuzzFeedbackComponent } from './components/testing/buzz-feedback/buzz-feedback.component';
 
 @Injectable({
   providedIn: 'root'
@@ -54,13 +55,15 @@ export class AppHammerConfig extends HammerGestureConfig {
     CurrentPrayerComponent,
     HeaderComponent,
     NavigationComponent,
-    RotateDivComponent
+    RotateDivComponent,
+    BuzzFeedbackComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HammerModule
+    HammerModule,
+    ReactiveFormsModule
   ],
   providers: [
     { provide: HAMMER_GESTURE_CONFIG, useClass: AppHammerConfig }
