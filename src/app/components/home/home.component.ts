@@ -38,7 +38,6 @@ export class HomeComponent implements OnInit {
       this.onMysterySelected(RosaryMysteriesEnum[this.selectedMysteryId]);
     }
     this.elem = document.documentElement;
-    //this.openFullscreen();
   }
 
   onMysterySelected(selectedMystery: RosaryMysteriesEnum): void {
@@ -60,15 +59,11 @@ export class HomeComponent implements OnInit {
   }
 
   onNext(): void {
-    console.log('home - window.navigator.vibrate([1000, 100, 250]);');
     this.activePrayer.onNext();
-    // navigator.vibrate([1000, 100, 250]);
   }
 
   onPrevious(): void {
-    console.log('home - window.navigator.vibrate([250, 250, 250]);');
     this.activePrayer.onPrevious();
-    // navigator.vibrate([250, 250, 250]);
   }
 
   onSwipe(event) {

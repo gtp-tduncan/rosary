@@ -61,14 +61,11 @@ export class HolyRosaryPrayerComponent implements OnInit, AfterViewInit {
     }
 
     this.currentPrayer = this.findCurrentPrayer();
-    console.log(`prayerName 1: ${this.prayerName}`);
   }
 
   ngAfterViewInit(): void {
-    console.log(`prayerName 2: ${this.prayerName}`);
     this.tap1 = this.extractAudioElement(this.tapRef1);
     this.tap2 = this.extractAudioElement(this.tapRef2, 0.5);
-    console.log(`tap1: ${this.tap1} - tap2: ${this.tap2}`);
   }
 
   private extractAudioElement(elementRef: ElementRef<HTMLAudioElement>, volume = 0.3): HTMLAudioElement {
@@ -100,6 +97,22 @@ export class HolyRosaryPrayerComponent implements OnInit, AfterViewInit {
       this.highlightBeadIndex--;
     }
     this.currentPrayer = this.findCurrentPrayer();
+  }
+
+  tap1mp3(): string {
+    return window.location.href + '/assets/Tapping-1.mp3';
+  }
+
+  tap1ogg(): string {
+    return window.location.href + '/assets/Tapping-1.ogg';
+  }
+
+  tap2mp3(): string {
+    return window.location.href + '/assets/Tapping-2.mp3';
+  }
+
+  tap2ogg(): string {
+    return window.location.href + '/assets/Tapping-2.ogg';
   }
 
   private findCurrentPrayer(): Prayer {

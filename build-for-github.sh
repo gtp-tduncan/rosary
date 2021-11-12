@@ -3,7 +3,7 @@
 # -----------------------------------------------------------------------
 function project_specific_updates() {
   # Any project specific changes should be added here.
-  echo "project_specific_updates called"
+  echo "project_specific_updates performed"
 }
 
 # -----------------------------------------------------------------------
