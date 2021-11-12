@@ -9,6 +9,10 @@
   .button-cell {
     width: 24%;
   }
+
+  .button-cell {
+    padding: $padding;
+  }
 }
 
 @media (orientation: portrait) {
@@ -20,10 +24,10 @@
   .button-cell {
     width: 97%;
   }
-}
 
-.button-cell {
-  padding: $padding;
+  .button-cell {
+    padding: $padding-phone;
+  }
 }
 
 button {

@@ -9,5 +9,8 @@
     <span class="active-nav" *ngIf="isPrayerSequenceDone">
       <button (click)="onStartNew()" i18n>Start New Prayer</button>
     </span>
+    <span *ngIf="appConfig.isPortrait">
+      <input #navEnabledChkbox type="checkbox" value=false (change)="onEnableNavigation()">
+    </span>
   </span>
 </div>

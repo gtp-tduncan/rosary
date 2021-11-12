@@ -2,26 +2,14 @@ $fontname: Consola;
 $font-size-base: 2vw;
 $font-size-base-phone: 5vw;
 
-$margins: 5px;
+$margins: 1vh;
+$margins-phone: 0.3vh;
 $nav-landscape-margin: 3vh;
 
-$padding: 5px;
+$padding: 1vh;
+$padding-phone: 0.3vh;
 
 $border: 1px dashed black;
-$border-radius: 10px;
+$border-radius: 1.5vh;
 
-$input-margin-bottom: 10px;
-
-// -------------------------------------------------------------------
-
-// $patsBeadsOffsetX: -90vw;
-// $patsBeadsOffsetY: -18vh;
-
-$prayerOffsetX: 0vw;
-$prayerOffsetY: -60vh;
-
-$phoneNavOffsetX: 0vw;
-$phoneNavOffsetY: 0vw;
-
-$footerOffsetX: 1vw;
-$footerOffsetY: 3vh;
+$input-margin-bottom: 1vh;

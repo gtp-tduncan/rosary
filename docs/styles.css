@@ -4,12 +4,12 @@ html, body {
   margin: unset;
 }
 button {
-  border-radius: 10px;
-  padding: 5px;
+  border-radius: 1.5vh;
+  padding: 1vh;
 }
 input {
   font-family: Consola;
-  margin-bottom: 10px;
+  margin-bottom: 1vh;
 }
 pre {
   font-family: Consola;
@@ -77,23 +77,41 @@ pre {
 */
 .content-border, #home-content-border {
   border: 1px dashed black;
-  border-radius: 10px;
+  border-radius: 1.5vh;
   display: flex;
   flex-flow: column;
 }
 .content-no-border, .content-border, #home-content-border {
   background-color: lightgray;
   box-sizing: border-box;
-  margin: 5px;
   opacity: 85%;
-  padding: 5px;
+  padding: 1vh;
 }
-#home-content-border {
-  position: absolute;
-  top: 5px;
-  left: 5px;
-  right: 5px;
-  bottom: 5px;
+@media (orientation: landscape) {
+  .content-no-border, .content-border, #home-content-border {
+    margin: 1vh;
+  }
+
+  #home-content-border {
+    position: absolute;
+    top: 1vh;
+    left: 1vh;
+    right: 1vh;
+    bottom: 1vh;
+  }
+}
+@media (orientation: portrait) {
+  .content-no-border, .content-border, #home-content-border {
+    margin: 0.3vh;
+  }
+
+  #home-content-border {
+    position: absolute;
+    top: 0.3vh;
+    left: 0.3vh;
+    right: 0.3vh;
+    bottom: 0.3vh;
+  }
 }
 #nav-footer {
   position: absolute;
@@ -107,7 +125,7 @@ pre {
 }
 @media (orientation: portrait) {
   #nav-footer {
-    bottom: 5px;
+    bottom: 1vh;
   }
 }
 #nav-footer app-navigation {
@@ -116,16 +134,16 @@ pre {
   flex-direction: row;
 }
 #nav-footer app-navigation .left button, #nav-footer app-navigation .right button {
-  padding: 5px;
+  padding: 1vh;
   width: 90%;
 }
 #nav-footer app-navigation .left {
-  padding: 5px;
+  padding: 1vh;
   text-align: right;
   width: 45%;
 }
 #nav-footer app-navigation .right {
-  padding: 5px;
+  padding: 1vh;
   text-align: left;
   width: 45%;
 }
@@ -139,7 +157,7 @@ pre {
 }
 .section-title {
   font-weight: bold;
-  padding: 5px;
+  padding: 1vh;
   text-align: center;
 }
 

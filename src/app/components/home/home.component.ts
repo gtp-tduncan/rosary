@@ -18,6 +18,8 @@ export class HomeComponent implements OnInit {
 
   selectedBeadGroupList: BeadGroupList;
 
+  navigationEnabled: boolean;
+
   @ViewChild(ActivePrayerComponent)
   activePrayer: ActivePrayerComponent;
 
@@ -46,17 +48,30 @@ export class HomeComponent implements OnInit {
     this.liturgicalYear.overrideLiturgicalColor = undefined;
   }
 
+  onEnableNavigation(flag: boolean): void {
+    console.log(`home: ${flag}`);
+    this.navigationEnabled = flag;
+  }
+
   onNext(): void {
+    console.log('home - window.navigator.vibrate([1000, 100, 250]);');
     this.activePrayer.onNext();
+    // navigator.vibrate([1000, 100, 250]);
   }
 
   onPrevious(): void {
+    console.log('home - window.navigator.vibrate([250, 250, 250]);');
     this.activePrayer.onPrevious();
+    // navigator.vibrate([250, 250, 250]);
   }
 
   onSwipe(event) {
-    console.log(`HomeComponent - swipe: ${event}`);
-    this.onNext();
+    if (Hammer.DIRECTION_LEFT === event?.direction) {
+      this.onNext();
+    }
+    else if (Hammer.DIRECTION_RIGHT === event?.direction) {
+      this.onPrevious();
+    }
   }
 
 }

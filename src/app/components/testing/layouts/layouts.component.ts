@@ -1,9 +1,6 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { BeadGroupList } from 'src/app/models/bead-group-list';
-import { RosaryMysteriesEnum } from 'src/app/sequences/rosary-helper';
 import { BeadGroupLoaderService } from 'src/app/services/bead-group-loader.service';
-import { ActivePrayerComponent } from '../active-prayer/active-prayer.component';
 
 @Component({
   selector: 'app-layouts',

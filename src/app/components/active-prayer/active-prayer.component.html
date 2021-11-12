@@ -3,7 +3,8 @@
     <app-header
       [prayerName]="prayerName"
       [isPrayerSequenceDone]="isPrayerSequenceDone"
-      (onResetEvent)="onStartNew()">
+      (onResetEvent)="onStartNew()"
+      (onEnableNavigationEvent)="onEnableNavigation($event)">
     </app-header>
   </div>
 

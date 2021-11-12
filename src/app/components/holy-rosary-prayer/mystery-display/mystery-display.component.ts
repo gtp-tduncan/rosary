@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { BeadGroupList } from 'src/app/models/bead-group-list';
+import { AppConfigService } from 'src/app/services/app-config.service';
 
 @Component({
   selector: 'app-mystery-display',
@@ -11,9 +12,9 @@ export class MysteryDisplayComponent implements OnInit {
   @Input()
   activeBeadGroupList: BeadGroupList;
 
-  private mysteryNumbers = [undefined, 'First', 'Second', 'Third', 'Fourth', 'Fifth'];
+  private mysteryNumbers = [undefined, '1st', '2nd', '3rd', '4th', '5th'];
 
-  constructor() { }
+  constructor(public appConfig: AppConfigService) { }
 
   ngOnInit(): void {
   }

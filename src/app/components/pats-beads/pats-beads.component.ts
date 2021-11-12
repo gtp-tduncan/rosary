@@ -38,9 +38,15 @@ export class PatsBeadsComponent implements OnInit, OnChanges, AfterViewInit, Ros
   }
 
   beadsTransformStyle(): string {
+    const useRawWidth = (this.appConfig.isPortrait) ? this.rawHeight : this.rawWidth;
+    const useRawHeight = (this.appConfig.isPortrait) ? this.rawWidth : this.rawHeight;
+    const hscale = window.innerHeight / useRawHeight;
+    const wscale = window.innerWidth / useRawWidth;
+    const offset = (this.appConfig.isPortrait) ? -0.015 : -0.04;
+    const scale = (hscale < wscale) ? hscale + offset : wscale + offset;
     return (this.appConfig.isPortrait)
-      ? 'transform: rotate(90deg) scale(0.10);'
-      : 'transform: scale(0.09);'
+      ? `transform: rotate(90deg) scale(${scale});`
+      : `transform: scale(${scale});`
   }
 
   imageStyle(): string {
