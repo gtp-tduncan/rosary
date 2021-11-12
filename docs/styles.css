@@ -134,8 +134,16 @@ pre {
   flex-direction: row;
 }
 #nav-footer app-navigation .left button, #nav-footer app-navigation .right button {
-  padding: 1vh;
-  width: 90%;
+  background-color: transparent;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+#nav-footer app-navigation .left button {
+  background-image: url('left-arrow.png');
+}
+#nav-footer app-navigation .right button {
+  background-image: url('right-arrow.png');
 }
 #nav-footer app-navigation .left {
   padding: 1vh;
