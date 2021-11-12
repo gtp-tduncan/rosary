@@ -7,7 +7,8 @@
     <app-active-prayer
       [activeBeadGroupList]="selectedBeadGroupList"
       (onResetEvent)="onResetEvent($event)"
-      (onEnableNavigationEvent)="onEnableNavigation($event)">
+      (onEnableNavigationEvent)="onEnableNavigation($event)"
+      (onToggleViewEvent)="onToggleView()">
     </app-active-prayer>
     <div id="nav-footer" *ngIf="!appConfig.isPortrait || navigationEnabled">
       <app-navigation (onNextClickEvent)="onNext()" (onPreviousClickEvent)="onPrevious()">

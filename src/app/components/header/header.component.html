@@ -12,5 +12,8 @@
     <span *ngIf="appConfig.isPortrait">
       <input #navEnabledChkbox type="checkbox" value=false (change)="onEnableNavigation()">
     </span>
+    <button [class]="toggleViewButtonClassName()" (click)="onToggleView()">
+      &nbsp;&nbsp;&nbsp;&nbsp;
+    </button>
   </span>
 </div>

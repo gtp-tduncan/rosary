@@ -205,8 +205,18 @@ $offset-red: rgb(150, 0, 0);
 }
 
 #nav-footer app-navigation .left button, #nav-footer app-navigation .right button {
-  padding: $padding;
-  width: 90%;
+  background-color: transparent;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+#nav-footer app-navigation .left button {
+  background-image: url('assets/left-arrow.png');
+}
+
+#nav-footer app-navigation .right button {
+  background-image: url('assets/right-arrow.png');
 }
 
 #nav-footer app-navigation .left {

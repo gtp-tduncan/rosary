@@ -113,7 +113,7 @@ export const FATIMA: BeadGroupTemplate = {
   prayerIds: [
     '@@fatima'
   ],
-  phoneFeedback: 'long'
+  phoneFeedback: 'skip'
 }
 
 export const GLORY_FATIMA: BeadGroupTemplate = {
@@ -130,7 +130,7 @@ export const GLORY_FATIMA: BeadGroupTemplate = {
 export const HAIL_HOLY_QUEEN: BeadGroupTemplate = {
   sequence: 'hail-holy-queen',
   sequenceId: 'hail-holy-queen',
-  phoneFeedback: 'extra-long',
+  phoneFeedback: 'long',
   incrementMysteryIdx: true
 }
 

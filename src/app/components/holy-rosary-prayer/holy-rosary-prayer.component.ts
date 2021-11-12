@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, Input, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { BeadGroup } from 'src/app/models/bead-group';
 import { BeadGroupList } from 'src/app/models/bead-group-list';
 import { Prayer, PrayerApostlesCreed, PrayerClosing1, PrayerClosing2, PrayerFatima, PrayerGlory, PrayerGloryFatima, PrayerHailHolyQueen, PrayerHailMary, PrayerOurFather, PrayerSignOfTheCross } from 'src/app/prayers/common-prayers';
@@ -42,7 +42,13 @@ export class HolyRosaryPrayerComponent implements OnInit, AfterViewInit {
   currentPrayer: Prayer;
   highlightBeadIndex: number;
 
-  private prayerClosing2 = new PrayerClosing2();
+  @ViewChild('tap1')
+  private tapRef1: ElementRef<HTMLAudioElement>;
+  private tap1: HTMLAudioElement;
+
+  @ViewChild('tap2')
+  private tapRef2: ElementRef<HTMLAudioElement>;
+  private tap2: HTMLAudioElement;
 
   constructor() { }
 
@@ -55,11 +61,20 @@ export class HolyRosaryPrayerComponent implements OnInit, AfterViewInit {
     }
 
     this.currentPrayer = this.findCurrentPrayer();
-    console.log(`prayerName 1: ${this.prayerName}`);
   }
 
   ngAfterViewInit(): void {
-    console.log(`prayerName 2: ${this.prayerName}`);
+    this.tap1 = this.extractAudioElement(this.tapRef1);
+    this.tap2 = this.extractAudioElement(this.tapRef2, 0.5);
+  }
+
+  private extractAudioElement(elementRef: ElementRef<HTMLAudioElement>, volume = 0.3): HTMLAudioElement {
+    if (elementRef?.nativeElement) {
+      const element = elementRef.nativeElement;
+      element.volume = volume;
+      return element;
+    }
+    return undefined;
   }
 
   get showMystery(): boolean {
@@ -73,6 +88,7 @@ export class HolyRosaryPrayerComponent implements OnInit, AfterViewInit {
       this.highlightBeadIndex++;
     }
     this.currentPrayer = this.findCurrentPrayer();
+    this.playSound();
   }
 
   onPrevious() {
@@ -83,7 +99,33 @@ export class HolyRosaryPrayerComponent implements OnInit, AfterViewInit {
     this.currentPrayer = this.findCurrentPrayer();
   }
 
+  tap1mp3(): string {
+    return window.location.href + '/assets/Tapping-1.mp3';
+  }
+
+  tap1ogg(): string {
+    return window.location.href + '/assets/Tapping-1.ogg';
+  }
+
+  tap2mp3(): string {
+    return window.location.href + '/assets/Tapping-2.mp3';
+  }
+
+  tap2ogg(): string {
+    return window.location.href + '/assets/Tapping-2.ogg';
+  }
+
   private findCurrentPrayer(): Prayer {
     return seqMap[this.activeBeadGroup?.sequence];
+  }
+
+  private playSound() {
+    const feedback = this.activeBeadGroup?.phoneFeedback;
+    if ('short' === feedback) {
+      this.tap1?.play();
+    }
+    else if ('long' === feedback) {
+      this.tap2?.play();
+    }
   }
 }
