@@ -31,17 +31,17 @@ pre {
 }
 @media (orientation: portrait) {
   html, body {
-    font-size: 5vw;
+    font-size: 4.5vw;
   }
 
   button {
     font-family: Consola;
-    font-size: 5vw;
+    font-size: 4.5vw;
   }
 
   pre {
     font-family: Consola;
-    font-size: 5vw;
+    font-size: 4.5vw;
   }
 }
 /* ================================================================================ */
