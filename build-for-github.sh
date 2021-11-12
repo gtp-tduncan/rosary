@@ -9,6 +9,7 @@ if [[ $1 == "--prod" ]]; then
 fi
 
 # ng build "${build_opt}" --output-path docs --deploy-url "${PRJ_NAME}/"
+npm version prerelease
 ng build "${build_opt}" --output-path docs --base-href "${PRJ_NAME}/"
 
 # -----------------------------------------------------------------------
@@ -21,3 +22,5 @@ if [[ ! -f "docs/404.html" ]]; then
   cp -p "docs/index.html" "docs/404.html"
 fi
 
+COMMIT_VERSION=`npm version | grep -i rosary | awk -F"[' :]" '{ print $3,$6 }'`
+git commit -a -m "Build - ${COMMIT_VERSION}"
