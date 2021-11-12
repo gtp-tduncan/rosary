@@ -80,6 +80,15 @@ export class HomeComponent implements OnInit {
     }
   }
 
+  onToggleView(): void {
+    this.appConfig.toggleView();
+    if (this.appConfig.isFullscreen) {
+      this.openFullscreen();
+    }
+    else {
+      this.closeFullscreen();
+    }
+  }
   openFullscreen() {
     if (this.elem.requestFullscreen) {
       console.log(`${this.elem.requestFullscreen}`);
