@@ -38,7 +38,7 @@ export class HomeComponent implements OnInit {
       this.onMysterySelected(RosaryMysteriesEnum[this.selectedMysteryId]);
     }
     this.elem = document.documentElement;
-    this.openFullscreen();
+    //this.openFullscreen();
   }
 
   onMysterySelected(selectedMystery: RosaryMysteriesEnum): void {
@@ -82,6 +82,7 @@ export class HomeComponent implements OnInit {
 
   openFullscreen() {
     if (this.elem.requestFullscreen) {
+      console.log(`${this.elem.requestFullscreen}`);
       this.elem.requestFullscreen();
     } else if (this.elem.mozRequestFullScreen) {
       /* Firefox */
