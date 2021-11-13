@@ -6,7 +6,8 @@
   <ng-container *ngIf="!showMysterySelector">
     <app-active-prayer
       [activeBeadGroupList]="selectedBeadGroupList"
-      (onResetEvent)="onResetEvent($event)"
+      (onConfigEvent)="onConfigApp()"
+      (onResetEvent)="onResetPrayer($event)"
       (onEnableNavigationEvent)="onEnableNavigation($event)"
       (onToggleViewEvent)="onToggleView()">
     </app-active-prayer>

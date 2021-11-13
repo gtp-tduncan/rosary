@@ -19,6 +19,9 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { RotateDivComponent } from './components/rotate-div/rotate-div.component';
 import * as Hammer from 'hammerjs';
 import { BuzzFeedbackComponent } from './components/testing/buzz-feedback/buzz-feedback.component';
+import { RosaryConfigComponent } from './components/holy-rosary-prayer/rosary-config/rosary-config.component';
+import { CommonConfigComponent } from './components/common/common-config/common-config.component';
+import { PrayerConfigComponent } from './components/holy-rosary-prayer/prayer-config/prayer-config.component';
 
 @Injectable({
   providedIn: 'root'
@@ -56,7 +59,10 @@ export class AppHammerConfig extends HammerGestureConfig {
     HeaderComponent,
     NavigationComponent,
     RotateDivComponent,
-    BuzzFeedbackComponent
+    BuzzFeedbackComponent,
+    RosaryConfigComponent,
+    CommonConfigComponent,
+    PrayerConfigComponent
   ],
   imports: [
     BrowserModule,

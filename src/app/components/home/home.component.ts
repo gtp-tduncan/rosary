@@ -48,7 +48,11 @@ export class HomeComponent implements OnInit {
     return this.selectedBeadGroupList === undefined;
   }
 
-  onResetEvent(flag: boolean): void {
+  onConfig(): void {
+
+  }
+
+  onResetPrayer(flag: boolean): void {
     this.selectedBeadGroupList = undefined;
     this.liturgicalYear.overrideLiturgicalColor = undefined;
   }

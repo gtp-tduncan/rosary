@@ -21,7 +21,7 @@ export class HeaderComponent implements OnInit {
   onEnableNavigationEvent = new EventEmitter<boolean>();
 
   @Output()
-  onToggleViewEvent = new EventEmitter<boolean>();
+  onConfigAppEvent = new EventEmitter<boolean>();
 
   @ViewChild('navEnabledChkbox')
   navEnabledChkbox: ElementRef;
@@ -39,13 +39,8 @@ export class HeaderComponent implements OnInit {
     this.onEnableNavigationEvent.emit(this.navEnabledChkbox?.nativeElement?.checked);
   }
 
-  onToggleView(): void {
-    this.onToggleViewEvent.emit(true);
+  onConfigApp(): void {
+    this.onConfigAppEvent.emit(true);
   }
 
-  toggleViewButtonClassName(): string {
-    return (this.appConfig.isFullscreen)
-      ? 'arrows-btn-inward'
-      : 'arrows-btn-outward';
-  }
 }

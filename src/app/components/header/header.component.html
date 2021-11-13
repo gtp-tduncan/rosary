@@ -12,7 +12,7 @@
     <span *ngIf="appConfig.isPortrait">
       <input #navEnabledChkbox type="checkbox" value=false (change)="onEnableNavigation()">
     </span>
-    <button [class]="toggleViewButtonClassName()" (click)="onToggleView()">
+    <button class="widget" (click)="onConfigApp()">
       &nbsp;&nbsp;&nbsp;&nbsp;
     </button>
   </span>
