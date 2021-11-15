@@ -3,25 +3,25 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule, HammerGestureConfig, HammerModule, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ActivePrayerComponent } from './components/active-prayer/active-prayer.component';
-import { CurrentPrayerComponent } from './components/holy-rosary-prayer/current-prayer/current-prayer.component';
-import { HolyRosaryPrayerComponent } from './components/holy-rosary-prayer/holy-rosary-prayer.component';
-import { MysteryDisplayComponent } from './components/holy-rosary-prayer/mystery-display/mystery-display.component';
+import { CurrentPrayerComponent } from './components/holy-rosary/current-prayer/current-prayer.component';
+import { MysteryDisplayComponent } from './components/holy-rosary/mystery-display/mystery-display.component';
 import { HomeComponent } from './components/home/home.component';
 import { LayoutsComponent } from './components/testing/layouts/layouts.component';
-import { LiturgicalDatesComponent } from './components/liturgical-dates/liturgical-dates.component';
+import { LiturgicalDatesComponent } from './components/common/liturgical-dates/liturgical-dates.component';
 import { MysterySelectorComponent } from './components/mystery-selector/mystery-selector.component';
 import { NoticesComponent } from './components/notices/notices.component';
-import { PatsBeadsComponent } from './components/pats-beads/pats-beads.component';
+import { PatsBeadsComponent } from './components/common/beads-pat/pats-beads.component';
 import { EndComponent } from './prayers/end/end.component';
-import { HeaderComponent } from './components/header/header.component';
+import { HeaderComponent } from './components/common/header/header.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { RotateDivComponent } from './components/rotate-div/rotate-div.component';
 import * as Hammer from 'hammerjs';
 import { BuzzFeedbackComponent } from './components/testing/buzz-feedback/buzz-feedback.component';
-import { RosaryConfigComponent } from './components/holy-rosary-prayer/rosary-config/rosary-config.component';
+import { RosaryConfigComponent } from './components/holy-rosary/rosary-config/rosary-config.component';
 import { CommonConfigComponent } from './components/common/common-config/common-config.component';
-import { PrayerConfigComponent } from './components/holy-rosary-prayer/prayer-config/prayer-config.component';
+import { PrayerConfigComponent } from './components/holy-rosary/prayer-config/prayer-config.component';
+import { HolyRosaryHomeComponent } from './components/holy-rosary/holy-rosary-home.component';
+import { HolyRosaryPrayerComponent } from './components/holy-rosary/holy-rosary-prayer/holy-rosary-prayer.component';
 
 @Injectable({
   providedIn: 'root'
@@ -44,8 +44,8 @@ export class AppHammerConfig extends HammerGestureConfig {
 @NgModule({
   declarations: [
     AppComponent,
-    ActivePrayerComponent,
     MysterySelectorComponent,
+    HolyRosaryHomeComponent,
     HolyRosaryPrayerComponent,
     NoticesComponent,
     PatsBeadsComponent,

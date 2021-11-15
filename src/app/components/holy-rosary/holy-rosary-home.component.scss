@@ -1,0 +1,20 @@
+@import '../../../styles-shared-mixins.scss';
+
+$offset-phone: -.75vh;
+
+#test-border {
+  position: absolute;
+  display: block;
+  border-color: yellow;
+  border-style: solid;
+  border-width: 2px;
+  z-index: 100;
+
+  margin-left: $offset-phone;
+  margin-top: $offset-phone;
+
+  top: 0px;
+  left: 0px;
+  width: 828px;
+  bottom: 60px;
+}

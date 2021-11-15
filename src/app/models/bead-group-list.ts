@@ -4,8 +4,6 @@ import { fruitByNumber, Mysteries, mysteryByNumber } from "./mysteries";
 
 export class BeadGroupList {
 
-  debugTheEnd = false;
-
   private currentBeadGroup: BeadGroup;
 
   // TODO: Mystery-related code should be moved to HolyRosaryPrayerComponent
@@ -37,23 +35,6 @@ export class BeadGroupList {
   debugWriteSequenceIds(): void {
     if (this.beadGroups) {
       this.beadGroups.forEach(beadGroup => console.log(`seqId: ${beadGroup.sequenceId}, mysteryIdx: ${beadGroup.mysteryIdx}, beadIdx: ${beadGroup.beadGroupIndex}`));
-    }
-  }
-
-  debugSetIndices(sequenceId: string): void {
-    const redirectBeadInfo: BeadGroup = this.beadContainer.beadMap[sequenceId];
-    if (redirectBeadInfo) {
-      this.currentBeadGroup = redirectBeadInfo;
-      this.activeMysteriesIdx = redirectBeadInfo.mysteryIdx;
-      this.beadGroupIdx = redirectBeadInfo.beadGroupIndex;
-      this.skipNext = true;
-      this.beadIdxOverrideOccurred = true;
-      console.log('debugTheEnd set to false');
-      this.debugTheEnd = false;
-    }
-    else if (sequenceId === 'end') {
-      console.log('debugTheEnd set to true');
-      this.debugTheEnd = true;
     }
   }
 

@@ -2,7 +2,7 @@ import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild } from '
 import { BeadGroup } from 'src/app/models/bead-group';
 import { BeadGroupList } from 'src/app/models/bead-group-list';
 import { Prayer, PrayerApostlesCreed, PrayerClosing1, PrayerClosing2, PrayerFatima, PrayerGlory, PrayerGloryFatima, PrayerHailHolyQueen, PrayerHailMary, PrayerOurFather, PrayerSignOfTheCross } from 'src/app/prayers/common-prayers';
-import { CurrentPrayerComponent } from './current-prayer/current-prayer.component';
+import { CurrentPrayerComponent } from '../current-prayer/current-prayer.component';
 
 const seqMap = new Map<string, Prayer>();
 seqMap['closing1'] = new PrayerClosing1();
@@ -30,9 +30,6 @@ export class HolyRosaryPrayerComponent implements OnInit, AfterViewInit {
   prayerName: string;
 
   @Input()
-  debugTheEnd: boolean;
-
-  @Input()
   orientation: string;
 
   @ViewChild('primaryPrayer')
@@ -53,14 +50,18 @@ export class HolyRosaryPrayerComponent implements OnInit, AfterViewInit {
   constructor() { }
 
   ngOnInit(): void {
+    console.log(`ngOnInit() 1 - ${this.activeBeadGroupList}`);
     this.activeBeadGroup = this.activeBeadGroupList.next();
+    console.log(`ngOnInit() 2 - ${this.activeBeadGroup}`);
     this.highlightBeadIndex = 0;
 
     if (this.orientation === undefined) {
       this.orientation = 'wide';
     }
 
+    console.log(`ngOnInit() 3`);
     this.currentPrayer = this.findCurrentPrayer();
+    console.log(`ngOnInit() 4 - ${this.currentPrayer}`);
   }
 
   ngAfterViewInit(): void {
@@ -116,6 +117,7 @@ export class HolyRosaryPrayerComponent implements OnInit, AfterViewInit {
   }
 
   private findCurrentPrayer(): Prayer {
+    console.log(`findCurrentPrayer - seqMap => ${seqMap} - seqIdx => ${this.activeBeadGroup?.sequence}`);
     return seqMap[this.activeBeadGroup?.sequence];
   }
 

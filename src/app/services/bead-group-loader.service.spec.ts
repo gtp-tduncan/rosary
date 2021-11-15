@@ -1,5 +1,5 @@
 import { TestBed } from '@angular/core/testing';
-import { MysteryGloriousComponent } from '../components/holy-rosary-prayer/mysteries/mystery-glorious';
+import { MysteryGloriousComponent } from '../components/holy-rosary/mysteries/mystery-glorious';
 
 import { BeadGroupLoaderService } from './bead-group-loader.service';
 

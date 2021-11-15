@@ -1,6 +1,6 @@
 import { Component, OnInit, OnChanges, AfterViewInit, SimpleChanges, Input } from "@angular/core";
 import { AppConfigService } from "src/app/services/app-config.service";
-import { RosaryBeads } from "../rosary-beads";
+import { RosaryBeads } from "../../rosary-beads";
 import { PATS_BEADS_COORDS_LONG } from "./pats-beads-coords";
 
 @Component({

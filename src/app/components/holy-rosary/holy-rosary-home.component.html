@@ -1,0 +1,37 @@
+<div id="home-content-border" (swipe)="onSwipe($event)">
+  <div *ngIf="showMysterySelector">
+    <app-mystery-selector (selectedMysteryEvent)="onMysterySelected($event)"></app-mystery-selector>
+    <app-notices></app-notices>
+  </div>
+  <ng-container *ngIf="!showMysterySelector">
+    <div class="app-header-div">
+      <app-header
+        [prayerName]="prayerName"
+        [isPrayerSequenceDone]="isPrayerSequenceDone"
+        (onResetEvent)="onResetPrayer()"
+        (onEnableNavigationEvent)="onEnableNavigation($event)"
+        (onToggleViewEvent)="onToggleView()">
+      </app-header>
+    </div>
+
+    <!-- <app-active-prayer
+      [activeBeadGroupList]="selectedBeadGroupList"
+      (onConfigEvent)="onConfigApp()"
+      (onResetEvent)="onResetPrayer($event)"
+      (onEnableNavigationEvent)="onEnableNavigation($event)"
+      (onToggleViewEvent)="onToggleView()">
+    </app-active-prayer> -->
+
+    <div>
+      <app-holy-rosary-prayer
+        [activeBeadGroupList]="selectedBeadGroupList"
+        [prayerName]="prayerName">
+      </app-holy-rosary-prayer>
+    </div>
+
+    <div id="nav-footer" *ngIf="!appConfig.isPortrait || navigationEnabled">
+      <app-navigation (onNextClickEvent)="onNext()" (onPreviousClickEvent)="onPrevious()">
+      </app-navigation>
+    </div>
+  </ng-container>
+</div>
