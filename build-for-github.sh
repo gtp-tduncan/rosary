@@ -29,4 +29,5 @@ if [[ ! -f "docs/404.html" ]]; then
 fi
 
 COMMIT_VERSION=`npm version | grep -i rosary | awk -F"[' :]" '{ print $3,$6 }'`
+git add docs/
 git commit -a -m "Build - ${COMMIT_VERSION}"
