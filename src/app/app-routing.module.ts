@@ -7,7 +7,7 @@ import { LayoutsComponent } from './components/testing/layouts/layouts.component
 
 const routes: Routes = [
   { path: 'holy-rosary', component: HolyRosaryHomeComponent },
-  { path: '', component: HomeComponent },
+  { path: '', component: HolyRosaryHomeComponent },
   { path: 'testing/layout', component: LayoutsComponent },
   { path: 'testing/buzz', component: BuzzFeedbackComponent }
 ];
