@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { version } from '../../package.json';
 import { AppConfigService } from './services/app-config.service';
 import { LiturgicalYearService } from './services/liturgical-year.service';
@@ -14,6 +14,14 @@ export class AppComponent {
 
   appVersion: string = version;
 
+  @ViewChild('tap1')
+  private tapRef1: ElementRef<HTMLAudioElement>;
+  private tap1: HTMLAudioElement;
+
+  @ViewChild('tap2')
+  private tapRef2: ElementRef<HTMLAudioElement>;
+  private tap2: HTMLAudioElement;
+
   constructor(public liturgicalYear: LiturgicalYearService,
               private appConfig: AppConfigService) {
     this.checkOrientation();
@@ -28,6 +36,22 @@ export class AppComponent {
   @HostListener('window:resize', ['$event'])
   onResize(event) {
     this.checkOrientation();
+  }
+  
+  tap1mp3(): string {
+    return window.location.href + '/assets/Tapping-1.mp3';
+  }
+
+  tap1ogg(): string {
+    return window.location.href + '/assets/Tapping-1.ogg';
+  }
+
+  tap2mp3(): string {
+    return window.location.href + '/assets/Tapping-2.mp3';
+  }
+
+  tap2ogg(): string {
+    return window.location.href + '/assets/Tapping-2.ogg';
   }
 
   private checkOrientation(): void {

@@ -13,22 +13,25 @@ export class PatsBeadsComponent implements OnInit, OnChanges, AfterViewInit, Ros
   @Input()
   highlightBeadIdx: number = 0;
 
-  imageWidth: number;
-  imageHeight: number;
-  highlightTop: string;
-  highlightLeft: string;
-
   private rawWidth = 1608;
   private rawHeight = 3704;
+  private scaleSet = false;
+  private lastScale = undefined;
   rawCoords = PATS_BEADS_COORDS_LONG;
 
   constructor(private appConfig: AppConfigService) { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.scaleSet = false;
+  }
 
   ngOnChanges(changes: SimpleChanges): void { }
 
   ngAfterViewInit(): void { }
+
+  resetPrayer() {
+    this.highlightBeadIdx = 0;
+  }
 
   highlightStyle(): string {
     const offsetX = this.appConfig.isPortrait ? -100 : 0;
@@ -38,15 +41,23 @@ export class PatsBeadsComponent implements OnInit, OnChanges, AfterViewInit, Ros
   }
 
   beadsTransformStyle(): string {
-    const useRawWidth = (this.appConfig.isPortrait) ? this.rawHeight : this.rawWidth;
-    const useRawHeight = (this.appConfig.isPortrait) ? this.rawWidth : this.rawHeight;
-    const hscale = window.innerHeight / useRawHeight;
-    const wscale = window.innerWidth / useRawWidth;
-    const offset = (this.appConfig.isPortrait) ? -0.015 : -0.04;
-    const scale = (hscale < wscale) ? hscale + offset : wscale + offset;
+    if (this.lastScale === undefined) {
+      console.log(`beadsTransformStyle => isPortrait: ${this.appConfig.isPortrait}`);
+      const useRawWidth = (this.appConfig.isPortrait) ? this.rawHeight : this.rawWidth;
+      const useRawHeight = (this.appConfig.isPortrait) ? this.rawWidth : this.rawHeight;
+      console.log(`beadsTransformStyle => useRawWidth: ${useRawWidth}, useRawHeight: ${useRawHeight}`);
+      const hscale = window.innerHeight / useRawHeight;
+      const wscale = window.innerWidth / useRawWidth;
+      console.log(`beadsTransformStyle => innerHeight: ${window.innerHeight}, innerWidth: ${window.innerWidth}`);
+      console.log(`beadsTransformStyle => hscale: ${hscale}, wscale: ${wscale}`);
+      const offset = (this.appConfig.isPortrait) ? -0.015 : -0.04;
+      const scale = (hscale < wscale) ? hscale + offset : wscale + offset;
+      this.lastScale = scale;
+    }
+    console.log(`beadsTransformStyle => scale: ${this.lastScale}`);
     return (this.appConfig.isPortrait)
-      ? `transform: rotate(90deg) scale(${scale});`
-      : `transform: scale(${scale});`
+      ? `transform: rotate(90deg) scale(${this.lastScale});`
+      : `transform: scale(${this.lastScale});`
   }
 
   imageStyle(): string {

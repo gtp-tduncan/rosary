@@ -1,11 +1,12 @@
 import { DOCUMENT } from '@angular/common';
-import { Component, Inject, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Inject, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { BeadGroupLoaderService } from '../../services/bead-group-loader.service';
 import { RosaryMysteriesEnum } from '../../sequences/rosary-helper';
 import { BeadGroupList } from '../../models/bead-group-list';
 import { AppConfigService } from '../../services/app-config.service';
 import { LiturgicalYearService } from 'src/app/services/liturgical-year.service';
 import { HolyRosaryPrayerComponent } from './holy-rosary-prayer/holy-rosary-prayer.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-holy-rosary-home',
@@ -16,6 +17,9 @@ export class HolyRosaryHomeComponent implements OnInit {
 
   @Input()
   selectedMysteryId: string;
+  
+  @Output()
+  onResetEvent = new EventEmitter<boolean>();
 
   selectedBeadGroupList: BeadGroupList;
 
@@ -31,7 +35,8 @@ export class HolyRosaryHomeComponent implements OnInit {
 
   elem: any;
 
-  constructor(private beadGroupLoader: BeadGroupLoaderService,
+  constructor(private router: Router,
+              private beadGroupLoader: BeadGroupLoaderService,
               public appConfig: AppConfigService,
               private liturgicalYear: LiturgicalYearService,
               @Inject(DOCUMENT) private document: any) {
@@ -59,9 +64,19 @@ export class HolyRosaryHomeComponent implements OnInit {
 
   }
 
-  onResetPrayer(flag: boolean): void {
+  resetPrayer() {
+    this.selectedMysteryId = undefined;
     this.selectedBeadGroupList = undefined;
     this.liturgicalYear.overrideLiturgicalColor = undefined;
+
+    if (this.holyRosaryPrayer) {
+      this.holyRosaryPrayer.resetPrayer();
+    }
+  }
+
+  onResetPrayer(): void {
+    this.resetPrayer();
+    this.router.navigate([ '/' ] );
   }
 
   onEnableNavigation(flag: boolean): void {
