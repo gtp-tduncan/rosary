@@ -25,26 +25,17 @@ export class PatsBeadsComponent implements OnInit, OnChanges, AfterViewInit, Ros
 
   private _highlightStyle: string;
 
-  @ViewChild('patsBeadsDiv')
-  patsBeadsDiv: ElementRef;
-
   @ViewChild('patsBeadsImg')
   patsBeadsImg: ElementRef<HTMLImageElement>;
 
   constructor(private appConfig: AppConfigService) { }
 
-  ngOnInit(): void {
-    this.debugElementRef('ngOnInit 1', this.patsBeadsDiv);
-    this.debugElementRef('ngOnInit 2', this.patsBeadsImg);
-  }
+  ngOnInit(): void { }
 
   ngOnChanges(changes: SimpleChanges): void { }
 
   ngAfterViewInit(): void {
     setTimeout(() => this._highlightStyle = this.highlightStyle());
-    
-    // this.debugElementRef('ngAfterViewInit 1', this.patsBeadsDiv);
-    // this.debugElementRef('ngAfterViewInit 2', this.patsBeadsImg);
   }
 
   highlightStyle(): string {
@@ -59,10 +50,6 @@ export class PatsBeadsComponent implements OnInit, OnChanges, AfterViewInit, Ros
       const offsetY = this.appConfig.isPortrait ? -100 : 0;
       const point = this.rawCoords[this.highlightBeadIdx];
 
-      //console.log(`patsBeadsImg exists: ${this.patsBeadsImg}, ${this.patsBeadsImg?.nativeElement?.width}, ${this.patsBeadsImg?.nativeElement?.height}`);
-      // this.debugElementRef('highlightStyle 1', this.patsBeadsDiv);
-      // this.debugElementRef('highlightStyle 2', this.patsBeadsImg);
-
       const style = (this.appConfig.isPortrait)
         ? this.highlightStyleForPortrait(point)
         : this.highlightStyleForLandscape(point);
@@ -70,10 +57,8 @@ export class PatsBeadsComponent implements OnInit, OnChanges, AfterViewInit, Ros
       console.log(`highlightStyle(2) style: ${style}`);
       return style;
     }
+
     return undefined;
-    // const style = `left: ${point.x + offsetX}px; top: ${point.y + offsetY}px;`;
-    // console.log(`highlightStyle: ${style}`);
-    // return style;
   }
 
   private highlightStyleForPortrait(point: BeadPosition): string {
@@ -98,31 +83,6 @@ export class PatsBeadsComponent implements OnInit, OnChanges, AfterViewInit, Ros
   private debugElementRef(desc: string, elementRef: ElementRef) {
     console.log(`${desc} - ${elementRef?.nativeElement?.name} exists: ${elementRef}, ${elementRef?.nativeElement?.width}, ${elementRef?.nativeElement?.height}`);
   }
-
-  // beadsTransformStyle(): string {
-  //   const useRawWidth = (this.appConfig.isPortrait) ? this.rawHeight : this.rawWidth;
-  //   const useRawHeight = (this.appConfig.isPortrait) ? this.rawWidth : this.rawHeight;
-  //   const hscale = window.innerHeight / useRawHeight;
-  //   const wscale = window.innerWidth / useRawWidth;
-  //   const offset = (this.appConfig.isPortrait) ? -0.015 : -0.04;
-  //   const scale = (hscale < wscale) ? hscale + offset : wscale + offset;
-  //   return (this.appConfig.isPortrait)
-  //     ? `transform: rotate(90deg) scale(${scale});`
-  //     : `transform: scale(${scale});`
-  // }
-
-  // imageStyle(): string {
-  //   return (this.appConfig.isPortrait)
-  //     ? `margin-top: ${this.rawHeight * -1}px;`
-  //     : '';
-  // }
-
-  // imagePlaceholderStyle(): string {
-  //   return '';
-  //   // return (this.appConfig.isPortrait)
-  //   //   ? `height: ${this.imageWidth}px;`
-  //   //   : '';
-  // }
 
 }
 

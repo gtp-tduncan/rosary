@@ -1,32 +1,9 @@
-// @media (orientation: landscape) {
-//   .pats-beads-container {
-//     // height: 24vh;
-//     // width: 24vw;
-//     object-fit: contain;
-//     width: 100%;
-//   }
-// }
-
-// @media (orientation: portrait) {
-//   .pats-beads-container {
-//     // height: 24vh;
-//     // width: 24vw;
-//     object-fit: contain;
-//     width: 100%;
-//   }
-// }
-
 #pats-beads-div {
   background-color: transparent;
   overflow: hidden;
-  // width: 10px;
 }
 
 @media (orientation: landscape) {
-  // #pats-beads-div {
-  //   height: 100%;
-  // }
-
   #pats-beads-img {
     object-fit: scale-down;
     height: 45vw;
@@ -35,7 +12,6 @@
 
 @media (orientation: portrait) {
   #pats-beads-div {
-    // width: 100%;
     transform: rotate(90deg);
   }
 
@@ -52,20 +28,10 @@
   background-color: red;
   border: solid darkred;
   border-radius: 50%;
-  // max-height: 500vh;
-  // height: 20vh;
-  // width: 20vh;
 
   opacity: 0.5;
   z-index: 2;
 }
-
-// @media (orientation: landscape) {
-//   .pats-beads-highlight-div {
-//     margin-top: -15vw;
-//     margin-left: -10vw;
-//   }
-// }
 
 #pats-beads-image-placeholder {
   background-color: blueviolet;

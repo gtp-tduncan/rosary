@@ -5,7 +5,7 @@ import { EndComponent } from 'src/app/prayers/end/end.component';
 import { RosaryMysteriesEnum } from 'src/app/sequences/rosary-helper';
 import { BeadGroupLoaderService } from 'src/app/services/bead-group-loader.service';
 import { HolyRosaryPrayerComponent } from '../holy-rosary-prayer/holy-rosary-prayer.component';
-import { PatsBeadsComponent } from '../pats-beads/v1-pats-beads.component';
+import { PatsBeadsComponent } from '../pats-beads/pats-beads.component';
 import { ActivePrayerComponent } from './active-prayer.component';
 
 describe('ActivePrayerComponent', () => {
