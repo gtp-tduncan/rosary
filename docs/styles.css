@@ -2,6 +2,7 @@
 html, body {
   font-family: Consola;
   margin: unset;
+  overflow: hidden;
 }
 button {
   border-radius: 1.5vh;
@@ -45,13 +46,12 @@ pre {
   }
 }
 /* ================================================================================ */
-/* ================================================================================ */
 .lit-color-green, .lit-color-red, .lit-color-rose, .lit-color-violet, .lit-color-white {
   position: absolute;
-  margin-left: 0px;
-  margin-top: 0px;
-  width: 100%;
-  height: 100%;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
 }
 .lit-color-green {
   background-image: repeating-linear-gradient(0deg, green, green 3px, darkgreen 3px, darkgreen 6px);
@@ -86,6 +86,7 @@ pre {
   box-sizing: border-box;
   opacity: 85%;
   padding: 1vh;
+  overflow: hidden;
 }
 @media (orientation: landscape) {
   .content-no-border, .content-border, #home-content-border {
@@ -115,12 +116,11 @@ pre {
 }
 #nav-footer {
   position: absolute;
-  max-height: 6vh;
   width: 100%;
 }
 @media (orientation: landscape) {
   #nav-footer {
-    bottom: 3vh;
+    bottom: 1vh;
   }
 }
 @media (orientation: portrait) {
@@ -141,9 +141,11 @@ pre {
 }
 #nav-footer app-navigation .left button {
   background-image: url('left-arrow.png');
+  bottom: 1vh;
 }
 #nav-footer app-navigation .right button {
   background-image: url('right-arrow.png');
+  bottom: 1vh;
 }
 #nav-footer app-navigation .left {
   padding: 1vh;
