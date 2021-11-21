@@ -32,11 +32,12 @@ export class AppComponent {
 
   private checkOrientation(): void {
     if (window.matchMedia('(orientation: portrait)').matches) {
-      console.log(`you're in PORTRAIT mode`);
+      // console.log(`you're in PORTRAIT mode - ${window.innerWidth}, ${window.innerHeight}`);
       this.appConfig.isPortrait = true;
     }
-    else if (window.matchMedia('(orientation: landscape)').matches) {
-      console.log(`you're in LANDSCAPE mode`);
+    else 
+    if (window.matchMedia('(orientation: landscape)').matches) {
+      // console.log(`you're in LANDSCAPE mode - ${window.innerWidth}, ${window.innerHeight}`);
       this.appConfig.isPortrait = false;
     }
     else {

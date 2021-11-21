@@ -147,6 +147,7 @@ $offset-red: rgb(150, 0, 0);
   box-sizing: border-box;
   opacity: 85%;
   padding: $padding;
+  overflow: hidden;
 }
 
 
@@ -179,8 +180,8 @@ $offset-red: rgb(150, 0, 0);
 }
 
 #nav-footer {
-  // position: absolute;
-  max-height: 6vh;
+  position: absolute;
+  // max-height: 7vh;
   width: 100%;
 }
 
@@ -195,7 +196,7 @@ $offset-red: rgb(150, 0, 0);
 @media (orientation: portrait) {
 
   #nav-footer {
-    bottom: $margins;
+    bottom: $nav-portrait-margin;
   }
 
 }
@@ -218,10 +219,12 @@ $offset-red: rgb(150, 0, 0);
 
 #nav-footer app-navigation .left button {
   background-image: url('assets/left-arrow.png');
+  bottom: $nav-landscape-margin;
 }
 
 #nav-footer app-navigation .right button {
   background-image: url('assets/right-arrow.png');
+  bottom: $nav-landscape-margin;
 }
 
 #nav-footer app-navigation .left {
