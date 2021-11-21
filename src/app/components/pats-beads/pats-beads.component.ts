@@ -34,33 +34,33 @@ export class PatsBeadsComponent implements OnInit, OnChanges, AfterViewInit, Ros
     const offsetX = this.appConfig.isPortrait ? -100 : 0;
     const offsetY = this.appConfig.isPortrait ? -100 : 0;
     const point = this.rawCoords[this.highlightBeadIdx];
-    return `left: ${point.x + offsetX}px; top: ${point.y + offsetY}px;` + this.imageStyle();
+    return `left: ${point.x + offsetX}px; top: ${point.y + offsetY}px;`;
   }
 
-  beadsTransformStyle(): string {
-    const useRawWidth = (this.appConfig.isPortrait) ? this.rawHeight : this.rawWidth;
-    const useRawHeight = (this.appConfig.isPortrait) ? this.rawWidth : this.rawHeight;
-    const hscale = window.innerHeight / useRawHeight;
-    const wscale = window.innerWidth / useRawWidth;
-    const offset = (this.appConfig.isPortrait) ? -0.015 : -0.04;
-    const scale = (hscale < wscale) ? hscale + offset : wscale + offset;
-    return (this.appConfig.isPortrait)
-      ? `transform: rotate(90deg) scale(${scale});`
-      : `transform: scale(${scale});`
-  }
+  // beadsTransformStyle(): string {
+  //   const useRawWidth = (this.appConfig.isPortrait) ? this.rawHeight : this.rawWidth;
+  //   const useRawHeight = (this.appConfig.isPortrait) ? this.rawWidth : this.rawHeight;
+  //   const hscale = window.innerHeight / useRawHeight;
+  //   const wscale = window.innerWidth / useRawWidth;
+  //   const offset = (this.appConfig.isPortrait) ? -0.015 : -0.04;
+  //   const scale = (hscale < wscale) ? hscale + offset : wscale + offset;
+  //   return (this.appConfig.isPortrait)
+  //     ? `transform: rotate(90deg) scale(${scale});`
+  //     : `transform: scale(${scale});`
+  // }
 
-  imageStyle(): string {
-    return (this.appConfig.isPortrait)
-      ? `margin-top: ${this.rawHeight * -1}px;`
-      : '';
-  }
+  // imageStyle(): string {
+  //   return (this.appConfig.isPortrait)
+  //     ? `margin-top: ${this.rawHeight * -1}px;`
+  //     : '';
+  // }
 
-  imagePlaceholderStyle(): string {
-    return '';
-    // return (this.appConfig.isPortrait)
-    //   ? `height: ${this.imageWidth}px;`
-    //   : '';
-  }
+  // imagePlaceholderStyle(): string {
+  //   return '';
+  //   // return (this.appConfig.isPortrait)
+  //   //   ? `height: ${this.imageWidth}px;`
+  //   //   : '';
+  // }
 
 }
 
