@@ -10,14 +10,16 @@ export class AppDateService {
   // tslint:disable-next-line:variable-name
   private _currentYear;
 
-  constructor(private activateRoute: ActivatedRoute) {
-    this.activateRoute.queryParams.subscribe(params => {
-      if ('use-date' in params) {
-        const value = params['use-date'];
-        const useDate = new Date(value);
-        this.updateDate(this.addDays(useDate, 1));
-      }
-    });
+  constructor(private activateRoute?: ActivatedRoute) {
+    if (activateRoute?.queryParams) {
+      this.activateRoute.queryParams.subscribe(params => {
+        if ('use-date' in params) {
+          const value = params['use-date'];
+          const useDate = new Date(value);
+          this.updateDate(this.addDays(useDate, 1));
+        }
+      });
+    }
     this.updateDate(new Date());
   }
 

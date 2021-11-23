@@ -6,6 +6,7 @@ import { BeadGroupList } from '../../models/bead-group-list';
 import { AppConfigService } from '../../services/app-config.service';
 import { ActivePrayerComponent } from '../active-prayer/active-prayer.component';
 import { LiturgicalYearService } from 'src/app/services/liturgical-year.service';
+import * as Hammer from 'hammerjs';
 
 @Component({
   selector: 'app-home',

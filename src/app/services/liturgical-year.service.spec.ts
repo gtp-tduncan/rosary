@@ -5,16 +5,20 @@ import { AppDateService } from './app-date.service';
 import { LocalizationService } from './localization.service';
 
 import { LiturgicalYearService } from './liturgical-year.service';
+import { ActivatedRoute } from '@angular/router';
 
 describe('LiturgicalYearService', () => {
   let service: LiturgicalYearService;
+  let activatedRoute: ActivatedRoute;
   let appDate: AppDateService;
 
   beforeEach(() => {
-    appDate = new AppDateService();
+    activatedRoute = new ActivatedRoute();
+    appDate = new AppDateService(activatedRoute);
 
     TestBed.configureTestingModule({
       providers: [
+        { provide: ActivatedRoute, useValue: activatedRoute },
         { provide: AppDateService, useValue: appDate },
         LocalizationService
       ]
@@ -24,7 +28,7 @@ describe('LiturgicalYearService', () => {
 
   it('should match expected results for 2020', () => {
     const fakeNow = new Date(2020, Months.JAN, 1);
-    appDate = new AppDateServiceForTest(fakeNow);
+    appDate = new AppDateServiceForTest(activatedRoute, fakeNow);
 
     const localization = new LocalizationService();
     service = new LiturgicalYearService(appDate, localization);
@@ -35,7 +39,7 @@ describe('LiturgicalYearService', () => {
 
   it('should match expected results for 2021', () => {
     const fakeNow = new Date(2021, Months.JAN, 1);
-    appDate = new AppDateServiceForTest(fakeNow);
+    appDate = new AppDateServiceForTest(activatedRoute, fakeNow);
 
     const localization = new LocalizationService();
     service = new LiturgicalYearService(appDate, localization);
@@ -46,7 +50,7 @@ describe('LiturgicalYearService', () => {
 
   it('should match expected results for liturgical year 2020/2021', () => {
     const fakeNow = new Date(2020, Months.NOV, 27);
-    appDate = new AppDateServiceForTest(fakeNow);
+    appDate = new AppDateServiceForTest(activatedRoute, fakeNow);
 
     const localization = new LocalizationService();
     service = new LiturgicalYearService(appDate, localization);
@@ -72,8 +76,8 @@ function expectLiturgicalPeriodsToMatch(period1: LiturgicalPeriod, period2: Litu
 
 class AppDateServiceForTest extends AppDateService {
 
-  constructor(date?: Date) {
-    super();
+  constructor(activatedRoute: ActivatedRoute, date?: Date) {
+    super(activatedRoute);
     this.updateDate(date);
   }
 

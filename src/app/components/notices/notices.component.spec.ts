@@ -5,27 +5,28 @@ import { LocalizationService } from 'src/app/services/localization.service';
 import { LiturgicalYearService } from 'src/app/services/liturgical-year.service';
 
 import { NoticesComponent } from './notices.component';
+import { ActivatedRoute } from '@angular/router';
 
 describe('NoticesComponent', () => {
   let component: NoticesComponent;
   let fixture: ComponentFixture<NoticesComponent>;
+  let activatedRoute: ActivatedRoute;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
+  beforeEach(() => {
+    activatedRoute = new ActivatedRoute();
+    TestBed.configureTestingModule({
       declarations: [
         NoticesComponent
       ],
       providers: [
+        { provide: ActivatedRoute, useValue: activatedRoute },
         AppComponent,
-        { provide: AppDateService, useValue: new AppDateService() },
+        { provide: AppDateService, useValue: new AppDateService(activatedRoute) },
         LocalizationService,
         LiturgicalYearService
       ]
-    })
-    .compileComponents();
-  });
+    });
 
-  beforeEach(() => {
     fixture = TestBed.createComponent(NoticesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
