@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, EventEmitter, HostListener } from '@angular/core';
 import { version } from '../../package.json';
 import { AppConfigService } from './services/app-config.service';
 import { LiturgicalYearService } from './services/liturgical-year.service';

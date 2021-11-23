@@ -3,21 +3,19 @@
   overflow: hidden;
 }
 
+#pats-beads-img {
+  object-fit: contain;
+}
+
 @media (orientation: landscape) {
   #pats-beads-img {
-    object-fit: scale-down;
-    height: 45vw;
+    width: 70%;
   }
 }
 
 @media (orientation: portrait) {
-  #pats-beads-div {
-    transform: rotate(90deg);
-  }
-
   #pats-beads-img {
-    object-fit: scale-down;
-    width: 40vw;
+    width: 100%;
   }
 }
 

@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges, AfterViewInit, SimpleChanges, Input, ViewChild, ElementRef } from "@angular/core";
+import { Component, OnInit, OnChanges, AfterViewInit, SimpleChanges, Input, ViewChild, ElementRef, HostListener } from "@angular/core";
 import { BeadPosition } from "src/app/models/bead-position";
 import { AppConfigService } from "src/app/services/app-config.service";
 import { RosaryBeads } from "../rosary-beads";
@@ -13,6 +13,7 @@ export class PatsBeadsComponent implements OnInit, OnChanges, AfterViewInit, Ros
 
   @Input()
   highlightBeadIdx: number = 0;
+  highlightStyle: string;
 
   imageWidth: number;
   imageHeight: number;
@@ -23,34 +24,37 @@ export class PatsBeadsComponent implements OnInit, OnChanges, AfterViewInit, Ros
   private rawHeight = 3704;
   rawCoords = PATS_BEADS_COORDS_LONG;
 
-  private _highlightStyle: string;
-
   @ViewChild('patsBeadsImg')
   patsBeadsImg: ElementRef<HTMLImageElement>;
 
-  constructor(private appConfig: AppConfigService) { }
+  constructor(private appConfig: AppConfigService) {
+    this.appConfig.screenOrientationChangeEvent.subscribe((portrait: boolean) => {
+      this.updateBeadPosition();
+    });
+  }
 
   ngOnInit(): void { }
 
   ngOnChanges(changes: SimpleChanges): void { }
 
   ngAfterViewInit(): void {
-    setTimeout(() => this._highlightStyle = this.highlightStyle());
+    setTimeout(() => this.updateBeadPosition());
   }
 
-  highlightStyle(): string {
-    if (this._highlightStyle) {
-      const style = this._highlightStyle;
-      this._highlightStyle = undefined;
-      console.log(`highlightStyle(1) style: ${style}`);
-      return style;
-    }
+  get isPortrait(): boolean {
+    return this.appConfig?.isPortrait;
+  }
+
+  updateBeadPosition(): void {
+    console.log(`updateBeadPosition`);
+    this.highlightStyle = this.calculateHighlightStyle(this.appConfig.isPortrait);
+  }
+
+  private calculateHighlightStyle(isPortrait: boolean): string {
     if (this.patsBeadsImg) {
-      const offsetX = this.appConfig.isPortrait ? -100 : 0;
-      const offsetY = this.appConfig.isPortrait ? -100 : 0;
       const point = this.rawCoords[this.highlightBeadIdx];
 
-      const style = (this.appConfig.isPortrait)
+      const style = (isPortrait)
         ? this.highlightStyleForPortrait(point)
         : this.highlightStyleForLandscape(point);
 
@@ -62,21 +66,24 @@ export class PatsBeadsComponent implements OnInit, OnChanges, AfterViewInit, Ros
   }
 
   private highlightStyleForPortrait(point: BeadPosition): string {
-    const scale = this.patsBeadsImg.nativeElement.width / this.rawWidth;
-    return this.generateHighlightStyle(point, scale, -5, -52);
+    const scale = this.patsBeadsImg.nativeElement.width / this.rawHeight;
+    return this.generateHighlightStyle(point.y * -1, point.x, scale, this.patsBeadsImg.nativeElement.width + 5, 52);
   }
 
   private highlightStyleForLandscape(point: BeadPosition): string {
-    const scale = this.patsBeadsImg.nativeElement.height / this.rawHeight;
-    return this.generateHighlightStyle(point, scale, 0, 0);
+    let scale = this.patsBeadsImg.nativeElement.height / this.rawHeight;
+    if (scale === undefined || scale <= 0) {
+      scale = 0.09260259;
+    }
+    return this.generateHighlightStyle(point.x, point.y, scale, this.patsBeadsImg.nativeElement.offsetLeft, this.patsBeadsImg.nativeElement.offsetTop);
   }
 
-  private generateHighlightStyle(point: BeadPosition, scale: number, offsetX: number, offsetY: number): string {
+  private generateHighlightStyle(x: number, y: number, scale: number, offsetX: number, offsetY: number): string {
     const diameter = (125 * scale);
     const border = (150 * scale);
     const offset = border / 2;
-    return `left: ${(point.x * scale) + this.patsBeadsImg.nativeElement.parentElement.offsetLeft - offset + offsetX}px;`
-      + ` top: ${(point.y * scale) + this.patsBeadsImg.nativeElement.parentElement.offsetTop - offset + offsetY}px;`
+    return `left: ${(x * scale) - offset + offsetX}px;`
+      + ` top: ${(y * scale) - offset + offsetY}px;`
       + ` width: ${diameter}px; height: ${diameter}px; border-width: ${border};`;
   }
 

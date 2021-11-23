@@ -12,7 +12,7 @@
 
 <div id="rosary-beads">
   <div id="rosary-beads-img-div">
-    <app-pats-beads [highlightBeadIdx]="highlightBeadIndex"></app-pats-beads>
+    <app-pats-beads #rosaryBeads [highlightBeadIdx]="highlightBeadIndex"></app-pats-beads>
   </div>
   <div id="rosary-beads-prayer-div">
     <div *ngIf="showMystery">

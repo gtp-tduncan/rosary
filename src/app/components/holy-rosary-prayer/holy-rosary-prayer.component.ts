@@ -2,6 +2,7 @@ import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild } from '
 import { BeadGroup } from 'src/app/models/bead-group';
 import { BeadGroupList } from 'src/app/models/bead-group-list';
 import { Prayer, PrayerApostlesCreed, PrayerClosing1, PrayerClosing2, PrayerFatima, PrayerGlory, PrayerGloryFatima, PrayerHailHolyQueen, PrayerHailMary, PrayerOurFather, PrayerSignOfTheCross } from 'src/app/prayers/common-prayers';
+import { PatsBeadsComponent } from '../pats-beads/pats-beads.component';
 import { CurrentPrayerComponent } from './current-prayer/current-prayer.component';
 
 const seqMap = new Map<string, Prayer>();
@@ -34,6 +35,9 @@ export class HolyRosaryPrayerComponent implements OnInit, AfterViewInit {
 
   @Input()
   orientation: string;
+
+  @ViewChild('rosaryBeads')
+  rosaryBeads: PatsBeadsComponent;
 
   @ViewChild('primaryPrayer')
   currentPrayerComponent: CurrentPrayerComponent;
@@ -88,6 +92,7 @@ export class HolyRosaryPrayerComponent implements OnInit, AfterViewInit {
       this.highlightBeadIndex++;
     }
     this.currentPrayer = this.findCurrentPrayer();
+    this.rosaryBeads.updateBeadPosition();
     this.playSound();
   }
 
@@ -97,6 +102,7 @@ export class HolyRosaryPrayerComponent implements OnInit, AfterViewInit {
       this.highlightBeadIndex--;
     }
     this.currentPrayer = this.findCurrentPrayer();
+    this.rosaryBeads.updateBeadPosition();
   }
 
   tap1mp3(): string {
