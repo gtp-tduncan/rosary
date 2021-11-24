@@ -1,7 +1,7 @@
 <div id="config-tab-row">
   <div class="tabs-section">
-    <span class="selected-tab" (click)="onActivateTab('device')">Device</span>
-    <span class="unselected-tab" (click)="onActivateTab('other')">Something else</span>
+    <span [class]="tabStateClass('device')" (click)="onActivateTab('device')">Device</span>
+    <span [class]="tabStateClass('other')" (click)="onActivateTab('other')">Something else</span>
   </div>
   <button class="close-config" (click)="onClose()">X</button>
 </div>

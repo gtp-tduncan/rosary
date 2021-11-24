@@ -25,7 +25,11 @@ export class DeviceDetailsComponent implements OnInit {
   }
 
   get windowOuterDimension(): any {
-    return `${window?.innerWidth} x ${window?.innerHeight}`;
+    return `${window?.outerWidth} x ${window?.outerHeight}`;
+  }
+
+  get windowDevicePixelRatio(): any {
+    return window.devicePixelRatio;
   }
 
 }

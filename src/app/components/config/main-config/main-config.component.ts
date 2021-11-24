@@ -23,4 +23,10 @@ export class MainConfigComponent implements OnInit {
   onClose(): void {
     this.onCloseConfigViewEvent.emit(true);
   }
+
+  tabStateClass(tabName: string): string {
+    return (this.activeTab && this.activeTab === tabName)
+      ? 'selected-tab'
+      : 'unselected-tab';
+  }
 }
