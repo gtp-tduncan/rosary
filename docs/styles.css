@@ -69,6 +69,13 @@ pre {
   background-image: repeating-linear-gradient(0deg, white, white 3px, #ebebeb 3px, #ebebeb 6px);
 }
 /* ================================================================================ */
+.config-widget {
+  background-image: url('widget.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+/* ================================================================================ */
 /*
   // Reference: https://stackoverflow.com/questions/90178/make-a-div-fill-the-height-of-the-remaining-screen-space
   display: flex;
