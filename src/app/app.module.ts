@@ -19,6 +19,8 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { RotateDivComponent } from './components/rotate-div/rotate-div.component';
 import * as Hammer from 'hammerjs';
 import { BuzzFeedbackComponent } from './components/testing/buzz-feedback/buzz-feedback.component';
+import { DeviceDetailsComponent } from './components/config/device-details/device-details.component';
+import { MainConfigComponent } from './components/config/main-config/main-config.component';
 
 @Injectable({
   providedIn: 'root'
@@ -56,7 +58,9 @@ export class AppHammerConfig extends HammerGestureConfig {
     HeaderComponent,
     NavigationComponent,
     RotateDivComponent,
-    BuzzFeedbackComponent
+    BuzzFeedbackComponent,
+    DeviceDetailsComponent,
+    MainConfigComponent
   ],
   imports: [
     BrowserModule,

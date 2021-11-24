@@ -1,5 +1,12 @@
 <div class="content-border">
-  <div class="section-title" i18n>Select the desired Mystery:</div>
+  <div class="select-mystery-title-row">
+    <span class="section-title" i18n>
+      Select the desired Mystery:
+    </span>
+    <button class="config-widget" (click)="onConfigView()">
+      &nbsp;&nbsp;&nbsp;&nbsp;
+    </button>
+  </div>
   <div class="button-row">
     <div class="button-cell">
       <button (click)='selectGlorious()' [class]='isGlorious'><b>{{ gloriousMystery }}</b></button>

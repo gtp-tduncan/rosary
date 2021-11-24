@@ -7,9 +7,8 @@
 
 @media (orientation: landscape) {
 
-  .liturgical-div select {
-    font-weight: $font-size-base;
-    height: vh;
+  .liturgical-div select, .liturgical-div select option {
+    font-size: $font-size-dropdown;
   }
 
   .box {
@@ -31,9 +30,8 @@
 
 @media (orientation: portrait) {
 
-  select {
-    font-weight: $font-size-base-phone;
-    height: 3vh;
+  .liturgical-div select, .liturgical-div select option {
+    font-size: $font-size-dropdown-phone;
   }
 
   .box {

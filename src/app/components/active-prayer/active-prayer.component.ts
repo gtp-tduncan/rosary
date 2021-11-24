@@ -22,7 +22,7 @@ export class ActivePrayerComponent implements OnInit, AfterViewInit {
   onEnableNavigationEvent = new EventEmitter<boolean>();
 
   @Output()
-  onToggleViewEvent = new EventEmitter<boolean>();
+  onConfigViewEvent = new EventEmitter<string>();
 
   @ViewChild(HolyRosaryPrayerComponent)
   holyRosaryPrayer: HolyRosaryPrayerComponent;
@@ -64,7 +64,7 @@ export class ActivePrayerComponent implements OnInit, AfterViewInit {
     this.onEnableNavigationEvent.emit(flag);
   }
 
-  onToggleView(): void {
-    this.onToggleViewEvent.emit(true);
+  onConfigView(source: string): void {
+    this.onConfigViewEvent.emit(source);
   }
 }

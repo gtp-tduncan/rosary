@@ -87,6 +87,7 @@ export class HolyRosaryPrayerComponent implements OnInit, AfterViewInit {
   }
 
   onNext() {
+    console.log('rosary - onNext');
     this.activeBeadGroup = this.activeBeadGroupList.next();
     if (this.activeBeadGroup) {
       this.highlightBeadIndex++;

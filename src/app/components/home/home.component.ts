@@ -22,10 +22,14 @@ export class HomeComponent implements OnInit {
 
   navigationEnabled: boolean;
 
+  showConfigView: boolean;
+
   @ViewChild(ActivePrayerComponent)
   activePrayer: ActivePrayerComponent;
 
   elem: any;
+
+  private exitingConfig = false;
 
   constructor(private beadGroupLoader: BeadGroupLoaderService,
               public appConfig: AppConfigService,
@@ -60,11 +64,22 @@ export class HomeComponent implements OnInit {
   }
 
   onNext(): void {
-    this.activePrayer.onNext();
+    console.log(`next method: ${this.exitingConfig}`);
+    if (this.exitingConfig) {
+      this.exitingConfig = false;
+    }
+    else {
+      this.activePrayer.onNext();
+    }
   }
 
   onPrevious(): void {
-    this.activePrayer.onPrevious();
+    if (this.exitingConfig) {
+      this.exitingConfig = false;
+    }
+    else {
+      this.activePrayer.onPrevious();
+    }
   }
 
   onSwipe(event) {
@@ -76,15 +91,15 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  onToggleView(): void {
-    this.appConfig.toggleView();
-    if (this.appConfig.isFullscreen) {
-      this.openFullscreen();
-    }
-    else {
-      this.closeFullscreen();
-    }
+  onConfigView(source: string): void {
+    this.showConfigView = true;
   }
+
+  onCloseConfigView(): void {
+    this.exitingConfig = true;
+    this.showConfigView = false;
+  }
+
   openFullscreen() {
     if (this.elem.requestFullscreen) {
       console.log(`${this.elem.requestFullscreen}`);

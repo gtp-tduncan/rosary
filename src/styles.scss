@@ -95,6 +95,15 @@ $offset-red: rgb(150, 0, 0);
 
 /* ================================================================================ */
 
+.config-widget {
+  background-image: url('assets/widget.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+/* ================================================================================ */
+
 /*
   // Reference: https://stackoverflow.com/questions/90178/make-a-div-fill-the-height-of-the-remaining-screen-space
   display: flex;
