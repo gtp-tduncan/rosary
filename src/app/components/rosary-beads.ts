@@ -9,5 +9,5 @@ export interface RosaryBeads {
 
   highlightStyle: string;
 
-  updateBeadPosition(): void;
+  updateBeadPosition(highlightBeadIdx: number): void;
 }

@@ -11,7 +11,6 @@ import { PATS_BEADS_COORDS_LONG } from "./pats-beads-coords";
 })
 export class PatsBeadsComponent implements OnInit, OnChanges, AfterViewInit, RosaryBeads {
 
-  @Input()
   highlightBeadIdx: number = 0;
   highlightStyle: string;
 
@@ -29,7 +28,7 @@ export class PatsBeadsComponent implements OnInit, OnChanges, AfterViewInit, Ros
 
   constructor(private appConfig: AppConfigService) {
     this.appConfig.screenOrientationChangeEvent.subscribe((portrait: boolean) => {
-      this.updateBeadPosition();
+      this.updateBeadPosition(this.highlightBeadIdx);
     });
   }
 
@@ -38,15 +37,15 @@ export class PatsBeadsComponent implements OnInit, OnChanges, AfterViewInit, Ros
   ngOnChanges(changes: SimpleChanges): void { }
 
   ngAfterViewInit(): void {
-    setTimeout(() => this.updateBeadPosition());
+    setTimeout(() => this.updateBeadPosition(0));
   }
 
   get isPortrait(): boolean {
     return this.appConfig?.isPortrait;
   }
 
-  updateBeadPosition(): void {
-    console.log(`updateBeadPosition`);
+  updateBeadPosition(highlightBeadIdx: number): void {
+    this.highlightBeadIdx = highlightBeadIdx;
     this.highlightStyle = this.calculateHighlightStyle(this.appConfig.isPortrait);
   }
 
@@ -58,7 +57,7 @@ export class PatsBeadsComponent implements OnInit, OnChanges, AfterViewInit, Ros
         ? this.highlightStyleForPortrait(point)
         : this.highlightStyleForLandscape(point);
 
-      console.log(`highlightStyle(2) style: ${style}`);
+      console.log(`highlightStyle(${this.highlightBeadIdx}) point: ${JSON.stringify(point)} style: ${style}`);
       return style;
     }
 

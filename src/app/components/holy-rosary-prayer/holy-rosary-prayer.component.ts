@@ -92,7 +92,7 @@ export class HolyRosaryPrayerComponent implements OnInit, AfterViewInit {
       this.highlightBeadIndex++;
     }
     this.currentPrayer = this.findCurrentPrayer();
-    this.rosaryBeads.updateBeadPosition();
+    this.rosaryBeads.updateBeadPosition(this.highlightBeadIndex);
     this.playSound();
   }
 
@@ -102,7 +102,7 @@ export class HolyRosaryPrayerComponent implements OnInit, AfterViewInit {
       this.highlightBeadIndex--;
     }
     this.currentPrayer = this.findCurrentPrayer();
-    this.rosaryBeads.updateBeadPosition();
+    this.rosaryBeads.updateBeadPosition(this.highlightBeadIndex);
   }
 
   tap1mp3(): string {
