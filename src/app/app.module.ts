@@ -66,8 +66,8 @@ export class AppHammerConfig extends HammerGestureConfig {
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HammerModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HammerModule
   ],
   providers: [
     { provide: HAMMER_GESTURE_CONFIG, useClass: AppHammerConfig }
