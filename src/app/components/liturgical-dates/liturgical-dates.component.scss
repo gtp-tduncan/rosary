@@ -12,16 +12,16 @@
   }
 
   .box {
-    height: 40vh;
+    height: 8em;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     text-align: center;
+    align-content: space-between;
   }
 
   .box>* {
-    flex: 0 0 33%;
-    height: 5vh;
+    flex: 0 0 50%;
   }
 
 }
@@ -36,7 +36,6 @@
 
   .box {
     display: flex;
-    // flex-wrap: wrap;
     flex-direction: column;
     height: 300px;
     text-align: center;

@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { RosaryMysteriesEnum } from 'src/app/sequences/rosary-helper';
+import { AppConfigService } from 'src/app/services/app-config.service';
 
 const SUN = 0;
 const MON = 1;
@@ -32,7 +33,7 @@ export class MysterySelectorComponent implements OnInit {
 
   private dayOfWeek: number;
 
-  constructor() {
+  constructor(private appConfig: AppConfigService) {
     if (MYSTERY_LABEL_MAP.size === 0) {
       MYSTERY_LABEL_MAP[RosaryMysteriesEnum.GLORIOUS] = this.gloriousMystery;
       MYSTERY_LABEL_MAP[RosaryMysteriesEnum.JOYFUL] = this.joyfulMystery;
@@ -51,20 +52,40 @@ export class MysterySelectorComponent implements OnInit {
     this.onConfigViewEvent.emit('mystery-selector');
   }
 
+  get isPortrait(): boolean {
+    return this.appConfig?.isPortrait;
+  }
+
   get gloriousMystery(): string {
     return $localize`:@@glorious:Glorious`;
+  }
+
+  get gloriousMysteryNotes(): string {
+    return $localize`:@@glorious-notes:Sunday and Wednesday`;
   }
 
   get joyfulMystery(): string {
     return $localize`:@@joyful:Joyful`;
   }
 
+  get joyfulMysteryNotes(): string {
+    return $localize`:@@joyful-notes:Monday, Saturday and Sunday during Advent`;
+  }
+
   get luminousMystery(): string {
     return $localize`:@@luminous:Luminous`;
   }
 
+  get luminousMysteryNotes(): string {
+    return $localize`:@@luminous-notes:Thursday`;
+  }
+
   get sorrowfulMystery(): string {
     return $localize`:@@sorrowful:Sorrowful`;
+  }
+
+  get sorrowfulMysteryNotes(): string {
+    return $localize`:@@sorrowful-notes:Tuesday, Friday and Sunday during Lent`;
   }
 
   get isGlorious(): string {
