@@ -8,17 +8,19 @@
     </button>
   </div>
   <div class="button-row">
-    <div class="button-cell">
       <button (click)='selectGlorious()' [class]='isGlorious'><b>{{ gloriousMystery }}</b></button>
-    </div>
-    <div class="button-cell">
+      <!-- <span class="description" i18n>Sundays and Wednesdays</span> -->
+  </div>
+  <div class="button-row">
       <button (click)='selectJoyful()' [class]='isJoyful'><b>{{ joyfulMystery }}</b></button>
-    </div>
-    <div class="button-cell">
+      <!-- <span class="description" i18n>Mondays, Saturdays and Sundays during Advent</span> -->
+  </div>
+  <div class="button-row">
       <button (click)='selectLuminous()' [class]='isLuminous'><b>{{ luminousMystery }}</b></button>
-    </div>
-    <div class="button-cell">
+      <!-- <span class="description" i18n>Thursdays</span> -->
+  </div>
+  <div class="button-row">
       <button (click)='selectSorrowful()' [class]='isSorrowful'><b>{{ sorrowfulMystery }}</b></button>
-    </div>
+      <!-- <span class="description" i18n>Tuesdays, Fridays and Sundays during Lent</span> -->
   </div>
 </div>

@@ -5,7 +5,7 @@ import { AppConfigService } from 'src/app/services/app-config.service';
 import { AppDateService } from 'src/app/services/app-date.service';
 import { BeadGroupLoaderService } from 'src/app/services/bead-group-loader.service';
 import { LocalizationService } from 'src/app/services/localization.service';
-import { PatsBeadsComponent } from '../pats-beads/pats-beads.component';
+import { PatsBeadsComponent } from '../../../rosary-beads/pats-beads/pats-beads.component';
 import { HolyRosaryPrayerComponent } from './holy-rosary-prayer.component';
 
 

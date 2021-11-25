@@ -1,8 +1,8 @@
-import { MysteryGloriousComponent } from "../components/holy-rosary-prayer/mysteries/mystery-glorious";
-import { MysteryJoyfulComponent } from "../components/holy-rosary-prayer/mysteries/mystery-joyful";
-import { MysteryLuminousComponent } from "../components/holy-rosary-prayer/mysteries/mystery-luminous";
-import { MysterySorrowfulComponent } from "../components/holy-rosary-prayer/mysteries/mystery-sorrowful";
 import { BeadGroupTemplate } from "../models/bead-group-template";
+import { MysteryGloriousComponent } from "../rosary-prayers/holy-rosary/mysteries/mystery-glorious";
+import { MysteryJoyfulComponent } from "../rosary-prayers/holy-rosary/mysteries/mystery-joyful";
+import { MysteryLuminousComponent } from "../rosary-prayers/holy-rosary/mysteries/mystery-luminous";
+import { MysterySorrowfulComponent } from "../rosary-prayers/holy-rosary/mysteries/mystery-sorrowful";
 
 export enum RosaryMysteriesEnum {
   GLORIOUS,
