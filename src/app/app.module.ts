@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule, HammerModule, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -54,7 +54,8 @@ import { AppHammerConfig } from './services/app-hammer-config';
     HammerModule
   ],
   providers: [
-    { provide: HAMMER_GESTURE_CONFIG, useClass: AppHammerConfig }
+    { provide: HAMMER_GESTURE_CONFIG, useClass: AppHammerConfig },
+    { provide: LOCALE_ID, useValue: 'es' }
   ],
   bootstrap: [AppComponent]
 })

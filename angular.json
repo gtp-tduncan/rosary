@@ -14,7 +14,7 @@
       "sourceRoot": "src",
       "prefix": "app",
       "i18n": {
-        "sourceLocale": "en-US",
+        "sourceLocale": "en",
         "locales": {
           "es": "src/assets/i18n/messages.es.xlf"
         }
@@ -25,7 +25,7 @@
           "options": {
             "outputPath": "dist/rosary-beads",
             "index": "src/index.html",
-            "localize": true,
+            "localize": false,
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
@@ -40,6 +40,18 @@
             "scripts": []
           },
           "configurations": {
+            "es": {
+              "localize": [
+                "es"
+              ],
+              "baseHref": "/es/"
+            },
+            "en": {
+              "localize": [
+                "en"
+              ],
+              "baseHref": "/en/"
+            },
             "production": {
               "fileReplacements": [
                 {
@@ -77,6 +89,12 @@
           "configurations": {
             "production": {
               "browserTarget": "rosary-beads:build:production"
+            },
+            "en": {
+              "browserTarget": "app:build:en"
+            },
+            "es": {
+              "browserTarget": "app:build:es"
             }
           }
         },
