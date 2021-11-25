@@ -82,12 +82,14 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  onSwipe(event) {
-    if (Hammer.DIRECTION_LEFT === event?.direction) {
-      this.onNext();
-    }
-    else if (Hammer.DIRECTION_RIGHT === event?.direction) {
-      this.onPrevious();
+  onSwipe(event: HammerInput) {
+    if (this.processSwipeEvent(event)) {
+      if (Hammer.DIRECTION_LEFT === event?.direction) {
+        this.onNext();
+      }
+      else if (Hammer.DIRECTION_RIGHT === event?.direction) {
+        this.onPrevious();
+      }
     }
   }
 
@@ -130,5 +132,9 @@ export class HomeComponent implements OnInit {
       /* IE/Edge */
       this.document.msExitFullscreen();
     }
+  }
+
+  private processSwipeEvent(ev: HammerInput): boolean {
+    return !this.showConfigView && !this.showMysterySelector && ev.isFinal;
   }
 }

@@ -1,4 +1,4 @@
-<div id="home-content-border" (swipe)="onSwipe($event)">
+<div id="home-content-border" (panleft)="onSwipe($event)" (panright)="onSwipe($event)">
   <ng-container *ngIf="showConfigView">
     <app-main-config (onCloseConfigViewEvent)="onCloseConfigView($event)"></app-main-config>
   </ng-container>
