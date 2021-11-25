@@ -34,29 +34,25 @@
   width: 55%;
 }
 
-.arrows-btn-inward, .arrows-btn-outward {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100%;
-}
+// .arrows-btn-inward, .arrows-btn-outward {
+//   background-position: center;
+//   background-repeat: no-repeat;
+//   background-size: 100%;
+// }
 
-.arrows-btn-inward {
-  background-image: url('../../../assets/inward-arrows.png');
-}
+// .arrows-btn-inward {
+//   background-image: url('../../../assets/inward-arrows.png');
+// }
 
-.arrows-btn-outward {
-  background-image: url('../../../assets/expand-arrows.png');
-}
+// .arrows-btn-outward {
+//   background-image: url('../../../assets/expand-arrows.png');
+// }
 
 @media (orientation: landscape) {
 
   .active-prayer-header .right {
     margin-top: -1.5vh;
   }
-
-  // .arrows-btn {
-  //   height: 5vh;
-  // }
 
 }
 
@@ -65,10 +61,6 @@
   .active-prayer-header .right {
     margin-top: -1.9vh;
   }
-
-  // .arrows-btn {
-  //   height: 3vh;
-  // }
 
 }
 

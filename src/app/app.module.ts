@@ -1,4 +1,4 @@
-import { Injectable, NgModule } from '@angular/core';
+import { EventEmitter, Injectable, NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule, HammerGestureConfig, HammerModule, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -17,26 +17,10 @@ import { EndComponent } from './prayers/end/end.component';
 import { HeaderComponent } from './components/header/header.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { RotateDivComponent } from './components/rotate-div/rotate-div.component';
-import * as Hammer from 'hammerjs';
 import { BuzzFeedbackComponent } from './components/testing/buzz-feedback/buzz-feedback.component';
-
-@Injectable({
-  providedIn: 'root'
-})
-export class AppHammerConfig extends HammerGestureConfig {
-  overrides = <any> {
-    'swipe': { enable: true, direction: Hammer.DIRECTION_HORIZONTAL},
-    'pinch': { enable: false },
-    'rotate': { enable: false }
-  }
-
-  buildHammer(element: HTMLElement) {
-    const mc = new Hammer(element, {
-      touchAction: 'pan-x'
-    });
-    return mc;
-  }
-}
+import { DeviceDetailsComponent } from './components/config/device-details/device-details.component';
+import { MainConfigComponent } from './components/config/main-config/main-config.component';
+import { AppHammerConfig } from './services/app-hammer-config';
 
 @NgModule({
   declarations: [
@@ -56,14 +40,16 @@ export class AppHammerConfig extends HammerGestureConfig {
     HeaderComponent,
     NavigationComponent,
     RotateDivComponent,
-    BuzzFeedbackComponent
+    BuzzFeedbackComponent,
+    DeviceDetailsComponent,
+    MainConfigComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HammerModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HammerModule
   ],
   providers: [
     { provide: HAMMER_GESTURE_CONFIG, useClass: AppHammerConfig }

@@ -12,8 +12,11 @@
     <span *ngIf="appConfig.isPortrait">
       <input #navEnabledChkbox type="checkbox" value=false (change)="onEnableNavigation()">
     </span>
-    <button [class]="toggleViewButtonClassName()" (click)="onToggleView()">
+    <!-- 
+      **** Got some debugging to do here before re-enabling config-widget ****
+    <button class="config-widget" (click)="onConfigView()">
       &nbsp;&nbsp;&nbsp;&nbsp;
     </button>
+    -->
   </span>
 </div>

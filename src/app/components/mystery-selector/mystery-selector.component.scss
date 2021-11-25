@@ -1,5 +1,21 @@
 @import '../../../styles-shared-mixins.scss';
 
+.select-mystery-title-row {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.section-title {
+  text-align: left;
+  width: calc(100% - 9vw);
+}
+
+.config-widget {
+  float: right;
+  width: 9vw;
+}
+
 @media (orientation: landscape) {
   .button-row {
     display: flex;
@@ -8,9 +24,6 @@
 
   .button-cell {
     width: 24%;
-  }
-
-  .button-cell {
     padding: $padding;
   }
 }
@@ -22,15 +35,8 @@
   }
 
   .button-cell {
-    width: 97%;
-  }
-
-  .button-cell {
+    width: 100%;
     padding: $padding-phone;
-  }
-
-  button {
-    height: 5vh;
   }
 }
 

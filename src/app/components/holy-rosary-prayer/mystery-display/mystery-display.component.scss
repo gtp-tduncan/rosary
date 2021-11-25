@@ -4,8 +4,7 @@
   border: $border;
   border-radius: $border-radius;
   background-color: lightskyblue;
-  margin-left: $margins;
-  margin-right: $margins;
+  margin: $margins;
   padding: $padding;
   text-align: left;
 }
@@ -43,10 +42,6 @@
 
   .fruit-value {
     font-style: italic;
-    font-weight: bolder;
-    margin-left: $margins;
-    margin-right: $margins;
-    text-align: left;
   }
 }
 

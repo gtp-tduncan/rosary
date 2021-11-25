@@ -6,6 +6,7 @@ import { BeadGroupList } from '../../models/bead-group-list';
 import { AppConfigService } from '../../services/app-config.service';
 import { ActivePrayerComponent } from '../active-prayer/active-prayer.component';
 import { LiturgicalYearService } from 'src/app/services/liturgical-year.service';
+import * as Hammer from 'hammerjs';
 
 @Component({
   selector: 'app-home',
@@ -21,10 +22,14 @@ export class HomeComponent implements OnInit {
 
   navigationEnabled: boolean;
 
+  showConfigView: boolean;
+
   @ViewChild(ActivePrayerComponent)
   activePrayer: ActivePrayerComponent;
 
   elem: any;
+
+  private exitingConfig = false;
 
   constructor(private beadGroupLoader: BeadGroupLoaderService,
               public appConfig: AppConfigService,
@@ -59,31 +64,44 @@ export class HomeComponent implements OnInit {
   }
 
   onNext(): void {
-    this.activePrayer.onNext();
+    console.log(`next method: ${this.exitingConfig}`);
+    if (this.exitingConfig) {
+      this.exitingConfig = false;
+    }
+    else {
+      this.activePrayer.onNext();
+    }
   }
 
   onPrevious(): void {
-    this.activePrayer.onPrevious();
-  }
-
-  onSwipe(event) {
-    if (Hammer.DIRECTION_LEFT === event?.direction) {
-      this.onNext();
-    }
-    else if (Hammer.DIRECTION_RIGHT === event?.direction) {
-      this.onPrevious();
-    }
-  }
-
-  onToggleView(): void {
-    this.appConfig.toggleView();
-    if (this.appConfig.isFullscreen) {
-      this.openFullscreen();
+    if (this.exitingConfig) {
+      this.exitingConfig = false;
     }
     else {
-      this.closeFullscreen();
+      this.activePrayer.onPrevious();
     }
   }
+
+  onSwipe(event: HammerInput) {
+    if (this.processSwipeEvent(event)) {
+      if (Hammer.DIRECTION_LEFT === event?.direction) {
+        this.onNext();
+      }
+      else if (Hammer.DIRECTION_RIGHT === event?.direction) {
+        this.onPrevious();
+      }
+    }
+  }
+
+  onConfigView(source: string): void {
+    this.showConfigView = true;
+  }
+
+  onCloseConfigView(): void {
+    this.exitingConfig = true;
+    this.showConfigView = false;
+  }
+
   openFullscreen() {
     if (this.elem.requestFullscreen) {
       console.log(`${this.elem.requestFullscreen}`);
@@ -114,5 +132,9 @@ export class HomeComponent implements OnInit {
       /* IE/Edge */
       this.document.msExitFullscreen();
     }
+  }
+
+  private processSwipeEvent(ev: HammerInput): boolean {
+    return !this.showConfigView && !this.showMysterySelector && ev.isFinal;
   }
 }

@@ -3,9 +3,12 @@ import { AppComponent } from 'src/app/app.component';
 import { BeadGroupList } from 'src/app/models/bead-group-list';
 import { EndComponent } from 'src/app/prayers/end/end.component';
 import { RosaryMysteriesEnum } from 'src/app/sequences/rosary-helper';
+import { AppConfigService } from 'src/app/services/app-config.service';
+import { AppDateService } from 'src/app/services/app-date.service';
 import { BeadGroupLoaderService } from 'src/app/services/bead-group-loader.service';
+import { LocalizationService } from 'src/app/services/localization.service';
 import { HolyRosaryPrayerComponent } from '../holy-rosary-prayer/holy-rosary-prayer.component';
-import { PatsBeadsComponent } from '../pats-beads/v1-pats-beads.component';
+import { PatsBeadsComponent } from '../pats-beads/pats-beads.component';
 import { ActivePrayerComponent } from './active-prayer.component';
 
 describe('ActivePrayerComponent', () => {
@@ -27,6 +30,9 @@ describe('ActivePrayerComponent', () => {
         EndComponent
       ],
       providers: [
+        { provide: AppDateService, useValue: new AppDateService(undefined) },
+        LocalizationService,
+        AppConfigService,
         AppComponent,
         { provide: HolyRosaryPrayerComponent, useValue: holyRosaryPrayer },
         { provide: BeadGroupList, useValue: holyRosaryPrayer.activeBeadGroupList }

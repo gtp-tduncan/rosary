@@ -23,6 +23,9 @@ export class MysterySelectorComponent implements OnInit {
   @Output()
   selectedMysteryEvent = new EventEmitter<RosaryMysteriesEnum>();
 
+  @Output()
+  onConfigViewEvent = new EventEmitter<string>();
+  
   mysteryOfTheDayLabel: string;
 
   mysteryOfTheDay: RosaryMysteriesEnum;
@@ -43,6 +46,10 @@ export class MysterySelectorComponent implements OnInit {
   }
 
   ngOnInit(): void { }
+
+  onConfigView(): void {
+    this.onConfigViewEvent.emit('mystery-selector');
+  }
 
   get gloriousMystery(): string {
     return $localize`:@@glorious:Glorious`;

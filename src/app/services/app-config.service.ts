@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { AppDateService } from './app-date.service';
 import { LocalizationService } from './localization.service';
 
@@ -7,7 +7,9 @@ import { LocalizationService } from './localization.service';
 })
 export class AppConfigService {
 
-  isPortrait: boolean;
+  screenOrientationChangeEvent = new EventEmitter<boolean>();
+
+  private _isPortrait: boolean;
 
   private _isFullscreen: boolean;
 
@@ -20,5 +22,14 @@ export class AppConfigService {
 
   get isFullscreen(): boolean {
     return this._isFullscreen;
+  }
+
+  get isPortrait(): boolean {
+    return this._isPortrait;
+  }
+
+  set isPortrait(portrait: boolean) {
+    this._isPortrait = portrait;
+    this.screenOrientationChangeEvent.emit(portrait);
   }
 }

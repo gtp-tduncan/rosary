@@ -7,7 +7,7 @@ describe('BeadGroupList', () => {
 
   describe('transition to next', () => {
 
-    it('for Holy Rosary sequence', () => {
+    it('for Holy Rosary sequence with Glory Be and Fatima prayers displayed separately', () => {
       // given
       const loader = new BeadGroupLoaderService();
       let beadGroupList: BeadGroupList = loader.loadHolyRosaryContemporaryMysteryEnum(RosaryMysteriesEnum.JOYFUL);
@@ -17,7 +17,7 @@ describe('BeadGroupList', () => {
       // when / then
       let beadGroup = beadGroupList.next();
       expectSignOfTheCross(beadGroup, groupIdx++);
-      consoleLogBead('sign-cross', beadGroup, groupIdx);
+      consoleLogBead('sign-cross (start)', beadGroup, groupIdx);
 
       // when / then
       beadGroup = beadGroupList.next();
@@ -56,8 +56,12 @@ describe('BeadGroupList', () => {
 
         // when / then
         beadGroup = beadGroupList.next();
-        expectGloryFatima(beadGroup, groupIdx++);
-        consoleLogBead('glory / fatima', beadGroup, groupIdx);
+        expectGloryBeOnly(beadGroup, groupIdx++);
+        consoleLogBead('glory', beadGroup, groupIdx);
+
+        beadGroup = beadGroupList.next();
+        expectFatimaOnly(beadGroup, groupIdx++);
+        consoleLogBead('fatima', beadGroup, groupIdx);
       }
 
       // when / then
@@ -66,7 +70,15 @@ describe('BeadGroupList', () => {
 
       // when / then
       beadGroup = beadGroupList.next();
-      expectClosing(beadGroup, groupIdx++);
+      expectClosing1(beadGroup, groupIdx++);
+
+      // when / then
+      beadGroup = beadGroupList.next();
+      expectClosing2(beadGroup, groupIdx++);
+
+      // when / then
+      beadGroup = beadGroupList.next();
+      consoleLogBead('sign-cross (end)', beadGroup, groupIdx);
     });
 
   });
@@ -121,6 +133,13 @@ function expectGloryBeOnly(beadGroup: BeadGroup, expectedGroupIndex: number) {
   expect(beadGroup.prayerIds).toEqual(['@@glory']);
 }
 
+function expectFatimaOnly(beadGroup: BeadGroup, expectedGroupIndex: number) {
+  expect(beadGroup.groupIndex).toEqual(expectedGroupIndex);
+  expect(beadGroup.index).toEqual(0);
+  expect(beadGroup.maxIndex).toEqual(0);
+  expect(beadGroup.prayerIds).toEqual(['@@fatima']);
+}
+
 function expectGloryFatima(beadGroup: BeadGroup, expectedGroupIndex: number) {
   expect(beadGroup.groupIndex).toEqual(expectedGroupIndex);
   expect(beadGroup.index).toEqual(0);
@@ -141,6 +160,22 @@ function expectClosing(beadGroup: BeadGroup, expectedGroupIndex: number) {
   expect(beadGroup.maxIndex).toEqual(0);
   expect(beadGroup.sequence).toEqual('closing1');
   expect(beadGroup.prayerIds).toEqual(['@@closing-1', '@@closing-2']);
+}
+
+function expectClosing1(beadGroup: BeadGroup, expectedGroupIndex: number) {
+  expect(beadGroup.groupIndex).toEqual(expectedGroupIndex);
+  expect(beadGroup.index).toEqual(0);
+  expect(beadGroup.maxIndex).toEqual(0);
+  expect(beadGroup.sequence).toEqual('closing1');
+  expect(beadGroup.prayerIds).toEqual(['@@closing-1']);
+}
+
+function expectClosing2(beadGroup: BeadGroup, expectedGroupIndex: number) {
+  expect(beadGroup.groupIndex).toEqual(expectedGroupIndex);
+  expect(beadGroup.index).toEqual(0);
+  expect(beadGroup.maxIndex).toEqual(0);
+  expect(beadGroup.sequence).toEqual('closing2');
+  expect(beadGroup.prayerIds).toEqual(['@@closing-2']);
 }
 
 function expectMystery(beadGroup: BeadGroup, expectedGroupIndex: number, mysteryNum: number) {
