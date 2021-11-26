@@ -32,7 +32,7 @@ do
 done
 
 # -----------------------------------------------------------------------
-cp -p redirect-index.html docs/index.html
+cp -p src/redirect-index.html docs/index.html
 
 project_specific_updates
 
