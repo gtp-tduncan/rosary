@@ -56,8 +56,8 @@ import { LanguageSelectorComponent } from './components/language-selector/langua
     HammerModule
   ],
   providers: [
-    { provide: HAMMER_GESTURE_CONFIG, useClass: AppHammerConfig },
-    { provide: LOCALE_ID, useValue: 'es' }
+    { provide: HAMMER_GESTURE_CONFIG, useClass: AppHammerConfig }
+    // { provide: LOCALE_ID, useValue: 'es' }
   ],
   bootstrap: [AppComponent]
 })
