@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { StateStorageService } from 'src/app/services/state-storage.service';
 
 @Component({
@@ -12,7 +13,8 @@ export class LanguageRedirectComponent implements OnInit {
 
   private language: string;
 
-  constructor(private stateStorage: StateStorageService) {
+  constructor(private stateStorage: StateStorageService,
+              private router: Router) {
     this.language = stateStorage.language.data;
     if (this.language === undefined) {
       this.language = window.navigator.language;
@@ -29,9 +31,10 @@ export class LanguageRedirectComponent implements OnInit {
     console.log(`ngOnInit language: ${this.language}`);
     if (this.supportedLanguages.indexOf(this.language) >= 0 && !this.matchUrlEnd(window.location.href, this.language)) {
       const rootUrl = window.location.href.substring(0, window.location.href.length - 3);
-      window.location.href = `${rootUrl}${this.language}/`;
+      const newUrl = `${rootUrl}${this.language}/`;
+      this.router.navigate([newUrl]);
     }
-    console.log(`using url: ${window.location.href}`);
+    // console.log(`using url: ${window.location.href}`);
   }
 
   private matchUrlEnd(url: string, matchSubstring: string): boolean {
