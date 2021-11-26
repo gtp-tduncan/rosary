@@ -36,5 +36,6 @@ project_specific_updates
 #   cp -p "docs/index.html" "docs/404.html"
 # fi
 
-COMMIT_VERSION=`npm version | grep -i "${PRJ_NAME}" | awk -F"[:]" '{ print $1,$2 }' | sed -e "s/'//g"`
-git commit -a -m "Build - ${COMMIT_VERSION}"
+COMMIT_VERSION=`npm version | grep -i "${PRJ_NAME}" | awk -F"[:]" '{ print $1,$2 }' | sed -e "s/',//g"`
+CV_CLEAN=`echo ${COMMIT_VERSION}`
+git commit -a -m "Build - ${CV_CLEAN}"
