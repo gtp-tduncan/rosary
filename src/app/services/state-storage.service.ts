@@ -19,7 +19,8 @@ class StringStorage {
   constructor(private key: string) { }
 
   get data(): string {
-    return window.localStorage.getItem(this.key);
+    const response = window.localStorage.getItem(this.key);
+    return (response !== null) ? response : undefined;
   }
 
   set data(entry: string) {
