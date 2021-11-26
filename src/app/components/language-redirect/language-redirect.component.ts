@@ -31,10 +31,15 @@ export class LanguageRedirectComponent implements OnInit {
     console.log(`ngOnInit language: ${this.language}`);
     if (this.supportedLanguages.indexOf(this.language) >= 0 && !this.matchUrlEnd(window.location.href, this.language)) {
       const rootUrl = window.location.href.substring(0, window.location.href.length - 3);
-      const newUrl = `${rootUrl}${this.language}/`;
+      let newUrl = `${rootUrl}${this.language}/`;
+      console.log(`newUrl: ${newUrl}`);
+      if (newUrl.startsWith('https:/git')) {
+        console.log('fixing newUrl');
+        newUrl = newUrl.replace('https:/git', 'https://git');
+        console.log(`fixed url: ${newUrl}`);
+      }
       this.router.navigate([newUrl]);
     }
-    // console.log(`using url: ${window.location.href}`);
   }
 
   private matchUrlEnd(url: string, matchSubstring: string): boolean {
