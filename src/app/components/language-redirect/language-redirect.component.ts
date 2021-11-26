@@ -27,7 +27,9 @@ export class LanguageRedirectComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.supportedLanguages.indexOf(this.language) >= 0 && !this.matchUrlEnd(window.location.href, this.language)) {
+      console.log(`original url: ${window.location.href}`);
       window.location.href = `/${this.language}/`;
+      console.log(`updated url: ${window.location.href}`);
     }
   }
 
