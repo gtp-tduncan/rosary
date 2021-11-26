@@ -836,7 +836,9 @@ CurrentPrayerComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵd
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomeComponent", function() { return HomeComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
-/* harmony import */ var _rosary_prayers_holy_rosary_holy_rosary_home_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../rosary-prayers/holy-rosary/holy-rosary-home.component */ "ZVbO");
+/* harmony import */ var _language_redirect_language_redirect_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../language-redirect/language-redirect.component */ "HJw/");
+/* harmony import */ var _rosary_prayers_holy_rosary_holy_rosary_home_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../rosary-prayers/holy-rosary/holy-rosary-home.component */ "ZVbO");
+
 
 
 
@@ -845,9 +847,10 @@ class HomeComponent {
     ngOnInit() { }
 }
 HomeComponent.ɵfac = function HomeComponent_Factory(t) { return new (t || HomeComponent)(); };
-HomeComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: HomeComponent, selectors: [["app-home"]], decls: 1, vars: 0, template: function HomeComponent_Template(rf, ctx) { if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "app-holy-rosary-home");
-    } }, directives: [_rosary_prayers_holy_rosary_holy_rosary_home_component__WEBPACK_IMPORTED_MODULE_1__["HolyRosaryHomeComponent"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJob21lLmNvbXBvbmVudC5zY3NzIn0= */"] });
+HomeComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: HomeComponent, selectors: [["app-home"]], decls: 2, vars: 0, template: function HomeComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "app-language-redirect");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "app-holy-rosary-home");
+    } }, directives: [_language_redirect_language_redirect_component__WEBPACK_IMPORTED_MODULE_1__["LanguageRedirectComponent"], _rosary_prayers_holy_rosary_holy_rosary_home_component__WEBPACK_IMPORTED_MODULE_2__["HolyRosaryHomeComponent"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJob21lLmNvbXBvbmVudC5zY3NzIn0= */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](HomeComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
@@ -1287,81 +1290,64 @@ class MysterySorrowfulComponent {
 
 /***/ }),
 
-/***/ "ICMc":
+/***/ "HJw/":
 /*!*****************************************************************************!*\
-  !*** ./src/app/components/language-selector/language-selector.component.ts ***!
+  !*** ./src/app/components/language-redirect/language-redirect.component.ts ***!
   \*****************************************************************************/
-/*! exports provided: LanguageSelectorComponent */
+/*! exports provided: LanguageRedirectComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LanguageSelectorComponent", function() { return LanguageSelectorComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LanguageRedirectComponent", function() { return LanguageRedirectComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "ofXK");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "3Pt+");
+/* harmony import */ var src_app_services_state_storage_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/services/state-storage.service */ "h5Vk");
 
 
 
-
-function LanguageSelectorComponent_option_3_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "option", 3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-} if (rf & 2) {
-    const language_r1 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("value", language_r1.endpoint);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", language_r1.name, " ");
-} }
-class LanguageSelectorComponent {
-    constructor() {
-        this.selectedLanguageCodeEvent = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
-        this.languages = [
-            { name: this.langEnglish, code: 'en' },
-            { name: this.langSpanish, code: 'es' }
-        ];
+class LanguageRedirectComponent {
+    constructor(stateStorage) {
+        this.stateStorage = stateStorage;
+        this.supportedLanguages = ['en', 'es'];
+        this.language = stateStorage.language.data;
+        if (this.language === undefined) {
+            this.language = window.navigator.language;
+            if (this.language && this.language.length > 2) {
+                this.language = this.language.substring(0, 2);
+            }
+            console.log(`No language stored - selecting browser language: ${this.language}`);
+            stateStorage.language.data = this.language;
+        }
+        console.log(`stateStorage language: ${this.language}`);
     }
     ngOnInit() {
+        if (this.supportedLanguages.indexOf(this.language) >= 0 && !this.matchUrlEnd(window.location.href, this.language)) {
+            window.location.href = `/${this.language}/`;
+        }
     }
-    onLanguageSelectionChange(newValue) {
-        // this.selectedLanguageCodeEvent.emit(newValue);
-        window.location.href = newValue;
-    }
-    get langEnglish() {
-        return "Ingl\xE9s";
-    }
-    get langSpanish() {
-        return "Espa\xF1ol";
+    matchUrlEnd(url, matchSubstring) {
+        let useSubstring = '/' + matchSubstring;
+        if (url.endsWith(useSubstring)) {
+            return true;
+        }
+        useSubstring += '/';
+        return url.endsWith(useSubstring);
     }
 }
-LanguageSelectorComponent.ɵfac = function LanguageSelectorComponent_Factory(t) { return new (t || LanguageSelectorComponent)(); };
-LanguageSelectorComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: LanguageSelectorComponent, selectors: [["app-language-selector"]], decls: 4, vars: 1, consts: function () { let i18n_0; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
-        const MSG_EXTERNAL_select_language$$SRC_APP_COMPONENTS_LANGUAGE_SELECTOR_LANGUAGE_SELECTOR_COMPONENT_TS_1 = goog.getMsg("Select Language");
-        i18n_0 = MSG_EXTERNAL_select_language$$SRC_APP_COMPONENTS_LANGUAGE_SELECTOR_LANGUAGE_SELECTOR_COMPONENT_TS_1;
-    }
-    else {
-        i18n_0 = "Seleccione el idioma";
-    } return [i18n_0, [3, "change"], [3, "value", 4, "ngFor", "ngForOf"], [3, "value"]]; }, template: function LanguageSelectorComponent_Template(rf, ctx) { if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "label");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](1, 0);
+LanguageRedirectComponent.ɵfac = function LanguageRedirectComponent_Factory(t) { return new (t || LanguageRedirectComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_services_state_storage_service__WEBPACK_IMPORTED_MODULE_1__["StateStorageService"])); };
+LanguageRedirectComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: LanguageRedirectComponent, selectors: [["app-language-redirect"]], decls: 2, vars: 0, template: function LanguageRedirectComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "span");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "{{ window.localSt");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "select", 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("change", function LanguageSelectorComponent_Template_select_change_2_listener($event) { return ctx.onLanguageSelectionChange($event.target.value); });
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, LanguageSelectorComponent_option_3_Template, 2, 2, "option", 2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    } if (rf & 2) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.languages);
-    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["NgForOf"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgSelectOption"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["ɵangular_packages_forms_forms_x"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJsYW5ndWFnZS1zZWxlY3Rvci5jb21wb25lbnQuc2NzcyJ9 */"] });
-/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](LanguageSelectorComponent, [{
+    } }, styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJsYW5ndWFnZS1yZWRpcmVjdC5jb21wb25lbnQuc2NzcyJ9 */"] });
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](LanguageRedirectComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
-                selector: 'app-language-selector',
-                templateUrl: './language-selector.component.html',
-                styleUrls: ['./language-selector.component.scss']
+                selector: 'app-language-redirect',
+                templateUrl: './language-redirect.component.html',
+                styleUrls: ['./language-redirect.component.scss']
             }]
-    }], function () { return []; }, null); })();
+    }], function () { return [{ type: src_app_services_state_storage_service__WEBPACK_IMPORTED_MODULE_1__["StateStorageService"] }]; }, null); })();
 
 
 /***/ }),
@@ -1652,6 +1638,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _models_liturgical_dates__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../models/liturgical-dates */ "t1Hb");
 /* harmony import */ var _app_date_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./app-date.service */ "tdVI");
 /* harmony import */ var _localization_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./localization.service */ "c2Te");
+/* harmony import */ var _state_storage_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./state-storage.service */ "h5Vk");
+
 
 
 
@@ -1662,9 +1650,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 class LiturgicalYearService {
-    constructor(appDate, localization) {
+    constructor(appDate, localization, stateStorage) {
         this.appDate = appDate;
         this.localization = localization;
+        this.stateStorage = stateStorage;
+        this.datesRefreshed = false;
         this.validateDates();
     }
     liturgicalColor() {
@@ -1693,15 +1683,7 @@ class LiturgicalYearService {
         return _models_liturgical_colors__WEBPACK_IMPORTED_MODULE_4__["LiturgicalColors"].GREEN;
     }
     validateDates() {
-        let rawDates = window.localStorage.getItem('rosary.liturgical-dates');
-        try {
-            if (rawDates) {
-                this.liturgicalDates = JSON.parse(rawDates);
-            }
-        }
-        catch (error) {
-            this.liturgicalDates = undefined;
-        }
+        this.liturgicalDates = this.stateStorage.liturgicalDates.data;
         this.refreshLiturgicalDates();
         this.allSaintsDay = new Date(this.appDate.currentYear, src_utils_key_dates__WEBPACK_IMPORTED_MODULE_3__["Months"].NOV, 1);
         this.pentacostSunday = this.liturgicalDates.easter.endDate;
@@ -1723,6 +1705,10 @@ class LiturgicalYearService {
         this.refreshAdventAndChristmas(workingCopy);
         this.refreshLentAndEaster(workingCopy);
         this.liturgicalDates = workingCopy;
+        if (this.datesRefreshed) {
+            this.stateStorage.liturgicalDates.data = this.liturgicalDates;
+            this.datesRefreshed = false;
+        }
     }
     refreshAdventAndChristmas(workingCopy) {
         const adventStatus = Object(src_utils_dates_advent_christmas__WEBPACK_IMPORTED_MODULE_1__["refreshNeeded"])(workingCopy === null || workingCopy === void 0 ? void 0 : workingCopy.advent, this.appDate);
@@ -1731,6 +1717,7 @@ class LiturgicalYearService {
             const updatedAdventChristmas = Object(src_utils_dates_advent_christmas__WEBPACK_IMPORTED_MODULE_1__["calculateAdventAndChristmas"])(this.appDate, this.localization);
             workingCopy.christmas = updatedAdventChristmas.christmas;
             workingCopy.advent = updatedAdventChristmas.advent;
+            this.datesRefreshed = true;
         }
     }
     refreshLentAndEaster(workingCopy) {
@@ -1742,17 +1729,18 @@ class LiturgicalYearService {
             workingCopy.lent = updatedLentEaster.lent;
             workingCopy.easter = updatedLentEaster.easter;
             workingCopy.triduum = updatedLentEaster.triduum;
+            this.datesRefreshed = true;
         }
     }
 }
-LiturgicalYearService.ɵfac = function LiturgicalYearService_Factory(t) { return new (t || LiturgicalYearService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_app_date_service__WEBPACK_IMPORTED_MODULE_6__["AppDateService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_localization_service__WEBPACK_IMPORTED_MODULE_7__["LocalizationService"])); };
+LiturgicalYearService.ɵfac = function LiturgicalYearService_Factory(t) { return new (t || LiturgicalYearService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_app_date_service__WEBPACK_IMPORTED_MODULE_6__["AppDateService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_localization_service__WEBPACK_IMPORTED_MODULE_7__["LocalizationService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_state_storage_service__WEBPACK_IMPORTED_MODULE_8__["StateStorageService"])); };
 LiturgicalYearService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({ token: LiturgicalYearService, factory: LiturgicalYearService.ɵfac, providedIn: 'root' });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](LiturgicalYearService, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
         args: [{
                 providedIn: 'root'
             }]
-    }], function () { return [{ type: _app_date_service__WEBPACK_IMPORTED_MODULE_6__["AppDateService"] }, { type: _localization_service__WEBPACK_IMPORTED_MODULE_7__["LocalizationService"] }]; }, null); })();
+    }], function () { return [{ type: _app_date_service__WEBPACK_IMPORTED_MODULE_6__["AppDateService"] }, { type: _localization_service__WEBPACK_IMPORTED_MODULE_7__["LocalizationService"] }, { type: _state_storage_service__WEBPACK_IMPORTED_MODULE_8__["StateStorageService"] }]; }, null); })();
 
 
 /***/ }),
@@ -2289,7 +2277,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _rosary_prayers_holy_rosary_mystery_display_mystery_display_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./rosary-prayers/holy-rosary/mystery-display/mystery-display.component */ "txVD");
 /* harmony import */ var _rosary_prayers_holy_rosary_mystery_selector_mystery_selector_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./rosary-prayers/holy-rosary/mystery-selector/mystery-selector.component */ "49rP");
 /* harmony import */ var _services_app_hammer_config__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./services/app-hammer-config */ "IQdK");
-/* harmony import */ var _components_language_selector_language_selector_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./components/language-selector/language-selector.component */ "ICMc");
+/* harmony import */ var _components_language_redirect_language_redirect_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./components/language-redirect/language-redirect.component */ "HJw/");
 
 
 
@@ -2321,7 +2309,6 @@ class AppModule {
 AppModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineNgModule"]({ type: AppModule, bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]] });
 AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({ factory: function AppModule_Factory(t) { return new (t || AppModule)(); }, providers: [
         { provide: _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["HAMMER_GESTURE_CONFIG"], useClass: _services_app_hammer_config__WEBPACK_IMPORTED_MODULE_23__["AppHammerConfig"] }
-        // { provide: LOCALE_ID, useValue: 'es' }
     ], imports: [[
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["BrowserModule"],
             _app_routing_module__WEBPACK_IMPORTED_MODULE_3__["AppRoutingModule"],
@@ -2348,7 +2335,7 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector
         _components_testing_buzz_feedback_buzz_feedback_component__WEBPACK_IMPORTED_MODULE_14__["BuzzFeedbackComponent"],
         _components_config_device_details_device_details_component__WEBPACK_IMPORTED_MODULE_6__["DeviceDetailsComponent"],
         _components_config_main_config_main_config_component__WEBPACK_IMPORTED_MODULE_7__["MainConfigComponent"],
-        _components_language_selector_language_selector_component__WEBPACK_IMPORTED_MODULE_24__["LanguageSelectorComponent"]], imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["BrowserModule"],
+        _components_language_redirect_language_redirect_component__WEBPACK_IMPORTED_MODULE_24__["LanguageRedirectComponent"]], imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["BrowserModule"],
         _app_routing_module__WEBPACK_IMPORTED_MODULE_3__["AppRoutingModule"],
         _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormsModule"],
         _angular_forms__WEBPACK_IMPORTED_MODULE_1__["ReactiveFormsModule"],
@@ -2376,7 +2363,7 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector
                     _components_testing_buzz_feedback_buzz_feedback_component__WEBPACK_IMPORTED_MODULE_14__["BuzzFeedbackComponent"],
                     _components_config_device_details_device_details_component__WEBPACK_IMPORTED_MODULE_6__["DeviceDetailsComponent"],
                     _components_config_main_config_main_config_component__WEBPACK_IMPORTED_MODULE_7__["MainConfigComponent"],
-                    _components_language_selector_language_selector_component__WEBPACK_IMPORTED_MODULE_24__["LanguageSelectorComponent"]
+                    _components_language_redirect_language_redirect_component__WEBPACK_IMPORTED_MODULE_24__["LanguageRedirectComponent"]
                 ],
                 imports: [
                     _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["BrowserModule"],
@@ -2387,7 +2374,6 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector
                 ],
                 providers: [
                     { provide: _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["HAMMER_GESTURE_CONFIG"], useClass: _services_app_hammer_config__WEBPACK_IMPORTED_MODULE_23__["AppHammerConfig"] }
-                    // { provide: LOCALE_ID, useValue: 'es' }
                 ],
                 bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
             }]
@@ -3097,6 +3083,78 @@ class PrayerSignOfTheCross extends GroupPrayer {
 
 /***/ }),
 
+/***/ "h5Vk":
+/*!***************************************************!*\
+  !*** ./src/app/services/state-storage.service.ts ***!
+  \***************************************************/
+/*! exports provided: StateStorageService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StateStorageService", function() { return StateStorageService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
+
+
+class StateStorageService {
+    constructor() {
+        this.language = new StringStorage('rosary.language');
+        this.liturgicalDates = new StateStorage('rosary.liturgical-dates');
+    }
+}
+StateStorageService.ɵfac = function StateStorageService_Factory(t) { return new (t || StateStorageService)(); };
+StateStorageService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({ token: StateStorageService, factory: StateStorageService.ɵfac, providedIn: 'root' });
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](StateStorageService, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
+        args: [{
+                providedIn: 'root'
+            }]
+    }], function () { return []; }, null); })();
+class StringStorage {
+    constructor(key) {
+        this.key = key;
+    }
+    get data() {
+        return window.localStorage.getItem(this.key);
+    }
+    set data(entry) {
+        if (entry) {
+            window.localStorage.setItem(this.key, entry);
+        }
+        else {
+            window.localStorage.removeItem(this.key);
+        }
+    }
+}
+class StateStorage {
+    constructor(key) {
+        this.key = key;
+    }
+    get data() {
+        let rawData = window.localStorage.getItem(this.key);
+        try {
+            if (rawData) {
+                return JSON.parse(rawData);
+            }
+        }
+        catch (error) {
+            // No action by design
+        }
+        return undefined;
+    }
+    set data(entry) {
+        if (entry) {
+            window.localStorage.setItem(this.key, JSON.stringify(entry));
+        }
+        else {
+            window.localStorage.removeItem(this.key);
+        }
+    }
+}
+
+
+/***/ }),
+
 /***/ "hwcc":
 /*!********************************************!*\
   !*** ./src/app/sequences/rosary-helper.ts ***!
@@ -3367,7 +3425,7 @@ class BeadGroup {
 /*! exports provided: name, version, scripts, private, dependencies, devDependencies, default */
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"name\":\"rosary-beads\",\"version\":\"0.1.0-13\",\"scripts\":{\"ng\":\"ng\",\"start\":\"ng serve\",\"build\":\"ng build\",\"test\":\"ng test\",\"lint\":\"ng lint\",\"e2e\":\"ng e2e\",\"i18n\":\"ng extract-i18n --output-path src/assets/i18n/\"},\"private\":true,\"dependencies\":{\"@angular/animations\":\"~11.0.6\",\"@angular/common\":\"~11.0.6\",\"@angular/compiler\":\"~11.0.6\",\"@angular/core\":\"~11.0.6\",\"@angular/forms\":\"~11.0.6\",\"@angular/localize\":\"^12.2.6\",\"@angular/platform-browser\":\"~11.0.6\",\"@angular/platform-browser-dynamic\":\"~11.0.6\",\"@angular/router\":\"~11.0.6\",\"@types/hammerjs\":\"^2.0.40\",\"hammerjs\":\"^2.0.8\",\"rxjs\":\"~6.6.0\",\"tslib\":\"^2.0.0\",\"zone.js\":\"~0.10.2\"},\"devDependencies\":{\"@angular-devkit/build-angular\":\"~0.1100.6\",\"@angular/cli\":\"~11.0.6\",\"@angular/compiler-cli\":\"~11.0.6\",\"@types/jasmine\":\"~3.6.0\",\"@types/node\":\"^12.11.1\",\"codelyzer\":\"^6.0.0\",\"jasmine-core\":\"~3.6.0\",\"jasmine-spec-reporter\":\"~5.0.0\",\"karma\":\"~5.1.0\",\"karma-chrome-launcher\":\"~3.1.0\",\"karma-coverage\":\"~2.0.3\",\"karma-jasmine\":\"~4.0.0\",\"karma-jasmine-html-reporter\":\"^1.5.0\",\"protractor\":\"~7.0.0\",\"ts-node\":\"~8.3.0\",\"tslint\":\"~6.1.0\",\"typescript\":\"~4.0.2\"}}");
+module.exports = JSON.parse("{\"name\":\"rosary-beads\",\"version\":\"0.1.0-14\",\"scripts\":{\"ng\":\"ng\",\"start\":\"ng serve\",\"build\":\"ng build\",\"test\":\"ng test\",\"lint\":\"ng lint\",\"e2e\":\"ng e2e\",\"i18n\":\"ng extract-i18n --output-path src/assets/i18n/\"},\"private\":true,\"dependencies\":{\"@angular/animations\":\"~11.0.6\",\"@angular/common\":\"~11.0.6\",\"@angular/compiler\":\"~11.0.6\",\"@angular/core\":\"~11.0.6\",\"@angular/forms\":\"~11.0.6\",\"@angular/localize\":\"^12.2.6\",\"@angular/platform-browser\":\"~11.0.6\",\"@angular/platform-browser-dynamic\":\"~11.0.6\",\"@angular/router\":\"~11.0.6\",\"@types/hammerjs\":\"^2.0.40\",\"hammerjs\":\"^2.0.8\",\"rxjs\":\"~6.6.0\",\"tslib\":\"^2.0.0\",\"zone.js\":\"~0.10.2\"},\"devDependencies\":{\"@angular-devkit/build-angular\":\"~0.1100.6\",\"@angular/cli\":\"~11.0.6\",\"@angular/compiler-cli\":\"~11.0.6\",\"@types/jasmine\":\"~3.6.0\",\"@types/node\":\"^12.11.1\",\"codelyzer\":\"^6.0.0\",\"jasmine-core\":\"~3.6.0\",\"jasmine-spec-reporter\":\"~5.0.0\",\"karma\":\"~5.1.0\",\"karma-chrome-launcher\":\"~3.1.0\",\"karma-coverage\":\"~2.0.3\",\"karma-jasmine\":\"~4.0.0\",\"karma-jasmine-html-reporter\":\"^1.5.0\",\"protractor\":\"~7.0.0\",\"ts-node\":\"~8.3.0\",\"tslint\":\"~6.1.0\",\"typescript\":\"~4.0.2\"}}");
 
 /***/ }),
 
