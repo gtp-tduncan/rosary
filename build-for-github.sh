@@ -31,11 +31,10 @@ do
   cp -p "$fn" "$NOT_FOUND_PAGE"
 done
 
-project_specific_updates
+# -----------------------------------------------------------------------
+cp -p redirect-index.html docs/index.html
 
-# if [[ ! -f "docs/404.html" ]]; then
-#   cp -p "docs/index.html" "docs/404.html"
-# fi
+project_specific_updates
 
 COMMIT_VERSION=`npm version | grep -i "${PRJ_NAME}" | awk -F"[:]" '{ print $1,$2 }' | sed -e "s/',//g"`
 CV_CLEAN=`echo ${COMMIT_VERSION}`
