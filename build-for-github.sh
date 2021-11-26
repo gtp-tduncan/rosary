@@ -30,6 +30,7 @@ do
   NOT_FOUND_PAGE=`echo $fn | sed -e "s/index.html/404.html/g"`
   cp -p "$fn" "$NOT_FOUND_PAGE"
 done
+
 project_specific_updates
 
 # if [[ ! -f "docs/404.html" ]]; then
