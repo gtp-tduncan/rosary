@@ -6,6 +6,7 @@ import { LiturgicalColors } from '../models/liturgical-colors';
 import { LiturgicalDates, LiturgicalPeriod, PeriodStatus } from '../models/liturgical-dates';
 import { AppDateService } from './app-date.service';
 import { LocalizationService } from './localization.service';
+import { StateStorageService } from './state-storage.service';
 
 @Injectable({
   providedIn: 'root'
@@ -22,8 +23,11 @@ export class LiturgicalYearService {
 
   overrideLiturgicalColor: LiturgicalColors;
 
+  private datesRefreshed = false;
+
   constructor(private readonly appDate: AppDateService,
-              private localization: LocalizationService) {
+              private localization: LocalizationService,
+              private stateStorage: StateStorageService) {
     this.validateDates();
   }
 
@@ -57,16 +61,7 @@ export class LiturgicalYearService {
   }
 
   validateDates() {
-    let rawDates = window.localStorage.getItem('rosary.liturgical-dates');
-
-    try {
-      if (rawDates) {
-        this.liturgicalDates = JSON.parse(rawDates) as LiturgicalDates;
-      }
-    }
-    catch (error) {
-      this.liturgicalDates = undefined;
-    }
+    this.liturgicalDates = this.stateStorage.liturgicalDates.data;
 
     this.refreshLiturgicalDates();
 
@@ -97,6 +92,11 @@ export class LiturgicalYearService {
     this.refreshLentAndEaster(workingCopy);
 
     this.liturgicalDates = workingCopy;
+
+    if (this.datesRefreshed) {
+      this.stateStorage.liturgicalDates.data = this.liturgicalDates;
+      this.datesRefreshed = false;
+    }
   }
 
   private refreshAdventAndChristmas(workingCopy: LiturgicalDates) {
@@ -107,6 +107,7 @@ export class LiturgicalYearService {
       const updatedAdventChristmas = calculateAdventAndChristmas(this.appDate, this.localization)
       workingCopy.christmas = updatedAdventChristmas.christmas;
       workingCopy.advent = updatedAdventChristmas.advent;
+      this.datesRefreshed = true;
     }
   }
 
@@ -120,6 +121,7 @@ export class LiturgicalYearService {
       workingCopy.lent = updatedLentEaster.lent;
       workingCopy.easter = updatedLentEaster.easter;
       workingCopy.triduum = updatedLentEaster.triduum;
+      this.datesRefreshed = true;
     }
   }
 

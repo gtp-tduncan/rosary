@@ -1,4 +1,4 @@
-import { LOCALE_ID, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule, HammerModule, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -22,7 +22,7 @@ import { HolyRosaryPrayerComponent } from './rosary-prayers/holy-rosary/holy-ros
 import { MysteryDisplayComponent } from './rosary-prayers/holy-rosary/mystery-display/mystery-display.component';
 import { MysterySelectorComponent } from './rosary-prayers/holy-rosary/mystery-selector/mystery-selector.component';
 import { AppHammerConfig } from './services/app-hammer-config';
-import { LanguageSelectorComponent } from './components/language-selector/language-selector.component';
+import { LanguageRedirectComponent } from './components/language-redirect/language-redirect.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +46,7 @@ import { LanguageSelectorComponent } from './components/language-selector/langua
     BuzzFeedbackComponent,
     DeviceDetailsComponent,
     MainConfigComponent,
-    LanguageSelectorComponent
+    LanguageRedirectComponent
   ],
   imports: [
     BrowserModule,
@@ -57,7 +57,6 @@ import { LanguageSelectorComponent } from './components/language-selector/langua
   ],
   providers: [
     { provide: HAMMER_GESTURE_CONFIG, useClass: AppHammerConfig }
-    // { provide: LOCALE_ID, useValue: 'es' }
   ],
   bootstrap: [AppComponent]
 })
