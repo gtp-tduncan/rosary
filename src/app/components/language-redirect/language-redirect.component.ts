@@ -29,10 +29,7 @@ export class LanguageRedirectComponent implements OnInit {
     console.log(`ngOnInit language: ${this.language}`);
     if (this.supportedLanguages.indexOf(this.language) >= 0 && !this.matchUrlEnd(window.location.href, this.language)) {
       const rootUrl = window.location.href.substring(0, window.location.href.length - 3);
-      console.log(`root url: ${rootUrl}`);
-      console.log(`original url: ${window.location.href}`);
-      window.location.href = `${rootUrl}/${this.language}/`;
-      console.log(`updated url: ${window.location.href}`);
+      window.location.href = `${rootUrl}${this.language}/`;
     }
     console.log(`using url: ${window.location.href}`);
   }
