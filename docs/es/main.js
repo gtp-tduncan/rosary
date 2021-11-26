@@ -1287,6 +1287,85 @@ class MysterySorrowfulComponent {
 
 /***/ }),
 
+/***/ "ICMc":
+/*!*****************************************************************************!*\
+  !*** ./src/app/components/language-selector/language-selector.component.ts ***!
+  \*****************************************************************************/
+/*! exports provided: LanguageSelectorComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LanguageSelectorComponent", function() { return LanguageSelectorComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "ofXK");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "3Pt+");
+
+
+
+
+function LanguageSelectorComponent_option_3_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "option", 3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const language_r1 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("value", language_r1.endpoint);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", language_r1.name, " ");
+} }
+class LanguageSelectorComponent {
+    constructor() {
+        this.selectedLanguageCodeEvent = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+        this.languages = [
+            { name: this.langEnglish, code: 'en' },
+            { name: this.langSpanish, code: 'es' }
+        ];
+    }
+    ngOnInit() {
+    }
+    onLanguageSelectionChange(newValue) {
+        // this.selectedLanguageCodeEvent.emit(newValue);
+        window.location.href = newValue;
+    }
+    get langEnglish() {
+        return "Ingl\xE9s";
+    }
+    get langSpanish() {
+        return "Espa\xF1ol";
+    }
+}
+LanguageSelectorComponent.ɵfac = function LanguageSelectorComponent_Factory(t) { return new (t || LanguageSelectorComponent)(); };
+LanguageSelectorComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: LanguageSelectorComponent, selectors: [["app-language-selector"]], decls: 4, vars: 1, consts: function () { let i18n_0; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+        const MSG_EXTERNAL_select_language$$SRC_APP_COMPONENTS_LANGUAGE_SELECTOR_LANGUAGE_SELECTOR_COMPONENT_TS_1 = goog.getMsg("Select Language");
+        i18n_0 = MSG_EXTERNAL_select_language$$SRC_APP_COMPONENTS_LANGUAGE_SELECTOR_LANGUAGE_SELECTOR_COMPONENT_TS_1;
+    }
+    else {
+        i18n_0 = "Seleccione el idioma";
+    } return [i18n_0, [3, "change"], [3, "value", 4, "ngFor", "ngForOf"], [3, "value"]]; }, template: function LanguageSelectorComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "label");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](1, 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "select", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("change", function LanguageSelectorComponent_Template_select_change_2_listener($event) { return ctx.onLanguageSelectionChange($event.target.value); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, LanguageSelectorComponent_option_3_Template, 2, 2, "option", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    } if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.languages);
+    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["NgForOf"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgSelectOption"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["ɵangular_packages_forms_forms_x"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJsYW5ndWFnZS1zZWxlY3Rvci5jb21wb25lbnQuc2NzcyJ9 */"] });
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](LanguageSelectorComponent, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
+        args: [{
+                selector: 'app-language-selector',
+                templateUrl: './language-selector.component.html',
+                styleUrls: ['./language-selector.component.scss']
+            }]
+    }], function () { return []; }, null); })();
+
+
+/***/ }),
+
 /***/ "IQdK":
 /*!***********************************************!*\
   !*** ./src/app/services/app-hammer-config.ts ***!
@@ -2210,6 +2289,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _rosary_prayers_holy_rosary_mystery_display_mystery_display_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./rosary-prayers/holy-rosary/mystery-display/mystery-display.component */ "txVD");
 /* harmony import */ var _rosary_prayers_holy_rosary_mystery_selector_mystery_selector_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./rosary-prayers/holy-rosary/mystery-selector/mystery-selector.component */ "49rP");
 /* harmony import */ var _services_app_hammer_config__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./services/app-hammer-config */ "IQdK");
+/* harmony import */ var _components_language_selector_language_selector_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./components/language-selector/language-selector.component */ "ICMc");
+
 
 
 
@@ -2266,7 +2347,8 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector
         _components_rotate_div_rotate_div_component__WEBPACK_IMPORTED_MODULE_13__["RotateDivComponent"],
         _components_testing_buzz_feedback_buzz_feedback_component__WEBPACK_IMPORTED_MODULE_14__["BuzzFeedbackComponent"],
         _components_config_device_details_device_details_component__WEBPACK_IMPORTED_MODULE_6__["DeviceDetailsComponent"],
-        _components_config_main_config_main_config_component__WEBPACK_IMPORTED_MODULE_7__["MainConfigComponent"]], imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["BrowserModule"],
+        _components_config_main_config_main_config_component__WEBPACK_IMPORTED_MODULE_7__["MainConfigComponent"],
+        _components_language_selector_language_selector_component__WEBPACK_IMPORTED_MODULE_24__["LanguageSelectorComponent"]], imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["BrowserModule"],
         _app_routing_module__WEBPACK_IMPORTED_MODULE_3__["AppRoutingModule"],
         _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormsModule"],
         _angular_forms__WEBPACK_IMPORTED_MODULE_1__["ReactiveFormsModule"],
@@ -2293,7 +2375,8 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector
                     _components_rotate_div_rotate_div_component__WEBPACK_IMPORTED_MODULE_13__["RotateDivComponent"],
                     _components_testing_buzz_feedback_buzz_feedback_component__WEBPACK_IMPORTED_MODULE_14__["BuzzFeedbackComponent"],
                     _components_config_device_details_device_details_component__WEBPACK_IMPORTED_MODULE_6__["DeviceDetailsComponent"],
-                    _components_config_main_config_main_config_component__WEBPACK_IMPORTED_MODULE_7__["MainConfigComponent"]
+                    _components_config_main_config_main_config_component__WEBPACK_IMPORTED_MODULE_7__["MainConfigComponent"],
+                    _components_language_selector_language_selector_component__WEBPACK_IMPORTED_MODULE_24__["LanguageSelectorComponent"]
                 ],
                 imports: [
                     _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["BrowserModule"],
@@ -3284,7 +3367,7 @@ class BeadGroup {
 /*! exports provided: name, version, scripts, private, dependencies, devDependencies, default */
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"name\":\"rosary-beads\",\"version\":\"0.1.0-8\",\"scripts\":{\"ng\":\"ng\",\"start\":\"ng serve\",\"build\":\"ng build\",\"test\":\"ng test\",\"lint\":\"ng lint\",\"e2e\":\"ng e2e\",\"i18n\":\"ng extract-i18n --output-path src/assets/i18n/\"},\"private\":true,\"dependencies\":{\"@angular/animations\":\"~11.0.6\",\"@angular/common\":\"~11.0.6\",\"@angular/compiler\":\"~11.0.6\",\"@angular/core\":\"~11.0.6\",\"@angular/forms\":\"~11.0.6\",\"@angular/localize\":\"^12.2.6\",\"@angular/platform-browser\":\"~11.0.6\",\"@angular/platform-browser-dynamic\":\"~11.0.6\",\"@angular/router\":\"~11.0.6\",\"@types/hammerjs\":\"^2.0.40\",\"hammerjs\":\"^2.0.8\",\"rxjs\":\"~6.6.0\",\"tslib\":\"^2.0.0\",\"zone.js\":\"~0.10.2\"},\"devDependencies\":{\"@angular-devkit/build-angular\":\"~0.1100.6\",\"@angular/cli\":\"~11.0.6\",\"@angular/compiler-cli\":\"~11.0.6\",\"@types/jasmine\":\"~3.6.0\",\"@types/node\":\"^12.11.1\",\"codelyzer\":\"^6.0.0\",\"jasmine-core\":\"~3.6.0\",\"jasmine-spec-reporter\":\"~5.0.0\",\"karma\":\"~5.1.0\",\"karma-chrome-launcher\":\"~3.1.0\",\"karma-coverage\":\"~2.0.3\",\"karma-jasmine\":\"~4.0.0\",\"karma-jasmine-html-reporter\":\"^1.5.0\",\"protractor\":\"~7.0.0\",\"ts-node\":\"~8.3.0\",\"tslint\":\"~6.1.0\",\"typescript\":\"~4.0.2\"}}");
+module.exports = JSON.parse("{\"name\":\"rosary-beads\",\"version\":\"0.1.0-9\",\"scripts\":{\"ng\":\"ng\",\"start\":\"ng serve\",\"build\":\"ng build\",\"test\":\"ng test\",\"lint\":\"ng lint\",\"e2e\":\"ng e2e\",\"i18n\":\"ng extract-i18n --output-path src/assets/i18n/\"},\"private\":true,\"dependencies\":{\"@angular/animations\":\"~11.0.6\",\"@angular/common\":\"~11.0.6\",\"@angular/compiler\":\"~11.0.6\",\"@angular/core\":\"~11.0.6\",\"@angular/forms\":\"~11.0.6\",\"@angular/localize\":\"^12.2.6\",\"@angular/platform-browser\":\"~11.0.6\",\"@angular/platform-browser-dynamic\":\"~11.0.6\",\"@angular/router\":\"~11.0.6\",\"@types/hammerjs\":\"^2.0.40\",\"hammerjs\":\"^2.0.8\",\"rxjs\":\"~6.6.0\",\"tslib\":\"^2.0.0\",\"zone.js\":\"~0.10.2\"},\"devDependencies\":{\"@angular-devkit/build-angular\":\"~0.1100.6\",\"@angular/cli\":\"~11.0.6\",\"@angular/compiler-cli\":\"~11.0.6\",\"@types/jasmine\":\"~3.6.0\",\"@types/node\":\"^12.11.1\",\"codelyzer\":\"^6.0.0\",\"jasmine-core\":\"~3.6.0\",\"jasmine-spec-reporter\":\"~5.0.0\",\"karma\":\"~5.1.0\",\"karma-chrome-launcher\":\"~3.1.0\",\"karma-coverage\":\"~2.0.3\",\"karma-jasmine\":\"~4.0.0\",\"karma-jasmine-html-reporter\":\"^1.5.0\",\"protractor\":\"~7.0.0\",\"ts-node\":\"~8.3.0\",\"tslint\":\"~6.1.0\",\"typescript\":\"~4.0.2\"}}");
 
 /***/ }),
 
