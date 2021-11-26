@@ -31,6 +31,7 @@ export class LanguageRedirectComponent implements OnInit {
       window.location.href = `/${this.language}/`;
       console.log(`updated url: ${window.location.href}`);
     }
+    console.log(`using url: ${window.location.href}`);
   }
 
   private matchUrlEnd(url: string, matchSubstring: string): boolean {
