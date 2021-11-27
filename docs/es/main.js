@@ -658,7 +658,8 @@ __webpack_require__.r(__webpack_exports__);
 // The list of file replacements can be found in `angular.json`.
 const environment = {
     production: false,
-    debugMode: true
+    debugMode: true,
+    redirect: true
 };
 /*
  * For easier debugging in development mode, you can import the following file
@@ -1301,8 +1302,10 @@ class MysterySorrowfulComponent {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LanguageRedirectComponent", function() { return LanguageRedirectComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
-/* harmony import */ var src_app_services_app_config_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/services/app-config.service */ "JvtB");
-/* harmony import */ var src_app_services_supported_languages_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/supported-languages.service */ "uzqb");
+/* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/environments/environment */ "AytR");
+/* harmony import */ var src_app_services_app_config_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/app-config.service */ "JvtB");
+/* harmony import */ var src_app_services_supported_languages_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/supported-languages.service */ "uzqb");
+
 
 
 
@@ -1316,17 +1319,21 @@ class LanguageRedirectComponent {
         this.checkForRedirect();
     }
     checkForRedirect() {
-        const languageSupported = this.languages.isSupportedLanguageId(this.language);
-        const currentCorrect = this.currentUrlCorrectLanguage();
-        console.log(`languageSupported: ${languageSupported}, currentCorrect: ${currentCorrect}`);
+        const languageId = this.languages.activeLanguageId;
+        const languageSupported = this.languages.isSupportedLanguageId(languageId);
+        const currentCorrect = this.currentUrlCorrectLanguage(languageId);
+        console.log(`language: ${languageId}, languageSupported: ${languageSupported}, currentCorrect: ${currentCorrect}`);
         if (languageSupported && !currentCorrect) {
-            const redirectUrl = `/${this.appConfig.appName}/${this.language}`;
-            console.log(`Redirect for language triggered: ${redirectUrl}`);
+            const redirectUrl = `/${this.appConfig.appName}/${languageId}`;
+            console.log(`Redirect for language triggered: ${redirectUrl} - enabled? ${src_environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].redirect !== false}`);
+            if (src_environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].redirect === false) {
+                return;
+            }
             window.location.href = redirectUrl;
         }
     }
-    currentUrlCorrectLanguage() {
-        let useSubstring = '/' + this.language;
+    currentUrlCorrectLanguage(languageId) {
+        let useSubstring = '/' + languageId;
         if (window.location.href.endsWith(useSubstring)) {
             return true;
         }
@@ -1334,7 +1341,7 @@ class LanguageRedirectComponent {
         return window.location.href.endsWith(useSubstring);
     }
 }
-LanguageRedirectComponent.ɵfac = function LanguageRedirectComponent_Factory(t) { return new (t || LanguageRedirectComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_services_app_config_service__WEBPACK_IMPORTED_MODULE_1__["AppConfigService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_services_supported_languages_service__WEBPACK_IMPORTED_MODULE_2__["SupportedLanguagesService"])); };
+LanguageRedirectComponent.ɵfac = function LanguageRedirectComponent_Factory(t) { return new (t || LanguageRedirectComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_services_app_config_service__WEBPACK_IMPORTED_MODULE_2__["AppConfigService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_services_supported_languages_service__WEBPACK_IMPORTED_MODULE_3__["SupportedLanguagesService"])); };
 LanguageRedirectComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: LanguageRedirectComponent, selectors: [["app-language-redirect"]], decls: 0, vars: 0, template: function LanguageRedirectComponent_Template(rf, ctx) { }, styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJsYW5ndWFnZS1yZWRpcmVjdC5jb21wb25lbnQuc2NzcyJ9 */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](LanguageRedirectComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
@@ -1343,7 +1350,7 @@ LanguageRedirectComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵ
                 templateUrl: './language-redirect.component.html',
                 styleUrls: ['./language-redirect.component.scss']
             }]
-    }], function () { return [{ type: src_app_services_app_config_service__WEBPACK_IMPORTED_MODULE_1__["AppConfigService"] }, { type: src_app_services_supported_languages_service__WEBPACK_IMPORTED_MODULE_2__["SupportedLanguagesService"] }]; }, null); })();
+    }], function () { return [{ type: src_app_services_app_config_service__WEBPACK_IMPORTED_MODULE_2__["AppConfigService"] }, { type: src_app_services_supported_languages_service__WEBPACK_IMPORTED_MODULE_3__["SupportedLanguagesService"] }]; }, null); })();
 
 
 /***/ }),
@@ -3528,7 +3535,7 @@ class BeadGroup {
 /*! exports provided: name, version, scripts, private, dependencies, devDependencies, default */
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"name\":\"rosary-beads\",\"version\":\"0.1.0-27\",\"scripts\":{\"ng\":\"ng\",\"start\":\"ng serve\",\"build\":\"ng build\",\"test\":\"ng test\",\"lint\":\"ng lint\",\"e2e\":\"ng e2e\",\"i18n\":\"ng extract-i18n --output-path src/assets/i18n/\"},\"private\":true,\"dependencies\":{\"@angular/animations\":\"~11.0.6\",\"@angular/common\":\"~11.0.6\",\"@angular/compiler\":\"~11.0.6\",\"@angular/core\":\"~11.0.6\",\"@angular/forms\":\"~11.0.6\",\"@angular/localize\":\"^12.2.6\",\"@angular/platform-browser\":\"~11.0.6\",\"@angular/platform-browser-dynamic\":\"~11.0.6\",\"@angular/router\":\"~11.0.6\",\"@types/hammerjs\":\"^2.0.40\",\"hammerjs\":\"^2.0.8\",\"rxjs\":\"~6.6.0\",\"tslib\":\"^2.0.0\",\"zone.js\":\"~0.10.2\"},\"devDependencies\":{\"@angular-devkit/build-angular\":\"~0.1100.6\",\"@angular/cli\":\"~11.0.6\",\"@angular/compiler-cli\":\"~11.0.6\",\"@types/jasmine\":\"~3.6.0\",\"@types/node\":\"^12.11.1\",\"codelyzer\":\"^6.0.0\",\"jasmine-core\":\"~3.6.0\",\"jasmine-spec-reporter\":\"~5.0.0\",\"karma\":\"~5.1.0\",\"karma-chrome-launcher\":\"~3.1.0\",\"karma-coverage\":\"~2.0.3\",\"karma-jasmine\":\"~4.0.0\",\"karma-jasmine-html-reporter\":\"^1.5.0\",\"protractor\":\"~7.0.0\",\"ts-node\":\"~8.3.0\",\"tslint\":\"~6.1.0\",\"typescript\":\"~4.0.2\"}}");
+module.exports = JSON.parse("{\"name\":\"rosary-beads\",\"version\":\"0.1.0-28\",\"scripts\":{\"ng\":\"ng\",\"start\":\"ng serve\",\"build\":\"ng build\",\"test\":\"ng test\",\"lint\":\"ng lint\",\"e2e\":\"ng e2e\",\"i18n\":\"ng extract-i18n --output-path src/assets/i18n/\"},\"private\":true,\"dependencies\":{\"@angular/animations\":\"~11.0.6\",\"@angular/common\":\"~11.0.6\",\"@angular/compiler\":\"~11.0.6\",\"@angular/core\":\"~11.0.6\",\"@angular/forms\":\"~11.0.6\",\"@angular/localize\":\"^12.2.6\",\"@angular/platform-browser\":\"~11.0.6\",\"@angular/platform-browser-dynamic\":\"~11.0.6\",\"@angular/router\":\"~11.0.6\",\"@types/hammerjs\":\"^2.0.40\",\"hammerjs\":\"^2.0.8\",\"rxjs\":\"~6.6.0\",\"tslib\":\"^2.0.0\",\"zone.js\":\"~0.10.2\"},\"devDependencies\":{\"@angular-devkit/build-angular\":\"~0.1100.6\",\"@angular/cli\":\"~11.0.6\",\"@angular/compiler-cli\":\"~11.0.6\",\"@types/jasmine\":\"~3.6.0\",\"@types/node\":\"^12.11.1\",\"codelyzer\":\"^6.0.0\",\"jasmine-core\":\"~3.6.0\",\"jasmine-spec-reporter\":\"~5.0.0\",\"karma\":\"~5.1.0\",\"karma-chrome-launcher\":\"~3.1.0\",\"karma-coverage\":\"~2.0.3\",\"karma-jasmine\":\"~4.0.0\",\"karma-jasmine-html-reporter\":\"^1.5.0\",\"protractor\":\"~7.0.0\",\"ts-node\":\"~8.3.0\",\"tslint\":\"~6.1.0\",\"typescript\":\"~4.0.2\"}}");
 
 /***/ }),
 
