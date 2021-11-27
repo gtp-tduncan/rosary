@@ -1230,7 +1230,7 @@ function calculateNextChristmas(appDate, localization) {
         endDate: endOfChristmas,
         name: localization.christmasLabel,
         color: src_app_models_liturgical_colors__WEBPACK_IMPORTED_MODULE_0__["LiturgicalColors"].WHITE,
-        labelId: ':@@christmasLabel{{'
+        labelId: ':@@christmasLabel'
     };
 }
 function calculateEndOfChristmasSeason(christmasDay) {
@@ -1345,10 +1345,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LanguageSelectorComponent", function() { return LanguageSelectorComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
 /* harmony import */ var src_app_services_supported_languages_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/services/supported-languages.service */ "uzqb");
-/* harmony import */ var src_app_services_liturgical_year_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/liturgical-year.service */ "N8x+");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "ofXK");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ "3Pt+");
-
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "ofXK");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "3Pt+");
 
 
 
@@ -1367,9 +1365,8 @@ function LanguageSelectorComponent_option_5_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", entry_r1, " ");
 } }
 class LanguageSelectorComponent {
-    constructor(languages, liturgicalYear) {
+    constructor(languages) {
         this.languages = languages;
-        this.liturgicalYear = liturgicalYear;
         this._supportedLanguages = [];
     }
     ngOnInit() {
@@ -1385,8 +1382,6 @@ class LanguageSelectorComponent {
     onLanguageSelectionChange(code) {
         const parsed = code.split(':');
         this.languages.activeLanguageId = parsed[0];
-        this.liturgicalYear.refreshLabels();
-        console.log(`onLanguageSelectionChange: ${parsed[0]} - ${parsed[1]} => ${this.languages.activeLanguageId}`);
         this.languages.checkForRedirect();
     }
     initSupportedLanguages() {
@@ -1398,7 +1393,7 @@ class LanguageSelectorComponent {
         this._supportedLanguages = languageList;
     }
 }
-LanguageSelectorComponent.ɵfac = function LanguageSelectorComponent_Factory(t) { return new (t || LanguageSelectorComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_services_supported_languages_service__WEBPACK_IMPORTED_MODULE_1__["SupportedLanguagesService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_services_liturgical_year_service__WEBPACK_IMPORTED_MODULE_2__["LiturgicalYearService"])); };
+LanguageSelectorComponent.ɵfac = function LanguageSelectorComponent_Factory(t) { return new (t || LanguageSelectorComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_services_supported_languages_service__WEBPACK_IMPORTED_MODULE_1__["SupportedLanguagesService"])); };
 LanguageSelectorComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: LanguageSelectorComponent, selectors: [["app-language-selector"]], decls: 6, vars: 1, consts: function () { let i18n_0; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
         const MSG_EXTERNAL_select_language$$SRC_APP_COMPONENTS_LANGUAGE_SELECTOR_LANGUAGE_SELECTOR_COMPONENT_TS_1 = goog.getMsg("Select language:");
         i18n_0 = MSG_EXTERNAL_select_language$$SRC_APP_COMPONENTS_LANGUAGE_SELECTOR_LANGUAGE_SELECTOR_COMPONENT_TS_1;
@@ -1419,7 +1414,7 @@ LanguageSelectorComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵ
     } if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.supportedLanguages);
-    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_3__["NgForOf"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["NgSelectOption"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["ɵangular_packages_forms_forms_x"]], styles: [".language-selector[_ngcontent-%COMP%] {\n  width: 100%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFxsYW5ndWFnZS1zZWxlY3Rvci5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLFdBQUE7QUFDRiIsImZpbGUiOiJsYW5ndWFnZS1zZWxlY3Rvci5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5sYW5ndWFnZS1zZWxlY3RvciB7XHJcbiAgd2lkdGg6IDEwMCU7XHJcbn1cclxuIl19 */"] });
+    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["NgForOf"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["NgSelectOption"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ɵangular_packages_forms_forms_x"]], styles: [".language-selector[_ngcontent-%COMP%] {\n  width: 100%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFxsYW5ndWFnZS1zZWxlY3Rvci5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLFdBQUE7QUFDRiIsImZpbGUiOiJsYW5ndWFnZS1zZWxlY3Rvci5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5sYW5ndWFnZS1zZWxlY3RvciB7XHJcbiAgd2lkdGg6IDEwMCU7XHJcbn1cclxuIl19 */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](LanguageSelectorComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
@@ -1427,7 +1422,7 @@ LanguageSelectorComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵ
                 templateUrl: './language-selector.component.html',
                 styleUrls: ['./language-selector.component.scss']
             }]
-    }], function () { return [{ type: src_app_services_supported_languages_service__WEBPACK_IMPORTED_MODULE_1__["SupportedLanguagesService"] }, { type: src_app_services_liturgical_year_service__WEBPACK_IMPORTED_MODULE_2__["LiturgicalYearService"] }]; }, null); })();
+    }], function () { return [{ type: src_app_services_supported_languages_service__WEBPACK_IMPORTED_MODULE_1__["SupportedLanguagesService"] }]; }, null); })();
 
 
 /***/ }),
@@ -1726,8 +1721,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _models_liturgical_dates__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../models/liturgical-dates */ "t1Hb");
 /* harmony import */ var _app_date_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./app-date.service */ "tdVI");
 /* harmony import */ var _localization_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./localization.service */ "c2Te");
-/* harmony import */ var _state_storage_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./state-storage.service */ "h5Vk");
-
 
 
 
@@ -1738,11 +1731,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 class LiturgicalYearService {
-    constructor(appDate, localization, stateStorage) {
+    constructor(appDate, localization) {
         this.appDate = appDate;
         this.localization = localization;
-        this.stateStorage = stateStorage;
-        this.datesRefreshed = false;
         this.validateDates();
     }
     liturgicalColor() {
@@ -1770,17 +1761,8 @@ class LiturgicalYearService {
         }
         return _models_liturgical_colors__WEBPACK_IMPORTED_MODULE_4__["LiturgicalColors"].GREEN;
     }
-    refreshLabels() {
-        if (this.liturgicalDates) {
-            this.liturgicalDates.advent.name = this.localization.adventLabel;
-            this.liturgicalDates.christmas.name = this.localization.christmasLabel;
-            this.liturgicalDates.easter.name = this.localization.easterLabel;
-            this.liturgicalDates.lent.name = this.localization.lentLabel;
-            this.liturgicalDates.triduum.name = this.localization.triduumLabel;
-        }
-    }
     validateDates() {
-        this.liturgicalDates = this.stateStorage.liturgicalDates.data;
+        this.liturgicalDates = undefined; //this.stateStorage.liturgicalDates.data;
         this.refreshLiturgicalDates();
         this.allSaintsDay = new Date(this.appDate.currentYear, src_utils_key_dates__WEBPACK_IMPORTED_MODULE_3__["Months"].NOV, 1);
         this.pentacostSunday = this.liturgicalDates.easter.endDate;
@@ -1802,10 +1784,6 @@ class LiturgicalYearService {
         this.refreshAdventAndChristmas(workingCopy);
         this.refreshLentAndEaster(workingCopy);
         this.liturgicalDates = workingCopy;
-        if (this.datesRefreshed) {
-            this.stateStorage.liturgicalDates.data = this.liturgicalDates;
-            this.datesRefreshed = false;
-        }
     }
     refreshAdventAndChristmas(workingCopy) {
         const adventStatus = Object(src_utils_dates_advent_christmas__WEBPACK_IMPORTED_MODULE_1__["refreshNeeded"])(workingCopy === null || workingCopy === void 0 ? void 0 : workingCopy.advent, this.appDate);
@@ -1814,7 +1792,6 @@ class LiturgicalYearService {
             const updatedAdventChristmas = Object(src_utils_dates_advent_christmas__WEBPACK_IMPORTED_MODULE_1__["calculateAdventAndChristmas"])(this.appDate, this.localization);
             workingCopy.christmas = updatedAdventChristmas.christmas;
             workingCopy.advent = updatedAdventChristmas.advent;
-            this.datesRefreshed = true;
         }
     }
     refreshLentAndEaster(workingCopy) {
@@ -1826,18 +1803,17 @@ class LiturgicalYearService {
             workingCopy.lent = updatedLentEaster.lent;
             workingCopy.easter = updatedLentEaster.easter;
             workingCopy.triduum = updatedLentEaster.triduum;
-            this.datesRefreshed = true;
         }
     }
 }
-LiturgicalYearService.ɵfac = function LiturgicalYearService_Factory(t) { return new (t || LiturgicalYearService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_app_date_service__WEBPACK_IMPORTED_MODULE_6__["AppDateService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_localization_service__WEBPACK_IMPORTED_MODULE_7__["LocalizationService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_state_storage_service__WEBPACK_IMPORTED_MODULE_8__["StateStorageService"])); };
+LiturgicalYearService.ɵfac = function LiturgicalYearService_Factory(t) { return new (t || LiturgicalYearService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_app_date_service__WEBPACK_IMPORTED_MODULE_6__["AppDateService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_localization_service__WEBPACK_IMPORTED_MODULE_7__["LocalizationService"])); };
 LiturgicalYearService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({ token: LiturgicalYearService, factory: LiturgicalYearService.ɵfac, providedIn: 'root' });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](LiturgicalYearService, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
         args: [{
                 providedIn: 'root'
             }]
-    }], function () { return [{ type: _app_date_service__WEBPACK_IMPORTED_MODULE_6__["AppDateService"] }, { type: _localization_service__WEBPACK_IMPORTED_MODULE_7__["LocalizationService"] }, { type: _state_storage_service__WEBPACK_IMPORTED_MODULE_8__["StateStorageService"] }]; }, null); })();
+    }], function () { return [{ type: _app_date_service__WEBPACK_IMPORTED_MODULE_6__["AppDateService"] }, { type: _localization_service__WEBPACK_IMPORTED_MODULE_7__["LocalizationService"] }]; }, null); })();
 
 
 /***/ }),
@@ -3221,9 +3197,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 class StateStorageService {
-    constructor() {
-        this.liturgicalDates = new StateStorage('rosary.liturgical-dates');
-    }
+    constructor() { }
 }
 StateStorageService.ɵfac = function StateStorageService_Factory(t) { return new (t || StateStorageService)(); };
 StateStorageService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({ token: StateStorageService, factory: StateStorageService.ɵfac, providedIn: 'root' });
@@ -3549,7 +3523,7 @@ class BeadGroup {
 /*! exports provided: name, version, scripts, private, dependencies, devDependencies, default */
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"name\":\"rosary-beads\",\"version\":\"0.1.0-32\",\"scripts\":{\"ng\":\"ng\",\"start\":\"ng serve\",\"build\":\"ng build\",\"test\":\"ng test\",\"lint\":\"ng lint\",\"e2e\":\"ng e2e\",\"i18n\":\"ng extract-i18n --output-path src/assets/i18n/\"},\"private\":true,\"dependencies\":{\"@angular/animations\":\"~11.0.6\",\"@angular/common\":\"~11.0.6\",\"@angular/compiler\":\"~11.0.6\",\"@angular/core\":\"~11.0.6\",\"@angular/forms\":\"~11.0.6\",\"@angular/localize\":\"^12.2.6\",\"@angular/platform-browser\":\"~11.0.6\",\"@angular/platform-browser-dynamic\":\"~11.0.6\",\"@angular/router\":\"~11.0.6\",\"@types/hammerjs\":\"^2.0.40\",\"hammerjs\":\"^2.0.8\",\"rxjs\":\"~6.6.0\",\"tslib\":\"^2.0.0\",\"zone.js\":\"~0.10.2\"},\"devDependencies\":{\"@angular-devkit/build-angular\":\"~0.1100.6\",\"@angular/cli\":\"~11.0.6\",\"@angular/compiler-cli\":\"~11.0.6\",\"@types/jasmine\":\"~3.6.0\",\"@types/node\":\"^12.11.1\",\"codelyzer\":\"^6.0.0\",\"jasmine-core\":\"~3.6.0\",\"jasmine-spec-reporter\":\"~5.0.0\",\"karma\":\"~5.1.0\",\"karma-chrome-launcher\":\"~3.1.0\",\"karma-coverage\":\"~2.0.3\",\"karma-jasmine\":\"~4.0.0\",\"karma-jasmine-html-reporter\":\"^1.5.0\",\"protractor\":\"~7.0.0\",\"ts-node\":\"~8.3.0\",\"tslint\":\"~6.1.0\",\"typescript\":\"~4.0.2\"}}");
+module.exports = JSON.parse("{\"name\":\"rosary-beads\",\"version\":\"0.1.0-33\",\"scripts\":{\"ng\":\"ng\",\"start\":\"ng serve\",\"build\":\"ng build\",\"test\":\"ng test\",\"lint\":\"ng lint\",\"e2e\":\"ng e2e\",\"i18n\":\"ng extract-i18n --output-path src/assets/i18n/\"},\"private\":true,\"dependencies\":{\"@angular/animations\":\"~11.0.6\",\"@angular/common\":\"~11.0.6\",\"@angular/compiler\":\"~11.0.6\",\"@angular/core\":\"~11.0.6\",\"@angular/forms\":\"~11.0.6\",\"@angular/localize\":\"^12.2.6\",\"@angular/platform-browser\":\"~11.0.6\",\"@angular/platform-browser-dynamic\":\"~11.0.6\",\"@angular/router\":\"~11.0.6\",\"@types/hammerjs\":\"^2.0.40\",\"hammerjs\":\"^2.0.8\",\"rxjs\":\"~6.6.0\",\"tslib\":\"^2.0.0\",\"zone.js\":\"~0.10.2\"},\"devDependencies\":{\"@angular-devkit/build-angular\":\"~0.1100.6\",\"@angular/cli\":\"~11.0.6\",\"@angular/compiler-cli\":\"~11.0.6\",\"@types/jasmine\":\"~3.6.0\",\"@types/node\":\"^12.11.1\",\"codelyzer\":\"^6.0.0\",\"jasmine-core\":\"~3.6.0\",\"jasmine-spec-reporter\":\"~5.0.0\",\"karma\":\"~5.1.0\",\"karma-chrome-launcher\":\"~3.1.0\",\"karma-coverage\":\"~2.0.3\",\"karma-jasmine\":\"~4.0.0\",\"karma-jasmine-html-reporter\":\"^1.5.0\",\"protractor\":\"~7.0.0\",\"ts-node\":\"~8.3.0\",\"tslint\":\"~6.1.0\",\"typescript\":\"~4.0.2\"}}");
 
 /***/ }),
 
