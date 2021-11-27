@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AppConfigService } from 'src/app/services/app-config.service';
 import { StateStorageService } from 'src/app/services/state-storage.service';
 
 @Component({
@@ -14,7 +15,9 @@ export class LanguageRedirectComponent implements OnInit {
   private language: string;
 
   constructor(private stateStorage: StateStorageService,
-              private router: Router) {
+              private router: Router,
+              private appConfig: AppConfigService) {
+                
     this.language = stateStorage.language.data;
     if (this.language === undefined) {
       this.language = window.navigator.language;
@@ -39,7 +42,7 @@ export class LanguageRedirectComponent implements OnInit {
       //   console.log(`fixed url: ${newUrl}`);
       // }
       // this.router.navigate([newUrl]);
-      window.location.href = `/../${this.language}`;
+      window.location.href = `/${this.appConfig.appName}/${this.language}`;
     }
   }
 
