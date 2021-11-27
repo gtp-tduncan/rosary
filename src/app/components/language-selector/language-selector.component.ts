@@ -33,6 +33,7 @@ export class LanguageSelectorComponent implements OnInit {
     this.languages.activeLanguageId = parsed[0];
     this.liturgicalYear.refreshLabels();
     console.log(`onLanguageSelectionChange: ${parsed[0]} - ${parsed[1]} => ${this.languages.activeLanguageId}`);
+    this.languages.checkForRedirect();
   }
 
   private initSupportedLanguages() {
