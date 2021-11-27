@@ -1302,10 +1302,8 @@ class MysterySorrowfulComponent {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LanguageRedirectComponent", function() { return LanguageRedirectComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
-/* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/environments/environment */ "AytR");
-/* harmony import */ var src_app_services_app_config_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/app-config.service */ "JvtB");
-/* harmony import */ var src_app_services_supported_languages_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/supported-languages.service */ "uzqb");
-
+/* harmony import */ var src_app_services_app_config_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/services/app-config.service */ "JvtB");
+/* harmony import */ var src_app_services_supported_languages_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/supported-languages.service */ "uzqb");
 
 
 
@@ -1316,32 +1314,10 @@ class LanguageRedirectComponent {
         this.languages = languages;
     }
     ngOnInit() {
-        this.checkForRedirect();
-    }
-    checkForRedirect() {
-        const languageId = this.languages.activeLanguageId;
-        const languageSupported = this.languages.isSupportedLanguageId(languageId);
-        const currentCorrect = this.currentUrlCorrectLanguage(languageId);
-        console.log(`language: ${languageId}, languageSupported: ${languageSupported}, currentCorrect: ${currentCorrect}`);
-        if (languageSupported && !currentCorrect) {
-            const redirectUrl = `/${this.appConfig.appName}/${languageId}`;
-            console.log(`Redirect for language triggered: ${redirectUrl} - enabled? ${src_environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].redirect !== false}`);
-            if (src_environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].redirect === false) {
-                return;
-            }
-            window.location.href = redirectUrl;
-        }
-    }
-    currentUrlCorrectLanguage(languageId) {
-        let useSubstring = '/' + languageId;
-        if (window.location.href.endsWith(useSubstring)) {
-            return true;
-        }
-        useSubstring += '/';
-        return window.location.href.endsWith(useSubstring);
+        this.languages.checkForRedirect();
     }
 }
-LanguageRedirectComponent.ɵfac = function LanguageRedirectComponent_Factory(t) { return new (t || LanguageRedirectComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_services_app_config_service__WEBPACK_IMPORTED_MODULE_2__["AppConfigService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_services_supported_languages_service__WEBPACK_IMPORTED_MODULE_3__["SupportedLanguagesService"])); };
+LanguageRedirectComponent.ɵfac = function LanguageRedirectComponent_Factory(t) { return new (t || LanguageRedirectComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_services_app_config_service__WEBPACK_IMPORTED_MODULE_1__["AppConfigService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_services_supported_languages_service__WEBPACK_IMPORTED_MODULE_2__["SupportedLanguagesService"])); };
 LanguageRedirectComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: LanguageRedirectComponent, selectors: [["app-language-redirect"]], decls: 0, vars: 0, template: function LanguageRedirectComponent_Template(rf, ctx) { }, styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJsYW5ndWFnZS1yZWRpcmVjdC5jb21wb25lbnQuc2NzcyJ9 */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](LanguageRedirectComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
@@ -1350,7 +1326,7 @@ LanguageRedirectComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵ
                 templateUrl: './language-redirect.component.html',
                 styleUrls: ['./language-redirect.component.scss']
             }]
-    }], function () { return [{ type: src_app_services_app_config_service__WEBPACK_IMPORTED_MODULE_2__["AppConfigService"] }, { type: src_app_services_supported_languages_service__WEBPACK_IMPORTED_MODULE_3__["SupportedLanguagesService"] }]; }, null); })();
+    }], function () { return [{ type: src_app_services_app_config_service__WEBPACK_IMPORTED_MODULE_1__["AppConfigService"] }, { type: src_app_services_supported_languages_service__WEBPACK_IMPORTED_MODULE_2__["SupportedLanguagesService"] }]; }, null); })();
 
 
 /***/ }),
@@ -1367,14 +1343,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LanguageSelectorComponent", function() { return LanguageSelectorComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
 /* harmony import */ var src_app_services_supported_languages_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/services/supported-languages.service */ "uzqb");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "ofXK");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "3Pt+");
+/* harmony import */ var src_app_services_liturgical_year_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/liturgical-year.service */ "N8x+");
+/* harmony import */ var _language_redirect_language_redirect_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../language-redirect/language-redirect.component */ "HJw/");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ "ofXK");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ "3Pt+");
 
 
 
 
 
-function LanguageSelectorComponent_option_5_Template(rf, ctx) { if (rf & 1) {
+
+
+function LanguageSelectorComponent_option_6_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "option", 4);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -1387,8 +1367,9 @@ function LanguageSelectorComponent_option_5_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", entry_r1, " ");
 } }
 class LanguageSelectorComponent {
-    constructor(languages) {
+    constructor(languages, liturgicalYear) {
         this.languages = languages;
+        this.liturgicalYear = liturgicalYear;
         this._supportedLanguages = [];
     }
     ngOnInit() {
@@ -1404,6 +1385,7 @@ class LanguageSelectorComponent {
     onLanguageSelectionChange(code) {
         const parsed = code.split(':');
         this.languages.activeLanguageId = parsed[0];
+        this.liturgicalYear.refreshLabels();
         console.log(`onLanguageSelectionChange: ${parsed[0]} - ${parsed[1]} => ${this.languages.activeLanguageId}`);
     }
     initSupportedLanguages() {
@@ -1415,28 +1397,29 @@ class LanguageSelectorComponent {
         this._supportedLanguages = languageList;
     }
 }
-LanguageSelectorComponent.ɵfac = function LanguageSelectorComponent_Factory(t) { return new (t || LanguageSelectorComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_services_supported_languages_service__WEBPACK_IMPORTED_MODULE_1__["SupportedLanguagesService"])); };
-LanguageSelectorComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: LanguageSelectorComponent, selectors: [["app-language-selector"]], decls: 6, vars: 1, consts: function () { let i18n_0; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+LanguageSelectorComponent.ɵfac = function LanguageSelectorComponent_Factory(t) { return new (t || LanguageSelectorComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_services_supported_languages_service__WEBPACK_IMPORTED_MODULE_1__["SupportedLanguagesService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_services_liturgical_year_service__WEBPACK_IMPORTED_MODULE_2__["LiturgicalYearService"])); };
+LanguageSelectorComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: LanguageSelectorComponent, selectors: [["app-language-selector"]], decls: 7, vars: 1, consts: function () { let i18n_0; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
         const MSG_EXTERNAL_select_language$$SRC_APP_COMPONENTS_LANGUAGE_SELECTOR_LANGUAGE_SELECTOR_COMPONENT_TS_1 = goog.getMsg("Select language:");
         i18n_0 = MSG_EXTERNAL_select_language$$SRC_APP_COMPONENTS_LANGUAGE_SELECTOR_LANGUAGE_SELECTOR_COMPONENT_TS_1;
     }
     else {
         i18n_0 = "Seleccione el idioma";
     } return [[1, "language-selector"], i18n_0, [3, "change"], [3, "value", "selected", 4, "ngFor", "ngForOf"], [3, "value", "selected"]]; }, template: function LanguageSelectorComponent_Template(rf, ctx) { if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "label");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](2, 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "app-language-redirect");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "label");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](3, 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, "\u00A0 ");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "select", 2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("change", function LanguageSelectorComponent_Template_select_change_4_listener($event) { return ctx.onLanguageSelectionChange($event.target.value); });
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](5, LanguageSelectorComponent_option_5_Template, 2, 3, "option", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4, "\u00A0 ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "select", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("change", function LanguageSelectorComponent_Template_select_change_5_listener($event) { return ctx.onLanguageSelectionChange($event.target.value); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](6, LanguageSelectorComponent_option_6_Template, 2, 3, "option", 3);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     } if (rf & 2) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.supportedLanguages);
-    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["NgForOf"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["NgSelectOption"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ɵangular_packages_forms_forms_x"]], styles: [".language-selector[_ngcontent-%COMP%] {\n  width: 100%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFxsYW5ndWFnZS1zZWxlY3Rvci5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLFdBQUE7QUFDRiIsImZpbGUiOiJsYW5ndWFnZS1zZWxlY3Rvci5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5sYW5ndWFnZS1zZWxlY3RvciB7XHJcbiAgd2lkdGg6IDEwMCU7XHJcbn1cclxuIl19 */"] });
+    } }, directives: [_language_redirect_language_redirect_component__WEBPACK_IMPORTED_MODULE_3__["LanguageRedirectComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_4__["NgForOf"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__["NgSelectOption"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__["ɵangular_packages_forms_forms_x"]], styles: [".language-selector[_ngcontent-%COMP%] {\n  width: 100%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFxsYW5ndWFnZS1zZWxlY3Rvci5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLFdBQUE7QUFDRiIsImZpbGUiOiJsYW5ndWFnZS1zZWxlY3Rvci5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5sYW5ndWFnZS1zZWxlY3RvciB7XHJcbiAgd2lkdGg6IDEwMCU7XHJcbn1cclxuIl19 */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](LanguageSelectorComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
@@ -1444,7 +1427,7 @@ LanguageSelectorComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵ
                 templateUrl: './language-selector.component.html',
                 styleUrls: ['./language-selector.component.scss']
             }]
-    }], function () { return [{ type: src_app_services_supported_languages_service__WEBPACK_IMPORTED_MODULE_1__["SupportedLanguagesService"] }]; }, null); })();
+    }], function () { return [{ type: src_app_services_supported_languages_service__WEBPACK_IMPORTED_MODULE_1__["SupportedLanguagesService"] }, { type: src_app_services_liturgical_year_service__WEBPACK_IMPORTED_MODULE_2__["LiturgicalYearService"] }]; }, null); })();
 
 
 /***/ }),
@@ -1786,6 +1769,15 @@ class LiturgicalYearService {
             return _models_liturgical_colors__WEBPACK_IMPORTED_MODULE_4__["LiturgicalColors"].VIOLET;
         }
         return _models_liturgical_colors__WEBPACK_IMPORTED_MODULE_4__["LiturgicalColors"].GREEN;
+    }
+    refreshLabels() {
+        if (this.liturgicalDates) {
+            this.liturgicalDates.advent.name = this.localization.adventLabel;
+            this.liturgicalDates.christmas.name = this.localization.christmasLabel;
+            this.liturgicalDates.easter.name = this.localization.easterLabel;
+            this.liturgicalDates.lent.name = this.localization.lentLabel;
+            this.liturgicalDates.triduum.name = this.localization.triduumLabel;
+        }
     }
     validateDates() {
         this.liturgicalDates = this.stateStorage.liturgicalDates.data;
@@ -3535,7 +3527,7 @@ class BeadGroup {
 /*! exports provided: name, version, scripts, private, dependencies, devDependencies, default */
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"name\":\"rosary-beads\",\"version\":\"0.1.0-28\",\"scripts\":{\"ng\":\"ng\",\"start\":\"ng serve\",\"build\":\"ng build\",\"test\":\"ng test\",\"lint\":\"ng lint\",\"e2e\":\"ng e2e\",\"i18n\":\"ng extract-i18n --output-path src/assets/i18n/\"},\"private\":true,\"dependencies\":{\"@angular/animations\":\"~11.0.6\",\"@angular/common\":\"~11.0.6\",\"@angular/compiler\":\"~11.0.6\",\"@angular/core\":\"~11.0.6\",\"@angular/forms\":\"~11.0.6\",\"@angular/localize\":\"^12.2.6\",\"@angular/platform-browser\":\"~11.0.6\",\"@angular/platform-browser-dynamic\":\"~11.0.6\",\"@angular/router\":\"~11.0.6\",\"@types/hammerjs\":\"^2.0.40\",\"hammerjs\":\"^2.0.8\",\"rxjs\":\"~6.6.0\",\"tslib\":\"^2.0.0\",\"zone.js\":\"~0.10.2\"},\"devDependencies\":{\"@angular-devkit/build-angular\":\"~0.1100.6\",\"@angular/cli\":\"~11.0.6\",\"@angular/compiler-cli\":\"~11.0.6\",\"@types/jasmine\":\"~3.6.0\",\"@types/node\":\"^12.11.1\",\"codelyzer\":\"^6.0.0\",\"jasmine-core\":\"~3.6.0\",\"jasmine-spec-reporter\":\"~5.0.0\",\"karma\":\"~5.1.0\",\"karma-chrome-launcher\":\"~3.1.0\",\"karma-coverage\":\"~2.0.3\",\"karma-jasmine\":\"~4.0.0\",\"karma-jasmine-html-reporter\":\"^1.5.0\",\"protractor\":\"~7.0.0\",\"ts-node\":\"~8.3.0\",\"tslint\":\"~6.1.0\",\"typescript\":\"~4.0.2\"}}");
+module.exports = JSON.parse("{\"name\":\"rosary-beads\",\"version\":\"0.1.0-29\",\"scripts\":{\"ng\":\"ng\",\"start\":\"ng serve\",\"build\":\"ng build\",\"test\":\"ng test\",\"lint\":\"ng lint\",\"e2e\":\"ng e2e\",\"i18n\":\"ng extract-i18n --output-path src/assets/i18n/\"},\"private\":true,\"dependencies\":{\"@angular/animations\":\"~11.0.6\",\"@angular/common\":\"~11.0.6\",\"@angular/compiler\":\"~11.0.6\",\"@angular/core\":\"~11.0.6\",\"@angular/forms\":\"~11.0.6\",\"@angular/localize\":\"^12.2.6\",\"@angular/platform-browser\":\"~11.0.6\",\"@angular/platform-browser-dynamic\":\"~11.0.6\",\"@angular/router\":\"~11.0.6\",\"@types/hammerjs\":\"^2.0.40\",\"hammerjs\":\"^2.0.8\",\"rxjs\":\"~6.6.0\",\"tslib\":\"^2.0.0\",\"zone.js\":\"~0.10.2\"},\"devDependencies\":{\"@angular-devkit/build-angular\":\"~0.1100.6\",\"@angular/cli\":\"~11.0.6\",\"@angular/compiler-cli\":\"~11.0.6\",\"@types/jasmine\":\"~3.6.0\",\"@types/node\":\"^12.11.1\",\"codelyzer\":\"^6.0.0\",\"jasmine-core\":\"~3.6.0\",\"jasmine-spec-reporter\":\"~5.0.0\",\"karma\":\"~5.1.0\",\"karma-chrome-launcher\":\"~3.1.0\",\"karma-coverage\":\"~2.0.3\",\"karma-jasmine\":\"~4.0.0\",\"karma-jasmine-html-reporter\":\"^1.5.0\",\"protractor\":\"~7.0.0\",\"ts-node\":\"~8.3.0\",\"tslint\":\"~6.1.0\",\"typescript\":\"~4.0.2\"}}");
 
 /***/ }),
 
@@ -4193,8 +4185,10 @@ MysteryDisplayComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵ
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SupportedLanguagesService", function() { return SupportedLanguagesService; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
-/* harmony import */ var _state_storage_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./state-storage.service */ "h5Vk");
-/* harmony import */ var _app_config_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app-config.service */ "JvtB");
+/* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/environments/environment */ "AytR");
+/* harmony import */ var _state_storage_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./state-storage.service */ "h5Vk");
+/* harmony import */ var _app_config_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app-config.service */ "JvtB");
+
 
 
 
@@ -4203,7 +4197,7 @@ class SupportedLanguagesService {
     constructor(appConfig) {
         this.appConfig = appConfig;
         this.supportedLanguages = new Map();
-        this.language = new _state_storage_service__WEBPACK_IMPORTED_MODULE_1__["StringStorage"]('rosary.language');
+        this.language = new _state_storage_service__WEBPACK_IMPORTED_MODULE_2__["StringStorage"]('rosary.language');
         this.supportedLanguages.set('en', this.languageEnglish);
         this.supportedLanguages.set('es', this.languageSpanish);
         this.loadActiveLanguageId();
@@ -4232,6 +4226,28 @@ class SupportedLanguagesService {
     isSupportedLanguageId(languageId) {
         return this.supportedLanguages.has(languageId);
     }
+    checkForRedirect() {
+        const languageId = this.activeLanguageId;
+        const languageSupported = this.isSupportedLanguageId(languageId);
+        const currentCorrect = this.currentUrlCorrectLanguage(languageId);
+        console.log(`language: ${languageId}, languageSupported: ${languageSupported}, currentCorrect: ${currentCorrect}`);
+        if (languageSupported && !currentCorrect) {
+            const redirectUrl = `/${this.appConfig.appName}/${languageId}`;
+            console.log(`Redirect for language triggered: ${redirectUrl} - enabled? ${src_environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].redirect !== false}`);
+            if (src_environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].redirect === false) {
+                return;
+            }
+            window.location.href = redirectUrl;
+        }
+    }
+    currentUrlCorrectLanguage(languageId) {
+        let useSubstring = '/' + languageId;
+        if (window.location.href.endsWith(useSubstring)) {
+            return true;
+        }
+        useSubstring += '/';
+        return window.location.href.endsWith(useSubstring);
+    }
     loadActiveLanguageId() {
         this._activeLanguageId = this.language.data;
         if (this._activeLanguageId === undefined) {
@@ -4240,14 +4256,14 @@ class SupportedLanguagesService {
         console.log(`stateStorage language: ${this._activeLanguageId}`);
     }
 }
-SupportedLanguagesService.ɵfac = function SupportedLanguagesService_Factory(t) { return new (t || SupportedLanguagesService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_app_config_service__WEBPACK_IMPORTED_MODULE_2__["AppConfigService"])); };
+SupportedLanguagesService.ɵfac = function SupportedLanguagesService_Factory(t) { return new (t || SupportedLanguagesService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_app_config_service__WEBPACK_IMPORTED_MODULE_3__["AppConfigService"])); };
 SupportedLanguagesService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({ token: SupportedLanguagesService, factory: SupportedLanguagesService.ɵfac, providedIn: 'root' });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](SupportedLanguagesService, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
         args: [{
                 providedIn: 'root'
             }]
-    }], function () { return [{ type: _app_config_service__WEBPACK_IMPORTED_MODULE_2__["AppConfigService"] }]; }, null); })();
+    }], function () { return [{ type: _app_config_service__WEBPACK_IMPORTED_MODULE_3__["AppConfigService"] }]; }, null); })();
 
 
 /***/ }),
