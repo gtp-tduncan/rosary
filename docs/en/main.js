@@ -1214,7 +1214,8 @@ function calculateAdventAndChristmas(appDate, localization) {
             startDate: adventStarts,
             endDate: new Date(adventYear, _key_dates__WEBPACK_IMPORTED_MODULE_2__["Months"].DEC, 24),
             name: localization.adventLabel,
-            color: src_app_models_liturgical_colors__WEBPACK_IMPORTED_MODULE_0__["LiturgicalColors"].VIOLET
+            color: src_app_models_liturgical_colors__WEBPACK_IMPORTED_MODULE_0__["LiturgicalColors"].VIOLET,
+            labelId: ':@@adventLabel'
         }
     };
 }
@@ -1228,7 +1229,8 @@ function calculateNextChristmas(appDate, localization) {
         startDate: christmasDay,
         endDate: endOfChristmas,
         name: localization.christmasLabel,
-        color: src_app_models_liturgical_colors__WEBPACK_IMPORTED_MODULE_0__["LiturgicalColors"].WHITE
+        color: src_app_models_liturgical_colors__WEBPACK_IMPORTED_MODULE_0__["LiturgicalColors"].WHITE,
+        labelId: ':@@christmasLabel{{'
     };
 }
 function calculateEndOfChristmasSeason(christmasDay) {
@@ -2143,8 +2145,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
 /* harmony import */ var src_app_models_liturgical_dates__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/models/liturgical-dates */ "t1Hb");
 /* harmony import */ var src_app_services_liturgical_year_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/liturgical-year.service */ "N8x+");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "ofXK");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ "3Pt+");
+/* harmony import */ var src_app_services_localization_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/localization.service */ "c2Te");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ "ofXK");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ "3Pt+");
+
 
 
 
@@ -2173,14 +2177,16 @@ function LiturgicalDatesComponent_div_7_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
     const period_r4 = ctx.$implicit;
+    const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("", period_r4.name, ":");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("", ctx_r1.labelFromId(period_r4.labelId), ":");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate2"](" ", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind1"](4, 3, period_r4.startDate), " - ", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind1"](5, 5, period_r4.endDate), " ");
 } }
 class LiturgicalDatesComponent {
-    constructor(liturgicalYear) {
+    constructor(liturgicalYear, localizationUtil) {
         this.liturgicalYear = liturgicalYear;
+        this.localizationUtil = localizationUtil;
     }
     ngOnInit() {
         var _a;
@@ -2208,6 +2214,24 @@ class LiturgicalDatesComponent {
             ...periods
         ];
     }
+    labelFromId(labelId) {
+        if (':@@adventLabel' === labelId) {
+            return this.localizationUtil.adventLabel;
+        }
+        else if (':@@christmasLabel' === labelId) {
+            return this.localizationUtil.christmasLabel;
+        }
+        else if (':@@lentLabel' === labelId) {
+            return this.localizationUtil.lentLabel;
+        }
+        else if (':@@triduumLabel' === labelId) {
+            return this.localizationUtil.triduumLabel;
+        }
+        else if (':@@easterLabel' === labelId) {
+            return this.localizationUtil.easterLabel;
+        }
+        return labelId;
+    }
     onLiturgicalPeriodChanged(newValue) {
         const idx = Number.parseInt(newValue);
         if (idx === 0) {
@@ -2218,7 +2242,7 @@ class LiturgicalDatesComponent {
         }
     }
 }
-LiturgicalDatesComponent.ɵfac = function LiturgicalDatesComponent_Factory(t) { return new (t || LiturgicalDatesComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_services_liturgical_year_service__WEBPACK_IMPORTED_MODULE_2__["LiturgicalYearService"])); };
+LiturgicalDatesComponent.ɵfac = function LiturgicalDatesComponent_Factory(t) { return new (t || LiturgicalDatesComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_services_liturgical_year_service__WEBPACK_IMPORTED_MODULE_2__["LiturgicalYearService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_services_localization_service__WEBPACK_IMPORTED_MODULE_3__["LocalizationService"])); };
 LiturgicalDatesComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: LiturgicalDatesComponent, selectors: [["app-liturgical-dates"]], decls: 8, vars: 2, consts: function () { let i18n_0; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
         const MSG_EXTERNAL_1516891117638138457$$SRC_APP_COMPONENTS_LITURGICAL_DATES_LITURGICAL_DATES_COMPONENT_TS_1 = goog.getMsg("Liturgical period:");
         i18n_0 = MSG_EXTERNAL_1516891117638138457$$SRC_APP_COMPONENTS_LITURGICAL_DATES_LITURGICAL_DATES_COMPONENT_TS_1;
@@ -2244,7 +2268,7 @@ LiturgicalDatesComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵ�
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.litYearColorSelector);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.periods);
-    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_3__["NgForOf"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["NgSelectOption"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["ɵangular_packages_forms_forms_x"]], pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_3__["DatePipe"]], styles: [".liturgical-div[_ngcontent-%COMP%] {\n  text-align: center;\n  width: 99%;\n}\n\n@media (orientation: landscape) {\n  .liturgical-div[_ngcontent-%COMP%]   select[_ngcontent-%COMP%], .liturgical-div[_ngcontent-%COMP%]   select[_ngcontent-%COMP%]   option[_ngcontent-%COMP%] {\n    font-size: 2vw;\n  }\n\n  .box[_ngcontent-%COMP%] {\n    height: 8em;\n    display: flex;\n    flex-wrap: wrap;\n    flex-direction: column;\n    text-align: center;\n    align-content: space-between;\n  }\n\n  .box[_ngcontent-%COMP%]    > *[_ngcontent-%COMP%] {\n    flex: 0 0 50%;\n  }\n}\n\n\n\n@media (orientation: portrait) {\n  .liturgical-div[_ngcontent-%COMP%]   select[_ngcontent-%COMP%], .liturgical-div[_ngcontent-%COMP%]   select[_ngcontent-%COMP%]   option[_ngcontent-%COMP%] {\n    font-size: 4vw;\n  }\n\n  .box[_ngcontent-%COMP%] {\n    display: flex;\n    flex-direction: column;\n    height: 300px;\n    text-align: center;\n  }\n\n  .box[_ngcontent-%COMP%]    > *[_ngcontent-%COMP%] {\n    flex: 0 0 10%;\n  }\n}\n\n.label[_ngcontent-%COMP%] {\n  font-weight: bold;\n  margin: 0.5vh;\n  padding-top: 1vh;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFxsaXR1cmdpY2FsLWRhdGVzLmNvbXBvbmVudC5zY3NzIiwiLi5cXC4uXFwuLlxcLi5cXC4uXFwuLlxcLi5cXHN0eWxlcy1zaGFyZWQtbWl4aW5zLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBRUE7RUFDRSxrQkFBQTtFQUNBLFVBQUE7QUFERjs7QUFJQTtFQUVFO0lBQ0UsY0NOaUI7RURJbkI7O0VBS0E7SUFDRSxXQUFBO0lBQ0EsYUFBQTtJQUNBLGVBQUE7SUFDQSxzQkFBQTtJQUNBLGtCQUFBO0lBQ0EsNEJBQUE7RUFGRjs7RUFLQTtJQUNFLGFBQUE7RUFGRjtBQUNGOztBQU1BLHFGQUFBOztBQUVBO0VBRUU7SUFDRSxjQzVCdUI7RURzQnpCOztFQVNBO0lBQ0UsYUFBQTtJQUNBLHNCQUFBO0lBQ0EsYUFBQTtJQUNBLGtCQUFBO0VBTkY7O0VBU0E7SUFDRSxhQUFBO0VBTkY7QUFDRjs7QUFVQTtFQUNFLGlCQUFBO0VBQ0EsYUFBQTtFQUNBLGdCQ3hDUTtBRGdDViIsImZpbGUiOiJsaXR1cmdpY2FsLWRhdGVzLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiQGltcG9ydCAnLi4vLi4vLi4vc3R5bGVzLXNoYXJlZC1taXhpbnMuc2Nzcyc7XHJcblxyXG4ubGl0dXJnaWNhbC1kaXYge1xyXG4gIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICB3aWR0aDogOTklO1xyXG59XHJcblxyXG5AbWVkaWEgKG9yaWVudGF0aW9uOiBsYW5kc2NhcGUpIHtcclxuXHJcbiAgLmxpdHVyZ2ljYWwtZGl2IHNlbGVjdCwgLmxpdHVyZ2ljYWwtZGl2IHNlbGVjdCBvcHRpb24ge1xyXG4gICAgZm9udC1zaXplOiAkZm9udC1zaXplLWRyb3Bkb3duO1xyXG4gIH1cclxuXHJcbiAgLmJveCB7XHJcbiAgICBoZWlnaHQ6IDhlbTtcclxuICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICBmbGV4LXdyYXA6IHdyYXA7XHJcbiAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgYWxpZ24tY29udGVudDogc3BhY2UtYmV0d2VlbjtcclxuICB9XHJcblxyXG4gIC5ib3g+KiB7XHJcbiAgICBmbGV4OiAwIDAgNTAlO1xyXG4gIH1cclxuXHJcbn1cclxuXHJcbi8qIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tICovXHJcblxyXG5AbWVkaWEgKG9yaWVudGF0aW9uOiBwb3J0cmFpdCkge1xyXG5cclxuICAubGl0dXJnaWNhbC1kaXYgc2VsZWN0LCAubGl0dXJnaWNhbC1kaXYgc2VsZWN0IG9wdGlvbiB7XHJcbiAgICBmb250LXNpemU6ICRmb250LXNpemUtZHJvcGRvd24tcGhvbmU7XHJcbiAgfVxyXG5cclxuICAuYm94IHtcclxuICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xyXG4gICAgaGVpZ2h0OiAzMDBweDtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICB9XHJcblxyXG4gIC5ib3g+KiB7XHJcbiAgICBmbGV4OiAwIDAgMTAlO1xyXG4gIH1cclxuXHJcbn1cclxuXHJcbi5sYWJlbCB7XHJcbiAgZm9udC13ZWlnaHQ6IGJvbGQ7XHJcbiAgbWFyZ2luOiAwLjV2aDtcclxuICBwYWRkaW5nLXRvcDogJHBhZGRpbmc7XHJcbn1cclxuIiwiJGZvbnRuYW1lOiBDb25zb2xhO1xyXG4kZm9udC1zaXplLWJhc2U6IDJ2dztcclxuJGZvbnQtc2l6ZS1iYXNlLXBob25lOiA0LjV2dztcclxuXHJcbiRmb250LXNpemUtZHJvcGRvd246IDJ2dztcclxuJGZvbnQtc2l6ZS1kcm9wZG93bi1waG9uZTogNHZ3O1xyXG5cclxuJG1hcmdpbnM6IDF2aDtcclxuJG1hcmdpbnMtcGhvbmU6IDAuM3ZoO1xyXG4kbmF2LWxhbmRzY2FwZS1tYXJnaW46IDF2aDtcclxuJG5hdi1wb3J0cmFpdC1tYXJnaW46IDF2aDtcclxuXHJcbiRwYWRkaW5nOiAxdmg7XHJcbiRwYWRkaW5nLXBob25lOiAwLjN2aDtcclxuXHJcbiRib3JkZXI6IDFweCBkYXNoZWQgYmxhY2s7XHJcbiRib3JkZXItcmFkaXVzOiAxLjV2aDtcclxuXHJcbiRpbnB1dC1tYXJnaW4tYm90dG9tOiAxdmg7XHJcbiJdfQ== */"] });
+    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_4__["NgForOf"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__["NgSelectOption"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__["ɵangular_packages_forms_forms_x"]], pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_4__["DatePipe"]], styles: [".liturgical-div[_ngcontent-%COMP%] {\n  text-align: center;\n  width: 99%;\n}\n\n@media (orientation: landscape) {\n  .liturgical-div[_ngcontent-%COMP%]   select[_ngcontent-%COMP%], .liturgical-div[_ngcontent-%COMP%]   select[_ngcontent-%COMP%]   option[_ngcontent-%COMP%] {\n    font-size: 2vw;\n  }\n\n  .box[_ngcontent-%COMP%] {\n    height: 8em;\n    display: flex;\n    flex-wrap: wrap;\n    flex-direction: column;\n    text-align: center;\n    align-content: space-between;\n  }\n\n  .box[_ngcontent-%COMP%]    > *[_ngcontent-%COMP%] {\n    flex: 0 0 50%;\n  }\n}\n\n\n\n@media (orientation: portrait) {\n  .liturgical-div[_ngcontent-%COMP%]   select[_ngcontent-%COMP%], .liturgical-div[_ngcontent-%COMP%]   select[_ngcontent-%COMP%]   option[_ngcontent-%COMP%] {\n    font-size: 4vw;\n  }\n\n  .box[_ngcontent-%COMP%] {\n    display: flex;\n    flex-direction: column;\n    height: 300px;\n    text-align: center;\n  }\n\n  .box[_ngcontent-%COMP%]    > *[_ngcontent-%COMP%] {\n    flex: 0 0 10%;\n  }\n}\n\n.label[_ngcontent-%COMP%] {\n  font-weight: bold;\n  margin: 0.5vh;\n  padding-top: 1vh;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFxsaXR1cmdpY2FsLWRhdGVzLmNvbXBvbmVudC5zY3NzIiwiLi5cXC4uXFwuLlxcLi5cXC4uXFwuLlxcLi5cXHN0eWxlcy1zaGFyZWQtbWl4aW5zLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBRUE7RUFDRSxrQkFBQTtFQUNBLFVBQUE7QUFERjs7QUFJQTtFQUVFO0lBQ0UsY0NOaUI7RURJbkI7O0VBS0E7SUFDRSxXQUFBO0lBQ0EsYUFBQTtJQUNBLGVBQUE7SUFDQSxzQkFBQTtJQUNBLGtCQUFBO0lBQ0EsNEJBQUE7RUFGRjs7RUFLQTtJQUNFLGFBQUE7RUFGRjtBQUNGOztBQU1BLHFGQUFBOztBQUVBO0VBRUU7SUFDRSxjQzVCdUI7RURzQnpCOztFQVNBO0lBQ0UsYUFBQTtJQUNBLHNCQUFBO0lBQ0EsYUFBQTtJQUNBLGtCQUFBO0VBTkY7O0VBU0E7SUFDRSxhQUFBO0VBTkY7QUFDRjs7QUFVQTtFQUNFLGlCQUFBO0VBQ0EsYUFBQTtFQUNBLGdCQ3hDUTtBRGdDViIsImZpbGUiOiJsaXR1cmdpY2FsLWRhdGVzLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiQGltcG9ydCAnLi4vLi4vLi4vc3R5bGVzLXNoYXJlZC1taXhpbnMuc2Nzcyc7XHJcblxyXG4ubGl0dXJnaWNhbC1kaXYge1xyXG4gIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICB3aWR0aDogOTklO1xyXG59XHJcblxyXG5AbWVkaWEgKG9yaWVudGF0aW9uOiBsYW5kc2NhcGUpIHtcclxuXHJcbiAgLmxpdHVyZ2ljYWwtZGl2IHNlbGVjdCwgLmxpdHVyZ2ljYWwtZGl2IHNlbGVjdCBvcHRpb24ge1xyXG4gICAgZm9udC1zaXplOiAkZm9udC1zaXplLWRyb3Bkb3duO1xyXG4gIH1cclxuXHJcbiAgLmJveCB7XHJcbiAgICBoZWlnaHQ6IDhlbTtcclxuICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICBmbGV4LXdyYXA6IHdyYXA7XHJcbiAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgYWxpZ24tY29udGVudDogc3BhY2UtYmV0d2VlbjtcclxuICB9XHJcblxyXG4gIC5ib3g+KiB7XHJcbiAgICBmbGV4OiAwIDAgNTAlO1xyXG4gIH1cclxuXHJcbn1cclxuXHJcbi8qIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tICovXHJcblxyXG5AbWVkaWEgKG9yaWVudGF0aW9uOiBwb3J0cmFpdCkge1xyXG5cclxuICAubGl0dXJnaWNhbC1kaXYgc2VsZWN0LCAubGl0dXJnaWNhbC1kaXYgc2VsZWN0IG9wdGlvbiB7XHJcbiAgICBmb250LXNpemU6ICRmb250LXNpemUtZHJvcGRvd24tcGhvbmU7XHJcbiAgfVxyXG5cclxuICAuYm94IHtcclxuICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xyXG4gICAgaGVpZ2h0OiAzMDBweDtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICB9XHJcblxyXG4gIC5ib3g+KiB7XHJcbiAgICBmbGV4OiAwIDAgMTAlO1xyXG4gIH1cclxuXHJcbn1cclxuXHJcbi5sYWJlbCB7XHJcbiAgZm9udC13ZWlnaHQ6IGJvbGQ7XHJcbiAgbWFyZ2luOiAwLjV2aDtcclxuICBwYWRkaW5nLXRvcDogJHBhZGRpbmc7XHJcbn1cclxuIiwiJGZvbnRuYW1lOiBDb25zb2xhO1xyXG4kZm9udC1zaXplLWJhc2U6IDJ2dztcclxuJGZvbnQtc2l6ZS1iYXNlLXBob25lOiA0LjV2dztcclxuXHJcbiRmb250LXNpemUtZHJvcGRvd246IDJ2dztcclxuJGZvbnQtc2l6ZS1kcm9wZG93bi1waG9uZTogNHZ3O1xyXG5cclxuJG1hcmdpbnM6IDF2aDtcclxuJG1hcmdpbnMtcGhvbmU6IDAuM3ZoO1xyXG4kbmF2LWxhbmRzY2FwZS1tYXJnaW46IDF2aDtcclxuJG5hdi1wb3J0cmFpdC1tYXJnaW46IDF2aDtcclxuXHJcbiRwYWRkaW5nOiAxdmg7XHJcbiRwYWRkaW5nLXBob25lOiAwLjN2aDtcclxuXHJcbiRib3JkZXI6IDFweCBkYXNoZWQgYmxhY2s7XHJcbiRib3JkZXItcmFkaXVzOiAxLjV2aDtcclxuXHJcbiRpbnB1dC1tYXJnaW4tYm90dG9tOiAxdmg7XHJcbiJdfQ== */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](LiturgicalDatesComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
@@ -2252,7 +2276,7 @@ LiturgicalDatesComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵ�
                 templateUrl: './liturgical-dates.component.html',
                 styleUrls: ['./liturgical-dates.component.scss']
             }]
-    }], function () { return [{ type: src_app_services_liturgical_year_service__WEBPACK_IMPORTED_MODULE_2__["LiturgicalYearService"] }]; }, null); })();
+    }], function () { return [{ type: src_app_services_liturgical_year_service__WEBPACK_IMPORTED_MODULE_2__["LiturgicalYearService"] }, { type: src_app_services_localization_service__WEBPACK_IMPORTED_MODULE_3__["LocalizationService"] }]; }, null); })();
 
 
 /***/ }),
@@ -3525,7 +3549,7 @@ class BeadGroup {
 /*! exports provided: name, version, scripts, private, dependencies, devDependencies, default */
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"name\":\"rosary-beads\",\"version\":\"0.1.0-31\",\"scripts\":{\"ng\":\"ng\",\"start\":\"ng serve\",\"build\":\"ng build\",\"test\":\"ng test\",\"lint\":\"ng lint\",\"e2e\":\"ng e2e\",\"i18n\":\"ng extract-i18n --output-path src/assets/i18n/\"},\"private\":true,\"dependencies\":{\"@angular/animations\":\"~11.0.6\",\"@angular/common\":\"~11.0.6\",\"@angular/compiler\":\"~11.0.6\",\"@angular/core\":\"~11.0.6\",\"@angular/forms\":\"~11.0.6\",\"@angular/localize\":\"^12.2.6\",\"@angular/platform-browser\":\"~11.0.6\",\"@angular/platform-browser-dynamic\":\"~11.0.6\",\"@angular/router\":\"~11.0.6\",\"@types/hammerjs\":\"^2.0.40\",\"hammerjs\":\"^2.0.8\",\"rxjs\":\"~6.6.0\",\"tslib\":\"^2.0.0\",\"zone.js\":\"~0.10.2\"},\"devDependencies\":{\"@angular-devkit/build-angular\":\"~0.1100.6\",\"@angular/cli\":\"~11.0.6\",\"@angular/compiler-cli\":\"~11.0.6\",\"@types/jasmine\":\"~3.6.0\",\"@types/node\":\"^12.11.1\",\"codelyzer\":\"^6.0.0\",\"jasmine-core\":\"~3.6.0\",\"jasmine-spec-reporter\":\"~5.0.0\",\"karma\":\"~5.1.0\",\"karma-chrome-launcher\":\"~3.1.0\",\"karma-coverage\":\"~2.0.3\",\"karma-jasmine\":\"~4.0.0\",\"karma-jasmine-html-reporter\":\"^1.5.0\",\"protractor\":\"~7.0.0\",\"ts-node\":\"~8.3.0\",\"tslint\":\"~6.1.0\",\"typescript\":\"~4.0.2\"}}");
+module.exports = JSON.parse("{\"name\":\"rosary-beads\",\"version\":\"0.1.0-32\",\"scripts\":{\"ng\":\"ng\",\"start\":\"ng serve\",\"build\":\"ng build\",\"test\":\"ng test\",\"lint\":\"ng lint\",\"e2e\":\"ng e2e\",\"i18n\":\"ng extract-i18n --output-path src/assets/i18n/\"},\"private\":true,\"dependencies\":{\"@angular/animations\":\"~11.0.6\",\"@angular/common\":\"~11.0.6\",\"@angular/compiler\":\"~11.0.6\",\"@angular/core\":\"~11.0.6\",\"@angular/forms\":\"~11.0.6\",\"@angular/localize\":\"^12.2.6\",\"@angular/platform-browser\":\"~11.0.6\",\"@angular/platform-browser-dynamic\":\"~11.0.6\",\"@angular/router\":\"~11.0.6\",\"@types/hammerjs\":\"^2.0.40\",\"hammerjs\":\"^2.0.8\",\"rxjs\":\"~6.6.0\",\"tslib\":\"^2.0.0\",\"zone.js\":\"~0.10.2\"},\"devDependencies\":{\"@angular-devkit/build-angular\":\"~0.1100.6\",\"@angular/cli\":\"~11.0.6\",\"@angular/compiler-cli\":\"~11.0.6\",\"@types/jasmine\":\"~3.6.0\",\"@types/node\":\"^12.11.1\",\"codelyzer\":\"^6.0.0\",\"jasmine-core\":\"~3.6.0\",\"jasmine-spec-reporter\":\"~5.0.0\",\"karma\":\"~5.1.0\",\"karma-chrome-launcher\":\"~3.1.0\",\"karma-coverage\":\"~2.0.3\",\"karma-jasmine\":\"~4.0.0\",\"karma-jasmine-html-reporter\":\"^1.5.0\",\"protractor\":\"~7.0.0\",\"ts-node\":\"~8.3.0\",\"tslint\":\"~6.1.0\",\"typescript\":\"~4.0.2\"}}");
 
 /***/ }),
 
@@ -3801,31 +3825,36 @@ const LIT_DATES_2020 = {
         startDate: new Date(2020, Months.NOV, 29),
         endDate: new Date(2020, Months.DEC, 24),
         name: 'test-advent',
-        color: src_app_models_liturgical_colors__WEBPACK_IMPORTED_MODULE_0__["LiturgicalColors"].VIOLET
+        color: src_app_models_liturgical_colors__WEBPACK_IMPORTED_MODULE_0__["LiturgicalColors"].VIOLET,
+        labelId: ':@@adventLabel'
     },
     christmas: {
         startDate: new Date(2020, Months.DEC, 25),
         endDate: new Date(2021, Months.JAN, 10),
         name: 'test-christmas',
-        color: src_app_models_liturgical_colors__WEBPACK_IMPORTED_MODULE_0__["LiturgicalColors"].WHITE
+        color: src_app_models_liturgical_colors__WEBPACK_IMPORTED_MODULE_0__["LiturgicalColors"].WHITE,
+        labelId: ':@@christmasLabel'
     },
     lent: {
         startDate: new Date(2020, Months.FEB, 26),
         endDate: new Date(2020, Months.APR, 9),
         name: 'test-lent',
-        color: src_app_models_liturgical_colors__WEBPACK_IMPORTED_MODULE_0__["LiturgicalColors"].VIOLET
+        color: src_app_models_liturgical_colors__WEBPACK_IMPORTED_MODULE_0__["LiturgicalColors"].VIOLET,
+        labelId: ':@@lentLabel'
     },
     triduum: {
         startDate: new Date(2020, Months.APR, 9),
         endDate: new Date(2020, Months.APR, 12),
         name: 'test-triduum',
-        color: src_app_models_liturgical_colors__WEBPACK_IMPORTED_MODULE_0__["LiturgicalColors"].RED
+        color: src_app_models_liturgical_colors__WEBPACK_IMPORTED_MODULE_0__["LiturgicalColors"].RED,
+        labelId: ':@@triduumLabel'
     },
     easter: {
         startDate: new Date(2020, Months.APR, 12),
         endDate: new Date(2020, Months.MAY, 31),
         name: 'test-easter',
-        color: src_app_models_liturgical_colors__WEBPACK_IMPORTED_MODULE_0__["LiturgicalColors"].WHITE
+        color: src_app_models_liturgical_colors__WEBPACK_IMPORTED_MODULE_0__["LiturgicalColors"].WHITE,
+        labelId: ':@@easterLabel'
     }
 };
 const LIT_DATES_2021 = {
@@ -3833,31 +3862,36 @@ const LIT_DATES_2021 = {
         startDate: new Date(2021, Months.NOV, 28),
         endDate: new Date(2021, Months.DEC, 24),
         name: 'test-advent',
-        color: src_app_models_liturgical_colors__WEBPACK_IMPORTED_MODULE_0__["LiturgicalColors"].VIOLET
+        color: src_app_models_liturgical_colors__WEBPACK_IMPORTED_MODULE_0__["LiturgicalColors"].VIOLET,
+        labelId: ':@@adventLabel'
     },
     christmas: {
         startDate: new Date(2021, Months.DEC, 25),
         endDate: new Date(2022, Months.JAN, 9),
         name: 'test-christmas',
-        color: src_app_models_liturgical_colors__WEBPACK_IMPORTED_MODULE_0__["LiturgicalColors"].WHITE
+        color: src_app_models_liturgical_colors__WEBPACK_IMPORTED_MODULE_0__["LiturgicalColors"].WHITE,
+        labelId: ':@@christmasLabel'
     },
     lent: {
         startDate: new Date(2021, Months.FEB, 17),
         endDate: new Date(2021, Months.APR, 1),
         name: 'test-lent',
-        color: src_app_models_liturgical_colors__WEBPACK_IMPORTED_MODULE_0__["LiturgicalColors"].VIOLET
+        color: src_app_models_liturgical_colors__WEBPACK_IMPORTED_MODULE_0__["LiturgicalColors"].VIOLET,
+        labelId: ':@@lentLabel'
     },
     triduum: {
         startDate: new Date(2021, Months.APR, 1),
         endDate: new Date(2021, Months.APR, 4),
         name: 'test-triduum',
-        color: src_app_models_liturgical_colors__WEBPACK_IMPORTED_MODULE_0__["LiturgicalColors"].RED
+        color: src_app_models_liturgical_colors__WEBPACK_IMPORTED_MODULE_0__["LiturgicalColors"].RED,
+        labelId: ':@@triduumLabel'
     },
     easter: {
         startDate: new Date(2021, Months.APR, 4),
         endDate: new Date(2021, Months.MAY, 23),
         name: 'test-easter',
-        color: src_app_models_liturgical_colors__WEBPACK_IMPORTED_MODULE_0__["LiturgicalColors"].WHITE
+        color: src_app_models_liturgical_colors__WEBPACK_IMPORTED_MODULE_0__["LiturgicalColors"].WHITE,
+        labelId: ':@@easterLabel'
     }
 };
 const LIT_YEAR_2020_2021 = {
@@ -3905,11 +3939,13 @@ var PeriodStatus;
 })(PeriodStatus || (PeriodStatus = {}));
 const automaticSelection = {
     name: "Automatic",
-    color: undefined
+    color: undefined,
+    labelId: ':@@selectPeriodAutomatic'
 };
 const ordinaryTime = {
     name: "Ordinary Time",
-    color: _liturgical_colors__WEBPACK_IMPORTED_MODULE_0__["LiturgicalColors"].GREEN
+    color: _liturgical_colors__WEBPACK_IMPORTED_MODULE_0__["LiturgicalColors"].GREEN,
+    labelId: ':@@selectOrdinaryTime'
 };
 
 
@@ -3973,19 +4009,22 @@ function calculateLentAndEaster(appDate, localization) {
             startDate: lentStarts,
             endDate: lentEnds,
             name: localization.lentLabel,
-            color: src_app_models_liturgical_colors__WEBPACK_IMPORTED_MODULE_0__["LiturgicalColors"].VIOLET
+            color: src_app_models_liturgical_colors__WEBPACK_IMPORTED_MODULE_0__["LiturgicalColors"].VIOLET,
+            labelId: ':@@lentLabel'
         },
         triduum: {
             startDate: lentEnds,
             endDate: easterDay,
             name: localization.triduumLabel,
-            color: src_app_models_liturgical_colors__WEBPACK_IMPORTED_MODULE_0__["LiturgicalColors"].RED
+            color: src_app_models_liturgical_colors__WEBPACK_IMPORTED_MODULE_0__["LiturgicalColors"].RED,
+            labelId: ':@@triduumLabel'
         },
         easter: {
             startDate: easterDay,
             endDate: endEaster,
             name: localization.easterLabel,
-            color: src_app_models_liturgical_colors__WEBPACK_IMPORTED_MODULE_0__["LiturgicalColors"].WHITE
+            color: src_app_models_liturgical_colors__WEBPACK_IMPORTED_MODULE_0__["LiturgicalColors"].WHITE,
+            labelId: ':@@easterLabel'
         }
     };
 }
@@ -4225,11 +4264,8 @@ class SupportedLanguagesService {
         return this.supportedLanguages.has(languageId);
     }
     checkForRedirect() {
-        console.log('checkForRedirect - 1');
         const languageId = this.activeLanguageId;
-        console.log('checkForRedirect - 2');
         const languageSupported = this.isSupportedLanguageId(languageId);
-        console.log('checkForRedirect - 3');
         const currentCorrect = this.currentUrlCorrectLanguage(languageId);
         console.log(`language: ${languageId}, languageSupported: ${languageSupported}, currentCorrect: ${currentCorrect}`);
         if (languageSupported && !currentCorrect) {
