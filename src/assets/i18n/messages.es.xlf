@@ -885,6 +885,22 @@ Santificado sea tu nombre. Venga tu reino. Hágase tu voluntad en la tierra como
           <context context-type="linenumber">43</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="lang-english" datatype="html">
+        <source>English</source>
+        <target>Inglés</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/services/supported-languages.service.ts</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="lang-spanish" datatype="html">
+        <source>Spanish</source>
+        <target>Español</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/services/supported-languages.service.ts</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+      </trans-unit>
     </body>
   </file>
 </xliff>
