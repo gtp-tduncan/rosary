@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "rosary": {
+    "rosary-beads": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -13,12 +13,19 @@
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
+      "i18n": {
+        "sourceLocale": "en",
+        "locales": {
+          "es": "src/assets/i18n/messages.es.xlf"
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/rosary",
+            "outputPath": "dist/rosary-beads",
             "index": "src/index.html",
+            "localize": true,
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
@@ -33,6 +40,25 @@
             "scripts": []
           },
           "configurations": {
+            "es": {
+              "localize": [
+                "es"
+              ],
+              "baseHref": "/es/"
+            },
+            "en": {
+              "localize": [
+                "en"
+              ],
+              "baseHref": "/en/"
+            },
+            "local": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.local.ts"
+                }
+              ]            },
             "production": {
               "fileReplacements": [
                 {
@@ -65,18 +91,27 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "rosary:build"
+            "browserTarget": "rosary-beads:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "rosary:build:production"
+              "browserTarget": "rosary-beads:build:production"
+            },
+            "local": {
+              "browserTarget": "rosary-beads:build:local"
+            },
+            "en": {
+              "browserTarget": "rosary-beads:build:en"
+            },
+            "es": {
+              "browserTarget": "rosary-beads:build:es"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "rosary:build"
+            "browserTarget": "rosary-beads:build"
           }
         },
         "test": {
@@ -113,16 +148,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "rosary:serve"
+            "devServerTarget": "rosary-beads:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "rosary:serve:production"
+              "devServerTarget": "rosary-beads:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "rosary"
+  "defaultProject": "rosary-beads"
 }

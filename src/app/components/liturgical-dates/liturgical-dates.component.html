@@ -8,7 +8,7 @@
 </div>
 <div class="box">
   <div *ngFor="let period of periods" class="period">
-    <div class="label">{{ period.name }}:</div>
+    <div class="label">{{ labelFromId(period.labelId) }}:</div>
     {{ period.startDate | date }} - {{ period.endDate | date }}
   </div>
 </div>

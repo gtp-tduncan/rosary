@@ -11,9 +11,9 @@ import { SoundService } from './services/sound.service';
 })
 export class AppComponent implements AfterViewInit {
 
-  title = $localize`:@@rosaryTitle:Rosary`;
+  title = $localize`:@@rosaryTitle:Rosary Beads`;
 
-  appVersion: string = version;
+  readonly appVersion: string = version;
 
   @ViewChild('tap1')
   private tapRef1: ElementRef<HTMLAudioElement>;

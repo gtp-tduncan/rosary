@@ -1,6 +1,6 @@
 {
-  "name": "rosary",
-  "version": "0.0.12-1",
+  "name": "rosary-beads",
+  "version": "0.1.0-33",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

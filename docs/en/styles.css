@@ -29,6 +29,10 @@ pre {
     font-family: Consola;
     font-size: 2vw;
   }
+
+  select, select option {
+    font-size: 2vw;
+  }
 }
 @media (orientation: portrait) {
   html, body {
@@ -43,6 +47,10 @@ pre {
   pre {
     font-family: Consola;
     font-size: 4.5vw;
+  }
+
+  select, select option {
+    font-size: 4vw;
   }
 }
 /* ================================================================================ */

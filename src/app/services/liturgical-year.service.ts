@@ -57,16 +57,7 @@ export class LiturgicalYearService {
   }
 
   validateDates() {
-    let rawDates = window.localStorage.getItem('rosary.liturgical-dates');
-
-    try {
-      if (rawDates) {
-        this.liturgicalDates = JSON.parse(rawDates) as LiturgicalDates;
-      }
-    }
-    catch (error) {
-      this.liturgicalDates = undefined;
-    }
+    this.liturgicalDates = undefined;   //this.stateStorage.liturgicalDates.data;
 
     this.refreshLiturgicalDates();
 

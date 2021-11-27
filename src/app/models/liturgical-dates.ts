@@ -27,8 +27,10 @@ export class LiturgicalDates {
 export interface LiturgicalPeriod {
   startDate?: Date;
   endDate?: Date;
-  name: string;
+  /* @deprecated */
+  name?: string;
   color: LiturgicalColors;
+  labelId: string;
 }
 
 export enum PeriodStatus {
@@ -39,10 +41,12 @@ export enum PeriodStatus {
 
 export const automaticSelection: LiturgicalPeriod = {
   name: $localize`:@@:Automatic`,
-  color: undefined
+  color: undefined,
+  labelId: ':@@selectPeriodAutomatic'
 }
 
 export const ordinaryTime: LiturgicalPeriod = {
   name: $localize`:@@:Ordinary Time`,
-  color: LiturgicalColors.GREEN
+  color: LiturgicalColors.GREEN,
+  labelId: ':@@selectOrdinaryTime'
 }

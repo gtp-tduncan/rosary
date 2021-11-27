@@ -38,6 +38,9 @@ pre {
     font-size: $font-size-base;
   }
 
+  select, select option {
+    font-size: $font-size-dropdown;
+  }
 
 }
 
@@ -55,6 +58,10 @@ pre {
   pre {
     font-family: $fontname;
     font-size: $font-size-base-phone;
+  }
+
+  select, select option {
+    font-size: $font-size-dropdown-phone;
   }
 
 }

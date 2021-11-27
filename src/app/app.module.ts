@@ -22,6 +22,8 @@ import { HolyRosaryPrayerComponent } from './rosary-prayers/holy-rosary/holy-ros
 import { MysteryDisplayComponent } from './rosary-prayers/holy-rosary/mystery-display/mystery-display.component';
 import { MysterySelectorComponent } from './rosary-prayers/holy-rosary/mystery-selector/mystery-selector.component';
 import { AppHammerConfig } from './services/app-hammer-config';
+import { LanguageRedirectComponent } from './components/language-redirect/language-redirect.component';
+import { LanguageSelectorComponent } from './components/language-selector/language-selector.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,9 @@ import { AppHammerConfig } from './services/app-hammer-config';
     RotateDivComponent,
     BuzzFeedbackComponent,
     DeviceDetailsComponent,
-    MainConfigComponent
+    MainConfigComponent,
+    LanguageRedirectComponent,
+    LanguageSelectorComponent
   ],
   imports: [
     BrowserModule,
