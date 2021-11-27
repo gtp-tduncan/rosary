@@ -52,6 +52,13 @@
               ],
               "baseHref": "/en/"
             },
+            "local": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.local.ts"
+                }
+              ]            },
             "production": {
               "fileReplacements": [
                 {
@@ -90,11 +97,14 @@
             "production": {
               "browserTarget": "rosary-beads:build:production"
             },
+            "local": {
+              "browserTarget": "rosary-beads:build:local"
+            },
             "en": {
-              "browserTarget": "app:build:en"
+              "browserTarget": "rosary-beads:build:en"
             },
             "es": {
-              "browserTarget": "app:build:es"
+              "browserTarget": "rosary-beads:build:es"
             }
           }
         },

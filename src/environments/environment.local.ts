@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   debugMode: true,
-  redirect: true
+  redirect: false
 };
 
 /*

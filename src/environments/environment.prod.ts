@@ -1,4 +1,5 @@
 export const environment = {
   production: true,
-  debugMode: false
+  debugMode: false,
+  redirect: true
 };

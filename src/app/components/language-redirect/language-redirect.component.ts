@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AppConfigService } from 'src/app/services/app-config.service';
 import { SupportedLanguagesService } from 'src/app/services/supported-languages.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-language-redirect',
@@ -8,8 +9,6 @@ import { SupportedLanguagesService } from 'src/app/services/supported-languages.
   styleUrls: ['./language-redirect.component.scss']
 })
 export class LanguageRedirectComponent implements OnInit {
-
-  private language: string;
 
   constructor(private appConfig: AppConfigService,
               private languages: SupportedLanguagesService) { }
@@ -19,20 +18,26 @@ export class LanguageRedirectComponent implements OnInit {
   }
 
   private checkForRedirect() {
-    const languageSupported = this.languages.isSupportedLanguageId(this.language);
-    const currentCorrect = this.currentUrlCorrectLanguage();
+    const languageId = this.languages.activeLanguageId;
+    const languageSupported = this.languages.isSupportedLanguageId(languageId);
+    const currentCorrect = this.currentUrlCorrectLanguage(languageId);
 
-    console.log(`languageSupported: ${languageSupported}, currentCorrect: ${currentCorrect}`);
+    console.log(`language: ${languageId}, languageSupported: ${languageSupported}, currentCorrect: ${currentCorrect}`);
 
     if (languageSupported && !currentCorrect) {
-      const redirectUrl = `/${this.appConfig.appName}/${this.language}`;
-      console.log(`Redirect for language triggered: ${redirectUrl}`);
+      const redirectUrl = `/${this.appConfig.appName}/${languageId}`;
+      console.log(`Redirect for language triggered: ${redirectUrl} - enabled? ${environment.redirect !== false}`);
+
+      if (environment.redirect === false) {
+        return;
+      }
+
       window.location.href = redirectUrl;
     }
   }
 
-  private currentUrlCorrectLanguage(): boolean {
-    let useSubstring = '/' + this.language;
+  private currentUrlCorrectLanguage(languageId: string): boolean {
+    let useSubstring = '/' + languageId;
     if (window.location.href.endsWith(useSubstring)) {
       return true;
     }
