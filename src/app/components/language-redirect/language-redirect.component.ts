@@ -19,7 +19,12 @@ export class LanguageRedirectComponent implements OnInit {
   }
 
   private checkForRedirect() {
-    if (this.languages.isSupportedLanguageId(this.language) && !this.currentUrlCorrectLanguage()) {
+    const languageSupported = this.languages.isSupportedLanguageId(this.language);
+    const currentCorrect = this.currentUrlCorrectLanguage();
+
+    console.log(`languageSupported: ${languageSupported}, currentCorrect: ${currentCorrect}`);
+
+    if (languageSupported && !currentCorrect) {
       const redirectUrl = `/${this.appConfig.appName}/${this.language}`;
       console.log(`Redirect for language triggered: ${redirectUrl}`);
       window.location.href = redirectUrl;
