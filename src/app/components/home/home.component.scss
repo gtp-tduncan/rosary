@@ -1,0 +1,12 @@
+.deprecated-header, .deprecated-notice {
+  margin: 5px;
+}
+
+.deprecated-header {
+  font-weight: bold;
+  text-align: center;
+  
+  a {
+    display: inline-block;
+  }
+}

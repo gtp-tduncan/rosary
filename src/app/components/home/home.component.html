@@ -1,1 +1,16 @@
-<app-holy-rosary-home></app-holy-rosary-home>
+<div *ngIf="showForkNotice">
+  <div class="content-border deprecated-header">
+    <div class="app-header-div">
+      The Holy Rosary
+    </div>
+  </div>
+
+  <div class="content-border deprecated-notice">
+    <p>Development of Rosary Beads has moved to <a href="{{ newProjectUrl }}">{{ newProjectUrl }}</a>.</p>
+    <p>You are free to continue using this version by clicking the link below, but there are no plans to make any additional updates here.</p>
+    <button (click)="onUseOriginalSite()">Use original version</button>
+  </div>
+</div>
+<div *ngIf="!showForkNotice">
+  <app-holy-rosary-home></app-holy-rosary-home>
+</div>
