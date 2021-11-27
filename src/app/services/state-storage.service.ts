@@ -1,6 +1,4 @@
 import { Injectable } from '@angular/core';
-import { LiturgicalDates } from '../models/liturgical-dates';
-
 
 @Injectable({
   providedIn: 'root'
@@ -8,8 +6,6 @@ import { LiturgicalDates } from '../models/liturgical-dates';
 export class StateStorageService {
 
   constructor() { }
-
-  readonly liturgicalDates = new StateStorage<LiturgicalDates>('rosary.liturgical-dates');
 
 }
 

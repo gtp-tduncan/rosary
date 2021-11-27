@@ -55,7 +55,7 @@ function calculateNextChristmas(appDate: AppDateService, localization: Localizat
     endDate: endOfChristmas,
     name: localization.christmasLabel,
     color: LiturgicalColors.WHITE,
-    labelId: ':@@christmasLabel{{'
+    labelId: ':@@christmasLabel'
   };
 }
 

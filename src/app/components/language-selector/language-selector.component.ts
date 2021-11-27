@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LiturgicalYearService } from 'src/app/services/liturgical-year.service';
 import { SupportedLanguagesService } from 'src/app/services/supported-languages.service';
-import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-language-selector',
@@ -12,8 +10,7 @@ export class LanguageSelectorComponent implements OnInit {
 
   private _supportedLanguages: string[] = [];
 
-  constructor(public languages: SupportedLanguagesService,
-              private liturgicalYear: LiturgicalYearService) { }
+  constructor(public languages: SupportedLanguagesService) { }
 
   ngOnInit(): void {
     this.initSupportedLanguages();
@@ -31,8 +28,6 @@ export class LanguageSelectorComponent implements OnInit {
   onLanguageSelectionChange(code: string) {
     const parsed = code.split(':');
     this.languages.activeLanguageId = parsed[0];
-    this.liturgicalYear.refreshLabels();
-    console.log(`onLanguageSelectionChange: ${parsed[0]} - ${parsed[1]} => ${this.languages.activeLanguageId}`);
     this.languages.checkForRedirect();
   }
 

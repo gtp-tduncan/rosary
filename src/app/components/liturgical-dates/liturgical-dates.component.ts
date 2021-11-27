@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LiturgicalColors } from 'src/app/models/liturgical-colors';
 import { automaticSelection, LiturgicalPeriod, ordinaryTime } from 'src/app/models/liturgical-dates';
-import { AppConfigService } from 'src/app/services/app-config.service';
 import { LiturgicalYearService } from 'src/app/services/liturgical-year.service';
 import { LocalizationService } from 'src/app/services/localization.service';
 
