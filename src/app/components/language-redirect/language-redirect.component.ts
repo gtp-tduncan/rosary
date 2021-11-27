@@ -30,15 +30,16 @@ export class LanguageRedirectComponent implements OnInit {
   ngOnInit(): void {
     console.log(`ngOnInit language: ${this.language}`);
     if (this.supportedLanguages.indexOf(this.language) >= 0 && !this.matchUrlEnd(window.location.href, this.language)) {
-      const rootUrl = window.location.href.substring(0, window.location.href.length - 3);
-      let newUrl = `${rootUrl}${this.language}/`;
-      console.log(`newUrl: ${newUrl}`);
-      if (newUrl.startsWith('https:/git')) {
-        console.log('fixing newUrl');
-        newUrl = newUrl.replace('https:/git', 'https://git');
-        console.log(`fixed url: ${newUrl}`);
-      }
-      this.router.navigate([newUrl]);
+      // const rootUrl = window.location.href.substring(0, window.location.href.length - 3);
+      // let newUrl = `${rootUrl}${this.language}/`;
+      // console.log(`newUrl: ${newUrl}`);
+      // if (newUrl.startsWith('https:/git')) {
+      //   console.log('fixing newUrl');
+      //   newUrl = newUrl.replace('https:/git', 'https://git');
+      //   console.log(`fixed url: ${newUrl}`);
+      // }
+      // this.router.navigate([newUrl]);
+      window.location.href = `/../${this.language}`;
     }
   }
 
