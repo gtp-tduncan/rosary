@@ -1,7 +1,7 @@
 import { EventEmitter, Injectable } from '@angular/core';
 import { AppDateService } from './app-date.service';
 import { LocalizationService } from './localization.service';
-import { name, } from '../../../package.json';
+import { name, version } from '../../../package.json';
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +11,7 @@ export class AppConfigService {
   screenOrientationChangeEvent = new EventEmitter<boolean>();
 
   readonly appName: string = name;
+  readonly appVersion: string = version;
 
   private _isPortrait: boolean;
 
@@ -34,5 +35,9 @@ export class AppConfigService {
   set isPortrait(portrait: boolean) {
     this._isPortrait = portrait;
     this.screenOrientationChangeEvent.emit(portrait);
+  }
+
+  get defaultLanguageId(): string {
+    return 'en';
   }
 }

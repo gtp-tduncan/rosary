@@ -23,6 +23,7 @@ import { MysteryDisplayComponent } from './rosary-prayers/holy-rosary/mystery-di
 import { MysterySelectorComponent } from './rosary-prayers/holy-rosary/mystery-selector/mystery-selector.component';
 import { AppHammerConfig } from './services/app-hammer-config';
 import { LanguageRedirectComponent } from './components/language-redirect/language-redirect.component';
+import { LanguageSelectorComponent } from './components/language-selector/language-selector.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { LanguageRedirectComponent } from './components/language-redirect/langua
     BuzzFeedbackComponent,
     DeviceDetailsComponent,
     MainConfigComponent,
-    LanguageRedirectComponent
+    LanguageRedirectComponent,
+    LanguageSelectorComponent
   ],
   imports: [
     BrowserModule,

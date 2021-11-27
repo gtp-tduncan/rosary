@@ -9,12 +9,11 @@ export class StateStorageService {
 
   constructor() { }
 
-  readonly language = new StringStorage('rosary.language');
   readonly liturgicalDates = new StateStorage<LiturgicalDates>('rosary.liturgical-dates');
 
 }
 
-class StringStorage {
+export class StringStorage {
 
   constructor(private key: string) { }
 

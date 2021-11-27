@@ -12,6 +12,10 @@ export class DeviceDetailsComponent implements OnInit {
 
   ngOnInit(): void { }
 
+  get appNameVersion(): string {
+    return `${this.appConfig.appName} - ${this.appConfig.appVersion}`;
+  }
+  
   get isPortrait(): boolean {
     return this.appConfig?.isPortrait;
   }
