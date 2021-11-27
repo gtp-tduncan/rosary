@@ -60,6 +60,16 @@ export class LiturgicalYearService {
     return LiturgicalColors.GREEN;
   }
 
+  refreshLabels() {
+    if (this.liturgicalDates) {
+      this.liturgicalDates.advent.name = this.localization.adventLabel;
+      this.liturgicalDates.christmas.name = this.localization.christmasLabel;
+      this.liturgicalDates.easter.name = this.localization.easterLabel;
+      this.liturgicalDates.lent.name = this.localization.lentLabel;
+      this.liturgicalDates.triduum.name = this.localization.triduumLabel;
+    }
+  }
+
   validateDates() {
     this.liturgicalDates = this.stateStorage.liturgicalDates.data;
 

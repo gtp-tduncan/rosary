@@ -1,12 +1,8 @@
+<app-language-redirect></app-language-redirect>
+
 <div class="language-selector">
   <label i18n="@@select-language">Select language:</label>&nbsp;
   <select (change)="onLanguageSelectionChange($event.target.value)">
-    <!-- <option *ngFor="let entry of supportedLanguageEntries" value="{{ entry.key }}">
-      {{ entry.key }}: {{ entry.value }}
-    </option> -->
-    <!-- <option *ngFor="let entry of supportedLanguageEntries" value="{{ entry.key }}">
-      {{ entry.key }}: {{ entry.value }}
-    </option> -->
     <option *ngFor="let entry of supportedLanguages" value="{{ entry }}" [selected]="isSelectedLanguage(entry)">
       {{ entry }}
     </option>
