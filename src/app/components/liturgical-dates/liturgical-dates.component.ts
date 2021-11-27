@@ -3,6 +3,7 @@ import { LiturgicalColors } from 'src/app/models/liturgical-colors';
 import { automaticSelection, LiturgicalPeriod, ordinaryTime } from 'src/app/models/liturgical-dates';
 import { AppConfigService } from 'src/app/services/app-config.service';
 import { LiturgicalYearService } from 'src/app/services/liturgical-year.service';
+import { LocalizationService } from 'src/app/services/localization.service';
 
 @Component({
   selector: 'app-liturgical-dates',
@@ -17,7 +18,8 @@ export class LiturgicalDatesComponent implements OnInit {
 
   litYearColorSelector: LiturgicalPeriod[];
 
-  constructor(private liturgicalYear: LiturgicalYearService) { }
+  constructor(private liturgicalYear: LiturgicalYearService,
+              private localizationUtil: LocalizationService) { }
 
   ngOnInit(): void {
     const liturgicalDates = this.liturgicalYear?.liturgicalDates;
@@ -49,6 +51,25 @@ export class LiturgicalDatesComponent implements OnInit {
       ordinaryTime,
       ...periods
     ]
+  }
+
+  labelFromId(labelId: string): string {
+    if (':@@adventLabel' === labelId) {
+      return this.localizationUtil.adventLabel;
+    }
+    else if (':@@christmasLabel' === labelId) {
+      return this.localizationUtil.christmasLabel;
+    }
+    else if (':@@lentLabel' === labelId) {
+      return this.localizationUtil.lentLabel;
+    }
+    else if (':@@triduumLabel' === labelId) {
+      return this.localizationUtil.triduumLabel;
+    }
+    else if (':@@easterLabel' === labelId) {
+      return this.localizationUtil.easterLabel;
+    }
+    return labelId;
   }
 
   onLiturgicalPeriodChanged(newValue: string): void {

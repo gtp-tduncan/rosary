@@ -51,11 +51,8 @@ export class SupportedLanguagesService {
   }
 
   checkForRedirect() {
-    console.log('checkForRedirect - 1');
     const languageId = this.activeLanguageId;
-    console.log('checkForRedirect - 2');
     const languageSupported = this.isSupportedLanguageId(languageId);
-    console.log('checkForRedirect - 3');
     const currentCorrect = this.currentUrlCorrectLanguage(languageId);
 
     console.log(`language: ${languageId}, languageSupported: ${languageSupported}, currentCorrect: ${currentCorrect}`);

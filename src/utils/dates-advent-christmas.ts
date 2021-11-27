@@ -35,7 +35,8 @@ export function calculateAdventAndChristmas(appDate: AppDateService, localizatio
       startDate: adventStarts,
       endDate: new Date(adventYear, Months.DEC, 24),
       name: localization.adventLabel,
-      color: LiturgicalColors.VIOLET
+      color: LiturgicalColors.VIOLET,
+      labelId: ':@@adventLabel'
     }
   }
 }
@@ -53,7 +54,8 @@ function calculateNextChristmas(appDate: AppDateService, localization: Localizat
     startDate: christmasDay,
     endDate: endOfChristmas,
     name: localization.christmasLabel,
-    color: LiturgicalColors.WHITE
+    color: LiturgicalColors.WHITE,
+    labelId: ':@@christmasLabel{{'
   };
 }
 
