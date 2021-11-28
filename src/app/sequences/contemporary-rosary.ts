@@ -15,9 +15,13 @@ IMPORTANT: If you change the order of prayers (ie: loadContemporaryHolyRosary),
 
 export class ContemporaryRosary extends BeadGroupList {
 
-  constructor(localizationUtil: LocalizationService, mysteries?: Mysteries) {
-    super(localizationUtil.prayerHolyRosary, ':@@prayerHolyRosary', loadContemporaryHolyRosary(), mysteries);
+  constructor(private localizationUtil: LocalizationService, mysteries?: Mysteries) {
+    super(localizationUtil.prayerHolyRosary, loadContemporaryHolyRosary(), mysteries);
     console.log(`Contemporary - ${mysteries.mysterySequenceName}`);
+  }
+
+  get prayerName(): string {
+    return this.localizationUtil.prayerHolyRosary;
   }
 
 }
