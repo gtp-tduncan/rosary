@@ -2,6 +2,7 @@ import { BeadGroup } from '../models/bead-group';
 import { BeadGroupList } from '../models/bead-group-list';
 import { BeadLinkOffset, initBeadGroup } from '../models/bead-group-template';
 import { Mysteries } from '../models/mysteries';
+import { LocalizationService } from '../services/localization.service';
 import { SIGN_CROSS, APOSTLES_CREED, OUR_FATHER, OPENING_HAIL_MARYS, GLORY, MYSTERY_1, HAIL_MARYS, GLORY_FATIMA, MYSTERY_2, MYSTERY_3, MYSTERY_4, MYSTERY_5, HAIL_HOLY_QUEEN, CLOSING_1, FATIMA, CLOSING_2 } from './rosary-helper';
 
 /*
@@ -12,12 +13,10 @@ IMPORTANT: If you change the order of prayers (ie: loadContemporaryHolyRosary),
              export const PATS_BEADS_COORDS: BeadPosition[]
 */
 
-const prayerName = "the Holy Rosary";
-
 export class ContemporaryRosary extends BeadGroupList {
 
-  constructor(mysteries?: Mysteries) {
-    super(prayerName, loadContemporaryHolyRosary(), mysteries);
+  constructor(localizationUtil: LocalizationService, mysteries?: Mysteries) {
+    super(localizationUtil.prayerHolyRosary, ':@@prayerHolyRosary', loadContemporaryHolyRosary(), mysteries);
     console.log(`Contemporary - ${mysteries.mysterySequenceName}`);
   }
 

@@ -7,6 +7,10 @@ export class LocalizationService {
 
   constructor() { }
 
+  get prayerHolyRosary(): string {
+    return $localize`:@@prayerHolyRosary:The Holy Rosary`;
+  }
+
   get adventLabel(): string {
     return $localize`:@@adventLabel:Advent`;
   }

@@ -27,7 +27,10 @@ export class ActivePrayerComponent implements OnInit, AfterViewInit {
   @ViewChild(HolyRosaryPrayerComponent)
   holyRosaryPrayer: HolyRosaryPrayerComponent;
 
+  /* @deprecated */
   prayerName: string;
+
+  prayerNameId: string;
 
   constructor() { }
 

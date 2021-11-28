@@ -18,7 +18,10 @@ export class BeadGroupList {
   private skipNext = false;
   private beadIdxOverrideOccurred = false;
 
-  constructor(public prayerName: string, private beadContainer: BeadGroupContainer, mysteries?: Mysteries) {
+  constructor(/* @deprecated */ public prayerName: string,
+              public prayerNameId: string,
+              private beadContainer: BeadGroupContainer, 
+              mysteries?: Mysteries) {
     this.currentBeadGroup = undefined;
     this.beadGroups = beadContainer.beadGroups;
     this.beadGroupIdx = -1;
