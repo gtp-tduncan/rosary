@@ -2,7 +2,7 @@ import { BeadGroupContainer } from "../sequences/contemporary-rosary";
 import { BeadGroup } from "./bead-group";
 import { fruitByNumber, Mysteries, mysteryByNumber } from "./mysteries";
 
-export class BeadGroupList {
+export abstract class BeadGroupList {
 
   debugTheEnd = false;
 
@@ -31,9 +31,7 @@ export class BeadGroupList {
     this.activeMysteriesIdx = 0;
   }
 
-  get prayerName(): string {
-    return this._prayerName;
-  }
+  abstract prayerName: string;
 
   debugHasBeadIdxOverrideOccurred(resetOverrideFlag = true): boolean {
     const result = this.beadIdxOverrideOccurred;
