@@ -42,9 +42,7 @@ export class ActivePrayerComponent implements OnInit, AfterViewInit {
 
   get prayerName(): string {
     let name = this.activeBeadGroupList.prayerName();
-    name = name[0].toUpperCase() + name.substring(1);
-    console.log(`active prayer name: ${name}`);
-    return name;
+    return name[0].toUpperCase() + name.substring(1);
   }
 
   onNext() {
