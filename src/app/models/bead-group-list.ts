@@ -31,7 +31,7 @@ export abstract class BeadGroupList {
     this.activeMysteriesIdx = 0;
   }
 
-  abstract prayerName: string;
+  abstract prayerName(): string;
 
   debugHasBeadIdxOverrideOccurred(resetOverrideFlag = true): boolean {
     const result = this.beadIdxOverrideOccurred;

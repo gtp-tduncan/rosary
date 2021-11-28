@@ -20,7 +20,7 @@ export class ContemporaryRosary extends BeadGroupList {
     console.log(`Contemporary - ${mysteries.mysterySequenceName}`);
   }
 
-  get prayerName(): string {
+  prayerName(): string {
     return this.localizationUtil.prayerHolyRosary;
   }
 
