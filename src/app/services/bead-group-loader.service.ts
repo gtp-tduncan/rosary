@@ -13,7 +13,7 @@ export class BeadGroupLoaderService {
   constructor(private localizationUtil: LocalizationService) { }
 
   loadHolyRosaryContemporaryMysteryEnum(mysteryEnum: RosaryMysteriesEnum): BeadGroupList {
-    const mystery = lookupMystery(mysteryEnum);
+    const mystery = lookupMystery(this.localizationUtil, mysteryEnum);
     return new ContemporaryRosary(this.localizationUtil, mystery);
   }
 
