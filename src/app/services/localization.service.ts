@@ -52,15 +52,15 @@ export class LocalizationService {
   }
 
   get joyfulMysteryLabel(): string {
-    return $localize`:@@joyful-mystery:Joyful`;
+    return $localize`:@@joyful:Joyful`;
   }
 
   get luminousMysteryLabel(): string {
-    return $localize`:@@luminous-mystery:Luminous`;
+    return $localize`:@@luminous:Luminous`;
   }
 
   get sorrowfulMysteryLabel(): string {
-    return $localize`:@@sorrowful-mystery:Sorrowful`;
+    return $localize`:@@sorrowful:Sorrowful`;
   }
 
 }
